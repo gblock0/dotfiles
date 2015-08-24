@@ -14,7 +14,7 @@ Dotfiles install idea taken from [Nick Nisi](http://www.github.com/nicknisi).
 
 ## Install
 
-1. `git clone https://github.com/gblock0/dotfiles_unstable.git ~/.dotfiles`
+1. `git clone https://github.com/gblock0/dotfiles.git ~/.dotfiles`
 1. `cd ~/.dotfiles`
 1. `./install.sh`
 1. Install [VirtualBox](https://www.virtualbox.org/)
