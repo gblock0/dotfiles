@@ -1,0 +1,9 @@
+.netrwhist
+vim/vim.symlink/plugged/
+nvim/nvim.symlink/plugged/
+npm-debug.log
+plug.vim.old
+vim/vim.symlink/cache/
+nvim/nvim.symlink/cache/
+tags
+zsh/localrc.symlink

@@ -1,0 +1,39 @@
+#!/bin/zsh
+
+SESSION_NAME=radish
+RBUILD=~/radish/build
+RNEWBACK=~/radish/new-backend
+
+
+if ! tmux has-session -t $SESSION_NAME; then
+	TMUX= tmux new-session -d -s $SESSION_NAME -n shell -c $RBUILD
+	tmux new-window -t$SESSION_NAME:2 -c $RNEWBACK -n new-backend
+	tmux new-window -t$SESSION_NAME:3 -c $RBUILD
+	tmux new-window -t$SESSION_NAME:4 -n redis/mongo
+
+	tmux select-window -t$SESSION_NAME:1
+	tmux split-window -h -t 1 -c $RBUILD
+	tmux split-window -v -c $RBUILD
+
+	tmux select-window -t$SESSION_NAME:2
+	tmux send-keys -t$SESSION_NAME:2 "vim" "C-m"
+	tmux split-window -h -c $RNEWBACK
+	tmux resize-pane -t 2 -x 80
+	tmux split-window -v -c $RNEWBACK
+
+	tmux select-window -t$SESSION_NAME:3
+	tmux split-window -h -c $RBUILD
+	tmux resize-pane -t 3 -x 80
+	tmux split-window -v -c $RBUILD
+
+	tmux select-window -t$SESSION_NAME:4
+	tmux split-window -h
+	tmux send-keys -t$SESSION_NAME:4 "mongod" "C-m"
+	tmux select-pane -t 1 
+	tmux send-keys -t$SESSION_NAME:4 "redis-server" "C-m"
+
+
+	tmux select-window -t$SESSION_NAME:1
+fi 
+tmux -2 attach -t $SESSION_NAME
+
