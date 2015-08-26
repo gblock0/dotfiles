@@ -154,32 +154,32 @@ let g:airline_section_y = ''
 " Neocomplete
 """""""""""""""""""""""""""
 
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#auto_completion_start_length = 1
-let g:neocomplete#sources#buffer#cache_limit_size = 50000
-let g:neocomplete#data_directory = $HOME.'/.vim/cache/noecomplete'
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 2
-if !exists('g:neocomplete#force_omni_input_patterns')
-	let g:neocomplete#force_omni_input_patterns = {}
-endif
-let g:neocomplete#force_omni_input_patterns.javascript = '[^. \t]\.\w*'
+" let g:neocomplete#enable_at_startup = 1
+" let g:neocomplete#auto_completion_start_length = 1
+" let g:neocomplete#sources#buffer#cache_limit_size = 50000
+" let g:neocomplete#data_directory = $HOME.'/.vim/cache/noecomplete'
+" let g:neocomplete#enable_smart_case = 1
+" let g:neocomplete#sources#syntax#min_keyword_length = 2
+" if !exists('g:neocomplete#force_omni_input_patterns')
+	" let g:neocomplete#force_omni_input_patterns = {}
+" endif
+" let g:neocomplete#force_omni_input_patterns.javascript = '[^. \t]\.\w*'
 
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplete#close_popup()
-inoremap <expr><C-e>  neocomplete#cancel_popup()
-set completeopt-=preview
-augroup omnicomplete
-	autocmd!
-	autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-	autocmd FileType markdown setlocal omnifunc=htmlcomplete#CompleteTags
-	autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
-	autocmd FileType javascript setlocal omnifunc=tern#Complete
-augroup END
+" " <TAB>: completion.
+" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" " <C-h>, <BS>: close popup and delete backword char.
+" inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><C-y>  neocomplete#close_popup()
+" inoremap <expr><C-e>  neocomplete#cancel_popup()
+" set completeopt-=preview
+" augroup omnicomplete
+	" autocmd!
+	" autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+	" autocmd FileType markdown setlocal omnifunc=htmlcomplete#CompleteTags
+	" autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
+	" autocmd FileType javascript setlocal omnifunc=tern#Complete
+" augroup END
 
 """""""""""""""""""""""""""
 " Gutentags
