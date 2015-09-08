@@ -25,3 +25,7 @@ function light() {
 function dark() {
     export BACKGROUND="dark" && reload!
 }
+
+function drmi() {
+	docker rmi -f $(docker images | grep '^<none>' | awk '{print $3}')
+}

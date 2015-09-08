@@ -32,10 +32,9 @@ set backspace=indent,eol,start
 " No Escape Keys in Insert Mode
 set noesckeys
 
-
 " set a map leader for more key combos
-let mapleader = ','
-let g:mapleader = ','
+let mapleader = "\<Space>"
+let g:mapleader = "\<Space>"
 
 set history=1000 " change history to 1000
 set textwidth=0
@@ -201,11 +200,8 @@ set laststatus=2 " show the satus line all the time
 
 nnoremap # "fyiw :/<c-r>f<cr>"
 
-" remap esc
-inoremap jj <esc>
-
 " Turn off highlighting
-nnoremap <leader><space> :noh<CR> :match none<CR>
+nnoremap <leader>h :noh<CR> :match none<CR>
 
 " Disable arrow keys in insert mode
 inoremap <up> <nop>
@@ -236,14 +232,12 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " wipout buffer
 "nmap <silent> <leader>b :bw<cr>
 
+
 " shortcut to save
-nmap <leader>, :w<cr>
+nmap <leader><leader> :w<cr>
 
 nnoremap " '
 nnoremap ' "
-
-nnoremap : ;
-nnoremap ; :
 
 " disable Ex mode
 noremap Q <NOP>
