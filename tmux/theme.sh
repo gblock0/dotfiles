@@ -55,7 +55,7 @@ tm_battery_percent="#[fg=$tm_color_battery]#(~/.dotfiles/tmux/tmux.symlink/plugi
 tm_battery_remain="#[fg=$tm_color_battery]#(~/.dotfiles/tmux/tmux.symlink/plugins/tmux-battery/scripts/battery_remain.sh)"
 tm_battery_icon="#[fg=$tm_color_battery]#(~/.dotfiles/tmux/tmux.symlink/plugins/tmux-battery/scripts/battery_icon.sh)"
 
-tm_date="#[fg=$tm_color_inactive] %a %h-%d %H:%M"
+tm_date="#[fg=$tm_color_feature] %a %h-%d %H:%M"
 tm_host="#[fg=$tm_color_feature,bold]#h"
 tm_session_name="#[fg=$tm_color_feature,bold]$tm_icon #S"
 
