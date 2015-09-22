@@ -40,6 +40,7 @@ Plug 'jiangmiao/auto-pairs'															" Auto-pairing brackets, parens, and q
 Plug 'xolox/vim-lua-ftplugin'														" Lua Plugin
 Plug 'xolox/vim-misc'																		" Misc Dependencies for xolox's plugins
 Plug 'suan/vim-instant-markdown'												" Markdown Preview in the browser
+Plug 'vasconcelloslf/vim-interestingwords'							" Highlight different words in a file
 
 " Js plugins...
 Plug 'othree/yajs.vim'																	" More JavaScript syntax highlighting

@@ -42,7 +42,7 @@
 	"disallowImplicitTypeConversion": [
 		"binary"
 	],
-	"requireCamelCaseOrUpperCaseIdentifiers": true,
+	"requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
 	"disallowKeywords": [
 		"with"
 	],

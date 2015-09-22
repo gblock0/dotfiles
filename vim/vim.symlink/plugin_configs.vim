@@ -18,12 +18,6 @@ let g:ctrlp_cmd = 'CtrlP'
 nnoremap <D-t> :CtrlP<CR>
 let g:ctrlp_working_path_mode = 'ra'
 
-" CtrlP ignore patterns
-" let g:ctrlp_custom_ignore = {
-"             \ 'dir': '\.git$\|node_modules$\|bower_components$\|\.hg$\|\.svn$',
-"             \ 'file': '\.exe$\|\.so$'
-"             \ }
-
 " search the nearest ancestor that contains .git, .hg, .svn
 let g:ctrlp_working_path_mode = 2
 
