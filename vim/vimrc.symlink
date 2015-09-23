@@ -200,6 +200,9 @@ set laststatus=2 " show the satus line all the time
 
 nnoremap # "fyiw :/<c-r>f<cr>"
 
+nnoremap <leader>U viwU
+nnoremap <leader>u viwu
+
 " Turn off highlighting
 nnoremap <leader>h :noh<CR> :match none<CR>
 
