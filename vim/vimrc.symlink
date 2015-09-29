@@ -100,7 +100,7 @@ set foldlevel=1
 
 " Remap colon commands to ignore shift
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
-cnoreabbrev <expr> w ((getcmdtype() is# ':' && getcmdline() is# 'w')?('wa'):('w'))
+cnoreabbrev <expr> w ((getcmdtype() is# ':' && getcmdline() is# 'w')?('w'):('w'))
 cnoreabbrev <expr> Q ((getcmdtype() is# ':' && getcmdline() is# 'Q')?('q'):('Q'))
 cnoreabbrev <expr> WQ ((getcmdtype() is# ':' && getcmdline() is# 'WQ')?('wq'):('WQ'))
 
@@ -237,7 +237,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 
 " shortcut to save
-nmap <leader><leader> :w<cr>
+nmap <leader><leader> :wa<cr>
 
 nnoremap " '
 nnoremap ' "
