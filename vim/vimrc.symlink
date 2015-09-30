@@ -58,6 +58,7 @@ set clipboard=unnamed
 " faster redrawing
 set ttyfast
 
+
 " highlight conflicts
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
@@ -167,6 +168,9 @@ set cursorline
 
 " Color Scheme Settings
 color hybrid
+
+" Underline Search instead of highlight
+highlight Search ctermbg=NONE ctermfg=darkred cterm=underline
 
 " Hide Scrollbar
 set guioptions-=r
