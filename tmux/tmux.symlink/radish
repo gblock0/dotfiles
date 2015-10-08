@@ -2,13 +2,14 @@
 
 SESSION_NAME=radish
 RBUILD=~/radish/build
+RADMIN=~/radish/build/admin
 RNEWBACK=~/radish/new-backend
 
 
 if ! tmux has-session -t $SESSION_NAME; then
 	TMUX= tmux new-session -d -s $SESSION_NAME -n shell -c $RBUILD
 	tmux new-window -t$SESSION_NAME:2 -c $RNEWBACK -n new-backend
-	tmux new-window -t$SESSION_NAME:3 -c $RBUILD
+	tmux new-window -t$SESSION_NAME:3 -c $RADMIN -n admin
 	tmux new-window -t$SESSION_NAME:4 -n redis/mongo
 
 	tmux select-window -t$SESSION_NAME:1
@@ -24,7 +25,7 @@ if ! tmux has-session -t $SESSION_NAME; then
 	tmux select-window -t$SESSION_NAME:3
 	tmux split-window -h -c $RBUILD
 	tmux resize-pane -t 3 -x 80
-	tmux split-window -v -c $RBUILD
+	tmux split-window -v -c $RADMIN
 
 	tmux select-window -t$SESSION_NAME:4
 	tmux split-window -h

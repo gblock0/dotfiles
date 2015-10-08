@@ -166,6 +166,9 @@ set smartindent
 " Highlight current line
 set cursorline
 
+" disable folding
+set nofoldenable
+
 " Color Scheme Settings
 color hybrid
 
@@ -228,7 +231,7 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
 " Want a space after this
-nnoremap <leader>a :Ag! 
+nnoremap <leader>a :Ag!<space>
 
 " Disable auto-commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
