@@ -170,7 +170,7 @@ set cursorline
 set nofoldenable
 
 " Color Scheme Settings
-color hybrid
+color Tomorrow-Night
 
 " Underline Search instead of highlight
 highlight Search ctermbg=NONE ctermfg=darkred cterm=underline
@@ -237,7 +237,7 @@ nnoremap <leader>a :Ag!<space>
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " remove extra whitespace
-"nmap <leader><space> :%s/\s\+$<cr>
+nmap <leader>i :%s/\s\+$<cr>
 
 " wipout buffer
 "nmap <silent> <leader>b :bw<cr>
