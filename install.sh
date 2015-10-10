@@ -22,6 +22,9 @@ if [ "$(uname)" == "Darwin" ]; then
     echo "installing node (from nvm)"
     nvm install stable
     nvm alias default stable
+
+		echo "install plug.vim"
+		curl -# --create-dirs -o ~/.dotfiles/vim/vim.symlink/autoload/plug.vim https://github.com/junegunn/vim-plug/blob/master/plug.vim
 fi
 
 
