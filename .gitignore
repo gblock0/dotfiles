@@ -1,6 +1,8 @@
 .netrwhist
 vim/vim.symlink/plugged/
+vim/vim.symlink/autoload/
 nvim/nvim.symlink/plugged/
+nvim/nvim.symlink/autoload/
 npm-debug.log
 plug.vim.old
 vim/vim.symlink/cache/
