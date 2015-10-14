@@ -62,7 +62,7 @@ alias subl="sublime"
 alias dotfiles="~/./.tmux/dotfiles"
 
 # Open Mvim in terminal
-alias vim="mvim -v"
+
 
 # Get list of the sizes of tmux panes
 alias tmuxsize="tmux list-panes -F '#{pane_id} #{pane_width}x#{pane_height}'"
