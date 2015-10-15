@@ -22,7 +22,7 @@ Plug 'ctrlpvim/ctrlp.vim'																"	File searcher
 Plug 'scrooloose/nerdcommenter'													" Easily comment/uncomment thing using shortcuts
 Plug 'moll/vim-node'																		" Makes Vim better for Node developement
 Plug 'lfilho/cosco.vim'																	" Comma and semi-colon insertion bliss
-" Plug 'airblade/vim-gitgutter'														" Allows stuff in the gutter
+Plug 'airblade/vim-gitgutter'														" Allows stuff in the gutter
 Plug 'vitorgalvao/autoswap_mac'													" Swap file handling
 Plug 'pangloss/vim-javascript'													" Javascript syntax highlighting
 Plug 'Xuyuanp/nerdtree-git-plugin'											" See git indicator symbols in NERDTree

@@ -178,7 +178,7 @@ let g:airline_section_y = ''
 """""""""""""""""""""""""""
 " Gutentags
 """""""""""""""""""""""""""
-let g:gutentags_cache_dir = "~/.vim/cache/tags"
+" let g:gutentags_cache_dir = "~/.vim/cache/tags"
 
 """""""""""""""""""""""""""
 " Quick-Scope
