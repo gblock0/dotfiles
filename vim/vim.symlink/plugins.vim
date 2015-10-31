@@ -29,8 +29,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'											" See git indicator symbols in NERD
 Plug 'vim-scripts/mru.vim'															" See most recently used files
 Plug 'Chiel92/vim-autoformat'														" Autoformatting
 Plug 'bling/vim-airline'																" Replacement for Powerline
-" Plug 'Shougo/neocomplete.vim'														" Autocomplete
-" Plug 'ludovicchabant/vim-gutentags'											" Updates Tags on Save of files
 Plug 'junegunn/limelight.vim'														" Highlights section of code
 Plug 'sickill/vim-pasta'																" Smart indenting on paste
 Plug 'vim-scripts/ZoomWin'															" Zoom in on current pane

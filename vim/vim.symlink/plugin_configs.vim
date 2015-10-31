@@ -211,3 +211,8 @@ vnoremap <expr> <silent> f Quick_scope_selective('f')
 vnoremap <expr> <silent> F Quick_scope_selective('F')
 vnoremap <expr> <silent> t Quick_scope_selective('t')
 vnoremap <expr> <silent> T Quick_scope_selective('T')
+
+"""""""""""""""""""""""""""
+" Auto-Pairs
+"""""""""""""""""""""""""""
+let g:AutoPairsShortcutFastWrap = '<M-e>'
