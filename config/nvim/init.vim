@@ -281,7 +281,7 @@ nmap \s :set ts=2 sts=2 sw=2 et<cr>
 nnoremap <leader>f :Autoformat<CR>:%s/\s\+$//e<CR>:noh<CR>
 
 " Reload vimrc
-nnoremap <leader>r :so ~/.vimrc<CR>:noh<CR>:echo "Vimrc Reload!"<CR>
+nnoremap <leader>r :so ~/.config/nvim/init.vim<CR>:noh<CR>:echo "Vimrc Reload!"<CR>
 
 " Add semi colon to the end of current line and return cursor to position
 nnoremap <leader>; maA;<esc>`a
