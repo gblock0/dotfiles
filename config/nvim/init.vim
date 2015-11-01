@@ -225,9 +225,6 @@ nnoremap <leader>a :Ag!<space>
 " Disable auto-commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" remove extra whitespace
-nmap <leader>i 
-
 " wipout buffer
 "nmap <silent> <leader>b :bw<cr>
 
@@ -281,7 +278,7 @@ nmap \s :set ts=2 sts=2 sw=2 et<cr>
 nnoremap <leader>f :Autoformat<CR>:%s/\s\+$//e<CR>:noh<CR>
 
 " Reload vimrc
-nnoremap <leader>r :so ~/.config/nvim/init.vim<CR>:noh<CR>:echo "Vimrc Reload!"<CR>
+nnoremap <leader>r :so ~/.config/nvim/init.vim<CR>:noh<CR>:echo "init.vim Reload!"<CR>
 
 " Add semi colon to the end of current line and return cursor to position
 nnoremap <leader>; maA;<esc>`a
