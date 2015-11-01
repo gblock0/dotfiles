@@ -14,7 +14,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'gregsexton/MatchTag'
 Plug 'Raimondi/delimitMate'															" Auto closes quotes, parens, brackets, etc.
 Plug 'tpope/vim-fugitive'																" Git stuff
-Plug 'scrooloose/syntastic'															" Syntax checking stuff
 Plug 'rking/ag.vim'																			" Fast grep replacement
 Plug 'scrooloose/nerdtree'															" File tree explorer
 Plug 'tpope/vim-surround'																" Change surrounding quotes, brackets, etc.
@@ -40,6 +39,7 @@ Plug 'xolox/vim-misc'																		" Misc Dependencies for xolox's plugins
 Plug 'suan/vim-instant-markdown'												" Markdown Preview in the browser
 Plug 'vasconcelloslf/vim-interestingwords'							" Highlight different words in a file
 Plug 'mattn/emmet-vim'																	" Adding Emmet
+Plug 'benekastah/neomake'																" Syntax checking with support for Neovim async
 
 " Js plugins...
 Plug 'othree/yajs.vim'																	" More JavaScript syntax highlighting

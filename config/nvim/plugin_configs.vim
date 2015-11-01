@@ -158,3 +158,15 @@ vnoremap <expr> <silent> T Quick_scope_selective('T')
 " Auto-Pairs
 """""""""""""""""""""""""""
 let g:AutoPairsShortcutFastWrap = '<M-e>'
+
+"""""""""""""""""""""""""""
+" Neomake
+"""""""""""""""""""""""""""
+if has('autocmd') && !exists('autocommands_loaded')
+	autocmd! BufWritePost * Neomake
+endif
+let g:neomake_javascript_jshint_maker = {
+    \ 'args': ['--verbose'],
+    \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
+\ }
+let g:neomake_javascript_enabled_markers = ['jshint', 'jscs']
