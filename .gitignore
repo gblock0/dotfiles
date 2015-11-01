@@ -1,12 +1,12 @@
 .netrwhist
 vim/vim.symlink/plugged/
 vim/vim.symlink/autoload/
-nvim/nvim.symlink/plugged/
-nvim/nvim.symlink/autoload/
+config/nvim/plugged/
+config/nvim/autoload/
 npm-debug.log
 plug.vim.old
 vim/vim.symlink/cache/
-nvim/nvim.symlink/cache/
+config/nvim/cache/
 tags
 zsh/localrc.symlink
 .config/

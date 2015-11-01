@@ -5,8 +5,8 @@
 
 " load plugins from vim-plug
 
-source ~/.vim/plugins.vim
-source ~/.vim/plugin_configs.vim
+source ~/.config/nvim/plugins.vim
+source ~/.config/nvim/plugin_configs.vim
 
 filetype plugin on
 
@@ -50,7 +50,6 @@ set completeopt+=longest
 
 if has('mouse')
 	set mouse=a
-	set ttymouse=xterm2
 endif
 
 set clipboard=unnamed
@@ -68,34 +67,26 @@ if has('autocmd') && !exists('autocommands_loaded')
 	let autocommands_loaded = 1
 	autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 	autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-	autocmd FileType ruby setlocal ts=2 sts=2 sw=2 noexpandtab
 	autocmd FileType html setlocal ts=4 sts=4 sw=4 noexpandtab indentkeys-=*<return>
-	autocmd FileType jade setlocal ts=2 sts=2 sw=2 noexpandtab
 	autocmd FileType *.md.js :call SyntasticReset<cr>
 	autocmd FileType markdown,textile setlocal textwidth=0 wrapmargin=0 wrap spell
 	autocmd FileType .xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
 
 	" automatically resize panes on resize
-	autocmd VimResized * exe 'normal! \<c-w>='
 	autocmd BufWritePost .vimrc source %
 	autocmd BufWritePost .vimrc.local source %
 	" save all files on focus lost, ignoring warnings about untitled buffers
 	autocmd FocusLost * silent! wa
 
-	source ~/.vim/filetype_settings.vim
-
-	" make quickfix windows take all the lower section of the screen when there
-	" are multiple windows open
-	autocmd FileType qf wincmd J
+	source ~/.config/nvim/filetype_settings.vim
 
 	let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'json=javascript', 'stylus', 'html']
 
-	" autocmd! BufEnter * call ApplyLocalSettings(expand('<afile>:p:h'))
 endif
 
 " code folding settings
 set foldmethod=syntax " fold based on indent
-set foldnestmax=10 " deepest fold is 10 levels
+set foldnestmax=5 " deepest fold is 10 levels
 set nofoldenable " don't fold by default
 set foldlevel=1
 
@@ -166,9 +157,6 @@ set smartindent
 " Highlight current line
 set cursorline
 
-" disable folding
-set nofoldenable
-
 " Color Scheme Settings
 set background=dark
 colorscheme hybrid
@@ -186,8 +174,8 @@ set nowrap
 " => Files, backups, and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set backupdir=~/.vim-tmp
-set directory=~/.vim-tmp
+set backupdir=~/.nvim-tmp
+set directory=~/.nvim-tmp
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -238,7 +226,7 @@ nnoremap <leader>a :Ag!<space>
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " remove extra whitespace
-nmap <leader>i :%s/\s\+$<cr>:noh<cr>
+nmap <leader>i 
 
 " wipout buffer
 "nmap <silent> <leader>b :bw<cr>
@@ -256,15 +244,6 @@ noremap Q <NOP>
 " set paste toggle
 set pastetoggle=<F6>
 
-" edit ~/.vimrc
-map <leader>ev :e! ~/.vimrc<cr>
-" edit vim plugins
-map <leader>evp :e! ~/.vim/plugins.vim<cr>
-" edit vim functions
-map <leader>evf :e! ~/.vim/functions.vim<cr>
-" edit gitconfig
-map <leader>eg :e! ~/.gitconfig<cr>
-
 " Reselect the text that was just pasted
 nnoremap <leader>v V`]
 
@@ -280,12 +259,6 @@ nnoremap <leader>w <C-w>v<C-w>l :CtrlP<CR>
 
 " Create a new split, switch to it and open CtrlP
 nnoremap <leader>s <C-w>s<C-w>j :CtrlP<CR>
-
-" switch between current and last buffer
-nmap <leader>. <c-^>
-
-" enable . command in visual mode
-vnoremap . :normal .<cr>
 
 "map <silent> <C-h> :call MovePane('h')<cr>
 "map <silent> <C-j> :call MovePane('j')<cr>
