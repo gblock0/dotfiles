@@ -52,6 +52,11 @@ if has('mouse')
 	set mouse=a
 endif
 
+" Need to do this since neovim sees ctrl+h as <BS>
+if has('nvim')
+	nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
+endif
+
 set clipboard=unnamed
 
 " faster redrawing
@@ -256,15 +261,6 @@ nnoremap <leader>w <C-w>v<C-w>l :CtrlP<CR>
 
 " Create a new split, switch to it and open CtrlP
 nnoremap <leader>s <C-w>s<C-w>j :CtrlP<CR>
-
-"map <silent> <C-h> :call MovePane('h')<cr>
-"map <silent> <C-j> :call MovePane('j')<cr>
-"map <silent> <C-k> :call MovePane('k')<cr>
-"map <silent> <C-l> :call MovePane('l')<cr>
-"map <silent> <C-h> <C-w>h
-"map <silent> <C-j> <C-w>j
-"map <silent> <C-k> <C-w>k
-"map <silent> <C-l> <C-w>l
 
 " scroll the viewport faster
 nnoremap <C-e> 3<C-e>
