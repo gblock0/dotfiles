@@ -170,3 +170,13 @@ let g:neomake_javascript_jshint_maker = {
     \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
 \ }
 let g:neomake_javascript_enabled_markers = ['jshint', 'jscs']
+
+"""""""""""""""""""""""""""
+" vim-tmux-navigator
+"""""""""""""""""""""""""""
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
