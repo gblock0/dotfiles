@@ -77,11 +77,14 @@ if has('autocmd') && !exists('autocommands_loaded')
 	autocmd FileType markdown,textile setlocal textwidth=0 wrapmargin=0 wrap spell
 	autocmd FileType .xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
 
-	" automatically resize panes on resize
-	autocmd BufWritePost .vimrc source %
-	autocmd BufWritePost .vimrc.local source %
+	" Set cursor line if in file and unset when leaving file
+	autocmd WinEnter * setlocal cursorline
+	autocmd WinLeave * setlocal nocursorline
+
 	" save all files on focus lost, ignoring warnings about untitled buffers
 	autocmd FocusLost * silent! wa
+
+	autocmd FileType javascript,html,lua,css,scss,ejs autocmd BufWritePre * :Autoformat
 
 	source ~/.config/nvim/filetype_settings.vim
 
@@ -135,7 +138,6 @@ set mat=2 " how many tenths of a second to blink
 " error bells
 set noerrorbells
 set visualbell
-set t_vb=
 set tm=500
 
 " switch syntax highlighting on
@@ -230,12 +232,8 @@ nnoremap <leader>a :Ag!<space>
 " Disable auto-commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" wipout buffer
-"nmap <silent> <leader>b :bw<cr>
-
-
 " shortcut to save
-nmap <leader><leader> :wa<cr>:%s/\s\+$//e<cr>:noh<cr>
+nmap <leader><leader> :wa<cr>
 
 nnoremap " '
 nnoremap ' "
@@ -270,8 +268,8 @@ nnoremap <C-y> 3<C-y>
 nmap \t :set ts=2 sts=2 sw=2 noet<cr>
 nmap \s :set ts=2 sts=2 sw=2 et<cr>
 
-" Format current file and return cursor to current position
-nnoremap <leader>f :Autoformat<CR>:%s/\s\+$//e<CR>:noh<CR>
+" Format current file and return cursor to current position (shouldn't need this anymore if Autoformat is working)
+" nnoremap <leader>f :Autoformat<CR>:%s/\s\+$//e<CR>:noh<CR>
 
 " Reload vimrc
 nnoremap <leader>r :so ~/.config/nvim/init.vim<CR>:noh<CR>:echo "init.vim Reload!"<CR>

@@ -166,9 +166,9 @@ if has('autocmd') && !exists('autocommands_loaded')
 	autocmd! BufWritePost * Neomake
 endif
 let g:neomake_javascript_jshint_maker = {
-    \ 'args': ['--verbose'],
-    \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
-\ }
+			\ 'args': ['--verbose'],
+			\ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
+			\ }
 let g:neomake_javascript_enabled_markers = ['jshint', 'jscs']
 let g:neomake_open_list = 2
 
@@ -181,3 +181,8 @@ nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+
+"""""""""""""""""""""""""""
+" vim-autoformat
+"""""""""""""""""""""""""""
+let g:formatters_javascript = [ 'jscs' ]
