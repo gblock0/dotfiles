@@ -84,8 +84,6 @@ if has('autocmd') && !exists('autocommands_loaded')
 	" save all files on focus lost, ignoring warnings about untitled buffers
 	autocmd FocusLost * silent! wa
 
-	autocmd FileType javascript,html,lua,css,scss,ejs autocmd BufWritePre * :Autoformat
-
 	source ~/.config/nvim/filetype_settings.vim
 
 	let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'json=javascript', 'stylus', 'html']
@@ -269,7 +267,7 @@ nmap \t :set ts=2 sts=2 sw=2 noet<cr>
 nmap \s :set ts=2 sts=2 sw=2 et<cr>
 
 " Format current file and return cursor to current position (shouldn't need this anymore if Autoformat is working)
-" nnoremap <leader>f :Autoformat<CR>:%s/\s\+$//e<CR>:noh<CR>
+nnoremap <leader>f :Autoformat<CR>
 
 " Reload vimrc
 nnoremap <leader>r :so ~/.config/nvim/init.vim<CR>:noh<CR>:echo "init.vim Reload!"<CR>
