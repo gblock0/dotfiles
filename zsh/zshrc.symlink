@@ -15,6 +15,7 @@ autoload -U compinit
 compinit
 
 export EDITOR='vim'
+export NEOVIM_JS_DEBUG="~/.nvim_js_debug"
 
 export PATH=/usr/local/bin:$PATH
 

@@ -27,6 +27,8 @@ Plug 'pangloss/vim-javascript'													" Javascript syntax highlighting
 Plug 'Xuyuanp/nerdtree-git-plugin'											" See git indicator symbols in NERDTree
 Plug 'vim-scripts/mru.vim'															" See most recently used files
 Plug 'Chiel92/vim-autoformat'														" Autoformatting
+Plug 'neovim/node-host', {'do': 'npm install' }																	" Need this to run node plugins
+Plug '~/neovim-autoformat'												" Async autoformatting
 Plug 'bling/vim-airline'																" Replacement for Powerline
 Plug 'junegunn/limelight.vim'														" Highlights section of code
 Plug 'sickill/vim-pasta'																" Smart indenting on paste
@@ -36,7 +38,7 @@ Plug 'unblevable/quick-scope'														" Highlight characters to target when
 Plug 'jiangmiao/auto-pairs'															" Auto-pairing brackets, parens, and quotes
 Plug 'xolox/vim-lua-ftplugin'														" Lua Plugin
 Plug 'xolox/vim-misc'																		" Misc Dependencies for xolox's plugins
-Plug 'suan/vim-instant-markdown'												" Markdown Preview in the browser
+Plug 'euclio/vim-markdown-composer'											" Markdown Preview in the browser
 Plug 'vasconcelloslf/vim-interestingwords'							" Highlight different words in a file
 Plug 'mattn/emmet-vim'																	" Adding Emmet
 Plug 'benekastah/neomake'																" Syntax checking with support for Neovim async
