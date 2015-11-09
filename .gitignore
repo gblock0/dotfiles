@@ -10,3 +10,4 @@ config/nvim/cache/
 tags
 zsh/localrc.symlink
 .config/
+tmux/tmux.symlink/plugins/
