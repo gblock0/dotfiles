@@ -225,7 +225,7 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
 " Want a space after this
-nnoremap <leader>a :Ag!<space>
+nnoremap <leader>a :Ag!<space>-Q<space>"
 
 " Disable auto-commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -267,7 +267,7 @@ nmap \t :set ts=2 sts=2 sw=2 noet<cr>
 nmap \s :set ts=2 sts=2 sw=2 et<cr>
 
 " Format current file and return cursor to current position (shouldn't need this anymore if Autoformat is working)
-nnoremap <leader>f :Autoformat<CR>
+nnoremap <leader>f :Autoformat<CR>:w<CR>
 
 " Reload vimrc
 nnoremap <leader>r :so ~/.config/nvim/init.vim<CR>:noh<CR>:echo "init.vim Reload!"<CR>

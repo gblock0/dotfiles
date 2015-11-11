@@ -60,4 +60,4 @@ tm_host="#[fg=$tm_color_feature,bold]#h"
 tm_session_name="#[fg=$tm_color_feature,bold]$tm_icon #S"
 
 set -g status-left $tm_session_name' '
-set -g status-right $tm_itunes' '$tm_spotify' '$tm_date' '$tm_battery_percent' '
+set -g status-right 'Batt: #{battery_percentage} '$tm_itunes' '$tm_spotify' '$tm_date' '$tm_battery_percent' '
