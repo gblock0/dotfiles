@@ -29,6 +29,9 @@ if [ "$(uname)" == "Darwin" ]; then
 
 		echo "Add tmux plugin manager"
 		git clone https://github.com/tmux-plugins/tpm tmux/tmux.symlink/plugins/tpm
+
+		echo "Installing JS-Beautifier"
+		npm install -g js-beautify
 fi
 
 
