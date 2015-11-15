@@ -51,13 +51,11 @@ set-window-option -g clock-mode-colour $tm_color_active
 
 tm_spotify="#[fg=$tm_color_music]#(osascript ~/.dotfiles/applescripts/spotify.scpt)"
 tm_itunes="#[fg=$tm_color_music]#(osascript ~/.dotfiles/applescripts/itunes.scpt)"
-tm_battery_percent="#[fg=$tm_color_battery]#(~/.dotfiles/tmux/tmux.symlink/plugins/tmux-battery/scripts/battery_percentage.sh)"
-tm_battery_remain="#[fg=$tm_color_battery]#(~/.dotfiles/tmux/tmux.symlink/plugins/tmux-battery/scripts/battery_remain.sh)"
-tm_battery_icon="#[fg=$tm_color_battery]#(~/.dotfiles/tmux/tmux.symlink/plugins/tmux-battery/scripts/battery_icon.sh)"
+battery_percent="#(~/.dotfiles/bin/battery_indicator.sh)"
 
 tm_date="#[fg=$tm_color_feature] %a %h-%d %H:%M"
 tm_host="#[fg=$tm_color_feature,bold]#h"
 tm_session_name="#[fg=$tm_color_feature,bold]$tm_icon #S"
 
 set -g status-left $tm_session_name' '
-set -g status-right 'Batt: #{battery_percentage} '$tm_itunes' '$tm_spotify' '$tm_date' '$tm_battery_percent' '
+set -g status-right $tm_itunes' '$tm_spotify' '$tm_date' '$battery_percent' '
