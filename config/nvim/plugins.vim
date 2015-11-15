@@ -12,7 +12,6 @@ Plug 'tpope/vim-markdown'
 " Utilities
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'gregsexton/MatchTag'
-Plug 'Raimondi/delimitMate'															" Auto closes quotes, parens, brackets, etc.
 Plug 'tpope/vim-fugitive'																" Git stuff
 Plug 'rking/ag.vim'																			" Fast grep replacement
 Plug 'scrooloose/nerdtree'															" File tree explorer
@@ -27,8 +26,8 @@ Plug 'pangloss/vim-javascript'													" Javascript syntax highlighting
 Plug 'Xuyuanp/nerdtree-git-plugin'											" See git indicator symbols in NERDTree
 Plug 'vim-scripts/mru.vim'															" See most recently used files
 Plug 'Chiel92/vim-autoformat'														" Autoformatting
-Plug 'neovim/node-host', {'do': 'npm install' }																	" Need this to run node plugins
-Plug '~/neovim-autoformat'												" Async autoformatting
+Plug 'neovim/node-host', {'do': 'npm install' }					" Need this to run node plugins
+Plug '~/neovim-autoformat'															" Async autoformatting
 Plug 'bling/vim-airline'																" Replacement for Powerline
 Plug 'junegunn/limelight.vim'														" Highlights section of code
 Plug 'sickill/vim-pasta'																" Smart indenting on paste
