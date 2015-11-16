@@ -21,4 +21,5 @@ brew install highlight
 brew install nvm
 brew install z
 brew install docker
-brew install boot2docker
+brew install docker-machine
+brew install neo4j
