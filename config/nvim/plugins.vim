@@ -2,6 +2,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 "Themes
 Plug 'w0ng/vim-hybrid'
+Plug 'goatslacker/mango.vim'
 
 " Syntax Plugins
 Plug 'othree/html5.vim'

@@ -138,9 +138,6 @@ set noerrorbells
 set visualbell
 set tm=500
 
-" switch syntax highlighting on
-syntax on
-
 set number
 set relativenumber
 
@@ -162,12 +159,15 @@ set smartindent
 " Highlight current line
 set cursorline
 
+" switch syntax highlighting on
+syntax on
+
 " Color Scheme Settings
 set background=dark
-colorscheme hybrid
+color mango
 
 " Underline Search instead of highlight
-highlight Search ctermbg=NONE ctermfg=darkred cterm=underline
+" highlight Search ctermbg=NONE ctermfg=darkred cterm=underline
 
 " Hide Scrollbar
 set guioptions-=r
