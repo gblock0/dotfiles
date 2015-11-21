@@ -2,7 +2,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 "Themes
 Plug 'w0ng/vim-hybrid'
-Plug 'goatslacker/mango.vim'
+Plug 'kristijanhusak/vim-hybrid-material'
 
 " Syntax Plugins
 Plug 'othree/html5.vim'
@@ -28,7 +28,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin'											" See git indicator symbols in NERD
 Plug 'vim-scripts/mru.vim'															" See most recently used files
 Plug 'Chiel92/vim-autoformat'														" Autoformatting
 Plug 'neovim/node-host', {'do': 'npm install' }					" Need this to run node plugins
-Plug '~/neovim-autoformat'															" Async autoformatting
+" Plug '~/neovim-autoformat'															" Async autoformatting
+Plug 'gblock0/neovim-autoformat'															" Async autoformatting
 Plug 'bling/vim-airline'																" Replacement for Powerline
 Plug 'junegunn/limelight.vim'														" Highlights section of code
 Plug 'sickill/vim-pasta'																" Smart indenting on paste

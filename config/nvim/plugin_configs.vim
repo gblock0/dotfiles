@@ -91,7 +91,7 @@ if executable('ag')
 	" ag is fast enough that CtrlP doesn't need to cache
 	let g:ctrlp_use_caching = 0
 
-	nnoremap <leader>g :Ag<CR>
+	nnoremap <leader>g :Ag!<CR>
 
 endif
 

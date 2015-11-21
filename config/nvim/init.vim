@@ -164,7 +164,8 @@ syntax on
 
 " Color Scheme Settings
 set background=dark
-color mango
+let g:enable_bold_font = 1
+color hybrid_material
 
 " Underline Search instead of highlight
 " highlight Search ctermbg=NONE ctermfg=darkred cterm=underline
