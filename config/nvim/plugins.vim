@@ -29,7 +29,7 @@ Plug 'vim-scripts/mru.vim'															" See most recently used files
 Plug 'Chiel92/vim-autoformat'														" Autoformatting
 Plug 'neovim/node-host', {'do': 'npm install' }					" Need this to run node plugins
 " Plug '~/neovim-autoformat'															" Async autoformatting
-Plug 'gblock0/neovim-autoformat'															" Async autoformatting
+" Plug 'gblock0/neovim-autoformat'															" Async autoformatting
 Plug 'bling/vim-airline'																" Replacement for Powerline
 Plug 'junegunn/limelight.vim'														" Highlights section of code
 Plug 'sickill/vim-pasta'																" Smart indenting on paste
@@ -43,6 +43,7 @@ Plug 'euclio/vim-markdown-composer'											" Markdown Preview in the browser
 Plug 'vasconcelloslf/vim-interestingwords'							" Highlight different words in a file
 Plug 'mattn/emmet-vim'																	" Adding Emmet
 Plug 'benekastah/neomake'																" Syntax checking with support for Neovim async
+Plug 'Shougo/deoplete.nvim'															" Autocompletion for neovim
 
 " Js plugins...
 Plug 'othree/yajs.vim'																	" More JavaScript syntax highlighting
