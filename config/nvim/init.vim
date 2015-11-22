@@ -84,6 +84,9 @@ if has('autocmd') && !exists('autocommands_loaded')
 	" save all files on focus lost, ignoring warnings about untitled buffers
 	autocmd FocusLost * silent! wa
 
+	" Delete trailing spaces when leaving insert mode
+	autocmd InsertLeave * :%s/\s\+$//e
+
 	source ~/.config/nvim/filetype_settings.vim
 
 	let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'json=javascript', 'stylus', 'html']
@@ -152,6 +155,7 @@ augroup linenumbers
 	autocmd FocusLost *   :set number norelativenumber
 	autocmd FocusGained * :set relativenumber
 augroup END
+
 
 set autoindent " automatically set indent of new line
 set smartindent
