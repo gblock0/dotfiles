@@ -46,7 +46,7 @@ if hash brew 2>/dev/null; then
     source $(brew --prefix nvm)/nvm.sh
     source `brew --prefix`/etc/profile.d/z.sh
 fi
-
+export EDITOR="vim"
 
 # Base16 Shell
 # if [ -z "$THEME" ]; then

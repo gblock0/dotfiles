@@ -62,7 +62,7 @@ alias subl="sublime"
 alias dotfiles="~/./.tmux/dotfiles"
 
 # Open Mvim in terminal
-alias vim="nvim"
+alias vim='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
 
 
 # Get list of the sizes of tmux panes
