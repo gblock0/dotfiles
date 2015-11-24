@@ -193,3 +193,10 @@ let g:formatters_javascript = [ 'jscs' ]
 " inoremap <silent><expr><Tab>
 		" \ pumvisible() ? "\<C-n>" :
 		" \ deoplete#mappings#manual_complete()
+
+"""""""""""""""""""""""""""
+" vim-autoswap
+"""""""""""""""""""""""""""
+
+" tmux autoswap support
+let g:autoswap_detect_tmux = 1
