@@ -2,6 +2,7 @@
 alias reload!="source ~/.zshrc"
 
 alias radish='~/./.tmux/radish'
+alias tc='~/./truecolor.sh'
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`

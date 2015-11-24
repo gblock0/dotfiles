@@ -39,7 +39,7 @@ Plug 'unblevable/quick-scope'														" Highlight characters to target when
 Plug 'jiangmiao/auto-pairs'															" Auto-pairing brackets, parens, and quotes
 Plug 'xolox/vim-lua-ftplugin'														" Lua Plugin
 Plug 'xolox/vim-misc'																		" Misc Dependencies for xolox's plugins
-Plug 'euclio/vim-markdown-composer'											" Markdown Preview in the browser
+" Plug 'euclio/vim-markdown-composer'											" Markdown Preview in the browser
 Plug 'vasconcelloslf/vim-interestingwords'							" Highlight different words in a file
 Plug 'mattn/emmet-vim'																	" Adding Emmet
 Plug 'benekastah/neomake'																" Syntax checking with support for Neovim async
