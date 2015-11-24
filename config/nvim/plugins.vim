@@ -43,7 +43,7 @@ Plug 'euclio/vim-markdown-composer'											" Markdown Preview in the browser
 Plug 'vasconcelloslf/vim-interestingwords'							" Highlight different words in a file
 Plug 'mattn/emmet-vim'																	" Adding Emmet
 Plug 'benekastah/neomake'																" Syntax checking with support for Neovim async
-Plug 'Shougo/deoplete.nvim'															" Autocompletion for neovim
+" Plug 'Shougo/deoplete.nvim'															" Autocompletion for neovim
 
 " Js plugins...
 Plug 'othree/yajs.vim'																	" More JavaScript syntax highlighting
