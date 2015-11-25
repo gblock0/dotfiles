@@ -2,7 +2,6 @@
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
 " load plugins from vim-plug
 
 source ~/.config/nvim/plugins.vim
@@ -17,6 +16,13 @@ else
 	let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 	let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
+
+" switch syntax highlighting on
+syntax on
+
+" Color Scheme Settings
+set background=dark
+colorscheme gruvbox
 
 " Abbreviations
 abbr funciton function
@@ -163,13 +169,6 @@ set smartindent
 " Highlight current line
 set cursorline
 
-" switch syntax highlighting on
-syntax on
-
-" Color Scheme Settings
-set background=dark
-let g:enable_bold_font = 1
-colorscheme hybrid_material
 
 " Underline Search instead of highlight
 " highlight Search ctermbg=NONE ctermfg=darkred cterm=underline

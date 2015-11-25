@@ -98,7 +98,7 @@ endif
 """"""""""""""""""""
 "  Airline
 """"""""""""""""""""
-let g:airline_theme             = 'hybrid'
+let g:airline_theme             = 'gruvbox'
 let g:airline#extensions#syntastic#enabled  = 0
 let g:airline#extensions#whitespace#enabled = 0
 
@@ -200,3 +200,9 @@ let g:formatters_javascript = [ 'jscs' ]
 
 " tmux autoswap support
 let g:autoswap_detect_tmux = 1
+
+"""""""""""""""""""""""""""
+" gruvbox
+"""""""""""""""""""""""""""
+let g:gruvbox_bold=1
+let g:gruvbox_italic=1

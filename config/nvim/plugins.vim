@@ -3,6 +3,8 @@ call plug#begin('~/.config/nvim/plugged')
 "Themes
 Plug 'w0ng/vim-hybrid'
 Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'morhetz/gruvbox'
+Plug 'romainl/flattened'
 
 " Syntax Plugins
 Plug 'othree/html5.vim'
