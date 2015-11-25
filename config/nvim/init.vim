@@ -207,6 +207,7 @@ nnoremap # "fyiw :/<c-r>f<cr>"
 
 nnoremap <leader>U viwU
 nnoremap <leader>u viwu
+nnoremap mm $%
 
 " Turn off highlighting
 nnoremap <leader>h :noh<CR> :match none<CR>
