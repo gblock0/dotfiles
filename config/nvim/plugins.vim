@@ -31,7 +31,7 @@ Plug 'neovim/node-host', {'do': 'npm install' }					" Need this to run node plug
 " Plug 'gblock0/neovim-autoformat'															" Async autoformatting
 Plug 'bling/vim-airline'																" Replacement for Powerline
 Plug 'junegunn/limelight.vim'														" Highlights section of code
-Plug 'sickill/vim-pasta'																" Smart indenting on paste
+" Plug 'sickill/vim-pasta'																" Smart indenting on paste
 Plug 'vim-scripts/ZoomWin'															" Zoom in on current pane
 Plug 'vim-scripts/matchit.zip'													" Expanding the % operator for HTML
 Plug 'unblevable/quick-scope'														" Highlight characters to target when using T/t F/f

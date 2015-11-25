@@ -277,6 +277,8 @@ nnoremap <leader>r :so ~/.config/nvim/init.vim<CR>:noh<CR>:echo "init.vim Reload
 " Add semi colon to the end of current line and return cursor to position
 nnoremap <leader>; maA;<esc>`a:wa<CR>
 
+nnoremap p p`[v`]=
+
 let g:python_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
