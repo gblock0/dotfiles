@@ -32,6 +32,10 @@ if [ "$(uname)" == "Darwin" ]; then
 
 		echo "Installing JS-Beautifier"
 		npm install -g js-beautify
+
+		echo "Fixing Terminfo for now. Look at https://github.com/neovim/neovim/issues/2048#issuecomment-78045837 for more details"
+		infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
+		tic $TERM.ti
 fi
 
 

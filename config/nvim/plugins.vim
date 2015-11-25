@@ -4,7 +4,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'w0ng/vim-hybrid'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'morhetz/gruvbox'
-Plug 'romainl/flattened'
 
 " Syntax Plugins
 Plug 'othree/html5.vim'
@@ -24,10 +23,8 @@ Plug 'scrooloose/nerdcommenter'													" Easily comment/uncomment thing usi
 Plug 'moll/vim-node'																		" Makes Vim better for Node developement
 Plug 'lfilho/cosco.vim'																	" Comma and semi-colon insertion bliss
 Plug 'airblade/vim-gitgutter'														" Allows stuff in the gutter
-Plug 'gioele/vim-autoswap'													" Swap file handling
-Plug 'pangloss/vim-javascript'													" Javascript syntax highlighting
+Plug 'gioele/vim-autoswap'															" Swap file handling
 Plug 'Xuyuanp/nerdtree-git-plugin'											" See git indicator symbols in NERDTree
-Plug 'vim-scripts/mru.vim'															" See most recently used files
 Plug 'Chiel92/vim-autoformat'														" Autoformatting
 Plug 'neovim/node-host', {'do': 'npm install' }					" Need this to run node plugins
 " Plug '~/neovim-autoformat'															" Async autoformatting

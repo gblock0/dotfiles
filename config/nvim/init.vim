@@ -7,8 +7,6 @@
 source ~/.config/nvim/plugins.vim
 source ~/.config/nvim/plugin_configs.vim
 
-filetype plugin on
-
 if exists('$TMUX')
 	let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 	let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
@@ -31,6 +29,9 @@ abbr tempalte template
 
 set nocompatible " not compatible with vi
 set autoread " detect when a file is changed
+
+" Turn off weird red highlight errors in init.vim
+hi ERROR NONE
 
 " make backspace behave in a sane manner
 set backspace=indent,eol,start
@@ -58,16 +59,10 @@ if has('mouse')
 	set mouse=a
 endif
 
-" Need to do this since neovim sees ctrl+h as <BS>
-if has('nvim')
-	nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
-endif
-
 set clipboard=unnamed
 
 " faster redrawing
 set ttyfast
-
 
 " highlight conflicts
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
@@ -75,6 +70,7 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 " file type specific settings
 if has('autocmd') && !exists('autocommands_loaded')
 
+	source ~/.config/nvim/filetype_settings.vim
 	let autocommands_loaded = 1
 	autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 	autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
@@ -93,9 +89,10 @@ if has('autocmd') && !exists('autocommands_loaded')
 	" Delete trailing spaces when leaving insert mode
 	autocmd InsertLeave * :%s/\s\+$//e
 
-	source ~/.config/nvim/filetype_settings.vim
 
 	let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'json=javascript', 'stylus', 'html']
+
+	filetype plugin indent on
 
 endif
 
@@ -320,5 +317,7 @@ function! ApplyLocalSettings(dirname)
 		exec ':source' . l:settingsFile
 	endif
 endfunction
+
+set nospell
 
 call ApplyLocalSettings(expand('.'))
