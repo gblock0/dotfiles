@@ -98,13 +98,13 @@ endif
 """"""""""""""""""""
 "  Airline
 """"""""""""""""""""
-let g:airline_theme             = 'gruvbox'
+let g:airline_theme             = 'bubblegum'
 let g:airline#extensions#syntastic#enabled  = 0
 let g:airline#extensions#whitespace#enabled = 0
 
   let g:airline#extensions#default#layout = [
       \ [ 'a', 'b', 'c' ],
-      \ [ 'z', 'warning' ]
+      \ [ 'x', 'z', 'warning' ]
       \ ]
 
 " vim-powerline symbols
