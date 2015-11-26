@@ -112,8 +112,9 @@ cnoreabbrev <expr> WQ ((getcmdtype() is# ':' && getcmdline() is# 'WQ')?('wq'):('
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => User Interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-set guifont=Source\ Code\ Pro\ for\ Powerline:h14
+if has('gui_running')
+	set guifont=Source\ Code\ Pro:h12
+endif
 
 set so=7 " set 7 lines to the cursors - when moving vertical
 set wildmenu " enhanced command line completion
