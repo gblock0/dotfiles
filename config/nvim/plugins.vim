@@ -4,6 +4,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'w0ng/vim-hybrid'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
 
 " Syntax Plugins
 Plug 'othree/html5.vim'
@@ -34,7 +35,6 @@ Plug 'junegunn/limelight.vim'														" Highlights section of code
 " Plug 'sickill/vim-pasta'																" Smart indenting on paste
 Plug 'vim-scripts/ZoomWin'															" Zoom in on current pane
 Plug 'vim-scripts/matchit.zip'													" Expanding the % operator for HTML
-Plug 'unblevable/quick-scope'														" Highlight characters to target when using T/t F/f
 Plug 'jiangmiao/auto-pairs'															" Auto-pairing brackets, parens, and quotes
 Plug 'xolox/vim-lua-ftplugin'														" Lua Plugin
 Plug 'xolox/vim-misc'																		" Misc Dependencies for xolox's plugins

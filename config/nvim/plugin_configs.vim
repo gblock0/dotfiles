@@ -98,14 +98,19 @@ endif
 """"""""""""""""""""
 "  Airline
 """"""""""""""""""""
-let g:airline_theme             = 'bubblegum'
+let g:airline_theme             = 'gruvbox'
 let g:airline#extensions#syntastic#enabled  = 0
 let g:airline#extensions#whitespace#enabled = 0
 
-  let g:airline#extensions#default#layout = [
-      \ [ 'a', 'b', 'c' ],
-      \ [ 'x', 'z', 'warning' ]
-      \ ]
+let g:airline#extensions#branch#format = 'CustomBranchName'
+function! CustomBranchName(name)
+	return split(a:name, '-')[1]
+endfunction
+
+let g:airline#extensions#default#layout = [
+		\ [ 'a', 'b', 'c' ],
+		\ [ 'x', 'z', 'warning' ]
+		\ ]
 
 " vim-powerline symbols
 let g:airline_left_sep = '▶'
@@ -197,9 +202,13 @@ let g:formatters_javascript = [ 'jscs' ]
 """""""""""""""""""""""""""
 " vim-autoswap
 """""""""""""""""""""""""""
-
 " tmux autoswap support
 let g:autoswap_detect_tmux = 1
+
+"""""""""""""""""""""""""""
+" hybrid_material
+"""""""""""""""""""""""""""
+let g:enable_bold_font = 1
 
 """""""""""""""""""""""""""
 " gruvbox

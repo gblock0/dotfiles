@@ -20,7 +20,7 @@ syntax on
 
 " Color Scheme Settings
 set background=dark
-colorscheme gruvbox
+colorscheme hybrid_material
 
 " Abbreviations
 abbr funciton function
