@@ -181,8 +181,3 @@ let g:autoswap_detect_tmux = 1
 """""""""""""""""""""""""""
 let g:enable_bold_font = 1
 
-"""""""""""""""""""""""""""
-" gruvbox
-"""""""""""""""""""""""""""
-let g:gruvbox_bold=1
-let g:gruvbox_italic=1
