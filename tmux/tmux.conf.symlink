@@ -27,18 +27,9 @@ setw -g aggressive-resize on
 # make delay shorter
 set -sg escape-time 0
 
-# cycle through panes
-# unbind C-a
-# unbind o # this is the default key for cycling panes
-# bind ^A select-pane -t:.+
-
 # make window/pane index start with 1
 set -g base-index 1
 setw -g pane-base-index 1
-
-# set-option -g set-titles on
-# set-option -g set-titles-string "#T - #W"
-# set-window-option -g automatic-rename on
 
 ######################
 #### Key Bindings ####
