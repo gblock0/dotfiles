@@ -74,3 +74,6 @@ alias tmuxkill="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, lengt
 
 # Heroku logs shortcut
 alias hlogs="heroku logs --tail --app"
+
+# Delete all local branches that have been merged locally
+alias gbpurge='git branch --merged | grep -v "\*" | grep -v "master" | xargs -n 1 git branch -d'
