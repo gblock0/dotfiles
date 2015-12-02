@@ -87,8 +87,7 @@ if has('autocmd') && !exists('autocommands_loaded')
 	autocmd FocusLost * silent! wa
 
 	" Delete trailing spaces when leaving insert mode
-	autocmd InsertLeave * :%s/\s\+$//e
-
+	autocmd BufWritePre * :%s/\s\+$//e
 
 	let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'json=javascript', 'stylus', 'html']
 
