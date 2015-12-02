@@ -128,9 +128,9 @@ if executable('ag')
 endif
 
 """""""""""""""""""""""""""
-" Auto-Pairs
+" delimitMate
 """""""""""""""""""""""""""
-let g:AutoPairsShortcutFastWrap = '<M-e>'
+let delimitMate_expand_cr = 1
 
 """""""""""""""""""""""""""
 " Neomake
