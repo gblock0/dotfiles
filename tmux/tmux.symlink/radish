@@ -21,17 +21,19 @@ if ! tmux has-session -t $SESSION_NAME; then
 	tmux select-window -t$SESSION_NAME:2
 	tmux send-keys -t$SESSION_NAME:2 "vim" "C-m"
 	tmux split-window -h -c $RNEWBACK
+	tmux send-keys -t$SESSION_NAME:2 "nodemon app.js" "C-m"
 	tmux resize-pane -t 2 -x 80
 	tmux split-window -v -c $RNEWBACK
 
 	tmux select-window -t$SESSION_NAME:3
 	tmux split-window -h -c $RBUILD
+	tmux send-keys -t$SESSION_NAME:3 "grunt dev" "C-m"
 	tmux resize-pane -t 3 -x 80
 	tmux split-window -v -c $RADMIN
 
 
 
 	tmux select-window -t$SESSION_NAME:2
-fi 
+fi
 tmux -2 attach -t $SESSION_NAME
 
