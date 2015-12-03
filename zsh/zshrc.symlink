@@ -14,7 +14,7 @@ fi
 autoload -U compinit
 compinit
 
-export EDITOR='vim'
+export EDITOR='nvim'
 export NEOVIM_JS_DEBUG="~/.nvim_js_debug"
 
 export PATH=/usr/local/bin:$PATH
@@ -46,7 +46,6 @@ if hash brew 2>/dev/null; then
     source $(brew --prefix nvm)/nvm.sh
     source `brew --prefix`/etc/profile.d/z.sh
 fi
-export EDITOR="vim"
 
 # Base16 Shell
 # if [ -z "$THEME" ]; then

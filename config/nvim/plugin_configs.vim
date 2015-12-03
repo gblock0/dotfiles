@@ -17,6 +17,7 @@ function! CustomBranchName(name)
 	endif
 endfunction
 
+let g:airline_section_c = '%t %m'
 let g:airline#extensions#default#layout = [
 		\ [ 'a', 'b', 'c' ],
 		\ [ 'x', 'z', 'warning' ]
@@ -25,10 +26,6 @@ let g:airline#extensions#default#layout = [
 " vim-powerline symbols
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
-
-if !exists('g:airline_symbols')
-	let g:airline_symbols = {}
-endif
 
 """""""""""""""""""""""""""
 " Ctags
