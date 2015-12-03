@@ -205,6 +205,9 @@ nnoremap # "fyiw :/<c-r>f<cr>"
 " Close location list or quickfix window
 nnoremap <leader>q :ccl<Space><Bar><Space>lcl<CR>
 
+" Remap p so that paste doesn't overwrite the 0 register
+xnoremap p pgvy
+
 nnoremap <leader>U viwU
 nnoremap <leader>u viwu
 nnoremap mm $%
