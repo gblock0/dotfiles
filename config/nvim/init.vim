@@ -202,7 +202,7 @@ set laststatus=2 " show the satus line all the time
 
 nnoremap # "fyiw :/<c-r>f<cr>"
 
-" Close location list or quickfix window for the current buffer
+" Close location list or quickfix window
 nnoremap <leader>q :ccl<Space><Bar><Space>lcl<CR>
 
 nnoremap <leader>U viwU
