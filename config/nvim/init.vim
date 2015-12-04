@@ -79,6 +79,10 @@ if has('autocmd') && !exists('autocommands_loaded')
 	autocmd FileType markdown,textile setlocal textwidth=0 wrapmargin=0 wrap spell
 	autocmd FileType .xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
 
+
+	" automatically resize panes on resize
+	autocmd VimResized * exe 'normal! \<c-w>='
+
 	" Set cursor line if in file and unset when leaving file
 	autocmd WinEnter * setlocal cursorline
 	autocmd WinLeave * setlocal nocursorline
@@ -98,7 +102,6 @@ endif
 " code folding settings
 set foldmethod=syntax " fold based on indent
 set foldnestmax=5 " deepest fold is 10 levels
-set nofoldenable " don't fold by default
 set foldlevel=1
 
 " Remap colon commands to ignore shift
