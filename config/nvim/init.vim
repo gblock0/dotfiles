@@ -100,7 +100,7 @@ if has('autocmd') && !exists('autocommands_loaded')
 endif
 
 " code folding settings
-set foldmethod=syntax " fold based on indent
+set foldmethod=indent " fold based on indent
 set foldnestmax=5 " deepest fold is 10 levels
 set foldlevel=1
 
