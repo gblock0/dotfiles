@@ -16,7 +16,7 @@ else
 endif
 
 " switch syntax highlighting on
-syntax on
+syntax enable
 
 " Color Scheme Settings
 set background=dark
@@ -100,8 +100,8 @@ if has('autocmd') && !exists('autocommands_loaded')
 endif
 
 " code folding settings
-set foldmethod=indent " fold based on indent
-set foldnestmax=5 " deepest fold is 10 levels
+set foldmethod=syntax " fold based on indent
+set foldnestmax=3 " deepest fold is 10 levels
 set foldlevel=1
 
 " Remap colon commands to ignore shift

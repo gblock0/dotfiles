@@ -47,6 +47,6 @@ Plug 'benekastah/neomake'																" Syntax checking with support for Neov
 " Js plugins...
 Plug 'othree/yajs.vim'																	" More JavaScript syntax highlighting
 Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'rschmukler/pangloss-vim-indent'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'jelera/vim-javascript-syntax'
 call plug#end()
