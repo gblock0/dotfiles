@@ -2,6 +2,10 @@
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" set a map leader for more key combos
+let mapleader = "\<Space>"
+let g:mapleader = "\<Space>"
+
 " load plugins from vim-plug
 
 source ~/.config/nvim/plugins.vim
@@ -38,10 +42,6 @@ set backspace=indent,eol,start
 
 " No Escape Keys in Insert Mode
 set noesckeys
-
-" set a map leader for more key combos
-let mapleader = "\<Space>"
-let g:mapleader = "\<Space>"
 
 set history=1000 " change history to 1000
 set textwidth=0
