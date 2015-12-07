@@ -185,4 +185,4 @@ let test#strategy = 'neovim'
 nmap <leader>n :TestNearest<CR>
 nmap <leader>t :TestFile<CR>
 let test#javascript#runner = 'mocha'
-let test#javascript#mocha#executable = 'NODE_ENV="test" mocha test/sails.test.js'
+let test#javascript#mocha#executable = 'NODE_ENV=test mocha test/sails.test.js'
