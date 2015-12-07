@@ -182,6 +182,6 @@ let g:enable_bold_font = 1
 " test.vim
 """""""""""""""""""""""""""
 let test#strategy = 'neovim'
-nmap <leader>t :TestFile<CR>
+nmap <leader>t :TestNearest<CR>
 let test#javascript#runner = 'mocha'
 let test#javascript#mocha#executable = 'NODE_ENV=test mocha test/sails.test.js'
