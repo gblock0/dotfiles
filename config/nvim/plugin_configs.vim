@@ -178,3 +178,11 @@ let g:autoswap_detect_tmux = 1
 """""""""""""""""""""""""""
 let g:enable_bold_font = 1
 
+"""""""""""""""""""""""""""
+" test.vim
+"""""""""""""""""""""""""""
+let test#strategy = 'neovim'
+nmap <leader>n :TestNearest<CR>
+nmap <leader>t :TestFile<CR>
+let test#javascript#runner = 'mocha'
+let test#javascript#mocha#executable = 'mocha test/sails.test.js'
