@@ -1,8 +1,4 @@
 # git aliases
-alias g='git'
-alias hg='git' # Habits from my mercurial days
-alias ga='git add'
-alias gaa='git add --all'
 alias gb='git branch'
 alias gl='git pull'
 alias gp='git push'

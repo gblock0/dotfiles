@@ -13,7 +13,6 @@ brew install ctags
 brew install hub
 brew install ruby
 brew install python
-brew install macvim --with-lua --with-override-system-vim --with-luajit
 brew install reattach-to-user-namespace
 brew install tmux
 brew install zsh
