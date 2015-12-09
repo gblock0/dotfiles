@@ -39,6 +39,7 @@ let g:tagbar_type_javascript = {
 " FZF
 """""""""""""""""""""""""""
 nnoremap <C-p> :GitFiles<CR>
+let g:fzf_layout = { 'down': '~15%' }
 
 """""""""""""""""""""""""""
 " NerdCommenter
