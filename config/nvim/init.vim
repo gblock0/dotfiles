@@ -263,10 +263,10 @@ set showbreak=↪
 nmap <leader>l :set list!<cr>
 
 " Create a new vsplit, switch to it and open CtrlP
-nnoremap <leader>w <C-w>v<C-w>l :CtrlP<CR>
+nnoremap <leader>w <C-w>v<C-w>l :GitFiles<CR>
 
 " Create a new split, switch to it and open CtrlP
-nnoremap <leader>s <C-w>s<C-w>j :CtrlP<CR>
+nnoremap <leader>s <C-w>s<C-w>j :GitFiles<CR>
 
 " scroll the viewport faster
 nnoremap <C-e> 3<C-e>

@@ -20,7 +20,9 @@ Plug 'tpope/vim-fugitive'																" Git stuff
 Plug 'rking/ag.vim'																			" Fast grep replacement
 Plug 'scrooloose/nerdtree'															" File tree explorer
 Plug 'tpope/vim-surround'																" Change surrounding quotes, brackets, etc.
-Plug 'ctrlpvim/ctrlp.vim'																"	File searcher
+" Plug 'ctrlpvim/ctrlp.vim'																"	File searcher
+Plug 'junegunn/fzf',{ 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdcommenter'													" Easily comment/uncomment thing using shortcuts
 Plug 'moll/vim-node'																		" Makes Vim better for Node developement
 Plug 'lfilho/cosco.vim'																	" Comma and semi-colon insertion bliss

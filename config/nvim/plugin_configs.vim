@@ -36,19 +36,9 @@ let g:tagbar_type_javascript = {
 			\ }
 
 """""""""""""""""""""""""""
-" Ctrl-P
+" FZF
 """""""""""""""""""""""""""
-set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules,lib-cov,public
-
-let g:ctrlp_working_path_mode = 2
-
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-nnoremap <D-t> :CtrlP<CR>
-let g:ctrlp_working_path_mode = 'ra'
-
-" search the nearest ancestor that contains .git, .hg, .svn
-let g:ctrlp_working_path_mode = 2
+nnoremap <C-p> :GitFiles<CR>
 
 """""""""""""""""""""""""""
 " NerdCommenter

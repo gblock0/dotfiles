@@ -16,6 +16,7 @@ compinit
 
 export EDITOR='nvim'
 export NEOVIM_JS_DEBUG="~/.nvim_js_debug"
+export FZF_DEFAULT_COMMAND='ag -g ""'
 
 export PATH=/usr/local/bin:$PATH
 
@@ -62,3 +63,5 @@ source $BASE16_SHELL
 export API_URL=$(ipconfig getifaddr en0)
 export NEW_API_URL=$(ipconfig getifaddr en0)
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

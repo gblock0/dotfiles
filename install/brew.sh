@@ -22,4 +22,4 @@ brew install nvm
 brew install z
 brew install docker
 brew install docker-machine
-brew install neo4j
+brew install fzf
