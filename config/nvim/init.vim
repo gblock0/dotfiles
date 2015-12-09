@@ -235,7 +235,7 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
 " Want a space after this
-nnoremap <leader>a :Ag!<space>-Q<space>"
+nnoremap <leader>a :Ag<Space>
 
 " Disable auto-commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o

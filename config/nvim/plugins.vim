@@ -17,7 +17,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'gregsexton/MatchTag'
 Plug 'Raimondi/delimitMate'															" Auto-pairing brackets, parens, and quotes
 Plug 'tpope/vim-fugitive'																" Git stuff
-Plug 'rking/ag.vim'																			" Fast grep replacement
 Plug 'scrooloose/nerdtree'															" File tree explorer
 Plug 'tpope/vim-surround'																" Change surrounding quotes, brackets, etc.
 " Plug 'ctrlpvim/ctrlp.vim'																"	File searcher
