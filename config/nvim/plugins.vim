@@ -20,7 +20,6 @@ Plug 'Raimondi/delimitMate'															" Auto-pairing brackets, parens, and q
 Plug 'tpope/vim-fugitive'																" Git stuff
 Plug 'scrooloose/nerdtree'															" File tree explorer
 Plug 'tpope/vim-surround'																" Change surrounding quotes, brackets, etc.
-" Plug 'ctrlpvim/ctrlp.vim'																"	File searcher
 Plug 'junegunn/fzf',{ 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdcommenter'													" Easily comment/uncomment thing using shortcuts
@@ -35,16 +34,14 @@ Plug 'neovim/node-host', {'do': 'npm install' }					" Need this to run node plug
 " Plug 'gblock0/neovim-autoformat'											" Async autoformatting
 Plug 'bling/vim-airline'																" Replacement for Powerline
 Plug 'junegunn/limelight.vim'														" Highlights section of code
-" Plug 'sickill/vim-pasta'															" Smart indenting on paste
 Plug 'vim-scripts/ZoomWin'															" Zoom in on current pane
 Plug 'vim-scripts/matchit.zip'													" Expanding the % operator for HTML
 Plug 'xolox/vim-lua-ftplugin'														" Lua Plugin
 Plug 'xolox/vim-misc'																		" Misc Dependencies for xolox's plugins
-" Plug 'euclio/vim-markdown-composer'										" Markdown Preview in the browser
 Plug 'vasconcelloslf/vim-interestingwords'							" Highlight different words in a file
 Plug 'mattn/emmet-vim'																	" Adding Emmet
 Plug 'benekastah/neomake'																" Syntax checking with support for Neovim async
-" Plug 'Shougo/deoplete.nvim'														" Autocompletion for neovim
+Plug 'Shougo/deoplete.nvim'														" Autocompletion for neovim
 Plug 'janko-m/vim-test'
 
 " Js plugins...

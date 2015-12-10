@@ -134,11 +134,7 @@ let g:formatters_javascript = [ 'jscs' ]
 """""""""""""""""""""""""""
 " deoplete
 """""""""""""""""""""""""""
-" let g:deoplete#enable_at_startup = 1
-
-" inoremap <silent><expr><Tab>
-		" \ pumvisible() ? "\<C-n>" :
-		" \ deoplete#mappings#manual_complete()
+let g:deoplete#enable_at_startup = 1
 
 """""""""""""""""""""""""""
 " vim-autoswap
