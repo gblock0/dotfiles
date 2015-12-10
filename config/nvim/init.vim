@@ -23,8 +23,8 @@ endif
 syntax enable
 
 " Color Scheme Settings
-set background=dark
 colorscheme hybrid_material
+set background=dark
 
 " Abbreviations
 abbr funciton function

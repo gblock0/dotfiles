@@ -5,6 +5,7 @@ Plug 'w0ng/vim-hybrid'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
+Plug 'mhartington/oceanic-next'
 
 " Syntax Plugins
 Plug 'othree/html5.vim'
@@ -47,8 +48,8 @@ Plug 'benekastah/neomake'																" Syntax checking with support for Neov
 Plug 'janko-m/vim-test'
 
 " Js plugins...
-Plug 'othree/yajs.vim'																	" More JavaScript syntax highlighting
-Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'othree/yajs.vim', { 'for': 'javascript' }																	" More JavaScript syntax highlighting
+Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'jelera/vim-javascript-syntax'
+Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 call plug#end()
