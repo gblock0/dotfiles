@@ -50,7 +50,7 @@ let NERDSpaceDelims=1
 """""""""""""""""""""""""""
 " NerdTree
 """""""""""""""""""""""""""
-nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <Bslash>n :NERDTreeToggle<CR>
 
 "Show hidden files in NERDTree (files that start with period)
 let NERDTreeShowHidden=1
