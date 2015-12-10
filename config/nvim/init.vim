@@ -61,9 +61,6 @@ endif
 
 set clipboard=unnamed
 
-" faster redrawing
-set ttyfast
-
 " highlight conflicts
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
@@ -101,7 +98,7 @@ endif
 
 " code folding settings
 set foldmethod=syntax " fold based on indent
-set foldnestmax=3 " deepest fold is 10 levels
+set foldnestmax=2 " deepest fold is 10 levels
 set foldlevel=1
 
 " Remap colon commands to ignore shift
@@ -118,12 +115,11 @@ if has('gui_running')
 	set guifont=Source\ Code\ Pro:h12
 endif
 
-set so=7 " set 7 lines to the cursors - when moving vertical
+set scrolloff=3 " lines of text around cursor
 set wildmenu " enhanced command line completion
 set showcmd " show incomplete commands
 set noshowmode " don't show which mode disabled for PowerLine
 set wildmode=list:longest " complete files like a shell
-set scrolloff=3 " lines of text around cursor
 set shell=$SHELL
 set cmdheight=1 " command bar height
 
@@ -134,7 +130,8 @@ set ignorecase " case insensitive searching
 set smartcase " case-sensitive if expresson contains a capital letter
 set hlsearch
 set incsearch " set incremental search, like modern browsers
-set nolazyredraw " don't redraw while executing macros
+set lazyredraw " don't redraw while executing macros
+set ttyfast			" fast redraw
 
 set magic " Set magic on, for regex
 
@@ -168,10 +165,6 @@ set smartindent
 " Highlight current line
 set cursorline
 
-
-" Underline Search instead of highlight
-" highlight Search ctermbg=NONE ctermfg=darkred cterm=underline
-
 " Hide Scrollbar
 set guioptions-=r
 
@@ -198,9 +191,6 @@ set laststatus=2 " show the satus line all the time
 " General mappings/shortcuts for functionality
 " Additional, plugin-specific mappings are located under
 " the plugins section
-
-" Close the current buffer
-" noremap <C-x> :q<cr>
 
 nnoremap # "fyiw :/<c-r>f<cr>"
 
@@ -248,9 +238,6 @@ nnoremap ' "
 
 " disable Ex mode
 noremap Q <NOP>
-
-" set paste toggle
-set pastetoggle=<F6>
 
 " Reselect the text that was just pasted
 nnoremap <leader>v V`]

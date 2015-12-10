@@ -87,15 +87,7 @@ let NERDTreeMapOpenVSplit = "w"
 """""""""""""""""""""""""""
 " Javascript plugins
 """""""""""""""""""""""""""
-let g:used_javascript_libs = 'angularjs,jquery,jasmine'
-
-""""""""""""""""""""
-"  Fugitive
-""""""""""""""""""""
-nmap <silent> <leader>gs :Gstatus<cr>
-nmap <leader>ge :Gedit<cr>
-nmap <silent><leader>gr :Gread<cr>
-nmap <silent><leader>gb :Gblame<cr>
+let g:used_javascript_libs = 'angularjs,jquery,mocha'
 
 """""""""""""""""""""""""""
 " delimitMate
@@ -139,7 +131,6 @@ let g:deoplete#enable_at_startup = 1
 """""""""""""""""""""""""""
 " vim-autoswap
 """""""""""""""""""""""""""
-" tmux autoswap support
 let g:autoswap_detect_tmux = 1
 
 """""""""""""""""""""""""""
