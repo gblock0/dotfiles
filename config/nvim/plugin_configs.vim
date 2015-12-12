@@ -17,7 +17,7 @@ function! CustomBranchName(name)
 	endif
 endfunction
 
-let g:airline_section_c = '%t %m'
+" let g:airline_section_c = '%t %m'
 let g:airline#extensions#default#layout = [
 		\ [ 'a', 'b', 'c' ],
 		\ [ 'x', 'z', 'warning' ]
@@ -127,6 +127,7 @@ let g:formatters_javascript = [ 'jscs' ]
 " deoplete
 """""""""""""""""""""""""""
 let g:deoplete#enable_at_startup = 1
+inoremap <expr><BS>  deoplete#mappings#smart_close_popup()."\<C-h>"
 
 """""""""""""""""""""""""""
 " vim-autoswap
