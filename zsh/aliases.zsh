@@ -72,8 +72,6 @@ alias tmuxsize="tmux list-panes -F '#{pane_id} #{pane_width}x#{pane_height}'"
 # Kill all tmux sessions
 alias tmuxkill="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
 
-alias tkill="tmux kill-session -t"
-
 # Heroku logs shortcut
 alias hlogs="heroku logs --tail --app"
 
