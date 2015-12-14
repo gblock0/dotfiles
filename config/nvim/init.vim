@@ -23,6 +23,7 @@ endif
 syntax enable
 
 " Color Scheme Settings
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 colorscheme hybrid_material
 set background=dark
 

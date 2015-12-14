@@ -65,7 +65,7 @@ alias dotfiles="~/./.tmux/dotfiles"
 alias tkill="tmux kill-session -t"
 
 # Open Mvim in terminal
-alias vim='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
+alias vim='nvim'
 
 
 # Get list of the sizes of tmux panes
