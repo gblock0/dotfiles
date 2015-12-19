@@ -36,7 +36,7 @@ Plug 'xolox/vim-misc'																		" Misc Dependencies for xolox's plugins
 Plug 'xolox/vim-lua-ftplugin'														" Lua Plugin
 Plug 'vasconcelloslf/vim-interestingwords'							" Highlight different words in a file
 Plug 'benekastah/neomake'																" Syntax checking with support for Neovim async
-Plug 'Shougo/deoplete.nvim'															" Autocompletion for neovim
+" Plug 'Shougo/deoplete.nvim'															" Autocompletion for neovim
 Plug 'janko-m/vim-test'																	" Test single files or tests
 
 " Js plugins...
