@@ -7,26 +7,16 @@ RNEWBACK=~/radish/new-backend
 
 
 if ! tmux has-session -t $SESSION_NAME; then
-	TMUX= tmux new-session -d -s $SESSION_NAME -n redis/mongo -c $RBUILD
-	tmux new-window -t$SESSION_NAME:2 -c $RNEWBACK -n new-backend
-	tmux new-window -t$SESSION_NAME:3 -c $RADMIN -n admin
-
+	TMUX= tmux new-session -d -s $SESSION_NAME -n new-backend -c $RBUILD
+	tmux new-window -t$SESSION_NAME:2 -c $RADMIN -n admin
 
 	tmux select-window -t$SESSION_NAME:1
-	tmux split-window -h
-	tmux send-keys -t$SESSION_NAME:1 "mongod" "C-m"
-	tmux select-pane -t 1
-	tmux send-keys -t$SESSION_NAME:1 "redis-server" "C-m"
+	tmux send-keys -t$SESSION_NAME:1 "vim" "C-m"
 
 	tmux select-window -t$SESSION_NAME:2
 	tmux send-keys -t$SESSION_NAME:2 "vim" "C-m"
 
-	tmux select-window -t$SESSION_NAME:3
-	tmux send-keys -t$SESSION_NAME:2 "vim" "C-m"
-
-
-
-	tmux select-window -t$SESSION_NAME:2
+	tmux select-window -t$SESSION_NAME:1
 fi
 tmux -2 attach -t $SESSION_NAME
 
