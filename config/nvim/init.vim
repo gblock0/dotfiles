@@ -91,7 +91,7 @@ endif
 
 " code folding settings
 set foldmethod=syntax " fold based on indent
-set foldnestmax=2 " deepest fold is 10 levels
+set foldnestmax=5 " deepest fold is 10 levels
 set foldlevel=1
 
 " Remap colon commands to ignore shift
@@ -154,7 +154,6 @@ augroup END
 
 
 set autoindent " automatically set indent of new line
-set smartindent
 
 " Highlight current line
 set cursorline

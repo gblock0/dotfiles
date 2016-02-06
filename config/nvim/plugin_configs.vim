@@ -88,6 +88,7 @@ let NERDTreeMapOpenVSplit = "w"
 " Javascript plugins
 """""""""""""""""""""""""""
 let g:used_javascript_libs = 'angularjs,jquery,mocha'
+let b:javascript_fold = 1
 
 """""""""""""""""""""""""""
 " delimitMate
