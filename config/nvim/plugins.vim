@@ -30,7 +30,8 @@ Plug 'Chiel92/vim-autoformat'														" Autoformatting
 Plug 'neovim/node-host', {'do': 'npm install' }					" Need this to run node plugins
 " Plug '~/neovim-autoformat'														" Async autoformatting
 " Plug 'gblock0/neovim-autoformat'											" Async autoformatting
-Plug 'bling/vim-airline'																" Replacement for Powerline
+Plug 'vim-airline/vim-airline'													" Replacement for Powerline
+Plug 'vim-airline/vim-airline-themes'										" Airline themes
 Plug 'junegunn/limelight.vim'														" Highlights section of code
 Plug 'xolox/vim-misc'																		" Misc Dependencies for xolox's plugins
 Plug 'xolox/vim-lua-ftplugin'														" Lua Plugin
