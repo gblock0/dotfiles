@@ -49,6 +49,9 @@ set-option -g display-panes-colour $tm_color_inactive
 # clock
 set-window-option -g clock-mode-colour $tm_color_active
 
+# set 24 bit color
+set -ag terminal-overrides ',*:Tc'
+
 tm_spotify="#[fg=$tm_color_music]#(osascript ~/.dotfiles/applescripts/spotify.scpt)"
 tm_itunes="#[fg=$tm_color_music]#(osascript ~/.dotfiles/applescripts/itunes.scpt)"
 battery_percent="#(~/.dotfiles/bin/battery_indicator.sh)"
