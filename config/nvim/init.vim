@@ -92,7 +92,7 @@ endif
 " code folding settings
 set foldmethod=syntax " fold based on indent
 set foldnestmax=5 " deepest fold is 10 levels
-set foldlevel=1
+set foldlevel=0
 
 " Remap colon commands to ignore shift
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))

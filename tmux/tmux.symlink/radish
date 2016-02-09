@@ -7,7 +7,7 @@ RNEWBACK=~/radish/new-backend
 
 
 if ! tmux has-session -t $SESSION_NAME; then
-	TMUX= tmux new-session -d -s $SESSION_NAME -n new-backend -c $RBUILD
+	TMUX= tmux new-session -d -s $SESSION_NAME -n new-backend -c $RNEWBACK
 	tmux new-window -t$SESSION_NAME:2 -c $RADMIN -n admin
 
 	tmux select-window -t$SESSION_NAME:1
