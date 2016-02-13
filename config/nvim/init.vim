@@ -52,6 +52,12 @@ if has('mouse')
 	set mouse=a
 endif
 
+if has('persistent_undo')
+	set undolevels=5000
+	set undodir=$HOME/.VIM_UNDO_FILES
+	set undofile
+endif
+
 set clipboard=unnamed
 
 " highlight conflicts
@@ -121,10 +127,10 @@ set cmdheight=1 " command bar height
 set title " set terminal title
 
 " Searching
+set incsearch " set incremental search, like modern browsers
 set ignorecase " case insensitive searching
 set smartcase " case-sensitive if expresson contains a capital letter
 set hlsearch
-set incsearch " set incremental search, like modern browsers
 set lazyredraw " don't redraw while executing macros
 set ttyfast			" fast redraw
 
@@ -203,7 +209,7 @@ nnoremap <leader>u viwu
 nnoremap mm $%
 
 " Turn off highlighting
-nnoremap <leader>h :noh<CR> :match none<CR>
+nnoremap <BS> :noh<CR> :match none<CR>
 
 " Disable arrow keys in insert mode
 inoremap <up> <nop>
