@@ -91,6 +91,9 @@ endif
 
 " code folding settings
 set foldmethod=syntax " fold based on indent
+set foldlevelstart=99
+set foldlevel=99
+set nofoldenable
 
 " Remap colon commands to ignore shift
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
