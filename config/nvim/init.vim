@@ -208,7 +208,7 @@ nnoremap <leader>U viwU
 nnoremap <leader>u viwu
 nnoremap mm $%
 
-" Turn off highlighting
+" Turn off highlighting, need to add the 'h' at the end of offset the <BS> making the cursor move one character to the right
 nnoremap <BS> :noh<CR> :match none<CR>h
 
 " Disable arrow keys in insert mode
