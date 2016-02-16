@@ -211,17 +211,19 @@ nnoremap mm $%
 " Turn off highlighting, need to add the 'h' at the end of offset the <BS> making the cursor move one character to the right
 nnoremap <BS> :noh<CR> :match none<CR>h
 
-" Disable arrow keys in insert mode
+" Disable arrow keys in all modes
 inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
-
-" Disable arrow keys in normal mode
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
+vnoremap <up> <nop>
+vnoremap <down> <nop>
+vnoremap <left> <nop>
+vnoremap <right> <nop>
 
 " Disable help F1 key
 inoremap <F1> <ESC>
