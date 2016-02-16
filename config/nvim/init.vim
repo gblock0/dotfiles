@@ -209,7 +209,7 @@ nnoremap <leader>u viwu
 nnoremap mm $%
 
 " Turn off highlighting
-nnoremap <BS> :noh<CR> :match none<CR>
+nnoremap <BS> :noh<CR> :match none<CR>h
 
 " Disable arrow keys in insert mode
 inoremap <up> <nop>
