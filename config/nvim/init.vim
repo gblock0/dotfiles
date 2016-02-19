@@ -192,10 +192,6 @@ set laststatus=2 " show the satus line all the time
 " Additional, plugin-specific mappings are located under
 " the plugins section
 
-" Remappings to make macros easier to do
-nnoremap <bs> @q
-vnoremap <silent> <bs> :norm @q<cr>
-
 nnoremap # "fyiw :/<c-r>f<cr>"
 
 " Close location list or quickfix window
