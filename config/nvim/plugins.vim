@@ -21,6 +21,7 @@ Plug 'scrooloose/nerdtree'															" File tree explorer
 Plug 'tpope/vim-surround'																" Change surrounding quotes, brackets, etc.
 Plug 'junegunn/fzf',{ 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'ctrlpvim/ctrlp.vim'																" Fuzzy File searching
+Plug 'junegunn/fzf.vim'																	" Fuzzy File searching
 Plug 'scrooloose/nerdcommenter'													" Easily comment/uncomment thing using shortcuts
 Plug 'moll/vim-node'																		" Makes Vim better for Node developement
 Plug 'airblade/vim-gitgutter'														" Allows stuff in the gutter
