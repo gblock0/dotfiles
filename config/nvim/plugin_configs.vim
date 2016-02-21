@@ -38,8 +38,14 @@ let g:tagbar_type_javascript = {
 """""""""""""""""""""""""""
 " FZF
 """""""""""""""""""""""""""
-nnoremap <C-p> :GitFiles<CR>
 let g:fzf_layout = { 'down': '~15%' }
+
+"""""""""""""""""""""""""""
+" CtrlP
+"""""""""""""""""""""""""""
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|git-crypt)$|node_modules|node|bower_components'
 
 """""""""""""""""""""""""""
 " NerdCommenter
