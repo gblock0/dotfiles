@@ -79,13 +79,6 @@ if has('autocmd') && !exists('autocommands_loaded')
 	" automatically resize panes on resize
 	autocmd VimResized * exe 'normal! \<c-w>='
 
-	" Set cursor line if in file and unset when leaving file
-	autocmd WinEnter * setlocal cursorline
-	autocmd WinLeave * setlocal nocursorline
-
-	" save all files on focus lost, ignoring warnings about untitled buffers
-	autocmd FocusLost * silent! wa
-
 	" Delete trailing spaces before saving
 	autocmd BufWritePre * :%s/\s\+$//e
 

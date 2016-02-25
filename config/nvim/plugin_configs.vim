@@ -45,7 +45,7 @@ let g:fzf_layout = { 'down': '~15%' }
 """""""""""""""""""""""""""
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|git-crypt)$|node_modules|node|bower_components'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|git-crypt)$|node_modules|node|bower_components|public'
 
 """""""""""""""""""""""""""
 " NerdCommenter
@@ -152,4 +152,8 @@ let g:enable_bold_font = 1
 let test#strategy = 'neovim'
 nmap <leader>t :TestNearest<CR>
 let test#javascript#runner = 'mocha'
-let test#javascript#mocha#executable = 'NODE_ENV=test mocha test/sails.test.js'
+if expand('%:p:h') =~ 'driverLocation-service'
+	let test#javascript#mocha#executable = 'NODE_ENV=test mocha test/index.js'
+else
+	let test#javascript#mocha#executable = 'NODE_ENV=test mocha test/sails.test.js'
+endif
