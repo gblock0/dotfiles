@@ -17,7 +17,6 @@ compinit
 export VISUAL='nvim'
 export EDITOR='$VISUAL'
 export NEOVIM_JS_DEBUG="~/.nvim_js_debug"
-export FZF_DEFAULT_COMMAND='ag -g ""'
 
 export PATH=/usr/local/bin:$PATH
 

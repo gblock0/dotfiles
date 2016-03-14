@@ -187,6 +187,8 @@ set laststatus=2 " show the satus line all the time
 
 nnoremap # "fyiw :/<c-r>f<cr>"
 
+nnoremap <leader>/ :CtrlPLine<CR>
+
 " Close location list or quickfix window
 nnoremap <leader>q :ccl<Space><Bar><Space>lcl<CR>
 
@@ -220,7 +222,7 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
 " Want a space after this
-nnoremap <leader>a :Ag<Space>
+nnoremap <leader>a :Ag!<Space>
 
 " Disable auto-commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
