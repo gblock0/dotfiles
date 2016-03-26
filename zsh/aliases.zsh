@@ -80,3 +80,5 @@ alias hlogs="heroku logs --tail --app"
 
 # Delete all local branches that have been merged locally
 alias gbpurge='git branch --merged | grep -v "\*" | grep -v "master" | xargs -n 1 git branch -d'
+
+alias wp="webpack --progress --colors --watch"
