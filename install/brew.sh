@@ -12,6 +12,7 @@ brew install git
 brew install ctags
 brew install hub
 brew install ruby
+brew install mongodb --with-openssl
 brew install python
 brew install reattach-to-user-namespace
 brew install tmux
