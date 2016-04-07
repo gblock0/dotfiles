@@ -255,6 +255,7 @@ nnoremap <leader>s <C-w>s<C-w>j :CtrlP<CR>
 " scroll the viewport faster
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
+nnoremap <leader>= <C-W>=
 
 " helpers for dealing with other people's code
 nmap \t :set ts=2 sts=2 sw=2 noet<cr>
