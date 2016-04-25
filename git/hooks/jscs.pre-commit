@@ -10,23 +10,23 @@ COLOR_NONE="\x1B[0m"
 
 repo=$( git rev-parse --show-toplevel )
 
-	for file in $( exec git diff-index --name-only HEAD ); do
+for file in $( exec git diff-index --name-only HEAD ); do
 	if [[ $file =~ \.js$ ]]; then
-status=$( exec git status --porcelain $file )
+		status=$( exec git status --porcelain $file )
 
-	if [[ $status != D* ]]; then
-# ${jshint} ${repo}/${file} >/dev/null 2>&1
-	jscs ${repo}/${file}
-EXIT_CODE=$((${EXIT_CODE} + $?))
+		if [[ $status != D* ]]; then
+			# ${jshint} ${repo}/${file} >/dev/null 2>&1
+			jscs ${repo}/${file}
+			EXIT_CODE=$((${EXIT_CODE} + $?))
+		fi
 	fi
-	fi
-	done
+done
 
-	echo ""
-	if [[ ${EXIT_CODE} -ne 0 ]]; then
+echo ""
+if [[ ${EXIT_CODE} -ne 0 ]]; then
 	echo "${COLOR_RED}✘ JSCS detected syntax problems.${COLOR_NONE}"
-	else
+else
 	echo "${COLOR_GREEN}✔ JSCS detected no errors.${COLOR_NONE}"
-	fi
+fi
 
 exit $((${EXIT_CODE}))
