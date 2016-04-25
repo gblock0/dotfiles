@@ -54,7 +54,6 @@
 	"validateIndentation": "\t",
 	"disallowMixedSpacesAndTabs": "smart",
 	"disallowTrailingWhitespace": true,
-	"disallowTrailingComma": true,
 	"requireKeywordsOnNewLine": [
 		"else"
 	],
