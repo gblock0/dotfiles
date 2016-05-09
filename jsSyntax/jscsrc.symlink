@@ -26,7 +26,6 @@
 	"disallowSpacesInFunctionDeclaration": {
 		"beforeOpeningRoundBrace": true
 	},
-	"requireMultipleVarDecl": true,
 	"requireBlocksOnNewline": true,
 	"disallowEmptyBlocks": true,
 	"requireSpacesInsideObjectBrackets": "allButNested",

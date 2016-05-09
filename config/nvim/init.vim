@@ -244,7 +244,7 @@ nnoremap <leader>v V`]
 set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
 highlight SpecialKey ctermbg=none " make the highlighting of tabs less annoying
 set showbreak=↪
-nmap <leader>l :set list!<cr>
+nmap <leader>l :IndentGuidesToggle<cr>
 
 " Create a new vsplit, switch to it and open CtrlP
 nnoremap <leader>w <C-w>v<C-w>l :CtrlP<CR>

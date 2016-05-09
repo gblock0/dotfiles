@@ -153,3 +153,10 @@ if expand('%:p:h') =~ 'driverLocation-service'
 else
 	let test#javascript#mocha#executable = 'NODE_ENV=test mocha test/sails.test.js'
 endif
+
+"""""""""""""""""""""""""""
+" vim-indent-guides
+"""""""""""""""""""""""""""
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
+let g:indent_guides_start_level = 2

@@ -32,6 +32,7 @@ Plug 'neovim/node-host', {'do': 'npm install' }					" Need this to run node plug
 " Plug 'gblock0/neovim-autoformat'											" Async autoformatting
 Plug 'vim-airline/vim-airline'													" Replacement for Powerline
 Plug 'vim-airline/vim-airline-themes'										" Airline themes
+Plug 'nathanaelkane/vim-indent-guides'									" Indentation Guides
 Plug 'xolox/vim-misc'																		" Misc Dependencies for xolox's plugins
 Plug 'xolox/vim-lua-ftplugin'														" Lua Plugin
 Plug 'vasconcelloslf/vim-interestingwords'							" Highlight different words in a file
