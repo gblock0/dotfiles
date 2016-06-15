@@ -60,5 +60,5 @@
 	"requireCapitalizedConstructors": true,
 	"disallowYodaConditions": true,
 	"requireSpaceAfterLineComment": true,
-	"excludeFiles": [**/*.json]
+	"excludeFiles": ["**/*.json"]
 }
