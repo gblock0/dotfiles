@@ -1,5 +1,6 @@
 export DOTFILES=$HOME/.dotfiles
 export ZSH=$DOTFILES/zsh
+export NODE_ENV="development"
 
 # load all zsh config files
 for config ($ZSH/**/*.zsh) source $config
