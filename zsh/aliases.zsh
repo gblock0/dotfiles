@@ -1,7 +1,7 @@
 # reload zsh config
 alias reload!="source ~/.zshrc"
 
-alias radish='~/./.tmux/radish'
+alias radish='~/./.tmux/radish.key'
 alias servers="~/./.tmux/servers.key"
 alias tc='~/./truecolor.sh'
 
