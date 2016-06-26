@@ -3,8 +3,8 @@
 tm_icon="♟"
 tm_color_active=colour213
 tm_color_inactive=colour241
-tm_color_feature=colour4
-tm_color_music=colour203
+tm_color_blue=colour4
+tm_color_red=colour203
 tm_color_battery=colour9
 
 # separators
@@ -52,13 +52,13 @@ set-window-option -g clock-mode-colour $tm_color_active
 # set 24 bit color
 set -ag terminal-overrides ',*:Tc'
 
-tm_spotify="#[fg=$tm_color_feature]#(osascript ~/.dotfiles/applescripts/spotify.scpt)"
-tm_itunes="#[fg=$tm_color_music]#(osascript ~/.dotfiles/applescripts/itunes.scpt)"
+tm_spotify="#[fg=$tm_color_blue]#(osascript ~/.dotfiles/applescripts/spotify.scpt)"
+tm_itunes="#[fg=$tm_color_blue]#(osascript ~/.dotfiles/applescripts/itunes.scpt)"
 battery_percent="#(~/.dotfiles/bin/battery_indicator.sh)"
 
-tm_date="#[fg=$tm_color_music] %a %h-%d %H:%M"
-tm_host="#[fg=$tm_color_feature,bold]#h"
-tm_session_name="#[fg=$tm_color_feature,bold]$tm_icon #S"
+tm_date="#[fg=$tm_color_red] %a %h-%d %H:%M"
+# tm_host="#[fg=$tm_color_feature,bold]#h"
+tm_session_name="#[fg=$tm_color_blue,bold]$tm_icon #S"
 
 set -g status-left $tm_session_name' '
 set -g status-right $tm_itunes' '$tm_spotify' '$tm_date' '$battery_percent' '
