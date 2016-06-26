@@ -57,10 +57,10 @@ nnoremap <Bslash>n :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
 " Hide files by extension and folder
-let NERDTreeIgnore=['^components/', '\.DS_Store$', '\.js.map$']
+let NERDTreeIgnore=[ '\.gitignore$', '\.git$[[dir]]', '\.DS_Store$', '\.js.map$', 'node_modules$[[dir]]', 'bower_components$[[dir]]' ]
 
 " Close NERDTree after a file is opened
-let g:NERDTreeQuitOnOpen=0
+let g:NERDTreeQuitOnOpen=1
 
 " Show hidden files in NERDTree
 let NERDTreeShowHidden=1
