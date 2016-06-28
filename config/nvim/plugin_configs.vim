@@ -60,7 +60,7 @@ let NERDTreeShowHidden=1
 let NERDTreeIgnore=[ '\.gitignore$', '\.git$[[dir]]', '\.DS_Store$', '\.js.map$', 'node_modules$[[dir]]', 'bower_components$[[dir]]' ]
 
 " Close NERDTree after a file is opened
-let g:NERDTreeQuitOnOpen=1
+let g:NERDTreeQuitOnOpen=0
 
 " Show hidden files in NERDTree
 let NERDTreeShowHidden=1
