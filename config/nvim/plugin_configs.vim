@@ -40,7 +40,7 @@ let g:tagbar_type_javascript = {
 """""""""""""""""""""""""""
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|git-crypt)$|node_modules|node|bower_components|public'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|git-crypt)$|node_modules|node|bower_components|public|coverage'
 
 """""""""""""""""""""""""""
 " NerdCommenter

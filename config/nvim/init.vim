@@ -79,9 +79,6 @@ if has('autocmd') && !exists('autocommands_loaded')
 	" automatically resize panes on resize
 	autocmd VimResized * exe 'normal! \<c-w>='
 
-	" Delete trailing spaces before saving
-	autocmd BufWritePre * :%s/\s\+$//e
-
 	let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'json=javascript', 'stylus', 'html']
 
 	filetype plugin indent on
@@ -262,7 +259,7 @@ nmap \t :set ts=2 sts=2 sw=2 noet<cr>
 nmap \s :set ts=2 sts=2 sw=2 et<cr>
 
 " Format current file and return cursor to current position (shouldn't need this anymore if Autoformat is working)
-nnoremap <leader>f :Autoformat<CR>:w<CR>
+nnoremap <leader>f :Autoformat<CR>:%s/\s\+$//e<CR>:noh<cr>:w<CR>
 
 " Reload vimrc
 nnoremap <leader>r :so ~/.config/nvim/init.vim<CR>:noh<CR>:echo "init.vim Reload!"<CR>
@@ -272,12 +269,14 @@ nnoremap <leader>; maA;<esc>`a:wa<CR>
 
 nnoremap p p`[v`]=
 
+
 let g:python_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 " Window movement shortcuts
 " move to the window in the direction shown, or create a new window
