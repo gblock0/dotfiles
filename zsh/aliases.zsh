@@ -3,6 +3,7 @@ alias reload!="source ~/.zshrc"
 
 alias radish='~/./.tmux/radish.key'
 alias servers="~/./.tmux/servers.key"
+alias dbs="~/./.tmux/dbs.key"
 alias tc='~/./truecolor.sh'
 
 # Detect which `ls` flavor is in use
