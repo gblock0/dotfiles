@@ -6,6 +6,8 @@
 let mapleader = "\<Space>"
 let g:mapleader = "\<Space>"
 
+filetype plugin indent on
+
 " load plugins from vim-plug
 
 source ~/.config/nvim/plugins.vim
@@ -81,8 +83,6 @@ if has('autocmd') && !exists('autocommands_loaded')
 
 	let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'json=javascript', 'stylus', 'html']
 
-	filetype plugin indent on
-
 endif
 
 " code folding settings
@@ -150,15 +150,13 @@ augroup linenumbers
 augroup END
 
 
-set autoindent " automatically set indent of new line
-
 " Highlight current line
 set cursorline
 
 " Hide Scrollbar
 set guioptions-=r
 
-" Wrap long lines
+" do not Wrap long lines
 set nowrap
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""

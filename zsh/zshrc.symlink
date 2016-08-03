@@ -61,8 +61,5 @@ BASE16_SHELL="$DOTFILES/.config/base16-shell/$THEME.$BACKGROUND.sh"
 # [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 source $BASE16_SHELL
 
-export API_URL=$(ipconfig getifaddr en0)
-export NEW_API_URL=$(ipconfig getifaddr en0)
-
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH=$PATH:~/.android-sdk-macosx/platform-tools/:~/.android-sdk-macox/tools:

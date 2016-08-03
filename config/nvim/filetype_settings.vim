@@ -13,3 +13,6 @@ autocmd BufNewFile,BufRead *.ejs set filetype=html
 
 " XML File Settings
 autocmd BufNewFile,BufRead *.svg set filetype=xml
+
+" Conf File Settings
+au BufNewFile,BufRead *.conf setfiletype apache

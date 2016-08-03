@@ -44,5 +44,6 @@ Plug 'janko-m/vim-test'																	" Test single files or tests
 Plug 'othree/yajs.vim', { 'for': 'javascript' }																	" More JavaScript syntax highlighting
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'marijnh/tern_for_vim', { 'do': 'npm install', 'for': 'javascript' }  " Javascript Auto complete
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 call plug#end()
