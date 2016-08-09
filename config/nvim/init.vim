@@ -16,8 +16,10 @@ source ~/.config/nvim/plugin_configs.vim
 " switch syntax highlighting on
 syntax enable
 
-" Color Scheme Settings
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" Set true colors
+if (has("termguicolors"))
+	set termguicolors
+endif
 colorscheme hybrid_material
 set background=dark
 
