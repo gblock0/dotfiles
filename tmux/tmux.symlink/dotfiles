@@ -14,11 +14,6 @@ if ! tmux has-session -t $SESSION_NAME; then
 	tmux select-pane -t 1
 	tmux send-keys -t$SESSION_NAME:1 "cd $DIRECTORY" "C-m"
 	tmux send-keys -t$SESSION_NAME:1 "vim" "C-m"
-
-	tmux select-window -t$SESSION_NAME:2
-	tmux send-keys -t$SESSION_NAME:2 "vim" "C-m"
-	
-	tmux select-window -t$SESSION_NAME:1
 fi
 
 tmux -2 attach -t $SESSION_NAME

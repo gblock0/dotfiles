@@ -28,6 +28,11 @@ let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
 
 """""""""""""""""""""""""""
+" Vim-interesting-words
+"""""""""""""""""""""""""""
+let g:interestingWordsTermColors = ['154', '121', '211', '137', '214', '222']
+
+"""""""""""""""""""""""""""
 " Ctags
 """""""""""""""""""""""""""
 nnoremap <leader>c :TagbarToggle<CR>

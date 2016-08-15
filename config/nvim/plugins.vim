@@ -29,6 +29,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'											" See git indicator symbols in NERD
 Plug 'Chiel92/vim-autoformat'														" Autoformatting
 Plug 'neovim/node-host', {'do': 'npm install' }					" Need this to run node plugins
 " Plug '~/neovim-autoformat'														" Async autoformatting
+Plug 'cohama/agit.vim'																	" Git plugin to easily go through all your commits
 " Plug 'gblock0/neovim-autoformat'											" Async autoformatting
 Plug 'vim-airline/vim-airline'													" Replacement for Powerline
 Plug 'vim-airline/vim-airline-themes'										" Airline themes
