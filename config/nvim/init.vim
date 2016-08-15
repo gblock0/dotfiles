@@ -14,7 +14,7 @@ source ~/.config/nvim/plugins.vim
 source ~/.config/nvim/plugin_configs.vim
 
 " switch syntax highlighting on
-syntax enable
+syntax on
 
 " Set true colors
 if (has("termguicolors"))
