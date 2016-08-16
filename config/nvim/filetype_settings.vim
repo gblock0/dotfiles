@@ -15,4 +15,6 @@ autocmd BufNewFile,BufRead *.ejs set filetype=html
 autocmd BufNewFile,BufRead *.svg set filetype=xml
 
 " Conf File Settings
-au BufNewFile,BufRead *.conf setfiletype apache
+au BufNewFile,BufRead *.conf set filetype=apache
+
+au BufNewFile,BufRead Dockerfile_base set filetype=dockerfile
