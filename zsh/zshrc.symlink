@@ -10,6 +10,7 @@ if [[ -a ~/.localrc ]]; then
     source ~/.localrc
 fi
 
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 # initialize autocomplete
 autoload -U compinit
