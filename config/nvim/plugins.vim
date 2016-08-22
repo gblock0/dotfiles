@@ -1,14 +1,8 @@
 call plug#begin('~/.config/nvim/plugged')
 
 "Themes
-Plug 'w0ng/vim-hybrid'
 Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'joshdick/onedark.vim'
 Plug 'mhartington/oceanic-next'
-Plug 'dracula/vim'
-Plug 'romainl/Apprentice'
-Plug 'chriskempson/base16-vim'
-Plug 'joshdick/onedark.vim'
 
 " Syntax Plugins
 Plug 'othree/html5.vim', { 'for' : 'html' }
