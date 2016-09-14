@@ -3,6 +3,7 @@ call plug#begin('~/.config/nvim/plugged')
 "Themes
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'mhartington/oceanic-next'
+Plug 'jacoborus/tender.vim'
 
 " Syntax Plugins
 Plug 'othree/html5.vim', { 'for' : 'html' }
@@ -34,10 +35,12 @@ Plug 'vim-airline/vim-airline-themes'										" Airline themes
 Plug 'nathanaelkane/vim-indent-guides'									" Indentation Guides
 Plug 'xolox/vim-misc'																		" Misc Dependencies for xolox's plugins
 Plug 'xolox/vim-lua-ftplugin'														" Lua Plugin
-Plug 'vasconcelloslf/vim-interestingwords'							" Highlight different words in a file
+Plug 'lfv89/vim-interestingwords'												" Highlight different words in a file
 Plug 'benekastah/neomake'																" Syntax checking with support for Neovim async
 " Plug 'Shougo/deoplete.nvim'															" Autocompletion for neovim
 Plug 'janko-m/vim-test'																	" Test single files or tests
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Js plugins...
 Plug 'othree/yajs.vim', { 'for': 'javascript' }																	" More JavaScript syntax highlighting

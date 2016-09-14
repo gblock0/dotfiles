@@ -48,6 +48,12 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|git-crypt)$|node_modules|node|bower_components|public|coverage'
 
 """""""""""""""""""""""""""
+" FZF
+"""""""""""""""""""""""""""
+nnoremap ? :BLine<CR>
+let g:fzf_layout = { 'down': '~20%' }
+
+"""""""""""""""""""""""""""
 " NerdCommenter
 """""""""""""""""""""""""""
 nnoremap <D-/> :NERDComToggleComment<CR>

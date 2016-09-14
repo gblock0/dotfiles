@@ -123,6 +123,7 @@ set wildmode=list:longest " complete files like a shell
 set shell=$SHELL
 set cmdheight=1 " command bar height
 
+
 set title " set terminal title
 
 " Searching
@@ -191,8 +192,6 @@ set laststatus=2 " show the satus line all the time
 
 nnoremap # "fyiw :/<c-r>f<cr>"
 
-nnoremap <leader>/ :CtrlPLine<CR>
-
 " Close location list or quickfix window
 nnoremap <leader>q :ccl<Space><Bar><Space>lcl<CR>
 
@@ -224,6 +223,8 @@ vnoremap <right> <nop>
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
+
+inoremap jj <ESC>
 
 " Want a space after this
 nnoremap <leader>a :Ag!<Space>
