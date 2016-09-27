@@ -107,6 +107,12 @@ cnoreabbrev <expr> Q ((getcmdtype() is# ':' && getcmdline() is# 'Q')?('q'):('Q')
 cnoreabbrev <expr> WQ ((getcmdtype() is# ':' && getcmdline() is# 'WQ')?('wq'):('WQ'))
 cnoreabbrev <expr> Qa ((getcmdtype() is# ':' && getcmdline() is# 'Qa')?('qa'):('Qa'))
 
+" Remap :s to :sus
+cnoreabbrev <expr> s ((getcmdtype() is# ':' && getcmdline() is# 's')?('sus'):('s'))
+
+
+" Remap Space-g to :sus
+nnoremap <leader>g :sus<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => User Interface
