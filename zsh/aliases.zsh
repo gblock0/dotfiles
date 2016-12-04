@@ -69,7 +69,6 @@ alias tkill="tmux kill-session -t"
 # Open Mvim in terminal
 alias vim='nvim'
 
-
 # Get list of the sizes of tmux panes
 alias tmuxsize="tmux list-panes -F '#{pane_id} #{pane_width}x#{pane_height}'"
 
