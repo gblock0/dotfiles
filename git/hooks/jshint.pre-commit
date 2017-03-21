@@ -16,7 +16,7 @@ for file in $( exec git diff-index --name-only HEAD ); do
 
 		if [[ $status != D* ]]; then
 			# ${jshint} ${repo}/${file} >/dev/null 2>&1
-			jshint ${repo}/${file}
+			eslint ${repo}/${file}
 			EXIT_CODE=$((${EXIT_CODE} + $?))
 		fi
 	fi

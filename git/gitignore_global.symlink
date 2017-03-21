@@ -5,6 +5,8 @@ Thumbs.db
 .AppleDouble
 .LSOverride
 Icon
+node_modules/*
+dist/*
 
 # Thumbnails
 ._*

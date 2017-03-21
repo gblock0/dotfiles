@@ -45,7 +45,7 @@ let g:tagbar_type_javascript = {
 """""""""""""""""""""""""""
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|git-crypt)$|node_modules|node|bower_components|public|coverage'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|git-crypt)$|node_modules|dist|node|bower_components|public|coverage'
 
 """""""""""""""""""""""""""
 " FZF
@@ -113,11 +113,15 @@ let delimitMate_expand_cr = 1
 if has('autocmd') && !exists('autocommands_loaded')
 	autocmd! BufWritePost * if &ft != 'html' | Neomake | endif
 endif
-let g:neomake_javascript_jshint_maker = {
-			\ 'args': ['--verbose'],
+
+let g:neomake_javascript_eslint_maker = {
+		\ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
+		\ }
+let g:neomake_jsx_eslint_maker = {
 			\ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
 			\ }
-let g:neomake_javascript_enabled_markers = ['jshint', 'jscs']
+let g:neomake_javascript_enabled_markers = ['eslint']
+let g:neomake_jsx_enabled_markers = ['eslint']
 let g:neomake_html_enabled_markers = []
 let g:neomake_open_list=2
 let g:neomake_verbose=0
@@ -171,3 +175,10 @@ endif
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 let g:indent_guides_start_level = 3
+
+"""""""""""""""""""""""""""
+" vim-markdown-preview
+"""""""""""""""""""""""""""
+let vim_markdown_preview_hotkey='<C-m>'
+let vim_markdown_preview_github=1
+

@@ -13,6 +13,7 @@ Plug 'tpope/vim-markdown', { 'for' : 'markdown' }
 
 " Utilities
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'sbdchd/neoformat'
 Plug 'gregsexton/MatchTag'
 Plug 'Raimondi/delimitMate'															" Auto-pairing brackets, parens, and quotes
 Plug 'tpope/vim-fugitive'																" Git stuff
@@ -41,8 +42,17 @@ Plug 'benekastah/neomake'																" Syntax checking with support for Neov
 Plug 'janko-m/vim-test'																	" Test single files or tests
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'SirVer/ultisnips'
 
 " Js plugins...
-Plug 'othree/yajs.vim', { 'for': 'javascript' }																	" More JavaScript syntax highlighting
-Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
+Plug 'othree/yajs.vim'																" More JavaScript syntax highlighting
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'mxw/vim-jsx'
+Plug 'isRuslan/vim-es6'
+
+Plug 'othree/es.next.syntax.vim'
+
+" Markdown
+Plug 'JamshedVesuna/vim-markdown-preview', { 'for': 'markdown' }
 call plug#end()
