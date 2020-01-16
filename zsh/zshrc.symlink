@@ -42,12 +42,14 @@ if hash hub 2>/dev/null; then
 fi
 
 # source nvm
-export NVM_DIR=~/.nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # Loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # Loads nvm bash completion
 
-if hash brew 2>/dev/null; then
-    source $(brew --prefix nvm)/nvm.sh
-    source `brew --prefix`/etc/profile.d/z.sh
-fi
+# if hash brew 2>/dev/null; then
+    # source $(brew --prefix nvm)/nvm.sh
+    # source `brew --prefix`/etc/profile.d/z.sh
+# fi
 
 # Base16 Shell
 # if [ -z "$THEME" ]; then
@@ -62,4 +64,5 @@ BASE16_SHELL="$DOTFILES/.config/base16-shell/$THEME.$BACKGROUND.sh"
 source $BASE16_SHELL
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH=$PATH:~/.android-sdk-macosx/platform-tools/:~/.android-sdk-macox/tools:
+export PATH=$PATH:~/.android-sdk-macosx/platform-tools:~/.android-sdk-macox/tools:
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

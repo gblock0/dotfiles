@@ -4,6 +4,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'mhartington/oceanic-next'
 Plug 'jacoborus/tender.vim'
+Plug 'tyrannicaltoucan/vim-deep-space'
 
 " Syntax Plugins
 Plug 'othree/html5.vim', { 'for' : 'html' }
@@ -43,7 +44,6 @@ Plug 'janko-m/vim-test'																	" Test single files or tests
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'SirVer/ultisnips'
 
 " Js plugins...
 Plug 'othree/yajs.vim'																" More JavaScript syntax highlighting

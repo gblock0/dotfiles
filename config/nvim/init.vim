@@ -45,7 +45,7 @@ hi ERROR NONE
 set backspace=indent,eol,start
 
 " No Escape Keys in Insert Mode
-set noesckeys
+" set noesckeys
 
 set history=1000 " change history to 1000
 set textwidth=0
