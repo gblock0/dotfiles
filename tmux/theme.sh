@@ -54,6 +54,7 @@ set-window-option -g clock-mode-colour $tm_color_active
 
 tm_spotify="#[fg=$tm_color_blue]#(osascript ~/.dotfiles/applescripts/spotify.scpt)"
 tm_itunes="#[fg=$tm_color_blue]#(osascript ~/.dotfiles/applescripts/itunes.scpt)"
+tm_music="#[fg=$tm_color_blue]#(osascript ~/.dotfiles/applescripts/appleMusic.scpt)"
 battery_percent="#(~/.dotfiles/bin/battery_indicator.sh)"
 
 tm_date="#[fg=$tm_color_red] %a %h-%d %H:%M"
