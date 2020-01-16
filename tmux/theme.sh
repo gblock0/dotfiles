@@ -62,4 +62,4 @@ tm_date="#[fg=$tm_color_red] %a %h-%d %H:%M"
 tm_session_name="#[fg=$tm_color_blue,bold]$tm_icon #S"
 
 set -g status-left $tm_session_name' #{prefix_highlight} '
-set -g status-right $tm_itunes' '$tm_spotify' '$tm_date' '$battery_percent' '
+set -g status-right $tm_itunes' '$tm_spotify' '$tm_music' '$tm_date' '$battery_percent' '
