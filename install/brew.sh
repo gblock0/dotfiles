@@ -23,3 +23,4 @@ brew install z
 brew install docker
 brew install docker-machine
 brew install fzf
+brew install romkatv/powerlevel10k/powerlevel10k
