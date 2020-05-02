@@ -33,14 +33,6 @@ let g:airline_right_sep = '◀'
 let g:interestingWordsTermColors = ['154', '121', '211', '137', '214', '222']
 
 """""""""""""""""""""""""""
-" Ctags
-"""""""""""""""""""""""""""
-nnoremap <leader>c :TagbarToggle<CR>
-let g:tagbar_type_javascript = {
-			\ 'ctagsbin' : '/usr/local/share/npm/bin/jsctags'
-			\ }
-
-"""""""""""""""""""""""""""
 " CtrlP
 """""""""""""""""""""""""""
 let g:ctrlp_map = '<c-p>'
@@ -97,12 +89,6 @@ let NERDTreeMapOpenSplit = "s"
 let NERDTreeMapOpenVSplit = "w"
 
 """""""""""""""""""""""""""
-" Javascript plugins
-"""""""""""""""""""""""""""
-let g:used_javascript_libs = 'angularjs,jquery,mocha'
-let b:javascript_fold = 1
-
-"""""""""""""""""""""""""""
 " delimitMate
 """""""""""""""""""""""""""
 let delimitMate_expand_cr = 1
@@ -142,12 +128,6 @@ nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 let g:formatters_javascript = [ 'jscs' ]
 
 """""""""""""""""""""""""""
-" deoplete
-"""""""""""""""""""""""""""
-" let g:deoplete#enable_at_startup = 1
-" inoremap <expr><BS>  deoplete#mappings#smart_close_popup()."\<C-h>"
-
-"""""""""""""""""""""""""""
 " vim-autoswap
 """""""""""""""""""""""""""
 let g:autoswap_detect_tmux = 1
@@ -158,27 +138,8 @@ let g:autoswap_detect_tmux = 1
 let g:enable_bold_font = 1
 
 """""""""""""""""""""""""""
-" test.vim
-"""""""""""""""""""""""""""
-let test#strategy = 'neovim'
-nmap <leader>t :TestNearest<CR>
-let test#javascript#runner = 'mocha'
-if expand('%:p:h') =~ 'driverLocation-service'
-	let test#javascript#mocha#executable = 'NODE_ENV=test mocha test/index.js'
-else
-	let test#javascript#mocha#executable = 'NODE_ENV=test mocha test/sails.test.js'
-endif
-
-"""""""""""""""""""""""""""
 " vim-indent-guides
 """""""""""""""""""""""""""
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 let g:indent_guides_start_level = 3
-
-"""""""""""""""""""""""""""
-" vim-markdown-preview
-"""""""""""""""""""""""""""
-let vim_markdown_preview_hotkey='<C-m>'
-let vim_markdown_preview_github=1
-

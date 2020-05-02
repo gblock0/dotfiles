@@ -7,7 +7,6 @@ fi
 
 export DOTFILES=$HOME/.dotfiles
 export ZSH=$DOTFILES/zsh
-export NODE_ENV="development"
 export EVENT_NOKQUEUE=1
 
 # load all zsh config files
@@ -24,70 +23,19 @@ compinit
 
 export VISUAL='nvim'
 export EDITOR='$VISUAL'
-export NEOVIM_JS_DEBUG="~/.nvim_js_debug"
 
-export PATH=/usr/local/bin:~/.local/bin:$PATH
-
-# add /usr/local/sbin
-if [[ -d /usr/local/sbin ]]; then
-    export PATH=/usr/local/sbin:$PATH
-fi
-
-# adding path directory for custom scripts
+# adding custom scripts to path directory
 export PATH=$DOTFILES/bin:$PATH
 
-# check for custom bin directory and add to path
-if [[ -d ~/bin ]]; then
-    export PATH=~/bin:$PATH
-fi
-
-# [ -z "$TMUX" ] && export TERM=xterm-256color
-
-# alias git to hub
-if hash hub 2>/dev/null; then
-    eval "$(hub alias -s)"
-fi
-
-# source nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # Loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # Loads nvm bash completion
-
-# if hash brew 2>/dev/null; then
-    # source $(brew --prefix nvm)/nvm.sh
-    # source `brew --prefix`/etc/profile.d/z.sh
-# fi
-
-# Base16 Shell
-# if [ -z "$THEME" ]; then
-    export THEME="base16-atelierheath"
-# fi
+export THEME="base16-atelierheath"
 if [ -z "$BACKGROUND" ]; then
     export BACKGROUND="dark"
 fi
 
 BASE16_SHELL="$DOTFILES/.config/base16-shell/$THEME.$BACKGROUND.sh"
-# [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 source $BASE16_SHELL
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH=$PATH:~/.android-sdk-macosx/platform-tools:~/.android-sdk-macox/tools:
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/usr/local/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
-        . "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh"
-    else
-        export PATH="/usr/local/Caskroom/miniconda/base/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 
