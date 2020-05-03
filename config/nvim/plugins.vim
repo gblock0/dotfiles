@@ -5,8 +5,8 @@ Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'mhartington/oceanic-next'
 
 " Syntax Plugins
-Plug 'ap/vim-css-color'																	" Shows CSS colors
-Plug 'sheerun/vim-polyglot'															" A collection of language packs for vim
+Plug 'norcalli/nvim-colorizer.lua'
+Plug 'sheerun/vim-polyglot'																" A collection of language packs for vim
 
 " Utilities
 Plug 'christoomey/vim-tmux-navigator'										" Allows navigation between vim and tmux
