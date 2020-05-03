@@ -8,6 +8,8 @@ let g:mapleader = "\<Space>"
 
 filetype plugin indent on
 
+set encoding=utf-8
+
 " load plugins from vim-plug
 
 source ~/.config/nvim/plugins.vim
@@ -118,10 +120,10 @@ nnoremap <leader>g :sus<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => User Interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if has('gui_running')
-	set guifont=Source\ Code\ Pro:h12
-endif
 set guifont=Source\ Code\ Pro:h12
+if has('gui_running')
+	set guifont=SauceCodePro\ Nerd\ Font\ Mono:h12
+endif
 
 set scrolloff=3 " lines of text around cursor
 set wildmenu " enhanced command line completion
@@ -181,8 +183,8 @@ set nowrap
 " => Files, backups, and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set backupdir=~/.nvim-tmp
-set directory=~/.nvim-tmp
+set backupdir=~/vim/backup
+set directory=~/vim/tmp
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -254,9 +256,9 @@ nnoremap <leader>v V`]
 
 " toggle invisible characters
 " set invlist
-set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
+" set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
 highlight SpecialKey ctermbg=none " make the highlighting of tabs less annoying
-set showbreak=↪
+"set showbreak=↪
 nmap <leader>l :IndentGuidesToggle<cr>
 
 " Create a new vsplit, switch to it and open CtrlP
