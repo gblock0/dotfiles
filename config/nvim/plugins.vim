@@ -28,5 +28,6 @@ Plug 'nathanaelkane/vim-indent-guides'									" Indentation Guides
 Plug 'lfv89/vim-interestingwords'												" Highlight different words in a file
 Plug 'benekastah/neomake'																" Syntax checking with support for Neovim async
 Plug 'junegunn/fzf'																			" Fast file searching
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
