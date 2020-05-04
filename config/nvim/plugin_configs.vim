@@ -28,10 +28,12 @@ let g:airline#extensions#default#layout = [
 """""""""""""""""""""""""""
 let g:interestingWordsTermColors = ['154', '121', '211', '137', '214', '222']
 
-"""""""""""""""""""""""""""
-" nvim-colorizer.lua
-"""""""""""""""""""""""""""
-lua require'colorizer-lua'
+if has('nvim')
+	"""""""""""""""""""""""""""
+	" nvim-colorizer.lua
+	"""""""""""""""""""""""""""
+	lua require'colorizer-lua'
+endif
 
 """""""""""""""""""""""""""
 " CtrlP

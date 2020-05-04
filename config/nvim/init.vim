@@ -251,11 +251,6 @@ noremap Q <NOP>
 " Reselect the text that was just pasted
 nnoremap <leader>v V`]
 
-" toggle invisible characters
-" set invlist
-set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
-highlight SpecialKey ctermbg=none " make the highlighting of tabs less annoying
-set showbreak=↪
 nmap <leader>l :IndentGuidesToggle<cr>
 
 " Create a new vsplit, switch to it and open CtrlP

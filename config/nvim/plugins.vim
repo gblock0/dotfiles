@@ -5,7 +5,10 @@ Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'mhartington/oceanic-next'
 
 " Syntax Plugins
-Plug 'norcalli/nvim-colorizer.lua'
+
+if has('nvim')
+	Plug 'norcalli/nvim-colorizer.lua'
+endif
 Plug 'sheerun/vim-polyglot'																" A collection of language packs for vim
 
 " Utilities
