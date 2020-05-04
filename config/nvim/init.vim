@@ -119,10 +119,8 @@ nnoremap <leader>g :sus<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => User Interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if has('gui_running')
-	set guifont=Source\ Code\ Pro:h12
-endif
-set guifont=Source\ Code\ Pro:h12
+" set guifont=JetBrainsMono\ Nerd\ Font\ Mono:h12
+set guifont=SauceCodePro\ Nerd\ Font\ Mono:h12
 
 set scrolloff=3 " lines of text around cursor
 set wildmenu " enhanced command line completion

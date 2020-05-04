@@ -23,10 +23,6 @@ let g:airline#extensions#default#layout = [
 		\ [ 'x', 'z', 'warning' ]
 		\ ]
 
-" vim-powerline symbols
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '◀'
-
 """""""""""""""""""""""""""
 " Vim-interesting-words
 """""""""""""""""""""""""""
