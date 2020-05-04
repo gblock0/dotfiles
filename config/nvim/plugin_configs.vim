@@ -33,6 +33,11 @@ let g:airline_right_sep = '◀'
 let g:interestingWordsTermColors = ['154', '121', '211', '137', '214', '222']
 
 """""""""""""""""""""""""""
+" nvim-colorizer.lua
+"""""""""""""""""""""""""""
+lua require'colorizer-lua'
+
+"""""""""""""""""""""""""""
 " CtrlP
 """""""""""""""""""""""""""
 let g:ctrlp_map = '<c-p>'
@@ -43,6 +48,8 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|git-crypt)$|node_modules|dist|node|bow
 " FZF
 """""""""""""""""""""""""""
 nnoremap ? :BLine<CR>
+" Intentional space left after `:Ag` to allow for faster searching
+nnoremap <C-F> :Ag 
 let g:fzf_layout = { 'down': '~20%' }
 
 """""""""""""""""""""""""""

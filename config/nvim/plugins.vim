@@ -5,8 +5,8 @@ Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'mhartington/oceanic-next'
 
 " Syntax Plugins
-Plug 'ap/vim-css-color'																	" Shows CSS colors
-Plug 'sheerun/vim-polyglot'															" A collection of language packs for vim
+Plug 'norcalli/nvim-colorizer.lua'
+Plug 'sheerun/vim-polyglot'																" A collection of language packs for vim
 
 " Utilities
 Plug 'christoomey/vim-tmux-navigator'										" Allows navigation between vim and tmux
@@ -28,5 +28,6 @@ Plug 'nathanaelkane/vim-indent-guides'									" Indentation Guides
 Plug 'lfv89/vim-interestingwords'												" Highlight different words in a file
 Plug 'benekastah/neomake'																" Syntax checking with support for Neovim async
 Plug 'junegunn/fzf'																			" Fast file searching
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
