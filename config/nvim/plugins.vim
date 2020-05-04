@@ -25,8 +25,8 @@ Plug 'gioele/vim-autoswap'															" Swap file handling
 Plug 'Xuyuanp/nerdtree-git-plugin'											" See git indicator symbols in NERDTree
 Plug 'cohama/agit.vim'																	" Git plugin to easily go through all your commits
 Plug 'vim-airline/vim-airline'													" Replacement for Powerline
-Plug 'ctrlpvim/ctrlp.vim'																" Fuzzy File searching
 Plug 'vim-airline/vim-airline-themes'										" Airline themes
+Plug 'ctrlpvim/ctrlp.vim'																" Fuzzy File searching
 Plug 'nathanaelkane/vim-indent-guides'									" Indentation Guides
 Plug 'lfv89/vim-interestingwords'												" Highlight different words in a file
 Plug 'benekastah/neomake'																" Syntax checking with support for Neovim async
