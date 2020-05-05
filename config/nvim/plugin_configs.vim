@@ -1,3 +1,7 @@
+if !has('gui_running')
+ source ~/.config/nvim/nvim_plugin_configs.vim
+endif
+
 """"""""""""""""""""
 "  Airline
 """"""""""""""""""""
@@ -27,13 +31,6 @@ let g:airline#extensions#default#layout = [
 " Vim-interesting-words
 """""""""""""""""""""""""""
 let g:interestingWordsTermColors = ['154', '121', '211', '137', '214', '222']
-
-if has('nvim')
-	"""""""""""""""""""""""""""
-	" nvim-colorizer.lua
-	"""""""""""""""""""""""""""
-	lua require'colorizer-lua'
-endif
 
 """""""""""""""""""""""""""
 " CtrlP
