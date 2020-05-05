@@ -216,29 +216,12 @@ nnoremap mm $%
 " Turn off highlighting, need to add the 'h' at the end of offset the <BS> making the cursor move one character to the right
 nnoremap <BS> :noh<CR> :match none<CR>h
 
-" Disable arrow keys in all modes
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-vnoremap <up> <nop>
-vnoremap <down> <nop>
-vnoremap <left> <nop>
-vnoremap <right> <nop>
-
 " Disable help F1 key
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
 inoremap jj <ESC>
-
-" Want a space after this
-nnoremap <leader>a :Ag!<Space>
 
 " Disable auto-commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -271,9 +254,6 @@ nnoremap <leader>= <C-W>=
 " helpers for dealing with other people's code
 nmap \t :set ts=2 sts=2 sw=2 noet<cr>
 nmap \s :set ts=2 sts=2 sw=2 et<cr>
-
-" Format current file and return cursor to current position (shouldn't need this anymore if Autoformat is working)
-nnoremap <leader>f :Autoformat<CR>:%s/\s\+$//e<CR>:noh<cr>:w<CR>
 
 " Reload vimrc
 nnoremap <leader>r :so ~/.config/nvim/init.vim<CR>:noh<CR>:echo "init.vim Reload!"<CR>

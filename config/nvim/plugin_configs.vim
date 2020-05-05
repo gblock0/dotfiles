@@ -44,7 +44,7 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|git-crypt)$|node_modules|dist|node|bow
 """""""""""""""""""""""""""
 nnoremap ? :BLine<CR>
 " Intentional space left after `:Ag` to allow for faster searching
-nnoremap <C-F> :Ag 
+nnoremap <leader>a :Ag!<Space>
 let g:fzf_layout = { 'down': '~20%' }
 
 """""""""""""""""""""""""""
