@@ -8,6 +8,10 @@ let g:mapleader = "\<Space>"
 
 filetype plugin indent on
 
+set encoding=utf-8
+set fileencoding=utf-8
+set termencoding=utf-8
+
 " switch syntax highlighting on
 syntax enable
 
