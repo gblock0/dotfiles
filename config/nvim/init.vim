@@ -12,9 +12,6 @@ set encoding=utf-8
 set fileencoding=utf-8
 set termencoding=utf-8
 
-" switch syntax highlighting on
-syntax enable
-
 " Set true colors
 if (has("nvim"))
 	"For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
@@ -28,13 +25,15 @@ if (has("termguicolors"))
 	set termguicolors
 endif
 
+" switch syntax highlighting on
+syntax enable
+
 " load plugins from vim-plug
 source ~/.config/nvim/plugins.vim
 source ~/.config/nvim/plugin_configs.vim
 
-
-colorscheme hybrid_material
 set background=dark
+colorscheme material
 
 " Abbreviations
 abbr funciton function

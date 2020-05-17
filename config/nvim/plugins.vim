@@ -1,8 +1,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
 "Themes
-Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'mhartington/oceanic-next'
+Plug 'kaicataldo/material.vim'
 
 " Syntax Plugins
 
