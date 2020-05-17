@@ -57,11 +57,11 @@ set history=1000 " change history to 1000
 set textwidth=0
 
 " Tab control
-" set noexpandtab " insert tabs rather than spaces for <Tab>
-set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
+"set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
 set tabstop=4 " the visible width of tabs
 set softtabstop=4 " edit as if the tabs are 4 characters wide
 set shiftwidth=4 " number of spaces to use for indent and unindent
+set expandtab " insert tabs rather than spaces for <Tab>
 set shiftround " round indent to a multiple of 'shiftwidth'
 set completeopt+=longest
 

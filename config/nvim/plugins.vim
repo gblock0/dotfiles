@@ -9,6 +9,7 @@ Plug 'mhartington/oceanic-next'
 if has('nvim')
 	Plug 'norcalli/nvim-colorizer.lua'
 endif
+
 Plug 'sheerun/vim-polyglot'																" A collection of language packs for vim
 
 " Utilities
