@@ -163,11 +163,12 @@ let g:coc_global_extensions = [
             \ 'coc-powershell',
             \ 'coc-prettier',
             \ 'coc-snippets',
-            \ 'coc-spell-checker',
             \ 'coc-svg',
             \ 'coc-tsserver',
             \ ]
 
+nmap <F2> <Plug>(coc-rename)
+nmap <F3> <Plug>(coc-definition)
 
 " **** THE FOLLOWING IS FROM THE COC.NVIM README ****
 " TextEdit might fail if hidden is not set.
@@ -227,7 +228,6 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
