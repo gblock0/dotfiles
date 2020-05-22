@@ -12,6 +12,7 @@ endif
 Plug 'sheerun/vim-polyglot'																" A collection of language packs for vim
 
 " Utilities
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'christoomey/vim-tmux-navigator'										" Allows navigation between vim and tmux
 Plug 'sbdchd/neoformat'																	" Formats the current buffer
 Plug 'gregsexton/MatchTag'															" Highlights the matching HTML tag
