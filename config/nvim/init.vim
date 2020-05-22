@@ -99,6 +99,14 @@ if has('autocmd') && !exists('autocommands_loaded')
 
 endif
 
+" Highlight trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
 " code folding settings
 set foldmethod=syntax " fold based on indent
 set foldlevelstart=99
