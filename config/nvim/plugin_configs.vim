@@ -61,14 +61,13 @@ nnoremap <Bslash>n :NERDTreeToggle<CR>
 "Show hidden files in NERDTree (files that start with period)
 let NERDTreeShowHidden=1
 
+let g:NERDTreeGitStatusWithFlags=1
+
 " Hide files by extension and folder
-let NERDTreeIgnore=[ '\.gitignore$', '\.git$[[dir]]', '\.DS_Store$', '\.js.map$', 'node_modules$[[dir]]', 'bower_components$[[dir]]' ]
+let NERDTreeIgnore=['config\configstore', '\.gitignore$', '\.git$[[dir]]', '\.DS_Store$', '\.js.map$', 'node_modules$[[dir]]', 'bower_components$[[dir]]' ]
 
 " Close NERDTree after a file is opened
 let g:NERDTreeQuitOnOpen=0
-
-" Show hidden files in NERDTree
-let NERDTreeShowHidden=1
 
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 
@@ -149,6 +148,28 @@ let g:indent_guides_start_level = 3
 """""""""""""""""""""""""""
 " coc.nvim
 """""""""""""""""""""""""""
+let g:coc_global_extensions = [
+            \ 'coc-bookmark',
+            \ 'coc-css',
+            \ 'coc-eslint',
+            \ 'coc-floaterm',
+            \ 'coc-git',
+            \ 'coc-highlight',
+            \ 'coc-html',
+            \ 'coc-json',
+            \ 'coc-markdownlint',
+            \ 'coc-omnisharp',
+            \ 'coc-pairs',
+            \ 'coc-powershell',
+            \ 'coc-prettier',
+            \ 'coc-snippets',
+            \ 'coc-spell-checker',
+            \ 'coc-svg',
+            \ 'coc-tsserver',
+            \ ]
+
+
+" **** THE FOLLOWING IS FROM THE COC.NVIM README ****
 " TextEdit might fail if hidden is not set.
 set hidden
 
