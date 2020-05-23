@@ -25,9 +25,5 @@ Dotfiles install idea taken from [Nick Nisi](http://www.github.com/nicknisi).
 
 ## ZSH Plugins
 
-By default, the `.zshrc` file will source any file within `.dotfiles/zsh` that have the `.zsh` extension.
-
-## Reference Websites
-[JSCS](http://jscs.info/rules.html)
-
-[JSHint](http://jshint.com/docs/options/)
+By default, the `.zshrc` file will source any file within `.dotfiles/zsh` that
+have the `.zsh` extension.
