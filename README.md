@@ -1,6 +1,6 @@
 # Dotfiles
 
-Dotfiles install idea taken from [Nick Nisi](http://www.github.com/nicknisi). 
+Dotfiles install idea taken from [Nick Nisi](http://www.github.com/nicknisi).
 
 ## Contents
 
