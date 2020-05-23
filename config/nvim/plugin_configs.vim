@@ -33,18 +33,12 @@ let g:airline#extensions#default#layout = [
 let g:interestingWordsTermColors = ['154', '121', '211', '137', '214', '222']
 
 """""""""""""""""""""""""""
-" CtrlP
-"""""""""""""""""""""""""""
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|git-crypt)$|node_modules|dist|node|bower_components|public|coverage'
-
-"""""""""""""""""""""""""""
 " FZF
 """""""""""""""""""""""""""
 nnoremap ? :BLine<CR>
 " Intentional space left after `:Ag` to allow for faster searching
 nnoremap <leader>a :Ag!<Space>
+nnoremap <C-p> :Files<Cr>
 let g:fzf_layout = { 'down': '~20%' }
 
 """""""""""""""""""""""""""
@@ -90,30 +84,6 @@ let NERDTreeMapOpenSplit = "s"
 let NERDTreeMapOpenVSplit = "w"
 
 """""""""""""""""""""""""""
-" delimitMate
-"""""""""""""""""""""""""""
-let delimitMate_expand_cr = 1
-
-"""""""""""""""""""""""""""
-" Neomake
-"""""""""""""""""""""""""""
-if has('autocmd') && !exists('autocommands_loaded')
-	autocmd! BufWritePost * if &ft != 'html' | Neomake | endif
-endif
-
-let g:neomake_javascript_eslint_maker = {
-		\ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
-		\ }
-let g:neomake_jsx_eslint_maker = {
-			\ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
-			\ }
-let g:neomake_javascript_enabled_markers = ['eslint']
-let g:neomake_jsx_enabled_markers = ['eslint']
-let g:neomake_html_enabled_markers = []
-let g:neomake_open_list=2
-let g:neomake_verbose=0
-
-"""""""""""""""""""""""""""
 " vim-tmux-navigator
 """""""""""""""""""""""""""
 let g:tmux_navigator_no_mappings = 1
@@ -124,19 +94,9 @@ nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 
 """""""""""""""""""""""""""
-" vim-autoformat
-"""""""""""""""""""""""""""
-let g:formatters_javascript = [ 'jscs' ]
-
-"""""""""""""""""""""""""""
 " vim-autoswap
 """""""""""""""""""""""""""
 let g:autoswap_detect_tmux = 1
-
-"""""""""""""""""""""""""""
-" hybrid_material
-"""""""""""""""""""""""""""
-let g:enable_bold_font = 1
 
 """""""""""""""""""""""""""
 " vim-indent-guides

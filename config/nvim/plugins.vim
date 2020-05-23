@@ -14,9 +14,7 @@ Plug 'sheerun/vim-polyglot'																" A collection of language packs for 
 " Utilities
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'christoomey/vim-tmux-navigator'										" Allows navigation between vim and tmux
-Plug 'sbdchd/neoformat'																	" Formats the current buffer
 Plug 'gregsexton/MatchTag'															" Highlights the matching HTML tag
-Plug 'Raimondi/delimitMate'															" Auto-pairing brackets, parens, and quotes
 Plug 'tpope/vim-fugitive'																" Git stuff
 Plug 'scrooloose/nerdtree'															" File tree explorer
 Plug 'tpope/vim-surround'																" Change surrounding quotes, brackets, etc.
@@ -29,10 +27,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin'											" See git indicator symbols in NERD
 Plug 'cohama/agit.vim'																	" Git plugin to easily go through all your commits
 Plug 'vim-airline/vim-airline'													" Replacement for Powerline
 Plug 'vim-airline/vim-airline-themes'										" Airline themes
-Plug 'ctrlpvim/ctrlp.vim'																" Fuzzy File searching
 Plug 'nathanaelkane/vim-indent-guides'									" Indentation Guides
 Plug 'lfv89/vim-interestingwords'												" Highlight different words in a file
-Plug 'benekastah/neomake'																" Syntax checking with support for Neovim async
 Plug 'junegunn/fzf'																			" Fast file searching
 Plug 'junegunn/fzf.vim'
 
