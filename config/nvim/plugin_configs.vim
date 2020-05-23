@@ -130,6 +130,8 @@ let g:coc_global_extensions = [
 nmap <F2> <Plug>(coc-rename)
 nmap <F3> <Plug>(coc-definition)
 
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
 " **** THE FOLLOWING IS FROM THE COC.NVIM README ****
 " TextEdit might fail if hidden is not set.
 set hidden
