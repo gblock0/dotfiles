@@ -72,4 +72,4 @@ let g:indent_guides_start_level = 3
 """""""""""""""""""""""""""
 " coc.nvim
 """""""""""""""""""""""""""
-source ~/.config/nvim/coc/coc_config.vim
+source ~/.config/nvim/coc_config.vim

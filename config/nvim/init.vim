@@ -82,7 +82,7 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 " file type specific settings
 if has('autocmd') && !exists('autocommands_loaded')
 
-	source ~/.config/nvim/filetype_settings.vim
+	source ~/.config/nvim/filetype_configs.vim
 	let autocommands_loaded = 1
 
 	" automatically resize panes on resize

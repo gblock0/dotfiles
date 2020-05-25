@@ -31,8 +31,6 @@ nnoremap <Bslash>n :CocCommand explorer<CR>
 " If the last buffer open is CocExplorer, then close (neo)vim
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
-
-
 " **** THE FOLLOWING IS FROM THE COC.NVIM README ****
 " TextEdit might fail if hidden is not set.
 set hidden
