@@ -5,5 +5,6 @@
             ["expanded?", "collapse", "expand"],
             "open"
         ]
-    }
+    },
+    "explorer.icon.enableNerdfont": true
 }
