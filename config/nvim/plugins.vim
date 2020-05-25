@@ -16,14 +16,12 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'christoomey/vim-tmux-navigator'										" Allows navigation between vim and tmux
 Plug 'gregsexton/MatchTag'															" Highlights the matching HTML tag
 Plug 'tpope/vim-fugitive'																" Git stuff
-Plug 'scrooloose/nerdtree'															" File tree explorer
 Plug 'tpope/vim-surround'																" Change surrounding quotes, brackets, etc.
 Plug 'scrooloose/nerdcommenter'													" Easily comment/uncomment thing using shortcuts
 if !has('gui_running')
 	Plug 'airblade/vim-gitgutter'														" Allows stuff in the gutter
 endif
 Plug 'gioele/vim-autoswap'															" Swap file handling
-Plug 'Xuyuanp/nerdtree-git-plugin'											" See git indicator symbols in NERDTree
 Plug 'cohama/agit.vim'																	" Git plugin to easily go through all your commits
 Plug 'vim-airline/vim-airline'													" Replacement for Powerline
 Plug 'vim-airline/vim-airline-themes'										" Airline themes
