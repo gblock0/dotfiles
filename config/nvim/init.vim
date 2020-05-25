@@ -84,19 +84,9 @@ if has('autocmd') && !exists('autocommands_loaded')
 
 	source ~/.config/nvim/filetype_settings.vim
 	let autocommands_loaded = 1
-	autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-	autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-	autocmd FileType html setlocal ts=4 sts=4 sw=4 noexpandtab indentkeys-=*<return>
-	autocmd FileType *.md.js :call SyntasticReset<cr>
-	autocmd FileType markdown,textile setlocal textwidth=0 wrapmargin=0 wrap spell
-	autocmd FileType .xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
-
 
 	" automatically resize panes on resize
 	autocmd VimResized * exe 'normal! \<c-w>='
-
-	let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'json=javascript', 'stylus', 'html']
-
 endif
 
 " Highlight trailing whitespace
