@@ -11,7 +11,6 @@ let g:coc_global_extensions = [
             \ 'coc-highlight',
             \ 'coc-html',
             \ 'coc-json',
-            \ 'coc-markdownlint',
             \ 'coc-omnisharp',
             \ 'coc-pairs',
             \ 'coc-powershell',
