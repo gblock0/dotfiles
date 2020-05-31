@@ -9,7 +9,7 @@ function md() {
 
 # open dotfiles in nvim
 function nrc() {
-  nvim ~/.dotfiles
+  cd ~/.dotfiles && nvim -c GFiles
 }
 
 function drmi() {

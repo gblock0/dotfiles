@@ -27,6 +27,9 @@ export EDITOR='$VISUAL'
 # adding custom scripts to path directory
 export PATH=$DOTFILES/bin:$PATH
 
+# Add sbin to path for Homebrew
+export PATH="/usr/local/sbin:$PATH"
+
 export THEME="base16-atelierheath"
 if [ -z "$BACKGROUND" ]; then
     export BACKGROUND="dark"

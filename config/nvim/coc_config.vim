@@ -27,7 +27,8 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 nnoremap <leader>e :CocCommand explorer --position floating<CR>
 nnoremap <Bslash>n :CocCommand explorer<CR>
-" If the last buffer open is CocExplorer, then close (neo)vim
+
+" If the last buffer open is coc-explorer, then close (neo)vim
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
 " **** THE FOLLOWING IS FROM THE COC.NVIM README ****
