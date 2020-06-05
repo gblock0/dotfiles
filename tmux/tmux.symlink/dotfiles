@@ -2,18 +2,12 @@
 
 SESSION_NAME=dotfiles
 DIRECTORY=~/.dotfiles
-RNEWBACK=~/radish/new-backend
 
 if ! tmux has-session -t $SESSION_NAME; then
 	TMUX= tmux new-session -d -s $SESSION_NAME -n dotfiles -c $DIRECTORY
-	tmux new-window -t$SESSION_NAME:2 -c $RNEWBACK -n new-backend
-
 	tmux select-window -t$SESSION_NAME:1
-	tmux split-window -h -c $DIRECTORY
-	tmux resize-pane -t 2 -x 80
-	tmux select-pane -t 1
 	tmux send-keys -t$SESSION_NAME:1 "cd $DIRECTORY" "C-m"
-	tmux send-keys -t$SESSION_NAME:1 "vim" "C-m"
+	tmux send-keys -t$SESSION_NAME:1 "nvim" "C-m"
 fi
 
 tmux -2 attach -t $SESSION_NAME
