@@ -18,14 +18,16 @@ Plug 'gregsexton/MatchTag'								" Highlights the matching HTML tag
 Plug 'tpope/vim-fugitive'								" Git stuff
 Plug 'tpope/vim-surround'								" Change surrounding quotes, brackets, etc.
 Plug 'scrooloose/nerdcommenter'							" Easily comment/uncomment thing using shortcuts
-" Plug 'tweekmonster/startuptime.vim'                   " Uncomment to test startup time
+Plug 'tweekmonster/startuptime.vim'                   " Uncomment to test startup time
 if !has('gui_running')
 	Plug 'airblade/vim-gitgutter'					    " Allows stuff in the gutter
 endif
 Plug 'gioele/vim-autoswap'								" Swap file handling
 Plug 'cohama/agit.vim'									" Git plugin to easily go through all your commits
-Plug 'vim-airline/vim-airline'							" Replacement for Powerline
-Plug 'vim-airline/vim-airline-themes'					" Airline themes
+" Plug 'vim-airline/vim-airline'							" Replacement for Powerline
+" Plug 'vim-airline/vim-airline-themes'					" Airline themes
+Plug 'itchyny/lightline.vim'									" Git plugin to easily go through all your commits
+Plug 'niklaas/lightline-gitdiff'
 Plug 'nathanaelkane/vim-indent-guides'					" Indentation Guides
 Plug 'lfv89/vim-interestingwords'						" Highlight different words in a file
 Plug 'junegunn/fzf'									    " Fast file searching

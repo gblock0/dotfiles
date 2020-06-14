@@ -30,7 +30,11 @@ syntax enable
 
 " load plugins from vim-plug
 source ~/.config/nvim/plugins.vim
-source ~/.config/nvim/plugin_configs.vim
+
+" load all plugin configs
+for f in split(glob('~/.config/nvim/pluginConfigs/*.vim'), '\n')
+    exe 'source' f
+endfor
 
 set background=dark
 colorscheme material

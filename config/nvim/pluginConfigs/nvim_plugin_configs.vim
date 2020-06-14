@@ -1,5 +1,7 @@
 """""""""""""""""""""""""""
 " nvim-colorizer.lua
 """""""""""""""""""""""""""
-lua require'colorizer-lua'
+if !has('gui-running')
+    lua require'colorizer-lua'
+endif
 
