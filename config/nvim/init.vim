@@ -28,13 +28,9 @@ endif
 " switch syntax highlighting on
 syntax enable
 
-" load plugins from vim-plug
+" load plugins from vim-plug,
+" plugin configs in ~/.config/nvim/plugin are loaded automatically
 source ~/.config/nvim/plugins.vim
-
-" load all plugin configs
-" for f in split(glob('~/.config/nvim/pluginConfigs/*.vim'), '\n')
-    " exe 'source' f
-" endfor
 
 set background=dark
 colorscheme material
