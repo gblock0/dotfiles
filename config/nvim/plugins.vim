@@ -24,10 +24,8 @@ if !has('gui_running')
 endif
 Plug 'gioele/vim-autoswap'								" Swap file handling
 Plug 'cohama/agit.vim'									" Git plugin to easily go through all your commits
-" Plug 'vim-airline/vim-airline'							" Replacement for Powerline
-" Plug 'vim-airline/vim-airline-themes'					" Airline themes
-Plug 'itchyny/lightline.vim'									" Git plugin to easily go through all your commits
-Plug 'niklaas/lightline-gitdiff'
+Plug 'itchyny/lightline.vim'						    " Status line plugin
+Plug 'gblock0/lightline-gitdiff'                        " Show git status in lightline.vim
 Plug 'nathanaelkane/vim-indent-guides'					" Indentation Guides
 Plug 'lfv89/vim-interestingwords'						" Highlight different words in a file
 Plug 'junegunn/fzf'									    " Fast file searching
