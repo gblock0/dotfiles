@@ -32,9 +32,9 @@ syntax enable
 source ~/.config/nvim/plugins.vim
 
 " load all plugin configs
-for f in split(glob('~/.config/nvim/pluginConfigs/*.vim'), '\n')
-    exe 'source' f
-endfor
+" for f in split(glob('~/.config/nvim/pluginConfigs/*.vim'), '\n')
+    " exe 'source' f
+" endfor
 
 set background=dark
 colorscheme material
