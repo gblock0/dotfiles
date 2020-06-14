@@ -5,6 +5,9 @@ let g:lightline = {
             \ 'right':
             \   [ ['lineinfo'], ['percent'], ['fileencoding', 'filetype']  ]
             \ },
+            \ 'component' : {
+            \   'lineinfo' : "%{printf('%03d/%03d', line('.'),  line('$'))}"
+            \ },
             \ 'component_function': {
             \   'gitbranch': 'FugitiveHead'
             \ },

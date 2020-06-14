@@ -1,6 +1,3 @@
-"""""""""""""""""""""""""""
-" coc.nvim
-"""""""""""""""""""""""""""
 let g:coc_global_extensions = [
             \ 'coc-bookmark',
             \ 'coc-css',
