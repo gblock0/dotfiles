@@ -28,7 +28,7 @@ nnoremap <Bslash>n :CocCommand explorer<CR>
 " If the last buffer open is coc-explorer, then close (neo)vim
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
-" **** THE FOLLOWING IS FROM THE COC.NVIM README ****
+" **** THE FOLLOWING IS ~MOSTLY~ FROM THE COC.NVIM README ****
 " TextEdit might fail if hidden is not set.
 set hidden
 
@@ -116,13 +116,6 @@ augroup mygroup
     autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-" Applying codeAction to the selected region.
-" Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
-
-" Remap keys for applying codeAction to the current line.
-nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
 
