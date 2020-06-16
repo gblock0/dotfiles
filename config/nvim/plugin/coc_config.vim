@@ -8,6 +8,7 @@ let g:coc_global_extensions = [
             \ 'coc-highlight',
             \ 'coc-html',
             \ 'coc-json',
+            \ 'coc-marketplace',
             \ 'coc-omnisharp',
             \ 'coc-pairs',
             \ 'coc-powershell',
@@ -15,6 +16,7 @@ let g:coc_global_extensions = [
             \ 'coc-snippets',
             \ 'coc-svg',
             \ 'coc-tsserver',
+            \ 'coc-vimlsp',
             \ ]
 
 nmap <F2> <Plug>(coc-rename)
