@@ -18,7 +18,8 @@ Plug 'gregsexton/MatchTag'								" Highlights the matching HTML tag
 Plug 'tpope/vim-fugitive'								" Git stuff
 Plug 'tpope/vim-surround'								" Change surrounding quotes, brackets, etc.
 Plug 'scrooloose/nerdcommenter'							" Easily comment/uncomment thing using shortcuts
-Plug 'tweekmonster/startuptime.vim'                   " Uncomment to test startup time
+Plug 'tweekmonster/startuptime.vim'                     " Uncomment to test startup time
+Plug 'jiangmiao/auto-pairs'
 if !has('gui_running')
 	Plug 'airblade/vim-gitgutter'					    " Allows stuff in the gutter
 endif
@@ -30,6 +31,6 @@ Plug 'nathanaelkane/vim-indent-guides'					" Indentation Guides
 Plug 'lfv89/vim-interestingwords'						" Highlight different words in a file
 Plug 'junegunn/fzf'									    " Fast file searching
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vader.vim'
+Plug 'junegunn/vader.vim', { 'for': 'vader' }
 
 call plug#end()
