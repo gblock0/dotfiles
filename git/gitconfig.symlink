@@ -4,8 +4,6 @@
     email = gblock0@gmail.com
 [github]
     user = gblock0
-# [init]
-     # templatedir = ~/.dotfiles/git/templates
 [alias]
     # list all aliases
     la = "!git config -l | grep alias | cut -c 7-"
@@ -67,8 +65,6 @@
     rg = "!sh -c 'git ls-files --others --exclude-standard | grep $1 | xargs rm' -"
 
     # Kaleidoscope commands
-    #dkal = difftool -y -t Kaleidoscope
-    #remotes = remote -v
 [color]
     diff = auto
     status = auto
@@ -117,10 +113,5 @@
     lineNumber = true
 [credential]
 	helper = osxkeychain
-#[difftool "Kaleidoscope"]
-#	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-#[mergetool "Kaleidoscope"]
-#	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-#	trustexitcode = true
 [url "git@github.com:"]
 	insteadOf = https://github.com/

@@ -9,6 +9,13 @@ export DOTFILES=$HOME/.dotfiles
 export ZSH=$DOTFILES/zsh
 export EVENT_NOKQUEUE=1
 
+# Detect which `ls` flavor is in use
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+    colorflag="--color"
+else # macOS `ls`
+    colorflag="-G"
+fi
+
 # load all zsh config files
 for config ($ZSH/**/*.zsh) source $config
 

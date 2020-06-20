@@ -2,16 +2,22 @@
 # functions
 ####################
 
-# Create a new directory and enter it
+# create a new directory and enter it
 function md() {
     mkdir -p "$@" && cd "$@"
 }
 
 # open dotfiles in nvim
 function nrc() {
-  cd ~/.dotfiles && nvim -c GFiles
+    cd ~/.dotfiles && nvim -c GFiles
 }
 
+# remove all docker images
 function drmi() {
 	docker rmi -f $(docker images | grep '^<none>' | awk '{print $3}')
+}
+
+# cd into dotfiles folder
+function cdd() {
+    cd ~/.dotfiles
 }

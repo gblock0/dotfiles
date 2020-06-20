@@ -46,13 +46,10 @@ set-window-option -g clock-mode-colour $tm_color_active
 # set 24 bit color
 # set -ag terminal-overrides ',*:Tc'
 
-tm_spotify="#[fg=$tm_color_blue]#(osascript ~/.dotfiles/applescripts/spotify.scpt)"
-tm_itunes="#[fg=$tm_color_blue]#(osascript ~/.dotfiles/applescripts/itunes.scpt)"
-tm_music="#[fg=$tm_color_blue]#(osascript ~/.dotfiles/applescripts/appleMusic.scpt)"
+tm_music="#[fg=$tm_color_blue]#(osascript ~/.dotfiles/applescripts/music.scpt)"
 battery_percent="#(~/.dotfiles/bin/battery_indicator.sh)"
 
 tm_date="#[fg=$tm_color_red] %a %h-%d %H:%M"
-# tm_host="#[fg=$tm_color_feature,bold]#h"
 tm_session_name="#[fg=$tm_color_blue,bold]$tm_icon #S"
 
 set -g status-left $tm_session_name' #{prefix_highlight} '

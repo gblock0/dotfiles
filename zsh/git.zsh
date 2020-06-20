@@ -1,6 +1,7 @@
 # git aliases
 alias gd='git diff'
-alias gs='git s'
+alias gs='git status'
+alias gst='git status'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 
 function g() {
@@ -9,7 +10,7 @@ function g() {
         git $@
     else
         # otherwise, run git status
-        git s
+        git status
     fi
 }
 

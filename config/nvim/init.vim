@@ -120,7 +120,6 @@ nnoremap <leader>g :sus<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => User Interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" set guifont=JetBrainsMono\ Nerd\ Font\ Mono:h12
 set guifont=SauceCodePro\ Nerd\ Font\ Mono:h12
 
 set scrolloff=3 " lines of text around cursor
