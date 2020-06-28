@@ -32,5 +32,6 @@ Plug 'lfv89/vim-interestingwords'						" Highlight different words in a file
 Plug 'junegunn/fzf'									    " Fast file searching
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vader.vim', { 'for': 'vader' }
+Plug 'DanilaMihailov/beacon.nvim'
 
 call plug#end()
