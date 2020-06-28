@@ -102,7 +102,7 @@
     whitespace = nowarn
 [core]
     excludesfile = ~/.gitignore_global
-    pager = less -FXRS -x2
+    pager = delta --plus-color="#012800" --minus-color="#340001" --theme='base16'
     editor = nvim
 [rerere]
     enabled = true
@@ -115,3 +115,5 @@
 	helper = osxkeychain
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[interactive]
+    diffFilter = delta --color-only
