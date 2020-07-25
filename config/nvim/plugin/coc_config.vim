@@ -7,6 +7,7 @@ let g:coc_global_extensions = [
             \ 'coc-git',
             \ 'coc-highlight',
             \ 'coc-html',
+            \ 'coc-jedi',
             \ 'coc-json',
             \ 'coc-marketplace',
             \ 'coc-omnisharp',
