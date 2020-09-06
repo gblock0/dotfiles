@@ -2,6 +2,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 "Themes
 Plug 'kaicataldo/material.vim'
+Plug 'franbach/miramare'
 
 " Syntax Plugins
 

@@ -33,7 +33,13 @@ syntax enable
 source ~/.config/nvim/plugins.vim
 
 set background=dark
-colorscheme material
+
+" the configuration options should be placed before `colorscheme miramare`
+let g:miramare_enable_italic = 1
+let g:miramare_disable_italic_comment = 1
+
+colorscheme miramare
+" colorscheme material
 
 " Abbreviations
 abbr funciton function
@@ -176,6 +182,7 @@ set guioptions-=r
 " do not Wrap long lines
 set nowrap
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups, and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -237,10 +244,10 @@ nnoremap <leader>v V`]
 nmap <leader>l :IndentGuidesToggle<cr>
 
 " Create a new vsplit, switch to it and open CtrlP
-nnoremap <leader>w <C-w>v<C-w>l :Files<cr>
+nnoremap <leader>w <C-w>v<C-w>l :GFiles<cr>
 
 " Create a new split, switch to it and open CtrlP
-nnoremap <leader>s <C-w>s<C-w>j :Files<cr>
+nnoremap <leader>s <C-w>s<C-w>j :GFiles<cr>
 
 " scroll the viewport faster
 nnoremap <C-e> 3<C-e>
