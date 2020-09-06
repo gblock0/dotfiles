@@ -8,7 +8,7 @@ nvim/.config/nvim/cache/
 npm-debug.log
 plug.vim.old
 tags
-zsh/localrc.symlink
+zsh/.localrc
 tmux/.tmux/plugins/
 config/configstore
 .config/configstore
