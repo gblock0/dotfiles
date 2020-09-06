@@ -17,3 +17,4 @@ brew install fzf
 brew install romkatv/powerlevel10k/powerlevel10k
 brew install neovim
 brew install git-delta
+brew install stow

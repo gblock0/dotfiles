@@ -9,6 +9,5 @@ npm-debug.log
 plug.vim.old
 tags
 zsh/.localrc
+zsh/**/plugins
 tmux/.tmux/plugins/
-config/configstore
-.config/configstore

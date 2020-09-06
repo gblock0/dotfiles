@@ -46,8 +46,8 @@ set-window-option -g clock-mode-colour $tm_color_active
 # set 24 bit color
 # set -ag terminal-overrides ',*:Tc'
 
-tm_music="#[fg=$tm_color_blue]#(osascript ~/.dotfiles/tmux/bin/applescripts/music.scpt)"
-battery_percent="#(~/.dotfiles/tmux/bin/bash/battery_indicator.sh)"
+tm_music="#[fg=$tm_color_blue]#(osascript ~/.tmux/bin/applescripts/music.scpt)"
+battery_percent="#(~/.tmux/bin/bash/battery_indicator.sh)"
 
 tm_date="#[fg=$tm_color_red] %a %h-%d %H:%M"
 tm_session_name="#[fg=$tm_color_blue,bold]$tm_icon #S"
