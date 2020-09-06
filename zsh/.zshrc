@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export DOTFILES=$HOME/.dotfiles
-export ZSH=$DOTFILES/zsh
+export ZSH=$HOME/.zsh
 export EVENT_NOKQUEUE=1
 
 # Detect which `ls` flavor is in use
@@ -32,7 +32,7 @@ export VISUAL='nvim'
 export EDITOR='$VISUAL'
 
 # adding custom scripts to path directory
-export PATH=$DOTFILES/bin:$PATH
+export PATH=~/.tmux/bin/bash:$PATH
 
 # Add sbin to path for Homebrew
 export PATH="/usr/local/sbin:$PATH"
@@ -42,7 +42,7 @@ if [ -z "$BACKGROUND" ]; then
     export BACKGROUND="dark"
 fi
 
-BASE16_SHELL="$DOTFILES/.config/base16-shell/$THEME.$BACKGROUND.sh"
+BASE16_SHELL="$ZSH/plugins/base16-shell/$THEME.$BACKGROUND.sh"
 source $BASE16_SHELL
 
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme

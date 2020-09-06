@@ -5,13 +5,14 @@ echo "installing dotfiles"
 echo "initializing submodule(s)"
 git submodule update --init --recursive
 
-source install/link.sh
-
 echo "installing homebrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 echo "brewing all the things"
 source install/brew.sh
+
+echo "running stow (with --verbose=5)"
+stow --verbose=5 -R ag alacritty git install nvim tmux vim zsh
 
 echo "installing node (from nvm)"
 nvm install stable

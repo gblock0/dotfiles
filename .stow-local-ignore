@@ -1,0 +1,9 @@
+install/
+install.sh
+deleteOldDotfiles.sh
+.editorconfig
+.gitmodules
+.gitattributes
+.git
+.git-crypt
+
