@@ -1,6 +1,5 @@
 install/
 install.sh
-deleteOldDotfiles.sh
 .editorconfig
 .gitmodules
 .gitattributes
