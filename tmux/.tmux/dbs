@@ -1,0 +1,23 @@
+#!/bin/zsh
+
+SESSION_NAME=dbs
+RNEWBACK=~/radish/new-backend
+
+if ! tmux has-session -t $SESSION_NAME; then
+	TMUX= tmux new-session -d -s $SESSION_NAME -n redis1/mongo -c $RNEWBACK
+	tmux new-window -t$SESSION_NAME:2 -n otherRedis
+
+	tmux select-window -t$SESSION_NAME:1
+	tmux send-keys -t$SESSION_NAME:1 "redis-server ~/radish/redis_local.conf" "C-m"
+	tmux split-window -h
+	tmux send-keys -t$SESSION_NAME:1 "mongod" "C-m"
+
+	tmux select-window -t$SESSION_NAME:2
+	tmux send-keys -t$SESSION_NAME:2 "redis-server ~/radish/redis_slave.conf" "C-m"
+	tmux split-window -h
+	tmux send-keys -t$SESSION_NAME:2 "redis-server ~/radish/redis_master.conf" "C-m"
+
+	tmux select-window -t$SESSION_NAME:1
+fi
+tmux -2 attach -t $SESSION_NAME
+

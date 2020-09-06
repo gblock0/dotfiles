@@ -1,0 +1,17 @@
+#!/bin/zsh
+
+SESSION_NAME=radish
+RAPP=~/radish/new-app
+RADMIN=~/radish/admin
+RNEWBACK=~/radish/backend
+
+
+if ! tmux has-session -t $SESSION_NAME; then
+	TMUX= tmux new-session -d -s $SESSION_NAME -n backend -c $RNEWBACK
+	tmux new-window -t$SESSION_NAME:2 -c $RAPP -n app
+	tmux new-window -t$SESSION_NAME:3 -c $RADMIN -n admin
+
+	tmux select-window -t$SESSION_NAME:1
+fi
+tmux -2 attach -t $SESSION_NAME
+

@@ -1,0 +1,35 @@
+#!/bin/zsh
+
+SESSION_NAME=servers
+RBUILD=~/radish/build
+RAPP=~/radish/restock-app
+RADMIN=~/radish/admin
+RROUTING=~/radish/routing-service
+RDRIVERLOCATION=~/radish/driverLocation-service
+RNEWBACK=~/radish/backend
+RCRONSERVICE=~/radish/cron-service
+
+
+if ! tmux has-session -t $SESSION_NAME; then
+	TMUX= tmux new-session -d -s $SESSION_NAME -n shell -c $RNEWBACK
+	tmux new-window -t$SESSION_NAME:2 -c $RNEWBACK -n main-servers
+	tmux new-window -t$SESSION_NAME:3 -c $RCRONSERVICE -n micro-services
+
+	tmux select-window -t$SESSION_NAME:1
+	tmux split-window -h -c $RAPP
+
+	tmux select-window -t$SESSION_NAME:2
+	tmux send-keys -t$SESSION_NAME:2 "nodemon app.js" "C-m"
+
+	tmux select-pane -t 1
+	tmux split-window -h -c $RADMIN
+	tmux send-keys -t$SESSION_NAME:2 "docker-machine start dev; eval \$(docker-machine env dev);docker rm -f admin; docker build -t admin --no-cache .; docker run -v ~/radish/admin/public:/usr/share/nginx/html -d -p 80:80 --name=admin admin; grunt dev" "C-m"
+
+	tmux select-window -t$SESSION_NAME:3
+	tmux split-window -h -c $RROUTING
+	tmux split-window -h -c $RDRIVERLOCATION
+
+	tmux select-window -t$SESSION_NAME:2
+fi
+tmux -2 attach -t $SESSION_NAME
+
