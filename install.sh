@@ -12,7 +12,7 @@ echo "brewing all the things"
 source install/brew.sh
 
 echo "running stow (with --verbose=5)"
-stow --verbose=5 -S ag alacritty git install nvim tmux vim zsh
+stow --verbose=5 -R ag alacritty git install nvim tmux vim zsh
 
 echo "installing node (from nvm)"
 nvm install stable
