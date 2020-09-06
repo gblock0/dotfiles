@@ -8,6 +8,6 @@ nvim/.config/nvim/cache/
 npm-debug.log
 plug.vim.old
 tags
-zsh/.localrc
+.localrc
 zsh/**/plugins
 tmux/.tmux/plugins/
