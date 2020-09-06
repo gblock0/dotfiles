@@ -1,27 +1,32 @@
-# Dotfiles
+# Welcome to my Dotfiles!
 
-Dotfiles install idea taken from [Nick Nisi](http://www.github.com/nicknisi).
-
-## Contents
-
-+ zsh configuration
-+ (neo)vim configuration
-+ tmux configuration
-+ git configuration
-+ unix configuration
-+ Node.js setup (nvm)
-+ Homebrew files (Brew.sh)
+## What's in this repo?
+- [Alacritty](https://github.com/alacritty/alacritty) configuration
+- git configuration
+- `install.sh`
+    1. downloads/updates any submodules
+    1. installs homebrew
+    1. downloads my default homebrew packages ([`install\brew.sh`](https://github.com/gblock0/dotfiles/blob/master/install/brew.sh))
+    1. installs latest stable node
+    1. downloads [vim-plug](https://github.com/junegunn/vim-plug)
+    1. downloads the [tmux plugin manager](https://github.com/tmux-plugins/tpm)
+    1. if running on OS X, it will update some settings ([`install\osx.sh`](https://github.com/gblock0/dotfiles/blob/master/install/osx.sh))
+    1. whichs the default shell to `zsh`
+    1. opens neovim and runs `PlugInstall`
+- (neo)vim configuration
+- [tmux](https://github.com/tmux/tmux/wiki) configuration
+- [zsh](https://ohmyz.sh/) configuration with [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
 
 ## Install
 
 1. `git clone https://github.com/gblock0/dotfiles.git ~/.dotfiles`
 1. `cd ~/.dotfiles`
 1. `./install.sh`
-1. Download a [Nerd Font](https://www.nerdfonts.com/) (my preference is SauceCodePro)
-1. Change terminal font to downloaded Nerd Font
+1. Download a [Nerd Font](https://www.nerdfonts.com/) (I'm deciding between SauceCodePro and BlexMono)
+1. Change terminal font to downloaded Nerd Font **NOTE: If you're using [Alacritty](https://github.com/alacritty/alacritty) you can skip this step**
 1. Change keyboard modifier keys to make `Caps Lock` be `Ctrl`
 
 ## ZSH Plugins
 
-By default, the `.zshrc` file will source any file within `.dotfiles/zsh` that
+By default, the `.zshrc` file will source any `.zsh` file within `~/.zsh` that
 have the `.zsh` extension.
