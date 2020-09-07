@@ -266,6 +266,10 @@ nnoremap <leader>; maA;<esc>`a:wa<CR>
 
 nnoremap p p`[v`]=
 
+" Map F1 to the Esc key
+map <F1> <Esc>
+imap <F1> <Esc>
+
 
 let g:python_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
