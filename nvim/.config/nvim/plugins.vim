@@ -31,6 +31,7 @@ Plug 'nathanaelkane/vim-indent-guides'					" Indentation Guides
 Plug 'lfv89/vim-interestingwords'						" Highlight different words in a file
 Plug 'junegunn/fzf'									    " Fast file searching
 Plug 'junegunn/fzf.vim'
+Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release' }
 Plug 'junegunn/vader.vim', { 'for': 'vader' }
 Plug 'DanilaMihailov/beacon.nvim'
 

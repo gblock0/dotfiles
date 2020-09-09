@@ -4,6 +4,7 @@ let g:coc_global_extensions = [
             \ 'coc-eslint',
             \ 'coc-explorer',
             \ 'coc-floaterm',
+            \ 'coc-fzf-preview',
             \ 'coc-git',
             \ 'coc-highlight',
             \ 'coc-html',
@@ -154,5 +155,3 @@ nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
 nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list.
-nnoremap <silent> <space>p  :<C-u>CocListResume<CR>

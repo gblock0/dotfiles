@@ -159,19 +159,6 @@ set tm=500
 set number
 set relativenumber
 
-augroup linenumbers
-	autocmd!
-	autocmd BufEnter *    :set relativenumber
-	autocmd BufLeave *    :set number norelativenumber
-	autocmd WinEnter *    :set relativenumber
-	autocmd WinLeave *    :set number norelativenumber
-	autocmd InsertEnter * :set number norelativenumber
-	autocmd InsertLeave * :set relativenumber
-	autocmd FocusLost *   :set number norelativenumber
-	autocmd FocusGained * :set relativenumber
-augroup END
-
-
 " Highlight current line
 set cursorline
 
@@ -243,10 +230,10 @@ nnoremap <leader>v V`]
 nmap <leader>l :IndentGuidesToggle<cr>
 
 " Create a new vsplit, switch to it and open CtrlP
-nnoremap <leader>w <C-w>v<C-w>l :GFiles<cr>
+nnoremap <leader>w <C-w>v<C-w>l :FzfPreviewProjectFiles<cr>
 
 " Create a new split, switch to it and open CtrlP
-nnoremap <leader>s <C-w>s<C-w>j :GFiles<cr>
+nnoremap <leader>s <C-w>s<C-w>j :FzfPreviewProjectFiles<cr>
 
 " scroll the viewport faster
 nnoremap <C-e> 3<C-e>
