@@ -122,6 +122,9 @@ cnoreabbrev <expr> s ((getcmdtype() is# ':' && getcmdline() is# 's')?('sus'):('s
 " Remap Space-g to :sus
 nnoremap <leader>g :sus<CR>
 
+" Toggle relative line numbers
+nnoremap <leader>rn :set rnu!<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => User Interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -245,7 +248,7 @@ nmap \t :set ts=2 sts=2 sw=2 noet<cr>
 nmap \s :set ts=2 sts=2 sw=2 et<cr>
 
 " Reload vimrc
-nnoremap <leader>r :so ~/.config/nvim/init.vim<CR>:noh<CR>:echo "init.vim Reload!"<CR>
+nnoremap <leader>re :so ~/.config/nvim/init.vim<CR>:noh<CR>:echo "init.vim Reload!"<CR>
 
 " Add semi colon to the end of current line and return cursor to position
 nnoremap <leader>; maA;<esc>`a:wa<CR>
