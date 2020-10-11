@@ -38,6 +38,11 @@ set background=dark
 let g:miramare_enable_italic = 1
 let g:miramare_disable_italic_comment = 1
 
+if has('nvim')
+	let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+	lua require'nvim_lsp'.tsserver.setup{ on_attach=require'completion'.on_attach }
+endif
+
 colorscheme material
 
 " Abbreviations
