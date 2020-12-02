@@ -60,6 +60,8 @@ set backspace=indent,eol,start
 set history=1000 " change history to 1000
 set textwidth=0
 
+au BufRead,BufNewFile *.md setlocal textwidth=80
+
 " Tab control
 set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
 set tabstop=4 " the visible width of tabs
