@@ -36,4 +36,6 @@ Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release' }
 Plug 'junegunn/vader.vim', { 'for': 'vader' }
 Plug 'DanilaMihailov/beacon.nvim'
 
+
+
 call plug#end()
