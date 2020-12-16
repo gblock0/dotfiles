@@ -7,12 +7,13 @@ Plug 'kaicataldo/material.vim'
 
 if has('nvim')
 	Plug 'norcalli/nvim-colorizer.lua'
+	Plug 'neovim/nvim-lspconfig'
+	Plug 'nvim-lua/completion-nvim'
 endif
 
 Plug 'sheerun/vim-polyglot'								" A collection of language packs for vim
 
 " Utilities
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'christoomey/vim-tmux-navigator'					" Allows navigation between vim and tmux
 Plug 'gregsexton/MatchTag'								" Highlights the matching HTML tag
 Plug 'tpope/vim-fugitive'								" Git stuff
