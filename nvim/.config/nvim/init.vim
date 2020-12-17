@@ -32,11 +32,22 @@ syntax enable
 " plugin configs in ~/.config/nvim/plugin are loaded automatically
 source ~/.config/nvim/plugins.vim
 
+if has('nvim')
+    let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+    set completeopt=menuone,noinsert,noselect
+    lua require'lspconfig'.tsserver.setup{ on_attach=require'completion'.on_attach }
+endif
+
 set background=dark
 
 " the configuration options should be placed before `colorscheme miramare`
 let g:miramare_enable_italic = 1
 let g:miramare_disable_italic_comment = 1
+
+if has('nvim')
+	let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+	lua require'lspconfig'.tsserver.setup{ on_attach=require'completion'.on_attach }
+endif
 
 colorscheme material
 
