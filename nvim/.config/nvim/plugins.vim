@@ -7,8 +7,14 @@ Plug 'kaicataldo/material.vim'
 
 if has('nvim')
 	Plug 'norcalli/nvim-colorizer.lua'
+
+    " nvim-lsp
 	Plug 'neovim/nvim-lspconfig'
 	Plug 'nvim-lua/completion-nvim'
+
+    "nvim-treesitter
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/playground'
 endif
 
 Plug 'sheerun/vim-polyglot'								" A collection of language packs for vim
