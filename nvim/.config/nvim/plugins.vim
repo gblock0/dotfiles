@@ -1,7 +1,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
 "Themes
-Plug 'kaicataldo/material.vim'
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 
 " Syntax Plugins
 
@@ -16,8 +16,6 @@ if has('nvim')
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'nvim-treesitter/playground'
 endif
-
-Plug 'sheerun/vim-polyglot'								" A collection of language packs for vim
 
 " Utilities
 Plug 'christoomey/vim-tmux-navigator'					" Allows navigation between vim and tmux
