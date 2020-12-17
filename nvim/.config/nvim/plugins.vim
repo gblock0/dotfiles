@@ -1,7 +1,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
 "Themes
-Plug 'kaicataldo/material.vim'
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 
 " Syntax Plugins
 
@@ -12,12 +12,17 @@ if has('nvim')
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
+
+    " nvim-lsp
+	Plug 'neovim/nvim-lspconfig'
+	Plug 'nvim-lua/completion-nvim'
+
+    "nvim-treesitter
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/playground'
 endif
 
-Plug 'sheerun/vim-polyglot'								" A collection of language packs for vim
-
 " Utilities
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'christoomey/vim-tmux-navigator'					" Allows navigation between vim and tmux
 Plug 'gregsexton/MatchTag'								" Highlights the matching HTML tag
 Plug 'tpope/vim-fugitive'								" Git stuff
@@ -39,5 +44,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release' }
 Plug 'junegunn/vader.vim', { 'for': 'vader' }
 Plug 'DanilaMihailov/beacon.nvim'
+
+
 
 call plug#end()
