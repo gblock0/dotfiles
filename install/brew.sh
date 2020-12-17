@@ -14,7 +14,8 @@ brew install tmux
 brew install zsh
 brew install fzf
 brew install romkatv/powerlevel10k/powerlevel10k
-brew install neovim
+brew install --build-from-source --HEAD luajit
+brew install --build-from-source --HEAD neovim
 brew install git-delta
 brew install stow
 brew cask install alacritty
