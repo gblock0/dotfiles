@@ -7,6 +7,11 @@ Plug 'kaicataldo/material.vim'
 
 if has('nvim')
 	Plug 'norcalli/nvim-colorizer.lua'
+
+    " Telescope setup
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
 endif
 
 Plug 'sheerun/vim-polyglot'								" A collection of language packs for vim

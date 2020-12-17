@@ -3,8 +3,6 @@ let g:coc_global_extensions = [
             \ 'coc-css',
             \ 'coc-eslint',
             \ 'coc-explorer',
-            \ 'coc-floaterm',
-            \ 'coc-fzf-preview',
             \ 'coc-git',
             \ 'coc-highlight',
             \ 'coc-html',
