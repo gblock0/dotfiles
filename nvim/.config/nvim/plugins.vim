@@ -1,9 +1,12 @@
 call plug#begin('~/.config/nvim/plugged')
 
-"Themes
-Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+"Current Theme
+Plug 'mhartington/oceanic-next'
 
-" Syntax Plugins
+" Testing themes
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+Plug 'cocopon/iceberg.vim'
+Plug 'ChristianChiarulli/nvcode-color-schemes.vim'
 
 if has('nvim')
 	Plug 'norcalli/nvim-colorizer.lua'
@@ -23,6 +26,7 @@ if has('nvim')
 endif
 
 " Utilities
+Plug 'preservim/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'					" Allows navigation between vim and tmux
 Plug 'gregsexton/MatchTag'								" Highlights the matching HTML tag
 Plug 'tpope/vim-fugitive'								" Git stuff
