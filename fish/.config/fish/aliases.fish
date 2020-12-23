@@ -1,16 +1,8 @@
 # reload zsh config
-alias reload!="source ~/.zshrc"
+alias reload!="source ~/.config/fish/config.fish"
 
 alias tc="~/.truecolor.sh"
 alias tm="~/.tmux/bin/bash/tm.sh"
-
-# Filesystem aliases
-alias l="ls -lah ${colorflag}"
-alias ls="ls -F ${colorflag}"
-alias la="ls -AF ${colorflag}"
-alias ll="ls -lFh ${colorflag}"
-alias lld="ls -l | grep ^d"
-alias rmf="rm -rf"
 
 # Helpers
 alias du="du -h -c" # calculate disk usage for a folder
@@ -30,3 +22,9 @@ alias tmuxkill="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, lengt
 
 # Delete all local branches that have been merged locally
 alias gbpurge="git branch --merged | grep -v "\*" | grep -v "master" | xargs -n 1 git branch -d"
+
+# git aliases
+alias gd='git diff'
+alias gs='git status'
+alias gst='git status'
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"

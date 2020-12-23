@@ -12,7 +12,7 @@ echo "brewing all the things"
 source install/brew.sh
 
 echo "running stow (with --verbose=5)"
-stow --verbose=5 -R ag alacritty git install nvim tmux vim zsh
+stow --verbose=5 -R ag alacritty git install nvim tmux vim zsh fish
 
 echo "installing node (from nvm)"
 nvm install stable
@@ -31,6 +31,6 @@ if [ "$(uname)" == "Darwin" ]; then
 fi
 
 echo "configuring zsh as default shell"
-chsh -s $(which zsh)
+chsh -s $(which fish)
 
 nvim -c "PlugInstall"

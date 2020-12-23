@@ -27,6 +27,7 @@ endif
 
 " Utilities
 Plug 'preservim/nerdtree'
+Plug 'dag/vim-fish'
 Plug 'christoomey/vim-tmux-navigator'					" Allows navigation between vim and tmux
 Plug 'gregsexton/MatchTag'								" Highlights the matching HTML tag
 Plug 'tpope/vim-fugitive'								" Git stuff
