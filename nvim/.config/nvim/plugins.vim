@@ -26,7 +26,14 @@ if has('nvim')
 endif
 
 " Utilities
-Plug 'preservim/nerdtree'
+
+" {{{ Fern plugins
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern-git-status.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+" }}}
+
 Plug 'dag/vim-fish'
 Plug 'christoomey/vim-tmux-navigator'					" Allows navigation between vim and tmux
 Plug 'gregsexton/MatchTag'								" Highlights the matching HTML tag
