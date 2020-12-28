@@ -10,8 +10,6 @@ let g:lightline = {
             \ },
             \ 'component_function': {
             \   'gitbranch': 'FugitiveHead',
-            \   'cocstatus': 'coc#status',
-            \   'currentfunction': 'CocCurrentFunction'
             \ },
             \ 'component_expand': {
             \   'gitdiff': 'lightline#gitdiff#get',
@@ -20,10 +18,6 @@ let g:lightline = {
             \   'gitdiff': 'middle',
             \ },
             \ }
-
-function! CocCurrentFunction()
-    return get(b:, 'coc_current_function', '')
-endfunction
 
 let g:lightline#gitdiff#indicator_added = '+'
 let g:lightline#gitdiff#indicator_deleted = '-'
