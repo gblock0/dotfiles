@@ -1,5 +1,5 @@
 function g
-    if count $argv > 0
+    if count $argv > /dev/null
         # if there are arguments, send them to git
         git $argv
     else
