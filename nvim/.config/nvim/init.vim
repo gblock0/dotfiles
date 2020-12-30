@@ -20,11 +20,9 @@ if has('nvim')
     let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
     set completeopt=menuone,noinsert,noselect
     lua require'lspconfig'.tsserver.setup{ on_attach=require'completion'.on_attach }
+    lua require'lspconfig'.pyls.setup{ on_attach=require'completion'.on_attach }
 
     lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
-
-    let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
-    lua require'lspconfig'.tsserver.setup{ on_attach=require'completion'.on_attach }
 endif
 
 
