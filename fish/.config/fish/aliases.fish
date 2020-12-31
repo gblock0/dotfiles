@@ -1,7 +1,7 @@
 # reload zsh config
 alias reload!="source ~/.config/fish/config.fish"
 
-alias tc="~/.truecolor.sh"
+alias tc="~/.dotfiles/truecolor.sh"
 alias tm="~/.tmux/bin/bash/tm.sh"
 
 # Helpers
