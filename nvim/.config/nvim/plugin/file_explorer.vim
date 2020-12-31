@@ -21,9 +21,8 @@ function! FernInit() abort
     nmap <buffer> d <Plug>(fern-action-remove)
     nmap <buffer> m <Plug>(fern-action-move)
     nmap <buffer> r <Plug>(fern-action-rename)
-    nmap <buffer> H <Plug>(fern-action-hidden-toggle)
+    nmap <buffer> I <Plug>(fern-action-hidden-toggle)
     nmap <buffer> R <Plug>(fern-action-reload)
-    "nmap <buffer> k <Plug>(fern-action-mark-toggle)
     nmap <buffer> s <Plug>(fern-action-open:split)
     nmap <buffer> w <Plug>(fern-action-open:vsplit)
 endfunction
