@@ -3,11 +3,6 @@ call plug#begin('~/.config/nvim/plugged')
 "Current Theme
 Plug 'mhartington/oceanic-next'
 
-" Testing themes
-Plug 'kaicataldo/material.vim', { 'branch': 'main' }
-Plug 'cocopon/iceberg.vim'
-Plug 'ChristianChiarulli/nvcode-color-schemes.vim'
-
 if has('nvim')
 	Plug 'norcalli/nvim-colorizer.lua'
 
@@ -51,9 +46,8 @@ Plug 'itchyny/lightline.vim'						    " Status line plugin
 Plug 'niklaas/lightline-gitdiff'                        " Show git status in lightline.vim
 Plug 'nathanaelkane/vim-indent-guides'					" Indentation Guides
 Plug 'lfv89/vim-interestingwords'						" Highlight different words in a file
-Plug 'junegunn/fzf'									    " Fast file searching
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }		" Fast file searching
 Plug 'junegunn/fzf.vim'
-Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release' }
 Plug 'junegunn/vader.vim', { 'for': 'vader' }
 Plug 'DanilaMihailov/beacon.nvim'
 
