@@ -113,9 +113,6 @@ cnoreabbrev <expr> Q ((getcmdtype() is# ':' && getcmdline() is# 'Q')?('q'):('Q')
 cnoreabbrev <expr> WQ ((getcmdtype() is# ':' && getcmdline() is# 'WQ')?('wq'):('WQ'))
 cnoreabbrev <expr> Qa ((getcmdtype() is# ':' && getcmdline() is# 'Qa')?('qa'):('Qa'))
 
-" Toggle relative line numbers
-nnoremap <leader>rn :set rnu!<cr>
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => User Interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -128,7 +125,6 @@ set noshowmode " don't show which mode disabled for PowerLine
 set wildmode=list:longest " complete files like a shell
 set shell=$SHELL
 set cmdheight=1 " command bar height
-
 
 set title " set terminal title
 
@@ -238,7 +234,7 @@ nnoremap <leader>= <C-W>=
 nmap \t :set ts=2 sts=2 sw=2 noet<cr>
 nmap \s :set ts=2 sts=2 sw=2 et<cr>
 
-" Reload vimrc
+" Reload init.vim
 nnoremap <leader>re :so ~/.config/nvim/init.vim<CR>:noh<CR>:echo "init.vim Reload!"<CR>
 
 " Add semi colon to the end of current line and return cursor to position
