@@ -82,23 +82,26 @@ set clipboard=unnamed
 " highlight conflicts
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
-" file type specific settings
-if has('autocmd') && !exists('autocommands_loaded')
+augroup GB_SETTINGS
+    autocmd!
+    source ~/.config/nvim/filetype_configs.vim
+    let autocommands_loaded = 1
 
-	source ~/.config/nvim/filetype_configs.vim
-	let autocommands_loaded = 1
+    " automatically resize panes on resize
+    autocmd VimResized * exe 'normal! \<c-w>='
 
-	" automatically resize panes on resize
-	autocmd VimResized * exe 'normal! \<c-w>='
-endif
+    " Highlight trailing whitespace
+    highlight ExtraWhitespace ctermbg=red guibg=red
 
-" Highlight trailing whitespace
-highlight ExtraWhitespace ctermbg=red guibg=red
+    autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+    autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+    autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+    autocmd BufWinLeave * call clearmatches()
 
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+    " Disable auto-commenting
+    autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+augroup END
+
 
 " code folding settings
 set foldmethod=syntax " fold based on indent
@@ -201,9 +204,6 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
 inoremap jj <ESC>
-
-" Disable auto-commenting
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " shortcut to save
 nmap <leader><leader> :wa<cr>
