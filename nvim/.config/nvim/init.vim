@@ -26,7 +26,7 @@ if has('nvim')
 endif
 
 
-if (has("termguicolors"))
+if (has('termguicolors'))
     set termguicolors
 endif
 
