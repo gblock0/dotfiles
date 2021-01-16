@@ -20,7 +20,7 @@ if has('nvim')
     let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
     set completeopt=menuone,noinsert,noselect
     lua require'lspconfig'.tsserver.setup{ on_attach=require'completion'.on_attach }
-    lua require'lspconfig'.pyls.setup{ on_attach=require'completion'.on_attach }
+    lua require'lspconfig'.pyright.setup{ on_attach=require'completion'.on_attach }
 
     lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
 endif
@@ -220,10 +220,10 @@ nnoremap <leader>v V`]
 nmap <leader>l :IndentGuidesToggle<cr>
 
 " Create a new vsplit, switch to it and open CtrlP
-nnoremap <leader>w <C-w>v<C-w>l :FzfPreviewProjectFiles<cr>
+nnoremap <leader>w <C-w>v<C-w>l :GFiles<cr>
 
 " Create a new split, switch to it and open CtrlP
-nnoremap <leader>s <C-w>s<C-w>j :FzfPreviewProjectFiles<cr>
+nnoremap <leader>s <C-w>s<C-w>j :GFiles<cr>
 
 " scroll the viewport faster
 nnoremap <C-e> 3<C-e>
