@@ -1,7 +1,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
 "Current Theme
-Plug 'mhartington/oceanic-next'
+Plug 'gblock0/oceanic-next', { 'branch': 'AddLspColors' }
 
 if has('nvim')
 	Plug 'norcalli/nvim-colorizer.lua'
