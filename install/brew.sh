@@ -8,10 +8,10 @@ brew install wget
 brew install ripgrep
 
 # development tools
+brew install node
 brew install git
 brew install reattach-to-user-namespace
 brew install tmux
-brew install zsh
 brew install fzf
 brew install fish
 brew install romkatv/powerlevel10k/powerlevel10k

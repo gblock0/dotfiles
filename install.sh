@@ -2,28 +2,26 @@
 
 echo "installing dotfiles"
 
-echo "initializing submodule(s)"
-git submodule update --init --recursive
+if [ ! -x "$(command -v brew)" ]; then
+    echo "installing homebrew"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-echo "installing homebrew"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    echo "brewing all the things"
+    source install/brew.sh
+else
+    echo "homebrew already install! skipping..."
+fi
 
-echo "brewing all the things"
-source install/brew.sh
+echo "running stow (with --verbose=3)"
+stow --verbose=3 -R alacritty fish git karabiner nvim tmux
 
-echo "running stow (with --verbose=5)"
-stow --verbose=5 -R ag alacritty git install nvim tmux vim zsh fish
 
-echo "installing node (from nvm)"
-nvm install stable
-nvm alias default stable
-
-echo "install plug.vim"
-curl -# --create-dirs -o ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-echo "Add tmux plugin manager"
-git clone https://github.com/tmux-plugins/tpm tmux/tmux.symlink/plugins/tpm
-
+if [ ! -d "${HOME}/.dotfiles/tmux/.tmux/plugins/tpm" ]; then
+    echo "Add tmux plugin manager"
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+else
+    echo "tmux plugin manager already installed! skipping!"
+fi
 
 if [ "$(uname)" == "Darwin" ]; then
     echo "updating OSX settings"
@@ -33,4 +31,13 @@ fi
 echo "configuring fish as default shell"
 chsh -s $(which fish)
 
-nvim -c "PlugInstall"
+if [ ! -e "${HOME}/.dotfiles/nvim/.config/nvim/autoload/plug.vim" ]; then
+    echo "install plug.vim"
+    curl -# --create-dirs -o ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+    echo "Running PlugInstall"
+    nvim -c "PlugInstall"
+else
+    echo "plug.vim already installed! skipping..."
+fi
+

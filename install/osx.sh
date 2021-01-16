@@ -6,26 +6,17 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 echo "show hidden files by default"
 defaults write com.apple.Finder AppleShowAllFiles -bool false
 
-echo "only use UTF-8 in Terminal.app"
-defaults write com.apple.terminal StringEncodings -array 4
-
 echo "expand save dialog by default"
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
 echo "show the ~/Library folder in Finder"
 chflags nohidden ~/Library
 
-echo "Enable subpixel font rendering on non-Apple LCDs"
-defaults write NSGlobalDomain AppleFontSmoothing -int 2
-
 echo "Automatically hide and show the Dock"
 defaults write com.apple.dock autohide -bool true
 
 echo "Always show scrollbars"
 defaults write NSGlobalDomain AppleShowScrollBars -string "Auto"
-
-echo "Use current directory as default search scope in Finder"
-defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
 echo "Show Path bar in Finder"
 defaults write com.apple.finder ShowPathbar -bool true
@@ -48,6 +39,3 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool
 
 echo "Kill affected applications"
 for app in Safari Finder Dock Mail SystemUIServer; do killall "$app" >/dev/null 2>&1; done
-
-echo "Disable the sound effects on boot"
-sudo nvram SystemAudioVolume=" "
