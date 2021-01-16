@@ -19,7 +19,7 @@ nvm install stable
 nvm alias default stable
 
 echo "install plug.vim"
-curl -# --create-dirs -o ~/.dotfiles/config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -# --create-dirs -o ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "Add tmux plugin manager"
 git clone https://github.com/tmux-plugins/tpm tmux/tmux.symlink/plugins/tpm
@@ -30,7 +30,7 @@ if [ "$(uname)" == "Darwin" ]; then
     source install/osx.sh
 fi
 
-echo "configuring zsh as default shell"
+echo "configuring fish as default shell"
 chsh -s $(which fish)
 
 nvim -c "PlugInstall"
