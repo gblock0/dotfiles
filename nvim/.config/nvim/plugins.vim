@@ -6,6 +6,11 @@ Plug 'mhartington/oceanic-next'
 if has('nvim')
 	Plug 'norcalli/nvim-colorizer.lua'
 
+    " Telescope setup
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+
     " nvim-lsp
 	Plug 'neovim/nvim-lspconfig'
 	Plug 'nvim-lua/completion-nvim'
