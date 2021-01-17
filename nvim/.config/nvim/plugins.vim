@@ -6,10 +6,7 @@ Plug 'gblock0/oceanic-next', { 'branch': 'AddLspColors' }
 if has('nvim')
 	Plug 'norcalli/nvim-colorizer.lua'
 
-    " Telescope setup
-    Plug 'nvim-lua/popup.nvim'
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'RRethy/vim-illuminate'
 
     " nvim-lsp
 	Plug 'neovim/nvim-lspconfig'

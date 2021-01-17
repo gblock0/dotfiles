@@ -16,15 +16,6 @@ set termencoding=utf-8
 " plugin configs in ~/.config/nvim/plugin are loaded automatically
 source ~/.config/nvim/plugins.vim
 
-if has('nvim')
-    let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
-    set completeopt=menuone,noinsert,noselect
-    lua require'lspconfig'.tsserver.setup{ on_attach=require'completion'.on_attach }
-    lua require'lspconfig'.pyright.setup{ on_attach=require'completion'.on_attach }
-
-    lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
-endif
-
 
 if (has('termguicolors'))
     set termguicolors
@@ -39,7 +30,6 @@ colorscheme OceanicNext
 abbr funciton function
 abbr teh the
 abbr tempalte template
-
 
 set nocompatible " not compatible with vi
 set autoread " detect when a file is changed
