@@ -1,8 +1,7 @@
 # gitconfig
 [user]
     name = Greg Block
-    email = gblock0@gmail.com
-	signingkey = E6AF05C96ACC44D9
+	email = gblock0@gmail.com
 [github]
     user = gblock0
 [alias]
@@ -73,10 +72,6 @@
 	insteadOf = https://github.com/
 [interactive]
     diffFilter = delta --color-only
-[commit]
-    gpgsign = true
-[gpg]
-	program = /usr/local/MacGPG2/bin/gpg
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
