@@ -20,6 +20,9 @@
 
     cleanup = "!git remote prune origin && git gc && git clean -df && git stash clear"
 
+[includeIf "gitdir:~/src/"]
+    path = ~/src/.gitconfig
+
 [color]
     diff = auto
     status = auto
