@@ -1,4 +1,4 @@
---must have run: npm install -g typescript-language-server
+--must have run: npm install -g typescript
 require"lspconfig".tsserver.setup{
     on_attach = function(client)
         require"completion".on_attach(client)
