@@ -92,7 +92,6 @@ augroup GB_SETTINGS
     " Disable auto-commenting
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-    autocmd BufWritePre *.js,*.ts Neoformat
 
 augroup END
 
@@ -289,7 +288,11 @@ set nospell
 nnoremap cp :let @+ = expand("%")<cr>
 
 nnoremap <leader>m :MaximizerToggle!<CR>
+nnoremap <leader>f :Neoformat<CR>
 
-set colorcolumn=80
+" Testing helpers
+nnoremap <leader>tn :TestNearest<CR>
+nnoremap <leader>tf :TestFile<CR>
+nnoremap <leader>ts :TestSuite<CR>
 
 call ApplyLocalSettings(expand('.'))

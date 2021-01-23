@@ -5,8 +5,8 @@ Plug 'gblock0/oceanic-next', { 'branch': 'AddLspColors' }
 
 if has('nvim')
 	Plug 'norcalli/nvim-colorizer.lua'
-
   Plug 'RRethy/vim-illuminate'
+  Plug 'sbdchd/neoformat'
 
   " nvim-lsp
 	Plug 'neovim/nvim-lspconfig'
@@ -16,7 +16,8 @@ if has('nvim')
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'nvim-treesitter/playground'
 
-  Plug 'sbdchd/neoformat'
+  " Debugging
+  Plug 'janko/vim-test'
 
 endif
 
