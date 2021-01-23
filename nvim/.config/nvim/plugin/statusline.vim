@@ -1,7 +1,7 @@
 let g:lightline = {
             \ 'active': {
             \   'left': [ [ 'mode', 'paste'],
-            \              [ 'gitdiff', 'gitbranch', 'filename', 'currentfunction' ] ],
+            \              [ 'gitdiff', 'gitbranch', 'relativepath', 'currentfunction' ] ],
             \ 'right':
             \   [ ['lineinfo'], ['percent'], ['fileencoding', 'filetype']  ]
             \ },
