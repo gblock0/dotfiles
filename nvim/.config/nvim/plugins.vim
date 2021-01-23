@@ -6,15 +6,18 @@ Plug 'gblock0/oceanic-next', { 'branch': 'AddLspColors' }
 if has('nvim')
 	Plug 'norcalli/nvim-colorizer.lua'
 
-    Plug 'RRethy/vim-illuminate'
+  Plug 'RRethy/vim-illuminate'
 
-    " nvim-lsp
+  " nvim-lsp
 	Plug 'neovim/nvim-lspconfig'
 	Plug 'nvim-lua/completion-nvim'
 
-    "nvim-treesitter
-    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-    Plug 'nvim-treesitter/playground'
+  "nvim-treesitter
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'nvim-treesitter/playground'
+
+  Plug 'sbdchd/neoformat'
+
 endif
 
 " Utilities
@@ -47,7 +50,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }		" Fast file searching
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vader.vim', { 'for': 'vader' }
 Plug 'DanilaMihailov/beacon.nvim'
-
-
+Plug 'szw/vim-maximizer'
 
 call plug#end()

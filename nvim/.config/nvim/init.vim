@@ -91,6 +91,9 @@ augroup GB_SETTINGS
 
     " Disable auto-commenting
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+    autocmd BufWritePre *.js,*.ts Neoformat
+
 augroup END
 
 
@@ -283,6 +286,10 @@ endfunction
 set nospell
 
 " Copy current file's path to clipboard
-nmap cp :let @+ = expand("%")<cr>
+nnoremap cp :let @+ = expand("%")<cr>
+
+nnoremap <leader>m :MaximizerToggle!<CR>
+
+set colorcolumn=80
 
 call ApplyLocalSettings(expand('.'))
