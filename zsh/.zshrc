@@ -16,17 +16,19 @@ else # macOS `ls`
     colorflag="-G"
 fi
 
+source /usr/local/share/antigen/antigen.zsh
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle git
+
 # load all zsh config files
-for config ($ZSH/**/*.zsh) source $config
+for config ($ZSH/*.zsh) source $config
+
 
 # TODO: Need to set this up
 if [[ -a ~/.localrc ]]; then
     source ~/.localrc
 fi
-
-# initialize autocomplete
-autoload -U compinit
-compinit
 
 export VISUAL='nvim'
 export EDITOR='$VISUAL'
