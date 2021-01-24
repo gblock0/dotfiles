@@ -18,6 +18,8 @@ fi
 
 source /usr/local/share/antigen/antigen.zsh
 antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle git
+antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply
 
 # load all zsh config files
