@@ -30,6 +30,8 @@ Plug 'lambdalisue/fern-git-status.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 " }}}
 
+Plug 'tmux-plugins/vim-tmux-focus-events'
+
 Plug 'dag/vim-fish'
 Plug 'christoomey/vim-tmux-navigator'					" Allows navigation between vim and tmux
 Plug 'gregsexton/MatchTag'								" Highlights the matching HTML tag
@@ -38,9 +40,7 @@ Plug 'tpope/vim-surround'								" Change surrounding quotes, brackets, etc.
 Plug 'scrooloose/nerdcommenter'							" Easily comment/uncomment thing using shortcuts
 Plug 'tweekmonster/startuptime.vim'                     " Uncomment to test startup time
 Plug 'jiangmiao/auto-pairs'
-if !has('gui_running')
-	Plug 'airblade/vim-gitgutter'					    " Allows stuff in the gutter
-endif
+Plug 'airblade/vim-gitgutter'					    " Allows stuff in the gutter
 Plug 'gioele/vim-autoswap'								" Swap file handling
 Plug 'cohama/agit.vim'									" Git plugin to easily go through all your commits
 Plug 'itchyny/lightline.vim'						    " Status line plugin
