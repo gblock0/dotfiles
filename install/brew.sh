@@ -13,7 +13,8 @@ brew install git
 brew install reattach-to-user-namespace
 brew install tmux
 brew install fzf
-brew install fish
+brew install zsh
+brew install antigen
 brew install romkatv/powerlevel10k/powerlevel10k
 brew install --build-from-source --HEAD luajit
 brew install --build-from-source --HEAD neovim

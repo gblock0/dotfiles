@@ -11,13 +11,10 @@
     1. downloads [vim-plug](https://github.com/junegunn/vim-plug)
     1. downloads the [tmux plugin manager](https://github.com/tmux-plugins/tpm)
     1. if running on OS X, it will update some settings ([`install\osx.sh`](https://github.com/gblock0/dotfiles/blob/master/install/osx.sh))
-    1. switch the default shell to `fish`
+    1. switch the default shell to `zsh`
     1. opens neovim and runs `PlugInstall`
 - (neo)vim configuration
 - [tmux](https://github.com/tmux/tmux/wiki) configuration
-- [Fish](https://fishshell.com/) configuration
-    - [Tide](https://github.com/IlanCosman/tide) must be installed separately
-    - [Dracula Theme](https://draculatheme.com/fish) must be installed separately
 
 ## Install
 

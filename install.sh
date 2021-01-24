@@ -13,7 +13,7 @@ else
 fi
 
 echo "running stow (with --verbose=3)"
-stow --verbose=3 -R alacritty fish git karabiner nvim tmux
+stow --verbose=3 -R alacritty zsh git karabiner nvim tmux
 
 
 if [ ! -d "${HOME}/.dotfiles/tmux/.tmux/plugins/tpm" ]; then
@@ -28,8 +28,8 @@ if [ "$(uname)" == "Darwin" ]; then
     source install/osx.sh
 fi
 
-echo "configuring fish as default shell"
-chsh -s $(which fish)
+echo "configuring zsh as default shell"
+chsh -s $(which zsh)
 
 if [ ! -e "${HOME}/.dotfiles/nvim/.config/nvim/autoload/plug.vim" ]; then
     echo "install plug.vim"
