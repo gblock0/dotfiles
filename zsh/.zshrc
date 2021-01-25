@@ -40,14 +40,6 @@ export PATH=~/.tmux/bin/bash:$PATH
 # Add sbin to path for Homebrew
 export PATH="/usr/local/sbin:$PATH"
 
-# export THEME="base16-atelierheath"
-# if [ -z "$BACKGROUND" ]; then
-    # export BACKGROUND="dark"
-# fi
-
-# BASE16_SHELL="$ZSH/plugins/base16-shell/$THEME.$BACKGROUND.sh"
-# source $BASE16_SHELL
-
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
