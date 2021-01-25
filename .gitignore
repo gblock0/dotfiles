@@ -1,4 +1,5 @@
 .netrwhist
+.gitconfig
 vim/vim.symlink/plugged/
 vim/vim.symlink/autoload/
 vim/vim.symlink/cache/

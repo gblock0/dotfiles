@@ -1,7 +1,7 @@
 # gitconfig
 [user]
     name = Greg Block
-	email = gblock0@gmail.com
+    email = gblock0@gmail.com
 [github]
     user = gblock0
 [alias]
