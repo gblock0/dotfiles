@@ -22,6 +22,27 @@ local buffer_not_empty = function()
   end
   return false
 end
+
+local checkwidth = function()
+  local squeeze_width  = vim.fn.winwidth(0) / 2
+  if squeeze_width > 40 then
+    return true
+  end
+  return false
+end
+
+local get_relative_file_path = function ()
+  return '| '..vim.fn.expand('%f')
+end
+
+local get_file_type = function ()
+  return '| '..vim.api.nvim_exec('echo &filetype', true)
+end
+
+local get_line_number = function ()
+  return vim.api.nvim_eval("printf('%03d/%03d', line('.'),  line('$'))")
+end
+
 gls.left[1] = {
   RainbowRed = {
     provider = function() return '▊ ' end,
@@ -49,22 +70,6 @@ gls.left[2] = {
     highlight = {colors.red,colors.bg,'bold'},
   },
 }
-
-local checkwidth = function()
-  local squeeze_width  = vim.fn.winwidth(0) / 2
-  if squeeze_width > 40 then
-    return true
-  end
-  return false
-end
-
-local get_relative_file_path = function ()
-  return '| '..vim.fn.expand('%f')
-end
-
-local get_file_type = function ()
-  return vim.api.nvim_exec('echo &filetype', true)
-end
 
 gls.left[3] = {
   DiffAdd = {
@@ -167,7 +172,7 @@ gls.right[3] = {
 
 gls.right[4] = {
   LineInfo = {
-    provider = 'LineColumn',
+    provider = get_line_number,
     separator = ' ',
     separator_highlight = {'NONE',colors.bg},
     highlight = {colors.fg,colors.bg},
