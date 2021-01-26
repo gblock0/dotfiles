@@ -18,7 +18,11 @@ if has('nvim')
 
   " Debugging
   Plug 'janko/vim-test'
-
+  Plug 'glepnir/galaxyline.nvim'
+  Plug 'kyazdani42/nvim-web-devicons'
+else
+  Plug 'itchyny/lightline.vim'						    " Status line plugin
+  Plug 'niklaas/lightline-gitdiff'                        " Show git status in lightline.vim
 endif
 
 " Utilities
@@ -43,9 +47,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'					    " Allows stuff in the gutter
 Plug 'gioele/vim-autoswap'								" Swap file handling
 Plug 'cohama/agit.vim'									" Git plugin to easily go through all your commits
-Plug 'itchyny/lightline.vim'						    " Status line plugin
-Plug 'niklaas/lightline-gitdiff'                        " Show git status in lightline.vim
-Plug 'nathanaelkane/vim-indent-guides'					" Indentation Guides
 Plug 'lfv89/vim-interestingwords'						" Highlight different words in a file
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }		" Fast file searching
 Plug 'junegunn/fzf.vim'
