@@ -12,8 +12,9 @@ local colors = {
   orange = '#FF8800',
   violet = '#a9a1e1',
   magenta = '#c678dd',
-  blue = '#51afef';
-  red = '#ec5f67';
+  blue = '#51afef',
+  red = '#ec5f67',
+  grey = '#585858'
 }
 
 local buffer_not_empty = function()
@@ -22,8 +23,13 @@ local buffer_not_empty = function()
   end
   return false
 end
-
 gls.left[1] = {
+  RainbowRed = {
+    provider = function() return '▊ ' end,
+    highlight = {colors.blue,colors.bg}
+  },
+}
+gls.left[2] = {
   ViMode = {
     provider = function()
       -- auto change color according the vim mode
@@ -35,8 +41,11 @@ gls.left[1] = {
                           cv = colors.red,ce=colors.red, r = colors.cyan,
                           rm = colors.cyan, ['r?'] = colors.cyan,
                           ['!']  = colors.red,t = colors.red}
+      local mode_map = {
+             n= 'NORMAL', i= 'INSERT', R= 'REPLACE', v= 'VISUAL', V= 'V-LINE',
+            c= 'COMMAND', s= 'SELECT', S= 'S-LINE', t= 'TERMINAL'}
       vim.api.nvim_command('hi GalaxyViMode guifg='..mode_color[vim.fn.mode()])
-      return '  '
+      return ' ' .. mode_map[vim.fn.mode()] .. ' '
     end,
     highlight = {colors.red,colors.bg,'bold'},
   },
@@ -50,60 +59,48 @@ local checkwidth = function()
   return false
 end
 
-gls.left[2] = {
+local get_relative_file_path = function ()
+  return '| '..vim.fn.expand('%f')
+end
+
+gls.left[3] = {
   DiffAdd = {
     provider = 'DiffAdd',
-    condition = checkwidth,
     icon = '  ',
     highlight = {colors.green,colors.bg},
   }
 }
-gls.left[3] = {
+gls.left[4] = {
   DiffModified = {
     provider = 'DiffModified',
-    condition = checkwidth,
     icon = ' 柳',
     highlight = {colors.orange,colors.bg},
   }
 }
-gls.left[4] = {
+gls.left[5] = {
   DiffRemove = {
     provider = 'DiffRemove',
-    condition = checkwidth,
     icon = '  ',
     highlight = {colors.red,colors.bg},
   }
 }
-gls.left[4] = {
+gls.left[6] = {
   GitBranch = {
     provider = 'GitBranch',
+    icon = '  ',
+    separator = ' ',
+    separator_highlight = {'NONE',colors.grey},
     condition = require('galaxyline.provider_vcs').check_git_workspace,
-    highlight = {colors.violet,colors.bg,'bold'},
+    highlight = {colors.white,colors.grey},
   }
 }
-gls.left[5] = {
-  FileName = {
-    provider = {'FileName'},
-    condition = buffer_not_empty,
-    highlight = {colors.green,colors.bg,'bold'}
-  }
-}
-
-gls.left[6] = {
-  LineInfo = {
-    provider = 'LineColumn',
-    separator = ' ',
-    separator_highlight = {'NONE',colors.bg},
-    highlight = {colors.fg,colors.bg},
-  },
-}
-
 gls.left[7] = {
-  PerCent = {
-    provider = 'LinePercent',
+  FilePath = {
+    provider = get_relative_file_path,
     separator = ' ',
-    separator_highlight = {'NONE',colors.bg},
-    highlight = {colors.fg,colors.bg,'bold'},
+    separator_highlight = {'NONE',colors.grey},
+    condition = buffer_not_empty,
+    highlight = {colors.white,colors.grey}
   }
 }
 
@@ -149,7 +146,7 @@ gls.right[1] = {
 
 gls.right[2] = {
   FileFormat = {
-    provider = 'FileFormat',
+    provider = 'FileType',
     separator = ' ',
     separator_highlight = {'NONE',colors.bg},
     highlight = {colors.cyan,colors.bg,'bold'}
@@ -157,8 +154,26 @@ gls.right[2] = {
 }
 
 gls.right[3] = {
+  PerCent = {
+    provider = 'LinePercent',
+    separator = ' ',
+    separator_highlight = {'NONE',colors.bg},
+    highlight = {colors.fg,colors.bg,'bold'},
+  }
+}
+
+gls.right[4] = {
+  LineInfo = {
+    provider = 'LineColumn',
+    separator = ' ',
+    separator_highlight = {'NONE',colors.bg},
+    highlight = {colors.fg,colors.bg},
+  },
+}
+
+gls.right[5] = {
   RainbowBlue = {
-    provider = function() return ' ▊' end,
+    provider = function() return '  ▊' end,
     highlight = {colors.blue,colors.bg}
   },
 }
