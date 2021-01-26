@@ -32,7 +32,14 @@ local checkwidth = function()
 end
 
 local get_relative_file_path = function ()
-  return '| '..vim.fn.expand('%f')
+    local file = vim.fn.expand('%f')
+    if vim.fn.empty(file) == 1 then return '' end
+    if vim.bo.modifiable then
+      if vim.bo.modified then
+        return file .. '   '
+      end
+    end
+    return file .. ' '
 end
 
 local get_line_number = function ()
@@ -119,7 +126,6 @@ gls.left[5] = {
 gls.left[6] = {
   GitBranch = {
     provider = 'GitBranch',
-    separator = ' ',
     separator_highlight = {'NONE',colors.bg},
     condition = require('galaxyline.provider_vcs').check_git_workspace,
     highlight = {colors.white,colors.bg},
@@ -128,6 +134,7 @@ gls.left[6] = {
 gls.left[7] = {
   FilePath = {
     provider = get_relative_file_path,
+    icon = '| ',
     separator = ' ',
     separator_highlight = {'NONE',colors.bg},
     condition = buffer_not_empty,
