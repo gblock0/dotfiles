@@ -248,10 +248,3 @@ table.insert(gls.short_line_left, {
     highlight = {colors.white,colors.bg,'bold'}
   }
 })
-
-table.insert(gls.short_line_right, {
-  BufferIcon = {
-    provider= 'BufferIcon',
-    highlight = {colors.fg,colors.bg}
-  }
-})
