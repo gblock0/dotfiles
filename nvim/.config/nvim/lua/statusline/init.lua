@@ -14,7 +14,6 @@ local colors = {
   magenta = '#c678dd',
   blue = '#51afef',
   red = '#ec5f67',
-  grey = '#585858'
 }
 
 local buffer_not_empty = function()
@@ -63,6 +62,10 @@ local get_relative_file_path = function ()
   return '| '..vim.fn.expand('%f')
 end
 
+local get_file_type = function ()
+  return vim.api.nvim_exec('echo &filetype', true)
+end
+
 gls.left[3] = {
   DiffAdd = {
     provider = 'DiffAdd',
@@ -89,18 +92,18 @@ gls.left[6] = {
     provider = 'GitBranch',
     icon = '  ',
     separator = ' ',
-    separator_highlight = {'NONE',colors.grey},
+    separator_highlight = {'NONE',colors.bg},
     condition = require('galaxyline.provider_vcs').check_git_workspace,
-    highlight = {colors.white,colors.grey},
+    highlight = {colors.white,colors.bg},
   }
 }
 gls.left[7] = {
   FilePath = {
     provider = get_relative_file_path,
     separator = ' ',
-    separator_highlight = {'NONE',colors.grey},
+    separator_highlight = {'NONE',colors.bg},
     condition = buffer_not_empty,
-    highlight = {colors.white,colors.grey}
+    highlight = {colors.white,colors.bg}
   }
 }
 
@@ -145,8 +148,8 @@ gls.right[1] = {
 }
 
 gls.right[2] = {
-  FileFormat = {
-    provider = 'FileType',
+  FileType = {
+    provider = get_file_type,
     separator = ' ',
     separator_highlight = {'NONE',colors.bg},
     highlight = {colors.cyan,colors.bg,'bold'}

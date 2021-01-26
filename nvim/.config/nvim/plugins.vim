@@ -44,7 +44,7 @@ Plug 'tpope/vim-surround'								" Change surrounding quotes, brackets, etc.
 Plug 'scrooloose/nerdcommenter'							" Easily comment/uncomment thing using shortcuts
 Plug 'tweekmonster/startuptime.vim'                     " Uncomment to test startup time
 Plug 'jiangmiao/auto-pairs'
-Plug 'airblade/vim-gitgutter'					    " Allows stuff in the gutter
+Plug 'mhinz/vim-signify'
 Plug 'gioele/vim-autoswap'								" Swap file handling
 Plug 'cohama/agit.vim'									" Git plugin to easily go through all your commits
 Plug 'lfv89/vim-interestingwords'						" Highlight different words in a file
