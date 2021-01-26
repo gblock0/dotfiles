@@ -195,6 +195,7 @@ nnoremap <BS> :noh<CR> :match none<CR>h
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
+xnoremap <F1> <ESC>
 
 inoremap jj <ESC>
 
@@ -234,11 +235,6 @@ nnoremap <leader>re :so ~/.config/nvim/init.vim<CR>:noh<CR>:echo "init.vim Reloa
 nnoremap <leader>; maA;<esc>`a:wa<CR>
 
 nnoremap p p`[v`]=
-
-" Map F1 to the Esc key
-map <F1> <Esc>
-imap <F1> <Esc>
-
 
 let g:python_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
@@ -291,7 +287,7 @@ nnoremap <leader>m :MaximizerToggle!<CR>
 nnoremap <leader>f :Neoformat<CR>
 
 " Testing helpers
-nnoremap <leader>tn :TestNearest<CR>
+nnoremap <leader>tt :TestNearest<CR>
 nnoremap <leader>tf :TestFile<CR>
 nnoremap <leader>ts :TestSuite<CR>
 

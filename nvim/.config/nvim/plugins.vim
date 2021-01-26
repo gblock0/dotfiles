@@ -36,13 +36,13 @@ Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
-Plug 'dag/vim-fish'
+Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'christoomey/vim-tmux-navigator'					" Allows navigation between vim and tmux
 Plug 'gregsexton/MatchTag'								" Highlights the matching HTML tag
 Plug 'tpope/vim-fugitive'								" Git stuff
 Plug 'tpope/vim-surround'								" Change surrounding quotes, brackets, etc.
 Plug 'scrooloose/nerdcommenter'							" Easily comment/uncomment thing using shortcuts
-Plug 'tweekmonster/startuptime.vim'                     " Uncomment to test startup time
+"Plug 'tweekmonster/startuptime.vim'                     " Uncomment to test startup time
 Plug 'jiangmiao/auto-pairs'
 Plug 'mhinz/vim-signify'
 Plug 'gioele/vim-autoswap'								" Swap file handling
@@ -51,7 +51,6 @@ Plug 'lfv89/vim-interestingwords'						" Highlight different words in a file
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }		" Fast file searching
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vader.vim', { 'for': 'vader' }
-Plug 'DanilaMihailov/beacon.nvim'
 Plug 'szw/vim-maximizer'
 
 call plug#end()
