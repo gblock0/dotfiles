@@ -50,13 +50,14 @@ local get_git_status = function()
   return vim.fn['sy#repo#get_stats']()
 end
 
-gls.left[1] = {
+table.insert(gls.left, {
   RainbowRed = {
     provider = function() return '▊ ' end,
     highlight = {colors.blue,colors.bg}
   },
-}
-gls.left[2] = {
+})
+
+table.insert(gls.left, {
   ViMode = {
     provider = function()
       -- auto change color according the vim mode
@@ -76,9 +77,9 @@ gls.left[2] = {
     end,
     highlight = {colors.red,colors.bg,'bold'},
   },
-}
+})
 
-gls.left[3] = {
+table.insert(gls.left, {
   DiffAdd = {
     provider = function()
       local diffAdd = get_git_status()[1]
@@ -92,8 +93,9 @@ gls.left[3] = {
     separator_highlight = {'NONE',colors.bg},
     highlight = {colors.green,colors.bg},
   }
-}
-gls.left[4] = {
+})
+
+table.insert(gls.left, {
   DiffModified = {
     provider = function()
       local diffMod = get_git_status()[2]
@@ -107,8 +109,9 @@ gls.left[4] = {
     separator_highlight = {'NONE',colors.bg},
     highlight = {colors.orange,colors.bg},
   }
-}
-gls.left[5] = {
+})
+
+table.insert(gls.left, {
   DiffRemove = {
     provider = function()
       local diffRem = get_git_status()[3]
@@ -122,16 +125,18 @@ gls.left[5] = {
     separator_highlight = {'NONE',colors.bg},
     highlight = {colors.red,colors.bg},
   }
-}
-gls.left[6] = {
+})
+
+table.insert(gls.left, {
   GitBranch = {
     provider = 'GitBranch',
     separator_highlight = {'NONE',colors.bg},
     condition = require('galaxyline.provider_vcs').check_git_workspace,
     highlight = {colors.white,colors.bg},
   }
-}
-gls.left[7] = {
+})
+
+table.insert(gls.left, {
   FilePath = {
     provider = get_relative_file_path,
     icon = '| ',
@@ -140,49 +145,50 @@ gls.left[7] = {
     condition = buffer_not_empty,
     highlight = {colors.white,colors.bg}
   }
-}
+})
 
-gls.left[8] = {
+table.insert(gls.left, {
   DiagnosticError = {
     provider = 'DiagnosticError',
     icon = '  ',
     highlight = {colors.red,colors.bg}
   }
-}
-gls.left[9] = {
+})
+
+table.insert(gls.left, {
   DiagnosticWarn = {
     provider = 'DiagnosticWarn',
     icon = '  ',
     highlight = {colors.yellow,colors.bg},
   }
-}
+})
 
-gls.left[10] = {
+table.insert(gls.left, {
   DiagnosticHint = {
     provider = 'DiagnosticHint',
     icon = '  ',
     highlight = {colors.cyan,colors.bg},
   }
-}
+})
 
-gls.left[11] = {
+table.insert(gls.left, {
   DiagnosticInfo = {
     provider = 'DiagnosticInfo',
     icon = '  ',
     highlight = {colors.blue,colors.bg},
   }
-}
+})
 
-gls.right[1] = {
+table.insert(gls.right, {
   FileEncode = {
     provider = 'FileEncode',
     separator = ' ',
     separator_highlight = {'NONE',colors.bg},
     highlight = {colors.cyan,colors.bg,'bold'}
   }
-}
+})
 
-gls.right[2] = {
+table.insert(gls.right, {
   FileType = {
     provider = 'FileTypeName',
     icon = '| ',
@@ -190,43 +196,43 @@ gls.right[2] = {
     separator_highlight = {'NONE',colors.bg},
     highlight = {colors.cyan,colors.bg,'bold'}
   }
-}
+})
 
-gls.right[3] = {
+table.insert(gls.right, {
   PerCent = {
     provider = 'LinePercent',
     separator = ' ',
     separator_highlight = {'NONE',colors.bg},
     highlight = {colors.fg,colors.bg,'bold'},
   }
-}
+})
 
-gls.right[4] = {
+table.insert(gls.right, {
   LineInfo = {
     provider = get_line_number,
     separator = ' ',
     separator_highlight = {'NONE',colors.bg},
     highlight = {colors.fg,colors.bg},
   },
-}
+})
 
-gls.right[5] = {
+table.insert(gls.right, {
   RainbowBlue = {
     provider = function() return '  ▊' end,
     highlight = {colors.blue,colors.bg}
   },
-}
+})
 
-gls.short_line_left[1] = {
+table.insert(gls.short_line_left, {
   BufferType = {
     provider = 'FileTypeName',
     separator = ' ',
     separator_highlight = {'NONE',colors.bg},
     highlight = {colors.blue,colors.bg,'bold'}
   }
-}
+})
 
-gls.short_line_left[2] = {
+table.insert(gls.short_line_left, {
   SFileName = {
     provider = function ()
       local fileinfo = require('galaxyline.provider_fileinfo')
@@ -241,11 +247,11 @@ gls.short_line_left[2] = {
     condition = buffer_not_empty,
     highlight = {colors.white,colors.bg,'bold'}
   }
-}
+})
 
-gls.short_line_right[1] = {
+table.insert(gls.short_line_right, {
   BufferIcon = {
     provider= 'BufferIcon',
     highlight = {colors.fg,colors.bg}
   }
-}
+})
