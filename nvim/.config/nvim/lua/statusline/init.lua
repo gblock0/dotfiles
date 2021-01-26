@@ -39,6 +39,10 @@ local get_line_number = function ()
   return vim.api.nvim_eval("printf('%03d/%03d', line('.'),  line('$'))")
 end
 
+local get_git_status = function()
+  return vim.fn['sy#repo#get_stats']()
+end
+
 gls.left[1] = {
   RainbowRed = {
     provider = function() return '▊ ' end,
@@ -69,29 +73,52 @@ gls.left[2] = {
 
 gls.left[3] = {
   DiffAdd = {
-    provider = 'DiffAdd',
+    provider = function()
+      local diffAdd = get_git_status()[1]
+      if diffAdd < 0 then
+        return 0
+      end
+      return diffAdd
+    end,
     icon = '  ',
+    separator = ' ',
+    separator_highlight = {'NONE',colors.bg},
     highlight = {colors.green,colors.bg},
   }
 }
 gls.left[4] = {
   DiffModified = {
-    provider = 'DiffModified',
-    icon = ' 柳',
+    provider = function()
+      local diffMod = get_git_status()[2]
+      if diffMod < 0 then
+        return 0
+      end
+      return diffMod
+    end,
+    icon = '柳',
+    separator = ' ',
+    separator_highlight = {'NONE',colors.bg},
     highlight = {colors.orange,colors.bg},
   }
 }
 gls.left[5] = {
   DiffRemove = {
-    provider = 'DiffRemove',
-    icon = '  ',
+    provider = function()
+      local diffRem = get_git_status()[3]
+      if diffRem < 0 then
+        return 0
+      end
+      return diffRem
+    end,
+    icon = ' ',
+    separator = ' ',
+    separator_highlight = {'NONE',colors.bg},
     highlight = {colors.red,colors.bg},
   }
 }
 gls.left[6] = {
   GitBranch = {
     provider = 'GitBranch',
-    icon = '  ',
     separator = ' ',
     separator_highlight = {'NONE',colors.bg},
     condition = require('galaxyline.provider_vcs').check_git_workspace,
