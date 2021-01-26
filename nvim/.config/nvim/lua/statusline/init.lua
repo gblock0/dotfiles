@@ -35,10 +35,6 @@ local get_relative_file_path = function ()
   return '| '..vim.fn.expand('%f')
 end
 
-local get_file_type = function ()
-  return '| '..vim.api.nvim_exec('echo &filetype', true)
-end
-
 local get_line_number = function ()
   return vim.api.nvim_eval("printf('%03d/%03d', line('.'),  line('$'))")
 end
@@ -154,7 +150,8 @@ gls.right[1] = {
 
 gls.right[2] = {
   FileType = {
-    provider = get_file_type,
+    provider = 'FileTypeName',
+    icon = '| ',
     separator = ' ',
     separator_highlight = {'NONE',colors.bg},
     highlight = {colors.cyan,colors.bg,'bold'}
