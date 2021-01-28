@@ -51,13 +51,6 @@ local get_git_status = function()
 end
 
 table.insert(gls.left, {
-  RainbowRed = {
-    provider = function() return '▊ ' end,
-    highlight = {colors.blue,colors.bg}
-  },
-})
-
-table.insert(gls.left, {
   ViMode = {
     provider = function()
       -- auto change color according the vim mode
@@ -75,6 +68,7 @@ table.insert(gls.left, {
       vim.api.nvim_command('hi GalaxyViMode guifg='..mode_color[vim.fn.mode()])
       return ' ' .. mode_map[vim.fn.mode()] .. ' '
     end,
+    icon = ' ',
     highlight = {colors.red,colors.bg,'bold'},
   },
 })
@@ -210,22 +204,23 @@ table.insert(gls.right, {
 table.insert(gls.right, {
   LineInfo = {
     provider = get_line_number,
-    separator = ' ',
+    separator = '  ',
     separator_highlight = {'NONE',colors.bg},
     highlight = {colors.fg,colors.bg},
   },
 })
 
 table.insert(gls.right, {
-  RainbowBlue = {
-    provider = function() return '  ▊' end,
-    highlight = {colors.blue,colors.bg}
+  Spacer = {
+    provider = function() return ' '  end,
+    highlight = {'NONE',colors.bg}
   },
 })
 
 table.insert(gls.short_line_left, {
   BufferType = {
     provider = 'FileTypeName',
+    icon = '  ',
     separator = ' ',
     separator_highlight = {'NONE',colors.bg},
     highlight = {colors.blue,colors.bg,'bold'}

@@ -211,8 +211,6 @@ noremap Q <NOP>
 " Reselect the text that was just pasted
 nnoremap <leader>v V`]
 
-nmap <leader>l :IndentGuidesToggle<cr>
-
 " Create a new vsplit, switch to it and open CtrlP
 nnoremap <leader>w <C-w>v<C-w>l :GFiles<cr>
 
