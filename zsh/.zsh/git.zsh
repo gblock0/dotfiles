@@ -14,6 +14,16 @@ function g() {
     fi
 }
 
+function gi() {
+  if [[ $# > 0 ]]; then
+    # if there are arguments, send them to git
+    git $@
+  else
+    # otherwise, run git status
+    git status
+  fi
+}
+
 # Show preview of changed files using fzf --preview
 function fd() {
     preview="git diff $@ --color=always -- {-1}"
