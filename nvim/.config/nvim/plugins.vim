@@ -11,6 +11,7 @@ if has('nvim')
   " nvim-lsp
 	Plug 'neovim/nvim-lspconfig'
 	Plug 'nvim-lua/completion-nvim'
+  Plug 'glepnir/lspsaga.nvim'
 
   "nvim-treesitter
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
