@@ -21,6 +21,8 @@ if has('nvim')
   Plug 'janko/vim-test'
   Plug 'glepnir/galaxyline.nvim'
   Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+
 else
   Plug 'itchyny/lightline.vim'						    " Status line plugin
   Plug 'niklaas/lightline-gitdiff'                        " Show git status in lightline.vim
@@ -45,7 +47,6 @@ Plug 'tpope/vim-fugitive'								" Git stuff
 Plug 'tpope/vim-surround'								" Change surrounding quotes, brackets, etc.
 Plug 'scrooloose/nerdcommenter'							" Easily comment/uncomment thing using shortcuts
 "Plug 'tweekmonster/startuptime.vim'                     " Uncomment to test startup time
-Plug 'jiangmiao/auto-pairs'
 Plug 'mhinz/vim-signify'
 Plug 'gioele/vim-autoswap'								" Swap file handling
 Plug 'cohama/agit.vim'									" Git plugin to easily go through all your commits

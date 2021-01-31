@@ -12,6 +12,7 @@ nnoremap <leader>lsd :lua vim.lsp.util.show_line_diagnostics(); vim.lsp.util.sho
 
 lua require'lsp'
 
+imap <silent> <c-p> <Plug>(completion_trigger)
 
 nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> [e :LspSagaDiagJumpPrev<CR>
