@@ -13,6 +13,7 @@ lua require('colorizer-lua')
 lua require('lsp')
 lua require('statusline')
 lua require('treesitter')
+lua require('fzf')
 
 colorscheme OceanicNext
 
