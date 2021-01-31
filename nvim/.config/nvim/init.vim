@@ -14,6 +14,7 @@ lua require('lsp')
 lua require('statusline')
 lua require('treesitter')
 lua require('fzf')
+lua require('nerdcommenter')
 
 colorscheme OceanicNext
 
