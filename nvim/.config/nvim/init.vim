@@ -8,13 +8,14 @@ lua require('sets')
 source ~/.config/nvim/plugins.vim
 
 " load plugin configs
-lua require('maximizer')
+lua require('autoswap')
 lua require('colorizer-lua')
+lua require('fzf')
 lua require('lsp')
+lua require('maximizer')
+lua require('nerdcommenter')
 lua require('statusline')
 lua require('treesitter')
-lua require('fzf')
-lua require('nerdcommenter')
 
 colorscheme OceanicNext
 
