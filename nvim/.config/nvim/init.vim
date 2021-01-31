@@ -4,11 +4,15 @@
 " load plugins from vim-plug,
 " plugin configs in ~/.config/nvim/plugin are loaded automatically
 
-source ~/.config/nvim/plugins.vim
 lua require('sets')
+source ~/.config/nvim/plugins.vim
 
+" load plugin configs
+lua require('maximizer')
+lua require('colorizer-lua')
+lua require('lsp')
 
-let g:maximizer_set_default_mapping = 0
+colorscheme OceanicNext
 
 " Turn off weird red highlight errors in init.vim
 hi ERROR NONE
@@ -153,7 +157,7 @@ nnoremap <leader>do :call GotoWindow(g:vimspector_session_windows.output)<CR>
 nnoremap <leader>d? :call AddToWatch()<CR>
 nnoremap <leader>dx :call vimspector#Reset()<CR>
 nnoremap <leader>dX :call vimspector#ClearBreakpoints()<CR>
-nnoremap <S-k> :call vimspector#StepOut()<CR>
+nnoremap <S-h> :call vimspector#StepOut()<CR>
 nnoremap <S-l> :call vimspector#StepInto()<CR>
 nnoremap <S-j> :call vimspector#StepOver()<CR>
 nnoremap <leader>d_ :call vimspector#Restart()<CR>

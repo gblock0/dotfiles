@@ -4,6 +4,8 @@ local opt = vim.o
 
 opt.termguicolors = true
 
+opt.mouse = 'a'
+
 -- Tab control
 opt.tabstop = 2 -- the visible width of tabs
 opt.softtabstop = opt.tabstop -- edit as if the tabs are 4 characters wide
@@ -13,8 +15,6 @@ opt.shiftround = true -- round indent to a multiple of 'shiftwidth'
 
 opt.undolevels = 5000
 opt.undodir = '~/.VIM_UNDO_FILES'
-
-vim.cmd('colorscheme OceanicNext')
 
 opt.clipboard = 'unnamedplus'
 
