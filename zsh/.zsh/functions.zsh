@@ -21,3 +21,12 @@ function drmi() {
 function cdd() {
     cd ~/.dotfiles
 }
+
+function reinstall-neovim() {
+  brew update
+  brew uninstall neovim
+  brew uninstall luajit
+  brew install --HEAD luajit
+  brew install --HEAD neovim
+}
+

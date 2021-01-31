@@ -11,3 +11,11 @@ nnoremap <leader>lca :lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>lsd :lua vim.lsp.util.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()<CR>
 
 lua require'lsp'
+
+imap <silent> <c-p> <Plug>(completion_trigger)
+
+nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> [e :LspSagaDiagJumpPrev<CR>
+nnoremap <silent> ]e :LspSagaDiagJumpNext<CR>
+nnoremap <silent><leader>ca :LspSagaCodeAction<CR>
+vnoremap <silent><leader>ca :LspSagaRangeCodeAction<CR>

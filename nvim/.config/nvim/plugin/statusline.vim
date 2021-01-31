@@ -24,3 +24,5 @@ let g:lightline#gitdiff#indicator_deleted = '-'
 let g:lightline#gitdiff#indicator_modified = '~'
 let g:lightline#gitdiff#separator = ' '
 let g:lightline#gitdiff#show_empty_indicators = 1
+
+lua require'statusline'

@@ -8,3 +8,5 @@ require"lspconfig".tsserver.setup{
 
 --must run: npm install -g pyright
 require"lspconfig".pyright.setup{on_attach=require"completion".on_attach}
+local saga = require 'lspsaga'
+saga.init_lsp_saga()

@@ -21,3 +21,4 @@ fish/.config/fish/completions/**/*
 fish/.config/fish/conf.d/**/*
 fish/.config/fish/fish_variables
 fishd.tmp.*
+nvim/.config/nvim/vimspector-config
