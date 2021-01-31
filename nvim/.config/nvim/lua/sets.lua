@@ -15,6 +15,7 @@ opt.shiftround = true -- round indent to a multiple of 'shiftwidth'
 
 opt.undolevels = 5000
 opt.undodir = '~/.VIM_UNDO_FILES'
+opt.undofile = true
 
 opt.clipboard = 'unnamedplus'
 
