@@ -10,6 +10,7 @@ bower_components/
 dist/
 lib/
 public/
+.vimspector.json
 
 # Thumbnails
 ._*

@@ -27,6 +27,7 @@ else
 endif
 
 " Utilities
+Plug 'puremourning/vimspector'
 
 " {{{ Fern plugins
 Plug 'lambdalisue/nerdfont.vim'
