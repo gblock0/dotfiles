@@ -11,6 +11,7 @@ source ~/.config/nvim/plugins.vim
 lua require('maximizer')
 lua require('colorizer-lua')
 lua require('lsp')
+lua require('statusline')
 
 colorscheme OceanicNext
 
