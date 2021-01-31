@@ -12,6 +12,7 @@ lua require('maximizer')
 lua require('colorizer-lua')
 lua require('lsp')
 lua require('statusline')
+lua require('treesitter')
 
 colorscheme OceanicNext
 
