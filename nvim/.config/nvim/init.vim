@@ -15,6 +15,7 @@ lua require('lsp')
 lua require('maximizer')
 lua require('nerdcommenter')
 lua require('statusline')
+lua require('tmux-navigator')
 lua require('treesitter')
 
 colorscheme OceanicNext
