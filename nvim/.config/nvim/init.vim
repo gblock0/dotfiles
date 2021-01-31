@@ -16,6 +16,7 @@ set termencoding=utf-8
 " plugin configs in ~/.config/nvim/plugin are loaded automatically
 source ~/.config/nvim/plugins.vim
 
+let g:maximizer_set_default_mapping = 0
 
 if (has('termguicolors'))
     set termguicolors
@@ -191,12 +192,6 @@ nnoremap mm $%
 " Turn off highlighting, need to add the 'h' at the end of offset the <BS> making the cursor move one character to the right
 nnoremap <BS> :noh<CR> :match none<CR>h
 
-" Disable help F1 key
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
-xnoremap <F1> <ESC>
-
 inoremap jj <ESC>
 
 " shortcut to save
@@ -257,25 +252,6 @@ function! MovePane(key)
 	endif
 endfunction
 
-" recursively search up from dirname, sourcing all .vimrc.local files along the way
-function! ApplyLocalSettings(dirname)
-	" convert windows paths to unix style
-	let l:curDir = substitute(a:dirname, '\\', '/', 'g')
-
-	" walk to the top of the dir tree
-	let l:parentDir = strpart(l:curDir, 0, strridx(l:curDir, '/'))
-	if isdirectory(l:parentDir)
-		call ApplyLocalSettings(l:parentDir)
-	endif
-
-	" now walk back down the path and source .vimsettings as you find them.
-	" child directories can inherit from their parents
-	let l:settingsFile = a:dirname . '/.vimrc.local'
-	if filereadable(l:settingsFile)
-		exec ':source' . l:settingsFile
-	endif
-endfunction
-
 set nospell
 
 " Copy current file's path to clipboard
@@ -326,4 +302,9 @@ function! JestStrategy(cmd)
 endfunction
 let g:test#custom_strategies = {'jest': function('JestStrategy')}
 
-call ApplyLocalSettings(expand('.'))
+" Disable help F1 key
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+xnoremap <F1> <ESC>
+
