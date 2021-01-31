@@ -1,75 +1,19 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" set a map leader for more key combos
-let mapleader = "\<Space>"
-let g:mapleader = "\<Space>"
-
-filetype plugin indent on
-
-set encoding=utf-8
-set fileencoding=utf-8
-set termencoding=utf-8
-
 " load plugins from vim-plug,
 " plugin configs in ~/.config/nvim/plugin are loaded automatically
+
 source ~/.config/nvim/plugins.vim
+lua require('sets')
+
 
 let g:maximizer_set_default_mapping = 0
-
-if (has('termguicolors'))
-    set termguicolors
-endif
-
-" switch syntax highlighting on
-syntax enable
-set background=dark
-colorscheme OceanicNext
-
-" Abbreviations
-abbr funciton function
-abbr teh the
-abbr tempalte template
-
-set nocompatible " not compatible with vi
-set autoread " detect when a file is changed
 
 " Turn off weird red highlight errors in init.vim
 hi ERROR NONE
 
-" make backspace behave in a sane manner
-set backspace=indent,eol,start
-
-" No Escape Keys in Insert Mode
-" set noesckeys
-
-set history=1000 " change history to 1000
-set textwidth=0
-
 au BufRead,BufNewFile *.md setlocal textwidth=80
-
-" Tab control
-set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
-set tabstop=2 " the visible width of tabs
-set softtabstop=2 " edit as if the tabs are 4 characters wide
-set shiftwidth=2 " number of spaces to use for indent and unindent
-set expandtab " insert tabs rather than spaces for <Tab>
-set shiftround " round indent to a multiple of 'shiftwidth'
-set completeopt+=longest
-
-
-if has('mouse')
-	set mouse=a
-endif
-
-if has('persistent_undo')
-	set undolevels=5000
-	set undodir=$HOME/.VIM_UNDO_FILES
-	set undofile
-endif
-
-set clipboard=unnamed
 
 " highlight conflicts
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
@@ -96,79 +40,12 @@ augroup GB_SETTINGS
 
 augroup END
 
-
-" code folding settings
-set foldmethod=syntax " fold based on indent
-set foldlevelstart=99
-set foldlevel=99
-set nofoldenable
-
 " Remap colon commands to ignore shift
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 cnoreabbrev <expr> w ((getcmdtype() is# ':' && getcmdline() is# 'w')?('w'):('w'))
 cnoreabbrev <expr> Q ((getcmdtype() is# ':' && getcmdline() is# 'Q')?('q'):('Q'))
 cnoreabbrev <expr> WQ ((getcmdtype() is# ':' && getcmdline() is# 'WQ')?('wq'):('WQ'))
 cnoreabbrev <expr> Qa ((getcmdtype() is# ':' && getcmdline() is# 'Qa')?('qa'):('Qa'))
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => User Interface
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set guifont=SauceCodePro\ Nerd\ Font\ Mono:h12
-
-set scrolloff=3 " lines of text around cursor
-set wildmenu " enhanced command line completion
-set showcmd " show incomplete commands
-set noshowmode " don't show which mode disabled for PowerLine
-set wildmode=list:longest " complete files like a shell
-set shell=$SHELL
-set cmdheight=1 " command bar height
-
-set title " set terminal title
-
-" Searching
-set incsearch " set incremental search, like modern browsers
-set ignorecase " case insensitive searching
-set smartcase " case-sensitive if expresson contains a capital letter
-set hlsearch
-set lazyredraw " don't redraw while executing macros
-set ttyfast			" fast redraw
-
-set magic " Set magic on, for regex
-
-set showmatch " show matching braces
-set mat=2 " how many tenths of a second to blink
-
-" error bells
-set noerrorbells
-set visualbell
-set tm=500
-
-set number
-set relativenumber
-
-" Highlight current line
-set cursorline
-
-" Hide Scrollbar
-set guioptions-=r
-
-" do not Wrap long lines
-set nowrap
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Files, backups, and undo
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-set backupdir=~/.nvim-tmp
-set directory=~/.nvim-tmp
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => StatusLine
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-set laststatus=2 " show the satus line all the time
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Mappings
@@ -252,8 +129,6 @@ function! MovePane(key)
 	endif
 endfunction
 
-set nospell
-
 " Copy current file's path to clipboard
 nnoremap cp :let @+ = expand("%")<cr>
 
@@ -264,8 +139,6 @@ nnoremap <leader>f :Neoformat<CR>
 nnoremap <leader>tt :TestNearest<CR>
 nnoremap <leader>tf :TestFile<CR>
 nnoremap <leader>ts :TestSuite<CR>
-
-set updatetime=100
 
 let g:vimspector_base_dir = expand('$HOME/.config/nvim/vimspector-config')
 let g:vimspector_sidebar_width = 120
