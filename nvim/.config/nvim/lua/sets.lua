@@ -14,7 +14,7 @@ opt('expandtab', true) -- insert tabs rather than spaces for <Tab>
 opt('shiftround', true) -- round indent to a multiple of 'shiftwidth'
 
 opt('undolevels', 5000)
-opt('undodir', '~/.VIM_UNDO_FILES')
+opt('undodir', vim.fn.expand('~/.VIM_UNDO_FILES'))
 opt('undofile', true)
 
 opt('clipboard', 'unnamedplus')
