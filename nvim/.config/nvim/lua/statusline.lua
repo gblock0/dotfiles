@@ -182,15 +182,15 @@ table.insert(gls.right, {
   }
 })
 
-table.insert(gls.right, {
-  FileType = {
-    provider = 'FileTypeName',
-    icon = '| ',
-    separator = ' ',
-    separator_highlight = {'NONE',colors.bg},
-    highlight = {colors.cyan,colors.bg,'bold'}
-  }
-})
+-- table.insert(gls.right, {
+  -- FileType = {
+    -- provider = 'FileTypeName',
+    -- icon = '| ',
+    -- separator = ' ',
+    -- separator_highlight = {'NONE',colors.bg},
+    -- highlight = {colors.cyan,colors.bg,'bold'}
+  -- }
+-- })
 
 table.insert(gls.right, {
   PerCent = {
