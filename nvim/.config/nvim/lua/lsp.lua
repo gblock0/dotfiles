@@ -11,11 +11,6 @@ keymap('n', '<leader>lh', ':lua vim.lsp.buf.hover()<CR>', {noremap = true })
 keymap('n', '<leader>lca', ':lua vim.lsp.buf.code_action()<CR>', {noremap = true })
 keymap('n', '<leader>lsd', ':lua vim.lsp.util.show_line_diagnostics()<CR>', {noremap = true })
 
-
-keymap('n', 'K', ':lua vim.lsp.buf.hover()<CR>', {noremap = true, silent = true })
-keymap('i', '<c-p>', '<Plug>(completion_trigger)<CR>', {noremap = true, silent = true })
-
-
 --must have run: npm install -g typescript
 require"lspconfig".tsserver.setup{
     on_attach = function(client)
@@ -32,6 +27,7 @@ local saga = require 'lspsaga'
 saga.init_lsp_saga()
 keymap('n', '<leader>e', ':LspSagaDiagJumpNext<CR>', {noremap = true, silent = true })
 keymap('n', '<leader>cd', ':LspSagaShowLineDiags<CR>', {noremap = true, silent = true })
+keymap('n', 'K', ':LspSagaHoverDoc<CR>', {noremap = true, silent = true })
 
 require('telescope').setup{
   defaults = {
