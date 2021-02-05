@@ -33,5 +33,4 @@ vim.wo.relativenumber = true
 
 opt('cursorline', true) -- highlight current line
 
-opt('wrap', false) -- do not wrap long lines
 opt('updatetime', 100) -- update the swap file quicker (also helps with updating git status)

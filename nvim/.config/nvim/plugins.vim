@@ -23,9 +23,13 @@ if has('nvim')
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
-else
-  Plug 'itchyny/lightline.vim'						    " Status line plugin
-  Plug 'niklaas/lightline-gitdiff'                        " Show git status in lightline.vim
+  Plug 'nvim-lua/popup.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
+
+  Plug 'onsails/lspkind-nvim'
+  Plug 'b3nj5m1n/kommentary'
+
 endif
 
 " Utilities
@@ -45,14 +49,12 @@ Plug 'christoomey/vim-tmux-navigator'					" Allows navigation between vim and tm
 Plug 'gregsexton/MatchTag'								" Highlights the matching HTML tag
 Plug 'tpope/vim-fugitive'								" Git stuff
 Plug 'tpope/vim-surround'								" Change surrounding quotes, brackets, etc.
-Plug 'scrooloose/nerdcommenter'							" Easily comment/uncomment thing using shortcuts
+" Plug 'scrooloose/nerdcommenter'							" Easily comment/uncomment thing using shortcuts
 "Plug 'tweekmonster/startuptime.vim'                     " Uncomment to test startup time
 Plug 'mhinz/vim-signify'
 Plug 'gioele/vim-autoswap'								" Swap file handling
 Plug 'cohama/agit.vim'									" Git plugin to easily go through all your commits
 Plug 'lfv89/vim-interestingwords'						" Highlight different words in a file
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }		" Fast file searching
-Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vader.vim', { 'for': 'vader' }
 Plug 'szw/vim-maximizer'
 

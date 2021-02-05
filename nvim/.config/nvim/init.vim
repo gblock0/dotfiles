@@ -14,7 +14,7 @@ lua require('fzf')
 lua require('lsp')
 lua require('maximizer')
 lua require('neoformat')
-lua require('nerdcommenter')
+lua require('commenter')
 lua require('remaps')
 lua require('statusline')
 lua require('test')
@@ -54,19 +54,14 @@ augroup GB_SETTINGS
 
     " Disable auto-commenting
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-
 augroup END
-
+set nowrap
 " Remap colon commands to ignore shift
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 cnoreabbrev <expr> w ((getcmdtype() is# ':' && getcmdline() is# 'w')?('w'):('w'))
 cnoreabbrev <expr> Q ((getcmdtype() is# ':' && getcmdline() is# 'Q')?('q'):('Q'))
 cnoreabbrev <expr> WQ ((getcmdtype() is# ':' && getcmdline() is# 'WQ')?('wq'):('WQ'))
 cnoreabbrev <expr> Qa ((getcmdtype() is# ':' && getcmdline() is# 'Qa')?('qa'):('Qa'))
-
-let g:python_host_prog = '/usr/local/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
 "}}}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
