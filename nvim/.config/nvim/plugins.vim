@@ -26,6 +26,7 @@ if has('nvim')
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
+  Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
   Plug 'onsails/lspkind-nvim'
   Plug 'b3nj5m1n/kommentary'
