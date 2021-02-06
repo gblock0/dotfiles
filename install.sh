@@ -13,8 +13,10 @@ else
 fi
 
 echo "running stow (with --verbose=3)"
-stow --verbose=3 -R alacritty zsh git karabiner nvim tmux
+stow --verbose=3 -R zsh git tmux
 
+echo "linking config dir"
+ln -sv $(PWD)/config/* ~/.config
 
 if [ ! -d "${HOME}/.dotfiles/tmux/.tmux/plugins/tpm" ]; then
     echo "Add tmux plugin manager"
