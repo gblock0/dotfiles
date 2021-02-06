@@ -6,6 +6,9 @@ vim/vim.symlink/cache/
 nvim/.config/nvim/plugged/
 nvim/.config/nvim/autoload/
 nvim/.config/nvim/cache/
+config/nvim/cache
+config/nvim/autoload
+config/nvim/plugged
 npm-debug.log
 plug.vim.old
 tags
