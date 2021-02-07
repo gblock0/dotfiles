@@ -10,7 +10,7 @@ if has('nvim')
 
   " nvim-lsp
 	Plug 'neovim/nvim-lspconfig'
-	Plug 'nvim-lua/completion-nvim'
+  Plug 'hrsh7th/nvim-compe'
   Plug 'glepnir/lspsaga.nvim'
 
   "nvim-treesitter
@@ -25,6 +25,7 @@ if has('nvim')
 
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
+ " Plug 'lewis6991/gitsigns.nvim'
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
@@ -50,11 +51,9 @@ Plug 'christoomey/vim-tmux-navigator'					" Allows navigation between vim and tm
 Plug 'gregsexton/MatchTag'								" Highlights the matching HTML tag
 Plug 'tpope/vim-fugitive'								" Git stuff
 Plug 'tpope/vim-surround'								" Change surrounding quotes, brackets, etc.
-" Plug 'scrooloose/nerdcommenter'							" Easily comment/uncomment thing using shortcuts
 "Plug 'tweekmonster/startuptime.vim'                     " Uncomment to test startup time
-Plug 'mhinz/vim-signify'
+Plug 'mhinz/vim-signify'                  " show git status in the gutter
 Plug 'gioele/vim-autoswap'								" Swap file handling
-Plug 'cohama/agit.vim'									" Git plugin to easily go through all your commits
 Plug 'lfv89/vim-interestingwords'						" Highlight different words in a file
 Plug 'junegunn/vader.vim', { 'for': 'vader' }
 Plug 'szw/vim-maximizer'

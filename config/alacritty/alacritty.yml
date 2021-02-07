@@ -88,9 +88,8 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    # The `style` can be specified to pick a specific face.
-    family: BlexMono Nerd Font Mono
-    style: Book
+    family: VictorMono Nerd Font Mono
+    style: Medium
 
   # Bold font face
   bold:
@@ -98,17 +97,15 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: BlexMono Nerd Font Mono
     style: SemiBold
 
   # Italic font face
-  italic:
+  # italic:
     # Font family
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: BlexMono Nerd Font Mono
-    style: Italic
+    # style: Italic
 
   # Bold italic font face
   bold_italic:
@@ -116,7 +113,6 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    # family: SauceCodePro Nerd Font Mono Regular
     style: SemiBold Italic
 
   # Point size

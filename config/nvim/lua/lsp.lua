@@ -1,5 +1,5 @@
 vim.g.completion_matching_strategy_list = {'exact', 'substring', 'fuzzy'}
-vim.o.completeopt = 'menuone,noinsert,noselect'
+vim.o.completeopt = 'menu,menuone,noselect'
 
 local keymap = vim.api.nvim_set_keymap
 
@@ -12,15 +12,22 @@ keymap('n', '<leader>lca', ':lua vim.lsp.buf.code_action()<CR>', {noremap = true
 keymap('n', '<leader>lsd', ':lua vim.lsp.util.show_line_diagnostics()<CR>', {noremap = true })
 
 --must have run: npm install -g typescript
-require"lspconfig".tsserver.setup{
-    on_attach = function(client)
-        require"completion".on_attach(client)
-        require"illuminate".on_attach(client)
-    end
+require'lspconfig'.tsserver.setup{}
+require'compe'.setup {
+  enabled = true;
+  source = {
+    path = true;
+    buffer = true;
+    nvim_lsp = true;
+    treesitter = true;
+  };
 }
 
+keymap('i', '<C-Space>', 'compe#complete()', {noremap = true, silent = true, expr = true})
+keymap('i', '<CR>', "compe#confirm('<CR>')", {noremap = true, silent = true, expr = true})
+
 --must run: npm install -g pyright
-require"lspconfig".pyright.setup{on_attach=require"completion".on_attach}
+require'lspconfig'.pyright.setup{}
 
 
 local saga = require 'lspsaga'

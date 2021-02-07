@@ -22,6 +22,8 @@ lua require('tmux-navigator')
 lua require('treesitter')
 lua require('vimspector')
 
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
 colorscheme OceanicNext
 
 " {{{ Things that cannot be converted to lua
@@ -42,7 +44,7 @@ augroup GB_SETTINGS
     let autocommands_loaded = 1
 
     " automatically resize panes on resize
-    autocmd VimResized * exe 'normal! \<c-w>='
+    " autocmd VimResized * exe 'normal! \<c-w>='
 
     " Highlight trailing whitespace
     highlight ExtraWhitespace ctermbg=red guibg=red
