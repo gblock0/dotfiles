@@ -8,6 +8,8 @@ if has('nvim')
   Plug 'RRethy/vim-illuminate'
   Plug 'sbdchd/neoformat'
 
+  Plug 'rafcamlet/nvim-luapad'
+
   " nvim-lsp
 	Plug 'neovim/nvim-lspconfig'
   Plug 'hrsh7th/nvim-compe'

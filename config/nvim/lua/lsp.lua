@@ -61,3 +61,4 @@ keymap('n', '<F3>', ':Telescope lsp_references<CR>', {noremap = true })
 require('lspkind').init({
     with_text = true,
 })
+
