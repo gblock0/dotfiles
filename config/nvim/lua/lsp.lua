@@ -13,6 +13,12 @@ keymap('n', '<leader>lsd', ':lua vim.lsp.util.show_line_diagnostics()<CR>', {nor
 
 --must have run: npm install -g typescript
 require'lspconfig'.tsserver.setup{}
+
+--must run: npm install -g pyright
+require'lspconfig'.pyright.setup{}
+
+require'lspconfig'.rust_analyzer.setup{}
+
 require'compe'.setup {
   enabled = true;
   source = {
@@ -25,10 +31,6 @@ require'compe'.setup {
 
 keymap('i', '<C-Space>', 'compe#complete()', {noremap = true, silent = true, expr = true})
 keymap('i', '<CR>', "compe#confirm('<CR>')", {noremap = true, silent = true, expr = true})
-
---must run: npm install -g pyright
-require'lspconfig'.pyright.setup{}
-
 
 local saga = require 'lspsaga'
 saga.init_lsp_saga()
