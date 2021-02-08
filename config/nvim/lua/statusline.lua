@@ -23,9 +23,9 @@ local buffer_not_empty = function()
   return false
 end
 
-local checkwidth = function()
+local useSmallConfig = function()
   local squeeze_width  = vim.fn.winwidth(0) / 2
-  if squeeze_width > 40 then
+  if squeeze_width <= 40 then
     return true
   end
   return false
@@ -34,6 +34,18 @@ end
 local get_relative_file_path = function ()
     local file = vim.fn.expand('%f')
     if vim.fn.empty(file) == 1 then return '' end
+    if string.len(file) > 50 and vim.fn.winwidth(0) < 130 then
+      local filePath = ''
+      for i,v in string.gmatch(file, '[^/]*') do
+        if string.len(i) > 0 then
+          if string.len(filePath) > 0 then
+            filePath = filePath .. '/'
+          end
+          filePath = filePath .. string.sub(i, 1,1)
+        end
+      end
+      file = string.sub(filePath, 1, string.len(filePath)-1) .. vim.fn.expand('%:t')
+    end
     if vim.bo.modifiable then
       if vim.bo.modified then
         return file .. '   '
@@ -63,8 +75,8 @@ table.insert(gls.left, {
                           rm = colors.cyan, ['r?'] = colors.cyan,
                           ['!']  = colors.red,t = colors.red}
       local mode_map = {
-             n= 'NORMAL', i= 'INSERT', R= 'REPLACE', v= 'VISUAL', V= 'V-LINE',
-            c= 'COMMAND', s= 'SELECT', S= 'S-LINE', t= 'TERMINAL'}
+             n= 'N', i= 'I', R= 'R', v= 'V', V= 'V',
+            c= 'C', s= 'S', S= 'S', t= 'T'}
       vim.api.nvim_command('hi GalaxyViMode guifg='..mode_color[vim.fn.mode()])
       return ' ' .. mode_map[vim.fn.mode()] .. ' '
     end,
@@ -204,7 +216,7 @@ table.insert(gls.right, {
 table.insert(gls.right, {
   LineInfo = {
     provider = get_line_number,
-    separator = '  ',
+    separator = ' ',
     separator_highlight = {'NONE',colors.bg},
     highlight = {colors.fg,colors.bg},
   },

@@ -13,5 +13,5 @@ function _G.go_to_test_file(typeOfSplit)
 
 end
 
-keymap('n', '<leader>ts', ':lua go_to_test_file()<CR>', {noremap = true})
-keymap('n', '<leader>tw', ':lua go_to_test_file("v")<CR>', {noremap = true})
+keymap('n', '<leader>ts', ':lua go_to_test_file()<CR>', {noremap = true, silent = true})
+keymap('n', '<leader>tw', ':lua go_to_test_file("v")<CR>', {noremap = true, silent = true})
