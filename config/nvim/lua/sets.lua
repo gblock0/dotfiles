@@ -1,36 +1,41 @@
 vim.g.mapleader = ' '
 
-local opt = vim.api.nvim_set_option
+local scopes = {o = vim.o, b = vim.bo, w = vim.wo}
 
-opt('termguicolors', true)
+local function opt(scope, key, value)
+  scopes[scope][key] = value
+  if scope ~= 'o' then scopes['o'][key] = value end
+end
 
-opt('mouse', 'a')
+opt('o', 'termguicolors', true)
+
+opt('o', 'mouse', 'a')
 
 -- Tab control
-opt('tabstop', 2) -- the visible width of tabs
-opt('softtabstop', 2) -- edit as if the tabs are 4 characters wide
-opt('shiftwidth', 2) -- number of spaces to use for indent and unindent
-opt('expandtab', true) -- insert tabs rather than spaces for <Tab>
-opt('shiftround', true) -- round indent to a multiple of 'shiftwidth'
+opt('b', 'tabstop', 2) -- the visible width of tabs
+opt('b', 'softtabstop', 2) -- edit as if the tabs are 4 characters wide
+opt('b', 'shiftwidth', 2) -- number of spaces to use for indent and unindent
+opt('b', 'expandtab', true) -- insert tabs rather than spaces for <Tab>
+opt('o', 'shiftround', true) -- round indent to a multiple of 'shiftwidth'
 
-opt('undolevels', 5000)
-opt('undodir', vim.fn.expand('~/.VIM_UNDO_FILES'))
-opt('undofile', true)
+opt('o', 'undolevels', 5000)
+opt('o', 'undodir', vim.fn.expand('~/.VIM_UNDO_FILES'))
+opt('o', 'undofile', true)
 
-opt('clipboard', 'unnamedplus')
+opt('o', 'clipboard', 'unnamedplus')
 
-opt('scrolloff', 10) -- lines of text around cursor
+opt('o', 'scrolloff', 10) -- lines of text around cursor
 
-opt('wildoptions', 'pum')
+opt('o', 'wildoptions', 'pum')
 
-opt('pumblend', 17) -- floating window popup menu for command line completion
+opt('o', 'pumblend', 17) -- floating window popup menu for command line completion
 
-opt('ignorecase', true) -- case insensitive searching
-opt('smartcase', true) -- case-sensitive if expression contains a capital letter
+opt('o', 'ignorecase', true) -- case insensitive searching
+opt('o', 'smartcase', true) -- case-sensitive if expression contains a capital letter
 
-vim.wo.number = true
-vim.wo.relativenumber = true
+opt('w', 'number', true);
+opt('w', 'relativenumber', true)
 
-opt('cursorline', true) -- highlight current line
+opt('w', 'cursorline', true) -- highlight current line
 
-opt('updatetime', 100) -- update the swap file quicker (also helps with updating git status)
+opt('o', 'updatetime', 100) -- update the swap file quicker (also helps with updating git status)
