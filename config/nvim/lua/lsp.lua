@@ -1,7 +1,10 @@
-vim.g.completion_matching_strategy_list = {'exact', 'substring', 'fuzzy'}
-vim.o.completeopt = 'menu,menuone,noselect'
+local utils = require'nutils'
+keymap = utils.map
+opt = utils.opt
 
-local keymap = vim.api.nvim_set_keymap
+vim.g.completion_matching_strategy_list = {'exact', 'substring', 'fuzzy'}
+
+opt('o', 'completeopt', 'menu,menuone,noselect')
 
 keymap('n', '<leader>ld', ':lua vim.lsp.buf.definition()<CR>', {noremap = true })
 keymap('n', '<leader>li', ':lua vim.lsp.buf.implementation()<CR>', {noremap = true })
