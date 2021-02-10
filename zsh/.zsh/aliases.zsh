@@ -4,13 +4,13 @@ alias reload!="source ~/.zshrc"
 alias tc="~/.truecolor.sh"
 alias tm="~/.tmux/bin/bash/tm.sh"
 
-# Filesystem aliases
-alias l="ls -lah ${colorflag}"
-alias ls="ls -F ${colorflag}"
-alias la="ls -AF ${colorflag}"
-alias ll="ls -lFh ${colorflag}"
-alias lld="ls -l | grep ^d"
-alias rmf="rm -rf"
+# Changing "ls" to "exa"
+alias ls='exa -al --color=always --group-directories-first'
+alias l='ls'
+alias la='exa -a --color=always --group-directories-first'  # all files and dirs
+alias ll='exa -l --color=always --group-directories-first'  # long format
+alias lt='exa -aT --color=always --group-directories-first' # tree listing
+alias l.='exa -a | egrep "^\."'
 
 # Helpers
 alias du="du -h -c" # calculate disk usage for a folder

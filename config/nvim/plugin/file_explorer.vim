@@ -2,7 +2,7 @@
 " Fern Settings
 """""""""""""""""""""""""""
 
-noremap <silent> <Bslash>n :Fern . -drawer -reveal=% -toggle -width=70<CR><C-w>=
+noremap <silent> <leader>n :Fern . -drawer -reveal=% -toggle -width=70<CR><C-w>=
 let g:fern#disable_default_mappings = 1
 let g:fern#renderer = "nerdfont"
 function! FernInit() abort

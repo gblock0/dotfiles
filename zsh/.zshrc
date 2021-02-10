@@ -9,13 +9,6 @@ export DOTFILES=$HOME/.dotfiles
 export ZSH=$HOME/.zsh
 export EVENT_NOKQUEUE=1
 
-# Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-    colorflag="--color"
-else # macOS `ls`
-    colorflag="-G"
-fi
-
 source /usr/local/share/antigen/antigen.zsh
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle git
@@ -40,6 +33,9 @@ export PATH=~/.tmux/bin/bash:$PATH
 # Add sbin to path for Homebrew
 export PATH="/usr/local/sbin:$PATH"
 
+# Add poetry to path
+export PATH=~/.poetry/bin:$PATH
+
 source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -50,3 +46,4 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 nvm use default
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi

@@ -11,8 +11,6 @@ keymap('n', '<leader>li', ':lua vim.lsp.buf.implementation()<CR>', {noremap = tr
 keymap('n', '<leader>lsh', ':lua vim.lsp.buf.signature_help()<CR>', {noremap = true })
 keymap('n', '<F2>', ':lua vim.lsp.buf.rename()<CR>', {noremap = true })
 keymap('n', '<leader>lh', ':lua vim.lsp.buf.hover()<CR>', {noremap = true })
-keymap('n', '<leader>lca', ':lua vim.lsp.buf.code_action()<CR>', {noremap = true })
-keymap('n', '<leader>lsd', ':lua vim.lsp.util.show_line_diagnostics()<CR>', {noremap = true })
 
 --must have run: npm install -g typescript
 require'lspconfig'.tsserver.setup{}
@@ -37,9 +35,9 @@ keymap('i', '<CR>', "compe#confirm('<CR>')", {noremap = true, silent = true, exp
 
 local saga = require 'lspsaga'
 saga.init_lsp_saga()
-keymap('n', '<leader>e', ':LspSagaDiagJumpNext<CR>', {noremap = true, silent = true })
-keymap('n', '<leader>cd', ':LspSagaShowLineDiags<CR>', {noremap = true, silent = true })
-keymap('n', 'K', ':LspSagaHoverDoc<CR>', {noremap = true, silent = true })
+keymap('n', '<leader>e', ':Lspsaga diagnostic_jump_next<CR>', {noremap = true, silent = true })
+keymap('n', '<leader>cd', ':Lspsaga show_line_diagnostics<CR>', {noremap = true, silent = true })
+keymap('n', 'K', ':Lspsaga signature_help<CR>', {noremap = true, silent = true })
 
 require('telescope').setup{
   defaults = {
