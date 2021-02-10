@@ -27,4 +27,5 @@ opt('w', 'cursorline', true) -- highlight current line
 opt('w', 'number', true);
 opt('w', 'relativenumber', true)
 opt('w', 'foldmethod', 'syntax')
+opt('w', 'foldlevel', 99)
 
