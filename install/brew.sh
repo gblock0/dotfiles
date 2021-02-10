@@ -3,9 +3,7 @@
 brew update
 
 # cli tools
-brew install tree
-brew install wget
-brew install ripgrep
+brew install tree wget ripgrep procs tldr exa
 
 # development tools
 brew install node
