@@ -105,7 +105,6 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: VictorMono Nerd Font Mono
     style: Italic
 
   # Bold italic font face
@@ -114,7 +113,6 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: VictorMono Nerd Font Mono
     style: SemiBold Italic
 
   # Point size
