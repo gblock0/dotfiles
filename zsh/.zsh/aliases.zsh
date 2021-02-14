@@ -27,6 +27,3 @@ alias vim="nvim"
 
 # Kill all tmux sessions
 alias tmuxkill="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
-
-# Delete all local branches that have been merged locally
-alias gbpurge='git branch --merged | grep -v "\*" | grep -v "master" | xargs -n 1 git branch -d'
