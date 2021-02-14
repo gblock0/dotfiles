@@ -7,6 +7,10 @@
 lua require('sets')
 source ~/.config/nvim/plugins.vim
 
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
+colorscheme OceanicNext
+
 " load plugin configs
 lua require('autoswap')
 lua require('colorizer-lua')
@@ -21,10 +25,6 @@ lua require('test')
 lua require('tmux-navigator')
 lua require('treesitter')
 lua require('vimspector')
-
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
-colorscheme OceanicNext
 
 " {{{ Things that cannot be converted to lua
 
@@ -76,3 +76,6 @@ function! JestStrategy(cmd)
   call vimspector#LaunchWithSettings( #{ configuration: 'jest', TestName: testName } )
 endfunction
 let g:test#custom_strategies = {'jest': function('JestStrategy')}
+
+autocmd BufEnter,BufWritePost <buffer> :lua require("lsp_extensions.inlay_hints").request {aligned = true, prefix = " » "}
+autocmd BufWritePre <buffer> :lua vim.lsp.buf.formatting_sync()
