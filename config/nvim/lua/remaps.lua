@@ -28,10 +28,7 @@ keymap('n', '<leader>;', 'maA;<esc>`a:wa<CR>', { noremap = true})
 keymap('n', 'cp', ':let @+ = expand("%")<cr>', { noremap = true})
 
 -- Disable help F1 key
-keymap('i', '<F1>', '<ESC>', { noremap = true})
-keymap('n', '<F1>', '<ESC>', { noremap = true})
-keymap('v', '<F1>', '<ESC>', { noremap = true})
-keymap('x', '<F1>', '<ESC>', { noremap = true})
+keymap('', '<F1>', '<ESC>', { noremap = true})
 
 
 

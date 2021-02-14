@@ -18,14 +18,16 @@ require'lspconfig'.tsserver.setup{}
 --must run: npm install -g pyright
 require'lspconfig'.pyright.setup{}
 
-require'lspconfig'.rust_analyzer.setup{}
+require'lspconfig'.rust_analyzer.setup{
+}
 
 require'compe'.setup {
-  enabled = true;
+  preselect = 'always';
   source = {
     path = true;
     buffer = true;
     nvim_lsp = true;
+    nvim_lua = true;
     treesitter = true;
   };
 }
@@ -37,7 +39,7 @@ local saga = require 'lspsaga'
 saga.init_lsp_saga()
 keymap('n', '<leader>e', ':Lspsaga diagnostic_jump_next<CR>', {noremap = true, silent = true })
 keymap('n', '<leader>cd', ':Lspsaga show_line_diagnostics<CR>', {noremap = true, silent = true })
-keymap('n', 'K', ':Lspsaga signature_help<CR>', {noremap = true, silent = true })
+keymap('n', 'K', ':Lspsaga hover_doc<CR>', {noremap = true, silent = true })
 
 require('telescope').setup{
   defaults = {

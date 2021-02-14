@@ -1,7 +1,7 @@
 -- Testing helpers
 local keymap = vim.api.nvim_set_keymap
-keymap('n', '<leader>tt', ':TestNearest<CR>', { noremap = true})
-keymap('n', '<leader>tf', ':TestFile<CR>', { noremap = true})
+keymap('n', '<leader>tt', ':TestNearest -strategy=neovim<CR>', { noremap = true})
+keymap('n', '<leader>tf', ':TestFile -strategy=neovim<CR>', { noremap = true})
 
 function _G.go_to_test_file(typeOfSplit)
   local testFilePath = string.gsub(vim.fn.expand('%'), '.ts$', '.test.ts')
