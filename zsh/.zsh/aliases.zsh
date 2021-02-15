@@ -24,6 +24,7 @@ alias dotfiles="~/./.tmux/dotfiles"
 alias tkill="tmux kill-session -t"
 
 alias vim="nvim"
+alias n="nvim"
 
 # Kill all tmux sessions
 alias tmuxkill="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
