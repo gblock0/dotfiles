@@ -18,8 +18,7 @@ require'lspconfig'.tsserver.setup{}
 --must run: npm install -g pyright
 require'lspconfig'.pyright.setup{}
 
-require'lspconfig'.rust_analyzer.setup{
-}
+require'lspconfig'.rust_analyzer.setup{}
 
 require'compe'.setup {
   preselect = 'always';
