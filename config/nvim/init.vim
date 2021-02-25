@@ -14,7 +14,7 @@ colorscheme OceanicNext
 " load plugin configs
 lua require('autoswap')
 lua require('colorizer-lua')
-lua require('fzf')
+lua require('finder')
 lua require('lsp')
 lua require('maximizer')
 lua require('neoformat')

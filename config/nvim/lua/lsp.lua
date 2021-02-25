@@ -40,28 +40,6 @@ keymap('n', '<leader>e', ':Lspsaga diagnostic_jump_next<CR>', {noremap = true, s
 keymap('n', '<leader>cd', ':Lspsaga show_line_diagnostics<CR>', {noremap = true, silent = true })
 keymap('n', 'K', ':Lspsaga hover_doc<CR>', {noremap = true, silent = true })
 
-require('telescope').setup{
-  defaults = {
-    file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
-    grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
-    qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
-  }
-}
-require('telescope').load_extension('fzy_native')
-
-
-keymap('n', '<leader>a',  ':Telescope live_grep<CR>', { noremap = true })
-keymap('n', '<leader>p', ':Telescope find_files<Cr>', { noremap = true })
-keymap('n', '<leader>ca', ':Telescope lsp_code_actions<CR>', {noremap = true, silent = true })
-keymap('v', '<leader>ca', ':Telescope lsp_range_code_actions<CR>', {noremap = true, silent = true })
-
--- Create a new vsplit, switch to it and open CtrlP
-keymap('n', '<leader>w', '<C-w>v<C-w>l :Telescope find_files<cr>', { noremap = true})
-
--- Create a new split, switch to it and open CtrlP
-keymap('n', '<leader>s', '<C-w>s<C-w>j :Telescope find_files<cr>', { noremap = true})
-keymap('n', '<F3>', ':Telescope lsp_references<CR>', {noremap = true })
-
 require('lspkind').init({
     with_text = true,
 })

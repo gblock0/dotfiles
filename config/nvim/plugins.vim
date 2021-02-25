@@ -28,9 +28,11 @@ if has('nvim')
 
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
- " Plug 'lewis6991/gitsigns.nvim'
+
+  " Telescope
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'nvim-telescope/telescope-fzy-native.nvim'
+  Plug 'nvim-telescope/telescope-fzf-writer.nvim'
 
   Plug 'onsails/lspkind-nvim'
   Plug 'b3nj5m1n/kommentary'
