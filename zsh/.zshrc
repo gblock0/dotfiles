@@ -10,10 +10,10 @@ export ZSH=$HOME/.zsh
 export EVENT_NOKQUEUE=1
 
 source /usr/local/share/antigen/antigen.zsh
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle git
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen apply
+antigen bundle zsh-users/zsh-autosuggestions >/dev/null
+antigen bundle git >/dev/null
+antigen bundle zsh-users/zsh-syntax-highlighting >/dev/null
+antigen apply >/dev/null
 
 # load all zsh config files
 for config ($ZSH/*.zsh) source $config
@@ -45,5 +45,5 @@ source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-nvm use default
+nvm use default >/dev/null
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
