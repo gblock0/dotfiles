@@ -22,6 +22,7 @@ opt('o', 'pumblend', 17) -- floating window popup menu for command line completi
 opt('o', 'ignorecase', true) -- case insensitive searching
 opt('o', 'smartcase', true) -- case-sensitive if expression contains a capital letter
 opt('o', 'updatetime', 100) -- update the swap file quicker (also helps with updating git status)
+opt('o', 'listchars', 'eol:¬,tab:>·,trail:~,space:␣') -- set what whitespace characters look like
 
 opt('w', 'cursorline', true) -- highlight current line
 opt('w', 'number', true);

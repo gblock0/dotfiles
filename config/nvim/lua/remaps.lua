@@ -30,5 +30,6 @@ keymap('n', 'cp', ':let @+ = expand("%")<cr>', { noremap = true})
 -- Disable help F1 key
 keymap('', '<F1>', '<ESC>', { noremap = true})
 
-
+-- show/hide whitespace mappings
+keymap('n', '<F5>', ':set list!<CR>', {noremap = true})
 

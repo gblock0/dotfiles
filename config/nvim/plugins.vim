@@ -3,42 +3,41 @@ call plug#begin('~/.config/nvim/plugged')
 "Current Theme
 Plug 'gblock0/oceanic-next', { 'branch': 'AddLspColors' }
 
-if has('nvim')
-	Plug 'norcalli/nvim-colorizer.lua'
-  Plug 'RRethy/vim-illuminate'
-  Plug 'sbdchd/neoformat'
+Plug 'mhartington/formatter.nvim'
+Plug 'norcalli/nvim-colorizer.lua'
+Plug 'RRethy/vim-illuminate'
 
-  Plug 'rafcamlet/nvim-luapad'
+Plug 'rafcamlet/nvim-luapad'
 
-  " nvim-lsp
-	Plug 'neovim/nvim-lspconfig'
-  Plug 'hrsh7th/nvim-compe'
-  Plug 'glepnir/lspsaga.nvim'
-  Plug 'nvim-lua/lsp_extensions.nvim'
+" nvim-lsp
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-compe'
+Plug 'glepnir/lspsaga.nvim'
+Plug 'nvim-lua/lsp_extensions.nvim'
 
-  "nvim-treesitter
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  Plug 'nvim-treesitter/playground'
 
-  " Debugging
-  Plug 'janko/vim-test'
-  Plug 'glepnir/galaxyline.nvim'
-  Plug 'kyazdani42/nvim-web-devicons'
-  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+"nvim-treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
 
-  Plug 'nvim-lua/popup.nvim'
-  Plug 'nvim-lua/plenary.nvim'
+" Debugging
+Plug 'janko/vim-test'
+Plug 'glepnir/galaxyline.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
-  " Telescope
-  Plug 'nvim-telescope/telescope.nvim'
-  Plug 'nvim-telescope/telescope-fzy-native.nvim'
-  Plug 'nvim-telescope/telescope-fzf-writer.nvim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
 
-  Plug 'onsails/lspkind-nvim'
-  Plug 'b3nj5m1n/kommentary'
+" Telescope
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'nvim-telescope/telescope-fzf-writer.nvim'
 
-endif
+Plug 'onsails/lspkind-nvim'
+Plug 'b3nj5m1n/kommentary'
 
+Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 " Utilities
 Plug 'puremourning/vimspector'
 
