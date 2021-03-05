@@ -1,9 +1,9 @@
 call plug#begin('~/.config/nvim/plugged')
 
 "Current Theme
-Plug 'gblock0/oceanic-next', { 'branch': 'AddLspColors' }
+Plug 'mhartington/oceanic-next'
 
-Plug 'mhartington/formatter.nvim'
+Plug 'sbdchd/neoformat'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'RRethy/vim-illuminate'
 

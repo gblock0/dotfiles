@@ -38,13 +38,11 @@ local rustfmt = {
   formatStdin = rustStdin
 }
 
-local prettierExePath = "./node_modules/.bin/prettier"
-local prettierArgs = "--stdin-filepath " .. vim.api.nvim_buf_get_name(0)
-local prettierStdin = true
+local prettierArgs = {"--stdin", "--stdin-filepath", vim.api.nvim_buf_get_name(0), "--single-quote"}
 
 local prettier = {
-  formatCommand = prettierExePath .. prettierArgs,
-  formatStdin = prettierStdin
+  formatCommand = "./node_modules/.bin/prettier" .. table.concat(prettierArgs,' '),
+  formatStdin = true
 }
 
 local languages = {
@@ -60,7 +58,17 @@ local languages = {
   scss = {prettier},
   css = {prettier},
   markdown = {prettier},
-  rust = {rustfmt}
+  rust = {rustfmt},
+  python = {
+    {
+      formatCommand = "black",
+      formatStdin = true
+    },
+    {
+      formatCommand = "isort",
+      formatStdin = true
+    },
+  }
 }
 
 nvim_lsp.efm.setup {
@@ -72,53 +80,6 @@ nvim_lsp.efm.setup {
   settings = {
     rootMarkers = {".git", "package.json"},
     languages = languages
-  }
-}
-
-local eslintPrettierFormatter = {
-  function()
-    return {
-      exe = prettierExePath,
-      args = {prettierArgs},
-      stdin = prettierStdin
-    }
-  end,
-  function()
-    return {
-      exe = "eslint_d",
-      args = {"--fix", "--stdin", "--stdin-filename ", vim.api.nvim_buf_get_name(0)},
-      stdin = true
-    }
-  end
-}
-
-require "formatter".setup {
-  logging = false,
-  filetype = {
-    typescriptreact = eslintPrettierFormatter,
-    typescript = eslintPrettierFormatter,
-    javascript = eslintPrettierFormatter,
-    javascriptreact = eslintPrettierFormatter,
-    json = eslintPrettierFormatter,
-    rust = {
-      function()
-        return {
-          exe = rustExe,
-          args = {rustArgs},
-          stdin = rustStdin
-        }
-      end
-    },
-    lua = {
-      -- luafmt
-      function()
-        return {
-          exe = "luafmt",
-          args = {"--indent-count", 2, "--stdin"},
-          stdin = true
-        }
-      end
-    }
   }
 }
 
