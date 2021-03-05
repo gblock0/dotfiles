@@ -10,9 +10,9 @@ export ZSH=$HOME/.zsh
 export EVENT_NOKQUEUE=1
 
 source /usr/local/share/antigen/antigen.zsh
-antigen bundle zsh-users/zsh-autosuggestions >/dev/null
 antigen bundle git >/dev/null
 antigen bundle zsh-users/zsh-syntax-highlighting >/dev/null
+antigen bundle zsh-users/zsh-autosuggestions >/dev/null
 antigen apply >/dev/null
 
 # load all zsh config files
