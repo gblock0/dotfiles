@@ -23,29 +23,16 @@ local buffer_not_empty = function()
   return false
 end
 
-local useSmallConfig = function()
+local show_in_small_window = function()
   local squeeze_width  = vim.fn.winwidth(0) / 2
-  if squeeze_width <= 40 then
-    return true
+  if vim.fn.winwidth(0) < 130 then
+    return false
   end
-  return false
+  return true
 end
 
 local get_relative_file_path = function ()
     local file = vim.fn.expand('%f')
-    if vim.fn.empty(file) == 1 then return '' end
-    if string.len(file) > 50 and vim.fn.winwidth(0) < 130 then
-      local filePath = ''
-      for i,v in string.gmatch(file, '[^/]*') do
-        if string.len(i) > 0 then
-          if string.len(filePath) > 0 then
-            filePath = filePath .. '/'
-          end
-          filePath = filePath .. string.sub(i, 1,1)
-        end
-      end
-      file = string.sub(filePath, 1, string.len(filePath)-1) .. vim.fn.expand('%:t')
-    end
     if vim.bo.modifiable then
       if vim.bo.modified then
         return file .. '   '
@@ -95,6 +82,7 @@ table.insert(gls.left, {
       return diffAdd
     end,
     icon = '  ',
+    condition = show_in_small_window,
     separator = ' ',
     separator_highlight = {'NONE',colors.bg},
     highlight = {colors.green,colors.bg},
@@ -111,6 +99,7 @@ table.insert(gls.left, {
       return diffMod
     end,
     icon = '柳',
+    condition = show_in_small_window,
     separator = ' ',
     separator_highlight = {'NONE',colors.bg},
     highlight = {colors.orange,colors.bg},
@@ -127,6 +116,7 @@ table.insert(gls.left, {
       return diffRem
     end,
     icon = ' ',
+    condition = show_in_small_window,
     separator = ' ',
     separator_highlight = {'NONE',colors.bg},
     highlight = {colors.red,colors.bg},
@@ -137,7 +127,9 @@ table.insert(gls.left, {
   GitBranch = {
     provider = 'GitBranch',
     separator_highlight = {'NONE',colors.bg},
-    condition = require('galaxyline.provider_vcs').check_git_workspace,
+    condition = function()
+      return show_in_small_window() and require('galaxyline.condition').check_git_workspace()
+    end,
     highlight = {colors.white,colors.bg},
   }
 })
