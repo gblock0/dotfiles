@@ -33,11 +33,6 @@ command! -bang -nargs=* Rg
       \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
       \   fzf#vim#with_preview(), <bang>0)
 
-
-" Turn off weird red highlight errors in init.vim
-hi ERROR NONE
-
-
 augroup GB_SETTINGS
     autocmd!
     source ~/.config/nvim/filetype_configs.vim

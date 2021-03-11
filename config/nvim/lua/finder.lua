@@ -13,13 +13,12 @@ require('telescope').setup{
     grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
     qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
     color_devicons = true,
-    -- mappings = {
-    --   i = {
-    --     ["<C-x>"] = false,
-    --     ["<C-s>"] = actions.goto_file_selection_split,
-    --     ["<C-q>"] = actions.send_to_qflist,
-    --   },
-    -- }
+    mappings = {
+      i = {
+        ["<C-x>"] = false,
+        ["<C-q>"] = actions.send_to_qflist,
+      },
+    }
   },
   extensions = {
     fzy_native = {

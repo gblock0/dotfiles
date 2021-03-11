@@ -6,6 +6,7 @@ Plug 'mhartington/oceanic-next'
 Plug 'sbdchd/neoformat'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'RRethy/vim-illuminate'
+Plug 'nvim-lua/lsp-status.nvim'
 
 Plug 'rafcamlet/nvim-luapad'
 
@@ -55,7 +56,7 @@ Plug 'christoomey/vim-tmux-navigator'					" Allows navigation between vim and tm
 Plug 'gregsexton/MatchTag'								" Highlights the matching HTML tag
 Plug 'tpope/vim-fugitive'								" Git stuff
 Plug 'tpope/vim-surround'								" Change surrounding quotes, brackets, etc.
-"Plug 'tweekmonster/startuptime.vim'                     " Uncomment to test startup time
+Plug 'tweekmonster/startuptime.vim'                     " Uncomment to test startup time
 Plug 'mhinz/vim-signify'                  " show git status in the gutter
 Plug 'gioele/vim-autoswap'								" Swap file handling
 Plug 'lfv89/vim-interestingwords'						" Highlight different words in a file
