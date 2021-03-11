@@ -1,3 +1,4 @@
+local lsp_status = require('lsp-status')
 local gl = require('galaxyline')
 local gls = gl.section
 gl.short_line_list = {'NvimTree','vista','dbui'}
@@ -174,6 +175,15 @@ table.insert(gls.left, {
     provider = 'DiagnosticInfo',
     icon = '  ',
     highlight = {colors.blue,colors.bg},
+  }
+})
+
+table.insert(gls.left, {
+  LspStatus = {
+    provider = function ()
+      return lsp_status.status()
+    end,
+    highlight = {'NONE', colors.bg}
   }
 })
 

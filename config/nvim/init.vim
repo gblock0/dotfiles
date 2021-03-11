@@ -25,6 +25,7 @@ lua require('test')
 lua require('tmux-navigator')
 lua require('treesitter')
 lua require('vimspector')
+lua require('bufferline').setup{}
 
 " {{{ Things that cannot be converted to lua
 

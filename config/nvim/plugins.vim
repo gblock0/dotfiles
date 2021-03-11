@@ -21,6 +21,8 @@ Plug 'nvim-lua/lsp_extensions.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 
+Plug 'akinsho/nvim-bufferline.lua'
+
 " Debugging
 Plug 'janko/vim-test'
 Plug 'glepnir/galaxyline.nvim'
