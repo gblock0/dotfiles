@@ -178,14 +178,14 @@ table.insert(gls.left, {
   }
 })
 
-table.insert(gls.left, {
-  LspStatus = {
-    provider = function ()
-      return lsp_status.status()
-    end,
-    highlight = {'NONE', colors.bg}
-  }
-})
+-- table.insert(gls.left, {
+--   LspStatus = {
+--     provider = function ()
+--       return lsp_status.status()
+--     end,
+--     highlight = {'NONE', colors.bg}
+--   }
+-- })
 
 table.insert(gls.right, {
   FileEncode = {

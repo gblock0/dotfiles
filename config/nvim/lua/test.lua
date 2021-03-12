@@ -20,9 +20,9 @@ function _G.go_to_test_file(typeOfSplit)
   end
 
   if typeOfSplit == 'v' then
-    return vim.api.nvim_command(':' .. vsplit_command ..test_file_path)
+    return vim.api.nvim_command(':' .. vsplit_command .. test_file_path)
   else
-    return vim.api.nvim_command(':' .. split_command ..test_file_path)
+    return vim.api.nvim_command(':' .. split_command .. test_file_path)
   end
 
 end

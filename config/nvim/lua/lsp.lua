@@ -14,31 +14,31 @@ keymap("n", "<leader>lsh", ":lua vim.lsp.buf.signature_help()<CR>", {noremap = t
 keymap("n", "<F2>", ":lua vim.lsp.buf.rename()<CR>", {noremap = true})
 keymap("n", "<leader>lh", ":lua vim.lsp.buf.hover()<CR>", {noremap = true})
 
-local lsp_status = require "lsp-status"
-lsp_status.config({
-  indicator_errors = "",
-  indicator_warnings = "",
-  indicator_info = "",
-  indicator_hint = "",
-  status_symbol = "",
-})
-lsp_status.register_progress()
+-- local lsp_status = require "lsp-status"
+-- lsp_status.config({
+--   indicator_errors = "",
+--   indicator_warnings = "",
+--   indicator_info = "",
+--   indicator_hint = "",
+--   status_symbol = "",
+-- })
+-- lsp_status.register_progress()
 
 --must have run: npm install -g typescript
 nvim_lsp.tsserver.setup {
-  on_attach = lsp_status.on_attach,
-  capabilities = lsp_status.capabilities,
+  -- on_attach = lsp_status.on_attach,
+  -- capabilities = lsp_status.capabilities,
 }
 
 --must run: npm install -g pyright
 nvim_lsp.pyright.setup {
-  on_attach = lsp_status.on_attach,
-  capabilities = lsp_status.capabilities,
+  -- on_attach = lsp_status.on_attach,
+  -- capabilities = lsp_status.capabilities,
 }
 
 nvim_lsp.rust_analyzer.setup {
-  on_attach = lsp_status.on_attach,
-  capabilities = lsp_status.capabilities,
+  -- on_attach = lsp_status.on_attach,
+  -- capabilities = lsp_status.capabilities,
 }
 
 local eslint_d = {
