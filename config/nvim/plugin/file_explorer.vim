@@ -1,36 +1,10 @@
 """""""""""""""""""""""""""
-" Fern Settings
+" nvim-tree Settings
 """""""""""""""""""""""""""
 
-noremap <silent> <leader>n :Fern . -drawer -reveal=% -toggle -width=70<CR><C-w>=
-let g:fern#disable_default_mappings = 1
-let g:fern#renderer = "nerdfont"
-function! FernInit() abort
-    nmap <buffer><expr>
-            \ <Plug>(fern-my-open-expand-collapse)
-            \ fern#smart#leaf(
-            \   "\<Plug>(fern-action-open:select)",
-            \   "\<Plug>(fern-action-expand:stay)",
-            \   "\<Plug>(fern-action-collapse)",
-            \ )
-    nmap <buffer> <CR> <Plug>(fern-my-open-expand-collapse)
-    nmap <buffer> l <Plug>(fern-action-expand:stay)
-    nmap <buffer> h <Plug>(fern-action-collapse)
-    nmap <buffer> <2-LeftMouse> <Plug>(fern-my-open-expand-collapse)
-    nmap <buffer> n <Plug>(fern-action-new-path)
-    nmap <buffer> f <Plug>(fern-action-new-file)
-    nmap <buffer> d <Plug>(fern-action-new-dir)
-    nmap <buffer> D <Plug>(fern-action-remove)
-    nmap <buffer> m <Plug>(fern-action-move)
-    nmap <buffer> r <Plug>(fern-action-rename)
-    nmap <buffer> I <Plug>(fern-action-hidden-toggle)
-    nmap <buffer> R <Plug>(fern-action-reload)
-    nmap <buffer> s <Plug>(fern-action-open:split)
-    nmap <buffer> w <Plug>(fern-action-open:vsplit)
-endfunction
+let g:nvim_tree_width = 40 "30 by default
+let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache' ] "empty by default
+let g:nvim_tree_auto_close = 1 "0 by default, closes the tree when it's the last window
 
-augroup FernGroup
-    autocmd!
-    autocmd FileType fern call FernInit()
-augroup END
-
+noremap <silent> <leader>n :NvimTreeToggle<CR>
+nnoremap <leader>r :NvimTreeRefresh<CR>

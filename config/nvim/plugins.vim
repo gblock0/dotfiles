@@ -42,12 +42,8 @@ Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 " Utilities
 Plug 'puremourning/vimspector'
 
-" {{{ Fern plugins
-Plug 'lambdalisue/nerdfont.vim'
-Plug 'lambdalisue/fern.vim'
-Plug 'lambdalisue/fern-git-status.vim'
-Plug 'lambdalisue/fern-renderer-nerdfont.vim'
-" }}}
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-tree.lua'
 
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
