@@ -34,15 +34,16 @@ require('telescope').setup{
 require('telescope').load_extension('fzy_native')
 require('telescope').load_extension('fzf_writer')
 
-keymap('n', '<leader>a',  ':Telescope fzf_writer staged_grep<CR>', { noremap = true })
-keymap('n', '<leader>p', ':Telescope fzf_writer files<Cr>', { noremap = true })
-keymap('n', '<leader>ca', ':Telescope lsp_code_actions<CR>', {noremap = true, silent = true })
-keymap('v', '<leader>ca', ':Telescope lsp_range_code_actions<CR>', {noremap = true, silent = true })
+keymap('n', '<leader>a',  ':Telescope fzf_writer staged_grep<CR>')
+keymap('n', '<leader>p', ':Telescope fzf_writer files<Cr>')
+keymap('n', '<leader>b', ':Telescope buffers<Cr>')
+keymap('n', '<leader>ca', ':Telescope lsp_code_actions<CR>')
+keymap('v', '<leader>ca', ':Telescope lsp_range_code_actions<CR>')
 
 -- Create a new vsplit, switch to it and open CtrlP
-keymap('n', '<leader>w', '<C-w>v<C-w>l :Telescope find_files<cr>', { noremap = true})
+keymap('n', '<leader>w', '<C-w>v<C-w>l :Telescope find_files<cr>')
 
 -- Create a new split, switch to it and open CtrlP
-keymap('n', '<leader>s', '<C-w>s<C-w>j :Telescope find_files<cr>', { noremap = true})
-keymap('n', '<F3>', ':Telescope lsp_references<CR>', {noremap = true })
+keymap('n', '<leader>s', '<C-w>s<C-w>j :Telescope find_files<cr>')
+keymap('n', '<F3>', ':Telescope lsp_references<CR>')
 
