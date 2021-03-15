@@ -2,6 +2,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 "Current Theme
 Plug 'mhartington/oceanic-next'
+Plug 'christianchiarulli/nvcode-color-schemes.vim'
 
 Plug 'sbdchd/neoformat'
 Plug 'norcalli/nvim-colorizer.lua'
