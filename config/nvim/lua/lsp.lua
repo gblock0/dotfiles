@@ -41,6 +41,12 @@ nvim_lsp.rust_analyzer.setup {
   -- capabilities = lsp_status.capabilities,
 }
 
+-- npm i -g vscode-css-languageserver-bin
+nvim_lsp.cssls.setup {}
+
+-- npm i -g vscode-html-languageserver-bin
+nvim_lsp.html.setup {}
+
 local eslint_d = {
   lintCommand = "eslint_d -f unix --stdin --stdin-filename ${INPUT}",
   lintIgnoreExitCode = true,
