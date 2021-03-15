@@ -26,8 +26,6 @@ lua require('tmux-navigator')
 lua require('treesitter')
 lua require('vimspector')
 
-" {{{ Things that cannot be converted to lua
-
 command! -bang -nargs=* Rg
       \ call fzf#vim#grep(
       \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
@@ -59,7 +57,6 @@ cnoreabbrev <expr> w ((getcmdtype() is# ':' && getcmdline() is# 'w')?('w'):('w')
 cnoreabbrev <expr> Q ((getcmdtype() is# ':' && getcmdline() is# 'Q')?('q'):('Q'))
 cnoreabbrev <expr> WQ ((getcmdtype() is# ':' && getcmdline() is# 'WQ')?('wq'):('WQ'))
 cnoreabbrev <expr> Qa ((getcmdtype() is# ':' && getcmdline() is# 'Qa')?('qa'):('Qa'))
-"}}}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Functions
