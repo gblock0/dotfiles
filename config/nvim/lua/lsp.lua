@@ -14,6 +14,10 @@ keymap("n", "<leader>lsh", ":lua vim.lsp.buf.signature_help()<CR>", {noremap = t
 keymap("n", "<F2>", ":lua vim.lsp.buf.rename()<CR>", {noremap = true})
 keymap("n", "<leader>lh", ":lua vim.lsp.buf.hover()<CR>", {noremap = true})
 
+local function custom_on_init()
+    print('Language Server Protocol started!')
+end
+
 -- local lsp_status = require "lsp-status"
 -- lsp_status.config({
 --   indicator_errors = "",
@@ -26,26 +30,34 @@ keymap("n", "<leader>lh", ":lua vim.lsp.buf.hover()<CR>", {noremap = true})
 
 --must have run: npm install -g typescript
 nvim_lsp.tsserver.setup {
+  filetypes = {'javascript', 'typescript', 'typescriptreact'},
+  on_init = custom_on_init
   -- on_attach = lsp_status.on_attach,
   -- capabilities = lsp_status.capabilities,
 }
 
 --must run: npm install -g pyright
 nvim_lsp.pyright.setup {
+  on_init = custom_on_init
   -- on_attach = lsp_status.on_attach,
   -- capabilities = lsp_status.capabilities,
 }
 
 nvim_lsp.rust_analyzer.setup {
+  on_init = custom_on_init
   -- on_attach = lsp_status.on_attach,
   -- capabilities = lsp_status.capabilities,
 }
 
 -- npm i -g vscode-css-languageserver-bin
-nvim_lsp.cssls.setup {}
+nvim_lsp.cssls.setup {
+  on_init = custom_on_init
+}
 
 -- npm i -g vscode-html-languageserver-bin
-nvim_lsp.html.setup {}
+nvim_lsp.html.setup {
+  on_init = custom_on_init
+}
 
 local eslint_d = {
   lintCommand = "eslint_d -f unix --stdin --stdin-filename ${INPUT}",
@@ -123,7 +135,19 @@ keymap("i", "<C-Space>", "compe#complete()", {noremap = true, silent = true, exp
 keymap("i", "<CR>", 'compe#confirm("<CR>")', {noremap = true, silent = true, expr = true})
 
 local saga = require "lspsaga"
-saga.init_lsp_saga()
+saga.init_lsp_saga({
+    error_sign               = '▊',
+    warn_sign                = '▊',
+    hint_sign                = '▊',
+    infor_sign               = '▊',
+    dianostic_header_icon    = '   ',
+    code_action_icon         = ' ',
+    finder_definition_icon   = '  ',
+    finder_reference_icon    = '  ',
+    definition_preview_icon  = '  ',
+    border_style             = 1,
+    rename_prompt_prefix     = '❱❱'
+})
 keymap("n", "<leader>e", ":Lspsaga diagnostic_jump_next<CR>", {noremap = true, silent = true})
 keymap("n", "<leader>cd", ":Lspsaga show_line_diagnostics<CR>", {noremap = true, silent = true})
 keymap("n", "K", ":Lspsaga hover_doc<CR>", {noremap = true, silent = true})

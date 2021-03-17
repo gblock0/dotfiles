@@ -30,6 +30,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'lewis6991/gitsigns.nvim'
 
 " Telescope
 Plug 'nvim-telescope/telescope.nvim'
@@ -54,7 +55,6 @@ Plug 'gregsexton/MatchTag'								" Highlights the matching HTML tag
 Plug 'tpope/vim-fugitive'								" Git stuff
 Plug 'tpope/vim-surround'								" Change surrounding quotes, brackets, etc.
 Plug 'tweekmonster/startuptime.vim'                     " Uncomment to test startup time
-Plug 'mhinz/vim-signify'                  " show git status in the gutter
 Plug 'gioele/vim-autoswap'								" Swap file handling
 Plug 'lfv89/vim-interestingwords'						" Highlight different words in a file
 Plug 'junegunn/vader.vim', { 'for': 'vader' }
