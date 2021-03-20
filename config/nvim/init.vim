@@ -12,7 +12,7 @@ let g:oceanic_next_terminal_italic = 1
 colorscheme OceanicNext
 
 " load plugin configs
-lua require('git-settings')
+lua require('gb-git')
 lua require('autoswap')
 lua require('colorizer-lua')
 lua require('finder')
