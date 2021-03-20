@@ -8,4 +8,4 @@ require("gitsigns").setup(
   }
 )
 
-keymap("n", "<leader>g", ":vertical Git<CR>")
+keymap("n", "<leader>g", ":vertical Git<CR>", {silent = true})

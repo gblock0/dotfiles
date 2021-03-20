@@ -1,21 +1,18 @@
 #!/bin/sh
-# give me what I need, brew!
 brew update
+
+# Install BlexMono Nerd Font
+brew tap homebrew/cask-fonts
+brew install font-blex-mono-nerd-font
 
 # cli tools
 brew install tree wget ripgrep procs tldr exa
 
 # development tools
-brew install node
-brew install git
-brew install reattach-to-user-namespace
-brew install tmux
-brew install fzf
-brew install zsh
-brew install antigen
+brew install node git reattach-to-user-namespace tmux fzf zsh antigen git-delta stow
 brew install romkatv/powerlevel10k/powerlevel10k
+
+# Need luajit for neovim
 brew install --build-from-source --HEAD luajit
 brew install --build-from-source --HEAD neovim
-brew install git-delta
-brew install stow
 brew cask install alacritty
