@@ -4,7 +4,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'mhartington/oceanic-next'
 Plug 'christianchiarulli/nvcode-color-schemes.vim'
 
-Plug 'sbdchd/neoformat'
+Plug 'lukas-reineke/format.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'RRethy/vim-illuminate'
 Plug 'nvim-lua/lsp-status.nvim'

@@ -18,7 +18,7 @@ lua require('colorizer-lua')
 lua require('finder')
 lua require('lsp')
 lua require('maximizer')
-lua require('format')
+lua require('gb-format')
 lua require('commenter')
 lua require('remaps')
 lua require('statusline')
@@ -43,9 +43,7 @@ augroup GB_SETTINGS
     " Highlight trailing whitespace
     highlight ExtraWhitespace ctermbg=red guibg=red
 
-    autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-    autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-    autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+    autocmd BufWritePost * FormatWrite
     autocmd BufWinLeave * call clearmatches()
 
     " Disable auto-commenting
@@ -71,7 +69,6 @@ endfunction
 let g:test#custom_strategies = {'jest': function('JestStrategy')}
 
 autocmd BufEnter,BufWritePost <buffer> :lua require("lsp_extensions.inlay_hints").request {aligned = true, prefix = " » "}
-autocmd BufWritePre <buffer> :lua vim.lsp.buf.formatting_sync()
 
 function! OpenURLUnderCursor()
   let s:uri = expand('<cWORD>')
@@ -89,5 +86,3 @@ autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif
-
-let g:neoformat_enabled_typescript = ['prettier']
