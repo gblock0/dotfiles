@@ -1,10 +1,10 @@
-local utils = require 'nutils'
-local nvim_lsp = require 'lspconfig'
+local utils = require "nutils"
+local nvim_lsp = require "lspconfig"
 keymap = utils.map
 opt = utils.opt
 
 local function custom_on_init()
-    print('Language Server Protocol started!')
+  print("Language Server Protocol started!")
 end
 
 --must have run: npm install -g typescript
@@ -12,7 +12,7 @@ nvim_lsp.tsserver.setup {
   on_attach = nvim_lsp.tsserver_on_attach,
   -- This makes sure tsserver is not used for formatting
   settings = {documentFormatting = false},
-  filetypes = {'javascript', 'typescript', 'typescriptreact'},
+  filetypes = {"javascript", "typescript", "typescriptreact"},
   on_init = custom_on_init
 }
 
@@ -36,25 +36,25 @@ nvim_lsp.html.setup {
 }
 
 local eslint_d = {
-  lintCommand = 'eslint_d -f unix --stdin --stdin-filename ${INPUT}',
+  lintCommand = "eslint_d -f unix --stdin --stdin-filename ${INPUT}",
   lintIgnoreExitCode = true,
   lintStdin = true,
-  lintFormats = {'%f:%l:%c: %m'}
+  lintFormats = {"%f:%l:%c: %m"}
 }
 
-local rustExe = 'rustfmt'
-local rustArgs = '--emit=stdout'
+local rustExe = "rustfmt"
+local rustArgs = "--emit=stdout"
 local rustStdin = true
 
 local rustfmt = {
-  formatCommand = rustExe .. rustArgs .. '${INPUT}',
+  formatCommand = rustExe .. rustArgs .. "${INPUT}",
   formatStdin = rustStdin
 }
 
-local prettierArgs = {'--stdin', '--stdin-filepath', vim.api.nvim_buf_get_name(0), '--single-quote'}
+local prettierArgs = {"--stdin", "--stdin-filepath", vim.api.nvim_buf_get_name(0), "--single-quote"}
 
 local prettier = {
-  formatCommand = './node_modules/.bin/prettier' .. table.concat(prettierArgs,' '),
+  formatCommand = "./node_modules/.bin/prettier" .. table.concat(prettierArgs, " "),
   formatStdin = true
 }
 
@@ -62,9 +62,9 @@ local languages = {
   typescript = {prettier, eslint_d},
   javascript = {prettier, eslint_d},
   typescriptreact = {prettier, eslint_d},
-  ['typescript.tsx'] = {prettier, eslint_d},
+  ["typescript.tsx"] = {prettier, eslint_d},
   javascriptreact = {prettier, eslint_d},
-  ['javascript.jsx'] = {prettier, eslint_d},
+  ["javascript.jsx"] = {prettier, eslint_d},
   yaml = {prettier},
   json = {prettier},
   html = {prettier},
@@ -74,13 +74,13 @@ local languages = {
   rust = {rustfmt},
   python = {
     {
-      formatCommand = 'black',
+      formatCommand = "black",
       formatStdin = true
     },
     {
-      formatCommand = 'isort',
+      formatCommand = "isort",
       formatStdin = true
-    },
+    }
   }
 }
 
@@ -91,87 +91,89 @@ nvim_lsp.efm.setup {
     return vim.fn.getcwd()
   end,
   settings = {
-    rootMarkers = {'.git', 'package.json'},
+    rootMarkers = {".git", "package.json"},
     languages = languages
   }
 }
 
-require 'compe'.setup {
-  enabled = true;
-  autocomplete = true;
-  debug = false;
-  min_length = 1;
-  preselect = 'enable';
-  throttle_time = 80;
-  source_timeout = 200;
-  incomplete_delay = 400;
-  max_abbr_width = 100;
-  max_kind_width = 100;
-  max_menu_width = 100;
-  documentation = true;
-
+require "compe".setup {
+  enabled = true,
+  autocomplete = true,
+  debug = false,
+  min_length = 1,
+  preselect = "enable",
+  throttle_time = 80,
+  source_timeout = 200,
+  incomplete_delay = 400,
+  max_abbr_width = 100,
+  max_kind_width = 100,
+  max_menu_width = 100,
+  documentation = true,
   source = {
-    path = true;
-    buffer = true;
-    nvim_lsp = true;
-    nvim_lua = true;
-    spell = true;
-  };
+    path = true,
+    buffer = true,
+    nvim_lsp = true,
+    nvim_lua = true,
+    spell = true
+  }
 }
 
-require('lspsaga').init_lsp_saga({
-    error_sign               = '▊',
-    warn_sign                = '▊',
-    hint_sign                = '▊',
-    infor_sign               = '▊',
-    dianostic_header_icon    = '   ',
-    code_action_icon         = ' ',
-    finder_definition_icon   = '  ',
-    finder_reference_icon    = '  ',
-    definition_preview_icon  = '  ',
-    border_style             = 1,
-    rename_prompt_prefix     = '❱❱'
-})
-require('lspkind').init({
+require("lspsaga").init_lsp_saga(
+  {
+    error_sign = "▊",
+    warn_sign = "▊",
+    hint_sign = "▊",
+    infor_sign = "▊",
+    dianostic_header_icon = "   ",
+    code_action_icon = " ",
+    finder_definition_icon = "  ",
+    finder_reference_icon = "  ",
+    definition_preview_icon = "  ",
+    border_style = 1,
+    rename_prompt_prefix = "❱❱"
+  }
+)
+require("lspkind").init(
+  {
     with_text = true,
     symbol_map = {
-      Text = '  ',
-      Method = '  ',
-      Function = '  ',
-      Constructor = '  ',
-      Variable = '[]',
-      Class = '  ',
-      Interface = ' 蘒',
-      Module = '  ',
-      Property = '  ',
-      Unit = ' 塞 ',
-      Value = '  ',
-      Enum = ' 練',
-      Keyword = '  ',
-      Snippet = '  ',
-      Color = '',
-      File = '',
-      Folder = ' ﱮ ',
-      EnumMember = '  ',
-      Constant = '  ',
-      Struct = '  '
-    },
-})
+      Text = "  ",
+      Method = "  ",
+      Function = "  ",
+      Constructor = "  ",
+      Variable = "[]",
+      Class = "  ",
+      Interface = " 蘒",
+      Module = "  ",
+      Property = "  ",
+      Unit = " 塞 ",
+      Value = "  ",
+      Enum = " 練",
+      Keyword = "  ",
+      Snippet = "  ",
+      Color = "",
+      File = "",
+      Folder = " ﱮ ",
+      EnumMember = "  ",
+      Constant = "  ",
+      Struct = "  "
+    }
+  }
+)
 
-
-vim.g.completion_matching_strategy_list = {'exact', 'substring', 'fuzzy'}
-opt('o', 'completeopt', 'menu,menuone,noselect')
+vim.g.completion_matching_strategy_list = {"exact", "substring", "fuzzy"}
+opt("o", "completeopt", "menu,menuone,noselect")
 
 local t = function(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
 local check_back_space = function()
-  local col = vim.fn.col('.') - 1
-  if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-      return true
+  local col = vim.fn.col(".") - 1
+  if col == 0 or vim.fn.getline("."):sub(col, col):match("%s") then
+    return true
   else
-      return false
+    return false
   end
 end
 
@@ -180,30 +182,30 @@ end
 --- jump to prev/next snippet's placeholder
 _G.tab_complete = function()
   if vim.fn.pumvisible() == 1 then
-    return t '<C-n>'
+    return t "<C-n>"
   elseif check_back_space() then
-    return t '<Tab>'
+    return t "<Tab>"
   else
-    return vim.fn['compe#complete']()
+    return vim.fn["compe#complete"]()
   end
 end
 _G.s_tab_complete = function()
   if vim.fn.pumvisible() == 1 then
-    return t '<C-p>'
+    return t "<C-p>"
   else
-    return t '<S-Tab>'
+    return t "<S-Tab>"
   end
 end
 
-keymap('i', '<Tab>', 'v:lua.tab_complete()', {expr = true})
-keymap('s', '<Tab>', 'v:lua.tab_complete()', {expr = true})
-keymap('i', '<S-Tab>', 'v:lua.s_tab_complete()', {expr = true})
-keymap('s', '<S-Tab>', 'v:lua.s_tab_complete()', {expr = true})
-keymap('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', {silent = true})
-keymap('n', 'gi', ':lua vim.lsp.buf.implementation()<CR>', {silent = true})
-keymap('n', 'gR', ':Lspsata rename<CR>', {noremap = true})
-keymap('n', '<leader>e', ':Lspsaga diagnostic_jump_next<CR>', {noremap = true, silent = true})
-keymap('n', '<leader>cd', ':Lspsaga show_line_diagnostics<CR>', {noremap = true, silent = true})
-keymap('n', 'K', ':Lspsaga hover_doc<CR>', {noremap = true, silent = true})
-keymap('i', '<C-Space>', 'compe#complete()', {noremap = true, silent = true, expr = true})
-keymap('i', '<CR>', 'compe#confirm("<CR>")', {noremap = true, silent = true, expr = true})
+keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
+keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
+keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", {silent = true})
+keymap("n", "gi", ":lua vim.lsp.buf.implementation()<CR>", {silent = true})
+keymap("n", "gR", ":Lspsata rename<CR>", {noremap = true})
+keymap("n", "<leader>e", ":Lspsaga diagnostic_jump_next<CR>", {noremap = true, silent = true})
+keymap("n", "<leader>cd", ":Lspsaga show_line_diagnostics<CR>", {noremap = true, silent = true})
+keymap("n", "K", ":Lspsaga hover_doc<CR>", {noremap = true, silent = true})
+keymap("i", "<C-Space>", "compe#complete()", {noremap = true, silent = true, expr = true})
+keymap("i", "<CR>", 'compe#confirm("<CR>")', {noremap = true, silent = true, expr = true})
