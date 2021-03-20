@@ -1,5 +1,5 @@
-local utils = require "nutils"
-local nvim_lsp = require "lspconfig"
+local utils = require("nutils")
+local nvim_lsp = require("lspconfig")
 keymap = utils.map
 opt = utils.opt
 
@@ -130,7 +130,11 @@ require("lspsaga").init_lsp_saga(
     finder_reference_icon = "  ",
     definition_preview_icon = "  ",
     border_style = 1,
-    rename_prompt_prefix = "❱❱"
+    rename_prompt_prefix = "❱❱",
+    rename_action_keys = {
+      quit = {"<C-c>", "<esc>"},
+      exec = "<CR>" -- quit can be a table
+    }
   }
 )
 require("lspkind").init(
@@ -202,10 +206,10 @@ keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
 keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", {silent = true})
-keymap("n", "gi", ":lua vim.lsp.buf.implementation()<CR>", {silent = true})
-keymap("n", "gR", ":Lspsata rename<CR>", {noremap = true})
-keymap("n", "<leader>e", ":Lspsaga diagnostic_jump_next<CR>", {noremap = true, silent = true})
-keymap("n", "<leader>cd", ":Lspsaga show_line_diagnostics<CR>", {noremap = true, silent = true})
-keymap("n", "K", ":Lspsaga hover_doc<CR>", {noremap = true, silent = true})
-keymap("i", "<C-Space>", "compe#complete()", {noremap = true, silent = true, expr = true})
-keymap("i", "<CR>", 'compe#confirm("<CR>")', {noremap = true, silent = true, expr = true})
+keymap("n", "gr", ":Lspsaga rename<CR>")
+keymap("n", "gs", ":Lspsaga signature_help<CR>")
+keymap("n", "<leader>e", ":Lspsaga diagnostic_jump_next<CR>", {silent = true})
+keymap("n", "<leader>cd", ":Lspsaga show_line_diagnostics<CR>", {silent = true})
+keymap("n", "K", ":Lspsaga hover_doc<CR>", {silent = true})
+keymap("i", "<C-Space>", "compe#complete()", {silent = true, expr = true})
+keymap("i", "<CR>", 'compe#confirm("<CR>")', {silent = true, expr = true})
