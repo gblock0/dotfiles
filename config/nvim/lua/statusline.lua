@@ -46,14 +46,6 @@ local get_line_number = function ()
   return vim.api.nvim_eval("printf('%03d/%03d', line('.'),  line('$'))")
 end
 
--- local get_git_status = function(index)
---   local status = vim.fn['sy#repo#get_stats']()[index]
---   if status < 0 then
---     return 0
---   end
---   return status
--- end
-
 table.insert(gls.left, {
   ViMode = {
     provider = function()
@@ -76,45 +68,6 @@ table.insert(gls.left, {
     highlight = {colors.red,colors.bg,'bold'},
   },
 })
-
--- table.insert(gls.left, {
---   DiffAdd = {
---     provider = function()
---       return get_git_status(1)
---     end,
---     icon = '  ',
---     condition = show_in_small_window,
---     separator = ' ',
---     separator_highlight = {'NONE',colors.bg},
---     highlight = {colors.green,colors.bg},
---   }
--- })
-
--- table.insert(gls.left, {
---   DiffModified = {
---     provider = function()
---       return get_git_status(2)
---     end,
---     icon = '柳',
---     condition = show_in_small_window,
---     separator = ' ',
---     separator_highlight = {'NONE',colors.bg},
---     highlight = {colors.orange,colors.bg},
---   }
--- })
-
--- table.insert(gls.left, {
---   DiffRemove = {
---     provider = function()
---       return get_git_status(3)
---     end,
---     icon = ' ',
---     condition = show_in_small_window,
---     separator = ' ',
---     separator_highlight = {'NONE',colors.bg},
---     highlight = {colors.red,colors.bg},
---   }
--- })
 
 table.insert(gls.left, {
   GitBranch = {
@@ -170,15 +123,6 @@ table.insert(gls.left, {
   }
 })
 
--- table.insert(gls.left, {
---   LspStatus = {
---     provider = function ()
---       return lsp_status.status()
---     end,
---     highlight = {'NONE', colors.bg}
---   }
--- })
-
 table.insert(gls.right, {
   FileEncode = {
     provider = 'FileEncode',
@@ -187,16 +131,6 @@ table.insert(gls.right, {
     highlight = {colors.cyan,colors.bg,'bold'}
   }
 })
-
--- table.insert(gls.right, {
-  -- FileType = {
-    -- provider = 'FileTypeName',
-    -- icon = '| ',
-    -- separator = ' ',
-    -- separator_highlight = {'NONE',colors.bg},
-    -- highlight = {colors.cyan,colors.bg,'bold'}
-  -- }
--- })
 
 table.insert(gls.right, {
   PerCent = {
@@ -221,16 +155,6 @@ table.insert(gls.right, {
     provider = function() return ' '  end,
     highlight = {'NONE',colors.bg}
   },
-})
-
-table.insert(gls.short_line_left, {
-  BufferType = {
-    provider = 'FileTypeName',
-    icon = '  ',
-    separator = ' ',
-    separator_highlight = {'NONE',colors.bg},
-    highlight = {colors.blue,colors.bg,'bold'}
-  }
 })
 
 table.insert(gls.short_line_left, {

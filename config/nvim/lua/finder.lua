@@ -1,13 +1,31 @@
---{{{ FZF.VIM Mappings
--- local keymap = vim.api.nvim_set_keymap
--- keymap('n', '<leader>a',  ':Rg<Cr>', { noremap = true })
--- keymap('n', '<leader>p', ':GFiles<Cr>', { noremap = true })
---}}}
 local utils = require'nutils'
 keymap = utils.map
+
 local actions = require('telescope.actions')
 require('telescope').setup{
   defaults = {
+    vimgrep_arguments = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
+    prompt_prefix = " ",
+    selection_caret = " ",
+    entry_prefix = "  ",
+    scroll_strategy = "cycle",
+    prompt_position = "top",
+    initial_mode = "insert",
+    selection_strategy = "reset",
+    sorting_strategy = "ascending",
+    layout_strategy = "horizontal",
+    file_ignore_patterns = {},
+    shorten_path = true,
+    winblend = 0,
+    width = 0.75,
+    preview_cutoff = 120,
+    results_height = 1,
+    results_width = 0.8,
+    border = {},
+    borderchars = {'─', '│', '─', '│', '╭', '╮', '╯', '╰'},
+    color_devicons = true,
+    use_less = true,
+    set_env = {['COLORTERM'] = 'truecolor'}, -- default = nil,
     file_sorter = require('telescope.sorters').get_fzy_sorter,
     file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
     grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
@@ -17,6 +35,9 @@ require('telescope').setup{
       i = {
         ["<C-x>"] = false,
         ["<C-q>"] = actions.send_to_qflist,
+        ["<esc>"] = actions.close,
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
       },
     }
   },
