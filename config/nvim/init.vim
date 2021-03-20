@@ -27,11 +27,6 @@ lua require('tmux-navigator')
 lua require('treesitter')
 lua require('vimspector')
 
-command! -bang -nargs=* Rg
-      \ call fzf#vim#grep(
-      \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
-      \   fzf#vim#with_preview(), <bang>0)
-
 augroup GB_SETTINGS
     autocmd!
     source ~/.config/nvim/filetype_configs.vim
@@ -49,6 +44,7 @@ augroup GB_SETTINGS
     " Disable auto-commenting
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 augroup END
+
 set nowrap
 " Remap colon commands to ignore shift
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
