@@ -2,6 +2,7 @@
 alias gs='git status'
 alias gst='git status'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+alias gd='git diff -w --ignore-blank-lines'
 
 function gi() {
   if [[ $# > 0 ]]; then
