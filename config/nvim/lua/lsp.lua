@@ -114,7 +114,8 @@ require "compe".setup {
     buffer = true,
     nvim_lsp = true,
     nvim_lua = true,
-    spell = true
+    spell = true,
+    treesitter = true
   }
 }
 
