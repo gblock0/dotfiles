@@ -13,7 +13,8 @@ nvim_lsp.tsserver.setup {
   -- This makes sure tsserver is not used for formatting
   settings = {documentFormatting = false},
   filetypes = {"javascript", "typescript", "typescriptreact"},
-  on_init = custom_on_init
+  on_init = custom_on_init,
+  capabilities = capabilities
 }
 
 --must run: npm install -g pyright
@@ -22,8 +23,32 @@ nvim_lsp.pyright.setup {
 }
 
 nvim_lsp.rust_analyzer.setup {
-  on_init = custom_on_init
+  on_init = custom_on_init,
+  settings = {
+    ["rust-analyzer"] = {
+      assist = {
+        importMergeBehavior = "last",
+        importPrefix = "by_self"
+      },
+      cargo = {
+        loadOutDirsFromCheck = true
+      },
+      procMacro = {
+        enable = true
+      }
+    }
+  }
 }
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] =
+  vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics,
+  {
+    virtual_text = true,
+    signs = true,
+    update_in_insert = true
+  }
+)
 
 -- npm i -g vscode-css-languageserver-bin
 nvim_lsp.cssls.setup {
@@ -31,8 +56,12 @@ nvim_lsp.cssls.setup {
 }
 
 -- npm i -g vscode-html-languageserver-bin
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 nvim_lsp.html.setup {
-  on_init = custom_on_init
+  on_init = custom_on_init,
+  capabilities = capabilities
 }
 
 local eslint_d = {
@@ -91,7 +120,7 @@ nvim_lsp.efm.setup {
     return vim.fn.getcwd()
   end,
   settings = {
-    rootMarkers = {".git", "package.json"},
+    rootMarkers = {".git/", "package.json", "node_modules/"},
     languages = languages
   }
 }
@@ -114,8 +143,7 @@ require "compe".setup {
     buffer = true,
     nvim_lsp = true,
     nvim_lua = true,
-    spell = true,
-    treesitter = true
+    spell = true
   }
 }
 
