@@ -15,7 +15,6 @@ opt("o", "wildoptions", "pum")
 opt("o", "pumblend", 17) -- floating window popup menu for command line completion
 opt("o", "ignorecase", true) -- case insensitive searching
 opt("o", "smartcase", true) -- case-sensitive if expression contains a capital letter
-opt("o", "updatetime", 100) -- update the swap file quicker (also helps with updating git status)
 opt("o", "listchars", "eol:¬,tab:>·,trail:~,space:␣") -- set what whitespace characters look like
 opt("o", "hidden", true) -- keep buffers around
 
@@ -32,3 +31,4 @@ opt("w", "number", true)
 opt("w", "relativenumber", true)
 opt("w", "foldmethod", "syntax")
 opt("w", "foldlevel", 99)
+opt("w", "signcolumn", "yes")
