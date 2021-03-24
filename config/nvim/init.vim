@@ -8,7 +8,7 @@ lua require('sets')
 source ~/.config/nvim/plugins.vim
 
 let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
+" let g:oceanic_next_terminal_italic = 1
 colorscheme OceanicNext
 
 " load plugin configs
@@ -43,6 +43,15 @@ augroup GB_SETTINGS
 
     " Disable auto-commenting
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+    " 300ms of no cursor movement to trigger CursorHold
+    set updatetime=300
+    " Show diagnostic popup on cursor hold
+    autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
+
+    " Enable type inlay hints
+    autocmd CursorMoved,InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *
+    \ lua require'lsp_extensions'.inlay_hints{ prefix = '', highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"} }
 augroup END
 
 set nowrap
