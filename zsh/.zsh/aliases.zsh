@@ -1,7 +1,7 @@
 # reload zsh config
 alias reload!="source ~/.zshrc"
 
-alias tc="~/.truecolor.sh"
+alias tc="~/.dotfiles/truecolor.sh"
 alias tm="~/.tmux/bin/bash/tm.sh"
 
 # Changing "ls" to "exa"
