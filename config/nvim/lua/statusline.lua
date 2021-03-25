@@ -49,54 +49,6 @@ end
 table.insert(
   gls.left,
   {
-    ViMode = {
-      provider = function()
-        -- auto change color according the vim mode
-        local mode_color = {
-          n = colors.magenta,
-          i = colors.green,
-          v = colors.blue,
-          [""] = colors.blue,
-          V = colors.blue,
-          c = colors.red,
-          no = colors.magenta,
-          s = colors.orange,
-          S = colors.orange,
-          [""] = colors.orange,
-          ic = colors.yellow,
-          R = colors.violet,
-          Rv = colors.violet,
-          cv = colors.red,
-          ce = colors.red,
-          r = colors.cyan,
-          rm = colors.cyan,
-          ["r?"] = colors.cyan,
-          ["!"] = colors.red,
-          t = colors.red
-        }
-        local mode_map = {
-          n = "N",
-          i = "I",
-          R = "R",
-          v = "V",
-          V = "V",
-          c = "C",
-          s = "S",
-          S = "S",
-          t = "T"
-        }
-        vim.api.nvim_command("hi GalaxyViMode guifg=" .. mode_color[vim.fn.mode()])
-        return " " .. mode_map[vim.fn.mode()] .. " "
-      end,
-      icon = " ",
-      highlight = {colors.red, colors.bg, "bold"}
-    }
-  }
-)
-
-table.insert(
-  gls.left,
-  {
     GitBranch = {
       provider = "GitBranch",
       separator_highlight = {"NONE", colors.bg},
