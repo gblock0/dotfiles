@@ -7,13 +7,24 @@ local function custom_on_init()
   print("Language Server Protocol started!")
 end
 
+local function custom_root_dir()
+  if (string.find(vim.fn.expand("%f"), "node_modules/") == nil) then
+    return nvim_lsp.util.root_pattern(".git")
+  end
+
+  return nil
+end
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 --must have run: npm install -g typescript
 nvim_lsp.tsserver.setup {
-  on_attach = nvim_lsp.tsserver_on_attach,
   -- This makes sure tsserver is not used for formatting
   settings = {documentFormatting = false},
   filetypes = {"javascript", "typescript", "typescriptreact"},
   on_init = custom_on_init,
+  root_dir = custom_root_dir(),
   capabilities = capabilities
 }
 
@@ -56,9 +67,6 @@ nvim_lsp.cssls.setup {
 }
 
 -- npm i -g vscode-html-languageserver-bin
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
 nvim_lsp.html.setup {
   on_init = custom_on_init,
   capabilities = capabilities
@@ -116,11 +124,8 @@ local languages = {
 nvim_lsp.efm.setup {
   init_options = {documentFormatting = true},
   filetypes = vim.tbl_keys(languages),
-  root_dir = function()
-    return vim.fn.getcwd()
-  end,
+  root_dir = custom_root_dir(),
   settings = {
-    rootMarkers = {".git/", "package.json", "node_modules/"},
     languages = languages
   }
 }
@@ -154,7 +159,7 @@ require("lspsaga").init_lsp_saga(
     hint_sign = "▊",
     infor_sign = "▊",
     dianostic_header_icon = "   ",
-    code_action_icon = " ",
+    code_action_icon = "",
     finder_definition_icon = "  ",
     finder_reference_icon = "  ",
     definition_preview_icon = "  ",
