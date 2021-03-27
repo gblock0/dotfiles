@@ -30,3 +30,7 @@ function reinstall-neovim() {
   brew install --HEAD neovim
 }
 
+function update-language-servers() {
+  npm update -g typescript pyright vscode-css-languageserver-bin vscode-html-languageserver-bin
+  brew update efm-langserver
+}
