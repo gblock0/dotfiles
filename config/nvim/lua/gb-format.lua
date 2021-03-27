@@ -43,6 +43,7 @@ require "format".setup {
   javascript = tsJsCmdOpts,
   scss = onlyPrettierCmdOpts,
   css = onlyPrettierCmdOpts,
+  html = onlyPrettierCmdOpts,
   markdown = onlyPrettierCmdOpts,
   rust = {
     {
