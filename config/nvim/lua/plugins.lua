@@ -18,7 +18,7 @@ return require("packer").startup(
     -- Packer can manage itself as an optional plugin
     use "wbthomason/packer.nvim"
 
-    --Current Theme
+    -- Current Theme
     use "gblock0/oceanic-next"
 
     use "lukas-reineke/format.nvim"
@@ -34,7 +34,8 @@ return require("packer").startup(
     use "glepnir/lspsaga.nvim"
     use "nvim-lua/lsp_extensions.nvim"
 
-    --nvim-treesitter
+    -- nvim-treesitter
+    -- TSInstall toml lua tsx css javascript jsonc yaml json regex bash python jsdoc html rust typescript
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
     use "nvim-treesitter/playground"
 
@@ -56,7 +57,12 @@ return require("packer").startup(
     use "onsails/lspkind-nvim"
     use "b3nj5m1n/kommentary"
 
-    --use {'kkoomen/vim-doge', run = 'doge#install()' }
+    use {
+      "kkoomen/vim-doge",
+      run = function()
+        vim.fn["doge#install"]()
+      end
+    }
     -- Utilities
     use "puremourning/vimspector"
 
