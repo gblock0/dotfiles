@@ -35,3 +35,5 @@ config/fish/fish_variables
 fishd.tmp.*
 Luapad*
 config/karabiner/automatic_backups
+config/nvim/packer
+config/nvim/plugin/packer_compiled.vim

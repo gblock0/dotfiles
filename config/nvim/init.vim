@@ -4,8 +4,9 @@
 " load plugins from vim-plug,
 " plugin configs in ~/.config/nvim/plugin are loaded automatically
 
+lua require('plugins')
 lua require('sets')
-source ~/.config/nvim/plugins.vim
+" source ~/.config/nvim/plugins.vim
 
 let g:oceanic_next_terminal_bold = 1
 " let g:oceanic_next_terminal_italic = 1
