@@ -17,7 +17,8 @@ Plug 'hrsh7th/nvim-compe'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'nvim-lua/lsp_extensions.nvim'
 
-"nvim-treesitter
+" nvim-treesitter
+" TSInstall toml lua tsx css javascript jsonc yaml json regex bash python jsdoc html rust typescript
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 

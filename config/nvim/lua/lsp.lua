@@ -21,10 +21,9 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 --must have run: npm install -g typescript
 nvim_lsp.tsserver.setup {
   -- This makes sure tsserver is not used for formatting
+  on_attach = nvim_lsp.tsserver_on_attach,
   settings = {documentFormatting = false},
-  filetypes = {"javascript", "typescript", "typescriptreact"},
   on_init = custom_on_init,
-  root_dir = custom_root_dir(),
   capabilities = capabilities
 }
 
