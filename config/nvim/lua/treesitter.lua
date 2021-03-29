@@ -1,6 +1,5 @@
-require"nvim-treesitter.configs".setup { 
-  ensure_installed = 
-  {
+require "nvim-treesitter.configs".setup {
+  ensure_installed = {
     "toml",
     "lua",
     "tsx",
@@ -15,7 +14,7 @@ require"nvim-treesitter.configs".setup {
     "jsdoc",
     "html",
     "rust",
-    "typescript",
+    "typescript"
   },
-  highlight = { enable = true },
+  highlight = {enable = true}
 }
