@@ -13,6 +13,7 @@ colorscheme OceanicNext
 
 " load plugin configs
 lua require('gb-git')
+lua require('gb-term')
 lua require('autoswap')
 lua require('colorizer-lua')
 lua require('finder')

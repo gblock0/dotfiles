@@ -20,6 +20,7 @@ Plug 'nvim-lua/lsp_extensions.nvim'
 " nvim-treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
+Plug 'voldikss/vim-floaterm'
 
 " Debugging
 Plug 'janko/vim-test'
