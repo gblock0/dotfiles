@@ -32,3 +32,5 @@ keymap("", "<F1>", "<ESC>")
 
 -- show/hide whitespace mappings
 keymap("n", "<F5>", ":set list!<CR>")
+
+keymap("n", "<leader>rn", ":set relativenumber!<CR>", {silent = true})
