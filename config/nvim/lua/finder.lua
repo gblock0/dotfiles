@@ -2,6 +2,10 @@ local utils = require "nutils"
 keymap = utils.map
 
 local actions = require("telescope.actions")
+
+require("telescope").load_extension("fzy_native")
+require("telescope").load_extension("fzf_writer")
+
 require("telescope").setup {
   defaults = {
     vimgrep_arguments = {"rg", "--no-heading", "--with-filename", "--line-number", "--column", "--smart-case"},
@@ -52,8 +56,6 @@ require("telescope").setup {
     }
   }
 }
-require("telescope").load_extension("fzy_native")
-require("telescope").load_extension("fzf_writer")
 
 keymap("n", "<leader>a", ":Telescope fzf_writer staged_grep<CR>")
 keymap("n", "<leader>p", ":Telescope fzf_writer files<Cr>")
