@@ -16,6 +16,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'nvim-lua/lsp_extensions.nvim'
+Plug 'onsails/lspkind-nvim'
 
 " nvim-treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -32,13 +33,12 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 
-" Telescope
+" Telescope/Fuzzy finding
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope-fzf-writer.nvim'
 
-Plug 'onsails/lspkind-nvim'
-Plug 'b3nj5m1n/kommentary'
+Plug 'b3nj5m1n/kommentary' " Comment helper
 
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 " Utilities
