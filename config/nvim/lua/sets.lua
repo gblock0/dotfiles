@@ -21,7 +21,7 @@ opt("o", "hidden", true) -- keep buffers around
 -- Buffer options
 --  Tab control
 opt("b", "tabstop", 2) -- the visible width of tabs
-opt("b", "softtabstop", 2) -- edit as if the tabs are 4 characters wide
+opt("b", "softtabstop", 2) -- edit as if the tabs are 2 characters wide
 opt("b", "shiftwidth", 2) -- number of spaces to use for indent and unindent
 opt("b", "expandtab", true) -- insert tabs rather than spaces for <Tab>
 
