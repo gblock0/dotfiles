@@ -2,7 +2,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 "Current Theme
 Plug 'gblock0/oceanic-next'
-Plug 'christianchiarulli/nvcode-color-schemes.vim'
 
 Plug 'lukas-reineke/format.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
@@ -10,6 +9,8 @@ Plug 'RRethy/vim-illuminate'
 Plug 'nvim-lua/lsp-status.nvim'
 
 Plug 'rafcamlet/nvim-luapad'
+
+Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'} 
 
 " nvim-lsp
 Plug 'neovim/nvim-lspconfig'
@@ -36,7 +37,6 @@ Plug 'lewis6991/gitsigns.nvim'
 " Telescope/Fuzzy finding
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
-Plug 'nvim-telescope/telescope-fzf-writer.nvim'
 
 Plug 'b3nj5m1n/kommentary' " Comment helper
 

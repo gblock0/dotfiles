@@ -28,6 +28,11 @@ lua require('tmux-navigator')
 lua require('treesitter')
 lua require('vimspector')
 
+let g:indent_blankline_space_char=' '
+let g:indent_blankline_char = '│'
+let g:indent_blankline_show_current_context = v:true
+let g:indent_blankline_context_patterns = ['class', 'function', 'method', 'if', 'try', 'for_in']
+
 augroup GB_SETTINGS
     autocmd!
     source ~/.config/nvim/filetype_configs.vim
