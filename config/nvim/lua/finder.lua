@@ -4,7 +4,6 @@ keymap = utils.map
 local actions = require("telescope.actions")
 
 require("telescope").load_extension("fzy_native")
-require("telescope").load_extension("fzf_writer")
 
 require("telescope").setup {
   defaults = {
@@ -30,7 +29,7 @@ require("telescope").setup {
     color_devicons = true,
     use_less = true,
     set_env = {["COLORTERM"] = "truecolor"}, -- default = nil,
-    file_sorter = require("telescope.sorters").get_fzy_sorter,
+    file_sorter = require("telescope.sorters").fuzzy_with_index_bias,
     file_previewer = require "telescope.previewers".vim_buffer_cat.new,
     grep_previewer = require "telescope.previewers".vim_buffer_vimgrep.new,
     qflist_previewer = require "telescope.previewers".vim_buffer_qflist.new,
