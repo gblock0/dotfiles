@@ -12,6 +12,7 @@ let g:oceanic_next_terminal_bold = 1
 colorscheme OceanicNext
 
 " load plugin configs
+lua require('gb-indent-lines')
 lua require('gb-git')
 lua require('gb-term')
 lua require('autoswap')
@@ -27,25 +28,6 @@ lua require('test')
 lua require('tmux-navigator')
 lua require('treesitter')
 lua require('vimspector')
-
-let g:indent_blankline_space_char=' '
-let g:indent_blankline_char = '│'
-let g:indent_blankline_show_current_context = v:true
-let g:indent_blankline_space_char_blankline = ' '
-
-let g:indent_blankline_context_patterns = [
-    \ 'class',
-    \ 'function',
-    \ 'method',
-    \ '^if',
-    \ 'while',
-    \ 'for',
-    \ 'with',
-    \ 'func_literal',
-    \ 'block',
-\ ]
-let g:indent_blankline_filetype_exclude = ['help']
-let g:indent_blankline_buftype_exclude = ['terminal']
 
 augroup GB_SETTINGS
     autocmd!
