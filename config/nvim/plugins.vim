@@ -56,7 +56,6 @@ Plug 'tpope/vim-fugitive'								" Git stuff
 Plug 'tpope/vim-surround'								" Change surrounding quotes, brackets, etc.
 Plug 'tweekmonster/startuptime.vim'                     " Uncomment to test startup time
 Plug 'gioele/vim-autoswap'								" Swap file handling
-Plug 'lfv89/vim-interestingwords'						" Highlight different words in a file
 Plug 'junegunn/vader.vim', { 'for': 'vader' }
 Plug 'szw/vim-maximizer'
 
