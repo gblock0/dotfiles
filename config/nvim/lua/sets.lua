@@ -16,7 +16,7 @@ opt("o", "pumblend", 17) -- floating window popup menu for command line completi
 opt("o", "ignorecase", true) -- case insensitive searching
 opt("o", "smartcase", true) -- case-sensitive if expression contains a capital letter
 opt("o", "listchars", "eol:¬,tab:>·,trail:~,space:␣") -- set what whitespace characters look like
-opt("o", "hidden", true) -- keep buffers around
+opt("o", "updatetime", 100) -- keep buffers around
 
 -- Buffer options
 --  Tab control
