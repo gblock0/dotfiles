@@ -21,10 +21,13 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 --must have run: npm install -g typescript
 nvim_lsp.tsserver.setup {
   -- This makes sure tsserver is not used for formatting
-  on_attach = nvim_lsp.tsserver_on_attach,
+  -- on_attach = nvim_lsp.tsserver_on_attach,
+  root_dir = function(fname)
+    return nvim_lsp.util.root_pattern("tsconfig.json")(fname) or
+      nvim_lsp.util.root_pattern("package.json", "jsconfig.json", ".git")(fname)
+  end,
   settings = {documentFormatting = false},
-  on_init = custom_on_init,
-  capabilities = capabilities
+  on_init = custom_on_init
 }
 
 --must run: npm install -g pyright
