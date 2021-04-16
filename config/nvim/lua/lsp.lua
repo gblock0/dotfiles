@@ -18,6 +18,8 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+nvim_lsp.vimls.setup {}
+
 --must have run: npm install -g typescript
 nvim_lsp.tsserver.setup {
   -- This makes sure tsserver is not used for formatting

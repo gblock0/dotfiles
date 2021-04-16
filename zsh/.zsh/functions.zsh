@@ -31,6 +31,6 @@ function reinstall-neovim() {
 }
 
 function update-language-servers() {
-  npm update -g typescript pyright vscode-css-languageserver-bin vscode-html-languageserver-bin
+  npm update -g typescript pyright vscode-css-languageserver-bin vscode-html-languageserver-bin vim-language-server
   brew upgrade efm-langserver
 }
