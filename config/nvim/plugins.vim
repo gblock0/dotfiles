@@ -10,7 +10,7 @@ Plug 'nvim-lua/lsp-status.nvim'
 
 Plug 'rafcamlet/nvim-luapad'
 
-Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'} 
+" Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'} 
 
 " nvim-lsp
 Plug 'neovim/nvim-lspconfig'
@@ -37,6 +37,7 @@ Plug 'lewis6991/gitsigns.nvim'
 " Telescope/Fuzzy finding
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+" Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}
 
 Plug 'b3nj5m1n/kommentary' " Comment helper
 
