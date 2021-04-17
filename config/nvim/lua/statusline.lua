@@ -51,6 +51,7 @@ table.insert(
   {
     GitBranch = {
       provider = "GitBranch",
+      separator = " ",
       separator_highlight = {"NONE", colors.bg},
       condition = function()
         return show_in_small_window() and require("galaxyline.condition").check_git_workspace()
