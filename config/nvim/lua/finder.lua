@@ -5,7 +5,6 @@ local actions = require("telescope.actions")
 
 require("telescope").setup {
   defaults = {
-    vimgrep_arguments = {"rg", "--no-heading", "--with-filename", "--line-number", "--column", "--smart-case"},
     prompt_prefix = " ",
     selection_caret = " ",
     entry_prefix = "  ",
@@ -15,27 +14,11 @@ require("telescope").setup {
     selection_strategy = "reset",
     sorting_strategy = "ascending",
     layout_strategy = "horizontal",
-    file_ignore_patterns = {},
-    shorten_path = true,
-    winblend = 0,
-    width = 0.75,
-    preview_cutoff = 120,
-    results_height = 1,
-    results_width = 0.8,
-    border = {},
-    borderchars = {"─", "│", "─", "│", "╭", "╮", "╯", "╰"},
-    color_devicons = true,
-    use_less = true,
-    set_env = {["COLORTERM"] = "truecolor"}, -- default = nil,
-    file_sorter = require("telescope.sorters").fuzzy_with_index_bias,
-    file_previewer = require "telescope.previewers".vim_buffer_cat.new,
-    grep_previewer = require "telescope.previewers".vim_buffer_vimgrep.new,
-    qflist_previewer = require "telescope.previewers".vim_buffer_qflist.new,
-    color_devicons = true,
+    shorten_path = false,
     mappings = {
       i = {
         ["<C-x>"] = false,
-        ["<C-q>"] = actions.send_to_qflist,
+        ["<C-f>"] = actions.smart_send_to_qflist + actions.open_qflist,
         ["<esc>"] = actions.close,
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous
@@ -43,23 +26,38 @@ require("telescope").setup {
     }
   },
   extensions = {
-    fzy_native = {
-      override_generic_sorter = false,
-      override_file_sorter = true
+    fzf = {
+      override_generic_sorter = true,
+      override_file_sorter = true,
+      case_mode = "smart_case"
     },
     fzf_writer = {
-      minimum_grep_characters = 2,
-      use_highlighter = true
+      minimum_grep_characters = 2
     }
   }
 }
 
-require("telescope").load_extension("fzy_native")
+require("telescope").load_extension("fzf")
 require("telescope").load_extension("git_worktree")
+require("telescope").load_extension("fzf_writer")
 
-keymap("n", "<leader>a", ":Telescope fzf_writer staged_grep<CR>")
-keymap("n", "<leader>p", ":Telescope fzf_writer files<Cr>")
-keymap("n", "<leader>b", ":Telescope buffers<Cr>")
+function _G.gb_find_proj_files()
+  require("telescope.builtin").find_files {
+    shorten_path = false,
+    previewer = false,
+    hidden = string.find(vim.fn.getcwd(), ".dotfiles")
+  }
+end
+
+function _G.gb_grep_files()
+  require("telescope").extensions.fzf_writer.staged_grep {
+    shorten_path = true,
+    previewer = false
+  }
+end
+
+keymap("n", "<leader>a", ":lua gb_grep_files()<CR>")
+keymap("n", "<leader>p", ":lua gb_find_proj_files()<Cr>")
 keymap("n", "<leader>ca", ":Telescope lsp_code_actions<CR>")
 keymap("n", "<leader>gw", ":Telescope git_worktree git_worktrees<CR>")
 keymap("v", "<leader>ca", ":Telescope lsp_range_code_actions<CR>")
