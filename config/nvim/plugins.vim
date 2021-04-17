@@ -39,6 +39,8 @@ Plug 'ThePrimeagen/git-worktree.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-writer.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}
+Plug 'kevinhwang91/nvim-bqf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 Plug 'b3nj5m1n/kommentary' " Comment helper
 
