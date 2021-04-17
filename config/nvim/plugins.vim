@@ -35,6 +35,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 
 " Telescope/Fuzzy finding
+Plug 'ThePrimeagen/git-worktree.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 " Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}

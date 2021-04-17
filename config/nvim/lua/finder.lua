@@ -55,11 +55,13 @@ require("telescope").setup {
 }
 
 require("telescope").load_extension("fzy_native")
+require("telescope").load_extension("git_worktree")
 
 keymap("n", "<leader>a", ":Telescope fzf_writer staged_grep<CR>")
 keymap("n", "<leader>p", ":Telescope fzf_writer files<Cr>")
 keymap("n", "<leader>b", ":Telescope buffers<Cr>")
 keymap("n", "<leader>ca", ":Telescope lsp_code_actions<CR>")
+keymap("n", "<leader>gw", ":Telescope git_worktree git_worktrees<CR>")
 keymap("v", "<leader>ca", ":Telescope lsp_range_code_actions<CR>")
 
 -- Create a new vsplit, switch to it and open CtrlP
