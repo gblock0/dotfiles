@@ -5,7 +5,6 @@
 " plugin configs in ~/.config/nvim/plugin are loaded automatically
 "
 let g:python_host_skip_check=1
-let g:loaded_python3_provider=1
 
 lua require('gb.sets')
 lua require('gb.plugins')
