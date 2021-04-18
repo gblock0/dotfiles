@@ -1,4 +1,4 @@
-local keymap = require("gb-utils").map
+local keymap = require("gb.utils").map
 keymap("n", "<leader>da", ":call vimspector#Launch()<CR>")
 keymap("n", "<leader>dd", ":TestNearest -strategy=jest<CR>")
 keymap("n", "<leader>dc", ":call GotoWindow(g:vimspector_session_windows.code)<CR>")

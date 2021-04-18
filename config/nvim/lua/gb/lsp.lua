@@ -1,4 +1,4 @@
-local utils = require("gb-utils")
+local utils = require("gb.utils")
 local nvim_lsp = require("lspconfig")
 keymap = utils.map
 opt = utils.opt

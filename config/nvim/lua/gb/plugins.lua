@@ -1,4 +1,4 @@
-vim.cmd "autocmd BufWritePost gb-plugins.lua PackerCompile" -- Auto compile when there are changes in plugins.lua
+vim.cmd "autocmd BufWritePost plugins.lua PackerCompile" -- Auto compile when there are changes in plugins.lua
 
 require("packer").startup(
   function(use)
@@ -117,19 +117,19 @@ require("packer").startup(
 
 -- load plugin configs
 -- require('gb-indent-lines')
-require("gb-git")
-require("gb-hlslens")
-require("gb-term")
-require("autoswap")
-require("colorizer-lua")
-require("finder")
-require("lsp")
-require("maximizer")
-require("gb-format")
-require("commenter")
-require("remaps")
-require("statusline")
-require("test")
-require("tmux-navigator")
-require("treesitter")
-require("vimspector")
+require("gb.git")
+require("gb.hlslens")
+require("gb.term")
+require("gb.autoswap")
+require("gb.colorizer")
+require("gb.finder")
+require("gb.lsp")
+require("gb.maximizer")
+require("gb.format")
+require("gb.commenter")
+require("gb.remaps")
+require("gb.statusline")
+require("gb.test")
+require("gb.tmux-navigator")
+require("gb.treesitter")
+require("gb.vimspector")

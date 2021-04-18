@@ -1,5 +1,5 @@
 -- misc remaps
-keymap = require("gb-utils").map
+keymap = require("gb.utils").map
 
 -- Close location list or quickfix window
 keymap("n", "<leader>q", ":ccl<Space><Bar><Space>lcl<CR>")

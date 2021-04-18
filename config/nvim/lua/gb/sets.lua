@@ -1,4 +1,4 @@
-local opt = require("gb-utils").opt
+local opt = require("gb.utils").opt
 
 vim.g.mapleader = " "
 
