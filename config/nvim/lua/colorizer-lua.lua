@@ -4,7 +4,9 @@ require "colorizer".setup(
     "css",
     "scss",
     "javascript",
-    "html"
+    "html",
+    "lua",
+    "vim"
   },
   {mode = "background"}
 )
