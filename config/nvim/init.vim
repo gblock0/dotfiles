@@ -35,9 +35,6 @@ augroup GB_SETTINGS
     source ~/.config/nvim/filetype_configs.vim
     let autocommands_loaded = 1
 
-    " automatically resize panes on resize
-    " autocmd VimResized * exe 'normal! \<c-w>='
-
     " Highlight trailing whitespace
     highlight ExtraWhitespace ctermbg=red guibg=red
 
