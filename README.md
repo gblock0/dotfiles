@@ -25,10 +25,8 @@
 1. `./install.sh`
 1. Download [`packer.nvim`]
 
-   ```
-   git clone https://github.com/wbthomason/packer.nvim\
-   ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-   ```
+   
+   `git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim`
 
 1. Run `:PackerInstall` in Neovim
 1. Change keyboard modifier keys to make `Caps Lock` be `Ctrl`
