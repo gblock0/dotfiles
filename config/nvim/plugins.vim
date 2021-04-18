@@ -55,9 +55,7 @@ Plug 'kyazdani42/nvim-tree.lua'
 
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
-Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'christoomey/vim-tmux-navigator'					" Allows navigation between vim and tmux
-Plug 'gregsexton/MatchTag'								" Highlights the matching HTML tag
 Plug 'tpope/vim-fugitive'								" Git stuff
 Plug 'tpope/vim-surround'								" Change surrounding quotes, brackets, etc.
 Plug 'tweekmonster/startuptime.vim'                     " Uncomment to test startup time

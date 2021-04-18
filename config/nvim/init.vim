@@ -14,6 +14,7 @@ colorscheme OceanicNext
 " load plugin configs
 lua require('gb-indent-lines')
 lua require('gb-git')
+lua require('gb-hlslens')
 lua require('gb-term')
 lua require('autoswap')
 lua require('colorizer-lua')
@@ -87,8 +88,3 @@ autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif
-
-noremap <silent> n <Cmd>execute('normal! ' . v:count1 . 'n')<CR>
-            \<Cmd>lua require('hlslens').start()<CR>
-noremap <silent> N <Cmd>execute('normal! ' . v:count1 . 'N')<CR>
-            \<Cmd>lua require('hlslens').start()<CR>
