@@ -10,6 +10,7 @@ require("telescope").setup {
     entry_prefix = "  ",
     scroll_strategy = "cycle",
     prompt_position = "top",
+    file_ignore_patterns = {".git/*", "node_modules/*"},
     initial_mode = "insert",
     selection_strategy = "reset",
     sorting_strategy = "ascending",
