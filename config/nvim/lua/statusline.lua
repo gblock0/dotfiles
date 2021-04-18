@@ -1,8 +1,3 @@
-local lsp_status = require("lsp-status")
-local gl = require("galaxyline")
-local gls = gl.section
-gl.short_line_list = {"NvimTree", "vista", "dbui"}
-
 local colors = {
   bg = "#202328",
   fg = "#bbc2cf",
@@ -14,175 +9,252 @@ local colors = {
   violet = "#a9a1e1",
   magenta = "#c678dd",
   blue = "#51afef",
-  red = "#ec5f67"
+  red = "#ec5f67",
+  white = "#e6e6e6"
 }
 
-local buffer_not_empty = function()
-  if vim.fn.empty(vim.fn.expand("%:t")) ~= 1 then
-    return true
-  end
-  return false
-end
+local vi_mode_colors = {
+  NORMAL = colors.green,
+  INSERT = colors.blue,
+  VISUAL = colors.magenta,
+  OP = colors.green,
+  BLOCK = colors.red,
+  REPLACE = colors.violet,
+  ["V-REPLACE"] = colors.violet,
+  ENTER = colors.cyan,
+  MORE = colors.cyan,
+  SELECT = colors.orange,
+  COMMAND = colors.green,
+  SHELL = colors.green,
+  TERM = colors.green,
+  NONE = colors.yellow
+}
 
-local show_in_small_window = function()
-  local squeeze_width = vim.fn.winwidth(0) / 2
-  if vim.fn.winwidth(0) < 130 then
-    return false
-  end
-  return true
-end
+local lsp = require "feline.providers.lsp"
+local vi_mode_utils = require "feline.providers.vi_mode"
 
-local get_relative_file_path = function()
-  local file = vim.fn.expand("%f")
-  if vim.bo.modifiable then
-    if vim.bo.modified then
-      return file .. "   "
-    end
-  end
-  return file .. " "
-end
-
-local get_line_number = function()
-  return vim.api.nvim_eval("printf('%03d/%03d', line('.'),  line('$'))")
-end
-
-table.insert(
-  gls.left,
-  {
-    GitBranch = {
-      provider = "GitBranch",
-      separator = " ",
-      separator_highlight = {"NONE", colors.bg},
-      condition = function()
-        return show_in_small_window() and require("galaxyline.condition").check_git_workspace()
+local comps = {
+  vi_mode = {
+    left = {
+      provider = "▊",
+      hl = function()
+        local val = {
+          name = vi_mode_utils.get_mode_highlight_name(),
+          fg = vi_mode_utils.get_mode_color()
+        }
+        return val
       end,
-      highlight = {colors.white, colors.bg}
-    }
-  }
-)
-
-table.insert(
-  gls.left,
-  {
-    FilePath = {
-      provider = get_relative_file_path,
-      icon = "| ",
-      separator = " ",
-      separator_highlight = {"NONE", colors.bg},
-      condition = buffer_not_empty,
-      highlight = {colors.white, colors.bg}
-    }
-  }
-)
-
-table.insert(
-  gls.left,
-  {
-    DiagnosticError = {
-      provider = "DiagnosticError",
-      icon = "  ",
-      highlight = {colors.red, colors.bg}
-    }
-  }
-)
-
-table.insert(
-  gls.left,
-  {
-    DiagnosticWarn = {
-      provider = "DiagnosticWarn",
-      icon = "  ",
-      highlight = {colors.yellow, colors.bg}
-    }
-  }
-)
-
-table.insert(
-  gls.left,
-  {
-    DiagnosticHint = {
-      provider = "DiagnosticHint",
-      icon = "  ",
-      highlight = {colors.cyan, colors.bg}
-    }
-  }
-)
-
-table.insert(
-  gls.left,
-  {
-    DiagnosticInfo = {
-      provider = "DiagnosticInfo",
-      icon = "  ",
-      highlight = {colors.blue, colors.bg}
-    }
-  }
-)
-
-table.insert(
-  gls.right,
-  {
-    FileEncode = {
-      provider = "FileEncode",
-      separator = " ",
-      separator_highlight = {"NONE", colors.bg},
-      highlight = {colors.cyan, colors.bg, "bold"}
-    }
-  }
-)
-
-table.insert(
-  gls.right,
-  {
-    PerCent = {
-      provider = "LinePercent",
-      separator = " ",
-      separator_highlight = {"NONE", colors.bg},
-      highlight = {colors.fg, colors.bg, "bold"}
-    }
-  }
-)
-
-table.insert(
-  gls.right,
-  {
-    LineInfo = {
-      provider = get_line_number,
-      separator = " ",
-      separator_highlight = {"NONE", colors.bg},
-      highlight = {colors.fg, colors.bg}
-    }
-  }
-)
-
-table.insert(
-  gls.right,
-  {
-    Spacer = {
-      provider = function()
-        return " "
+      right_sep = " "
+    },
+    right = {
+      provider = "▊",
+      hl = function()
+        local val = {
+          name = vi_mode_utils.get_mode_highlight_name(),
+          fg = vi_mode_utils.get_mode_color()
+        }
+        return val
       end,
-      highlight = {"NONE", colors.bg}
+      left_sep = " "
     }
-  }
-)
-
-table.insert(
-  gls.short_line_left,
-  {
-    SFileName = {
-      provider = function()
-        local fileinfo = require("galaxyline.provider_fileinfo")
-        local fname = fileinfo.get_current_file_name()
-        for _, v in ipairs(gl.short_line_list) do
-          if v == vim.bo.filetype then
-            return ""
-          end
-        end
-        return fname
+  },
+  line_number = {
+    provider = function()
+      return vim.api.nvim_eval("printf('%03d/%03d', line('.'),  line('$'))")
+    end,
+    left_sep = {
+      " ",
+      "left_rounded_thin",
+      hl = {bg = colors.white, fg = colors.white}
+    },
+    right_sep = {
+      "right_rounded_thin",
+      " ",
+      {
+        hl = {fg = colors.white}
+      }
+    }
+  },
+  file = {
+    info = {
+      provider = "file_info",
+      hl = {
+        fg = colors.white,
+        bg = "oceanblue",
+        style = "bold"
+      },
+      icon = "",
+      left_sep = {
+        " ",
+        "slant_left_2",
+        {hl = {bg = "oceanblue", fg = "NONE"}}
+      },
+      right_sep = {"slant_right_2", " "}
+    },
+    encoding = {
+      provider = "file_encoding",
+      left_sep = " ",
+      hl = {
+        fg = colors.violet,
+        style = "bold"
+      }
+    },
+    type = {
+      provider = "file_type"
+    }
+  },
+  line_percentage = {
+    provider = "line_percentage",
+    left_sep = " "
+  },
+  scroll_bar = {
+    provider = "scroll_bar",
+    left_sep = " ",
+    hl = {
+      fg = colors.blue,
+      style = "bold"
+    }
+  },
+  diagnos = {
+    err = {
+      provider = "diagnostic_errors",
+      enabled = function()
+        return lsp.diagnostics_exist("Error")
       end,
-      condition = buffer_not_empty,
-      highlight = {colors.white, colors.bg, "bold"}
+      hl = {
+        fg = colors.red
+      }
+    },
+    warn = {
+      provider = "diagnostic_warnings",
+      enabled = function()
+        return lsp.diagnostics_exist("Warning")
+      end,
+      hl = {
+        fg = colors.yellow
+      }
+    },
+    hint = {
+      provider = "diagnostic_hints",
+      enabled = function()
+        return lsp.diagnostics_exist("Hint")
+      end,
+      hl = {
+        fg = colors.cyan
+      }
+    },
+    info = {
+      provider = "diagnostic_info",
+      enabled = function()
+        return lsp.diagnostics_exist("Information")
+      end,
+      hl = {
+        fg = colors.blue
+      }
+    }
+  },
+  lsp = {
+    name = {
+      provider = "lsp_client_names",
+      left_sep = " ",
+      icon = " ",
+      hl = {
+        fg = colors.yellow,
+        style = "bold"
+      }
+    }
+  },
+  git = {
+    branch = {
+      provider = "git_branch",
+      icon = " ",
+      left_sep = " ",
+      hl = {
+        fg = colors.violet,
+        style = "bold"
+      },
+      right_sep = " "
     }
   }
-)
+}
+
+local properties = {
+  force_inactive = {
+    filetypes = {
+      "NvimTree",
+      "dbui",
+      "vim-plug",
+      "startify",
+      "fugitive",
+      "fugitiveblame"
+    },
+    buftypes = {"terminal"},
+    bufnames = {}
+  }
+}
+
+local components = {
+  left = {
+    active = {
+      comps.vi_mode.left,
+      comps.git.branch,
+      comps.file.info,
+      comps.lsp.name
+    },
+    inactive = {
+      comps.vi_mode.left,
+      comps.file.info
+    }
+  },
+  mid = {
+    active = {
+      comps.diagnos.err,
+      comps.diagnos.warn,
+      comps.diagnos.hint,
+      comps.diagnos.info
+    },
+    inactive = {}
+  },
+  right = {
+    active = {
+      comps.file.encoding,
+      comps.line_percentage,
+      comps.line_number,
+      comps.scroll_bar,
+      comps.vi_mode.right
+    },
+    inactive = {}
+  }
+}
+
+-- Built in separators {{{
+-- vertical_bar	'┃'
+-- vertical_bar_thin	'│'
+-- left	''
+-- right	''
+-- block	'█'
+-- left_filled	''
+-- right_filled	''
+-- slant_left	''
+-- slant_left_thin	''
+-- slant_right	''
+-- slant_right_thin	''
+-- slant_left_2	''
+-- slant_left_2_thin	''
+-- slant_right_2	''
+-- slant_right_2_thin	''
+-- left_rounded	''
+-- left_rounded_thin	''
+-- right_rounded	''
+-- right_rounded_thin	''
+-- circle	'●'
+-- }}}
+-- modified ''
+
+require "feline".setup {
+  default_bg = colors.bg,
+  default_fg = colors.fg,
+  components = components,
+  properties = properties,
+  vi_mode_colors = vi_mode_colors
+}

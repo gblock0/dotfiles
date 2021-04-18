@@ -9,6 +9,7 @@ Plug 'RRethy/vim-illuminate'
 Plug 'nvim-lua/lsp-status.nvim'
 
 Plug 'rafcamlet/nvim-luapad'
+Plug 'famiu/feline.nvim'
 
 " Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'} 
 
@@ -26,7 +27,6 @@ Plug 'voldikss/vim-floaterm'
 
 " Debugging
 Plug 'janko/vim-test'
-Plug 'glepnir/galaxyline.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
