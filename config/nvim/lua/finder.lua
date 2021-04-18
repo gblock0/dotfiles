@@ -59,9 +59,7 @@ end
 
 keymap("n", "<leader>a", ":lua gb_grep_files()<CR>")
 keymap("n", "<leader>p", ":lua gb_find_proj_files()<Cr>")
-keymap("n", "<leader>ca", ":Telescope lsp_code_actions<CR>")
 keymap("n", "<leader>gw", ":Telescope git_worktree git_worktrees<CR>")
-keymap("v", "<leader>ca", ":Telescope lsp_range_code_actions<CR>")
 
 -- Create a new vsplit, switch to it and open CtrlP
 keymap("n", "<leader>w", "<C-w>v<C-w>l :Telescope find_files<cr>")
