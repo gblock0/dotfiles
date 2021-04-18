@@ -14,22 +14,27 @@
   1. downloads my default homebrew packages ([`install/brew.sh`])
      - including BlexMono Nerd Font
   1. installs latest stable node
-  1. downloads [vim-plug]
   1. downloads the [tmux plugin manager]
   1. if running on OS X, it will update some settings ([`install/osx.sh`])
   1. switch the default shell to `zsh`
-  1. opens neovim and runs `PlugInstall`
 
 ## Install
 
 1. `git clone https://github.com/gblock0/dotfiles.git ~/.dotfiles`
 1. `cd ~/.dotfiles`
 1. `./install.sh`
+1. Download [`packer.nvim`]
+
+   ```
+   git clone https://github.com/wbthomason/packer.nvim\
+   ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+   ```
+
+1. Run `:PackerInstall` in Neovim
 1. Change keyboard modifier keys to make `Caps Lock` be `Ctrl`
 
 ## TODO
 
-- Migrate plugins to packer
 - Migrate the rest of the nvim config to lua
 
 [alacritty]: https://github.com/alacritty/alacritty
@@ -42,3 +47,4 @@
 [vim-plug]: https://github.com/junegunn/vim-plug
 [tmux plugin manager]: https://github.com/tmux-plugins/tpm
 [`install/osx.sh`]: https://github.com/gblock0/dotfiles/blob/master/install/osx.sh
+[`packer.nvim`]: https://github.com/wbthomason/packer.nvim

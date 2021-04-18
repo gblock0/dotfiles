@@ -32,14 +32,3 @@ fi
 
 echo "configuring zsh as default shell"
 chsh -s $(which zsh)
-
-if [ ! -e "${HOME}/.dotfiles/nvim/.config/nvim/autoload/plug.vim" ]; then
-    echo "install plug.vim"
-    curl -# --create-dirs -o ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-    echo "Running PlugInstall"
-    nvim -c "PlugInstall"
-else
-    echo "plug.vim already installed! skipping..."
-fi
-
