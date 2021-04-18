@@ -42,6 +42,8 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}
 Plug 'kevinhwang91/nvim-bqf'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
+Plug 'kevinhwang91/nvim-hlslens'
+
 Plug 'b3nj5m1n/kommentary' " Comment helper
 
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
