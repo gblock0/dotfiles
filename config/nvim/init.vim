@@ -5,30 +5,11 @@
 " plugin configs in ~/.config/nvim/plugin are loaded automatically
 
 lua require('sets')
-source ~/.config/nvim/plugins.vim
+lua require('gb-plugins')
 
 let g:oceanic_next_terminal_bold = 1
 " let g:oceanic_next_terminal_italic = 1
 colorscheme OceanicNext
-
-" load plugin configs
-lua require('gb-indent-lines')
-lua require('gb-git')
-lua require('gb-hlslens')
-lua require('gb-term')
-lua require('autoswap')
-lua require('colorizer-lua')
-lua require('finder')
-lua require('lsp')
-lua require('maximizer')
-lua require('gb-format')
-lua require('commenter')
-lua require('remaps')
-lua require('statusline')
-lua require('test')
-lua require('tmux-navigator')
-lua require('treesitter')
-lua require('vimspector')
 
 augroup GB_SETTINGS
     autocmd!

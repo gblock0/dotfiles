@@ -11,6 +11,7 @@ config/nvim/cache/
 config/nvim/autoload/
 config/nvim/plugged/
 config/nvim/vimspector-config
+packer_compiled.vim
 npm-debug.log
 plug.vim.old
 tags
