@@ -4,6 +4,13 @@ require("gitsigns").setup(
   {
     watch_index = {
       interval = 100
+    },
+    signs = {
+      add = {hl = "GitGutterAdd"},
+      change = {hl = "GitGutterChange"},
+      delete = {hl = "GitGutterDelete"},
+      topdelete = {hl = "GitGutterDelete"},
+      changedelete = {hl = "GitGutterChangeDelete"}
     }
   }
 )
