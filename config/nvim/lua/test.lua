@@ -1,5 +1,5 @@
 -- Testing helpers
-local keymap = require("nutils").map
+local keymap = require("gb-utils").map
 keymap("n", "<leader>tt", ":TestNearest -strategy=neovim<CR>")
 keymap("n", "<leader>tf", ":TestFile -strategy=neovim<CR>")
 

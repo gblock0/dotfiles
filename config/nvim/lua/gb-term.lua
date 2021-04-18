@@ -1,4 +1,4 @@
-local utils = require("nutils")
+local utils = require("gb-utils")
 local keymap = utils.map
 
 vim.api.nvim_set_var("floaterm_width", 0.9)

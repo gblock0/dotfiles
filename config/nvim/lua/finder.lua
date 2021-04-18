@@ -1,4 +1,4 @@
-local utils = require "nutils"
+local utils = require("gb-utils")
 keymap = utils.map
 
 local actions = require("telescope.actions")

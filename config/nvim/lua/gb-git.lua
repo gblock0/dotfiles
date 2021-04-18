@@ -1,4 +1,4 @@
-keymap = require("nutils").map
+keymap = require("gb-utils").map
 
 require("gitsigns").setup(
   {

@@ -1,5 +1,5 @@
 -- autocmd BufWritePost set in init.vim
-local keymap = require("nutils").map
+local keymap = require("gb-utils").map
 
 local prettierCmd = "prettier -w"
 
