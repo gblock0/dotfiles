@@ -117,6 +117,7 @@ require("packer").startup(
 
 -- load plugin configs
 require("gb.git")
+require("gb.file-explorer")
 require("gb.hlslens")
 require("gb.term")
 require("gb.autoswap")
