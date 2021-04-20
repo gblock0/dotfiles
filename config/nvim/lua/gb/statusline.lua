@@ -84,6 +84,7 @@ local comps = {
         style = "bold"
       },
       icon = "",
+      file_modified_icon = "",
       left_sep = {
         " ",
         "slant_left_2",
@@ -199,7 +200,11 @@ local components = {
       comps.vi_mode.left,
       comps.git.branch,
       comps.file.info,
-      comps.lsp.name
+      comps.lsp.name,
+      comps.diagnos.err,
+      comps.diagnos.warn,
+      comps.diagnos.hint,
+      comps.diagnos.info
     },
     inactive = {
       comps.vi_mode.left,
@@ -207,12 +212,7 @@ local components = {
     }
   },
   mid = {
-    active = {
-      comps.diagnos.err,
-      comps.diagnos.warn,
-      comps.diagnos.hint,
-      comps.diagnos.info
-    },
+    active = {},
     inactive = {}
   },
   right = {
