@@ -78,7 +78,6 @@ require("packer").startup(
     -- Telescope Plugins {{{
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
-    use "ThePrimeagen/git-worktree.nvim"
     use "nvim-telescope/telescope.nvim"
     use "nvim-telescope/telescope-fzf-writer.nvim"
     use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}

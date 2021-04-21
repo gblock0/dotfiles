@@ -39,7 +39,6 @@ require("telescope").setup {
 }
 
 require("telescope").load_extension("fzf")
-require("telescope").load_extension("git_worktree")
 require("telescope").load_extension("fzf_writer")
 
 function _G.gb_find_proj_files()
@@ -59,7 +58,6 @@ end
 
 keymap("n", "<leader>a", ":lua gb_grep_files()<CR>")
 keymap("n", "<leader>p", ":lua gb_find_proj_files()<Cr>")
-keymap("n", "<leader>gw", ":Telescope git_worktree git_worktrees<CR>")
 keymap("n", "<leader>ca", ":Telescope lsp_code_actions<CR>")
 
 -- Create a new vsplit, switch to it and open CtrlP
