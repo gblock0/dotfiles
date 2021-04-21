@@ -15,8 +15,6 @@ require("gitsigns").setup(
   }
 )
 
-require("git-worktree").setup {}
-
 keymap("n", "<leader>gs", ":vertical Git<CR>", {silent = true})
 keymap("n", "<leader>gh", ":diffget //2<CR>", {silent = true})
 keymap("n", "<leader>gl", ":diffget //3<CR>", {silent = true})
