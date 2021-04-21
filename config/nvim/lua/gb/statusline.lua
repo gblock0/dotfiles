@@ -207,7 +207,6 @@ local components = {
       comps.diagnos.info
     },
     inactive = {
-      comps.vi_mode.left,
       comps.file.info
     }
   },
