@@ -67,4 +67,3 @@ keymap("n", "<leader>w", "<C-w>v<C-w>l :lua gb_find_proj_files()<cr>")
 
 -- Create a new split, switch to it and open CtrlP
 keymap("n", "<leader>s", "<C-w>s<C-w>j :lua gb_find_proj_files()<cr>")
-keymap("n", "<F3>", ":Telescope lsp_references<CR>")
