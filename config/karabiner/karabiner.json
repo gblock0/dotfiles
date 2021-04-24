@@ -22,8 +22,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "com\\.microsoft\\.rdc\\.macos",
-                                            "io\\.alacritty"
+                                            "com\\.microsoft\\.rdc\\.macos"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -48,7 +47,6 @@
                                     {
                                         "bundle_identifiers": [
                                             "com\\.microsoft\\.rdc\\.macos",
-                                            "io\\.alacritty"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -72,8 +70,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "com\\.microsoft\\.rdc\\.macos",
-                                            "io\\.alacritty"
+                                            "com\\.microsoft\\.rdc\\.macos"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -97,8 +94,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "com\\.microsoft\\.rdc\\.macos",
-                                            "io\\.alacritty"
+                                            "com\\.microsoft\\.rdc\\.macos"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
