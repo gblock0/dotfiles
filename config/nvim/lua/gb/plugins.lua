@@ -111,6 +111,14 @@ require("packer").startup(
 
     -- Adds debugger to nvim
     use "puremourning/vimspector"
+
+    use {
+      "folke/lsp-trouble.nvim",
+      requires = "kyazdani42/nvim-web-devicons",
+      config = function()
+        require("trouble").setup {}
+      end
+    }
   end
 )
 
@@ -124,6 +132,7 @@ require("gb.format")
 require("gb.git")
 require("gb.hlslens")
 require("gb.lsp")
+require("gb.lsp-trouble")
 require("gb.maximizer")
 require("gb.remaps")
 require("gb.statusline")
