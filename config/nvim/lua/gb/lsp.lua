@@ -24,10 +24,8 @@ nvim_lsp.vimls.setup {}
 nvim_lsp.tsserver.setup {
   -- This makes sure tsserver is not used for formatting
   -- on_attach = nvim_lsp.tsserver_on_attach,
-  root_dir = function(fname)
-    return nvim_lsp.util.root_pattern("tsconfig.json")(fname) or
-      nvim_lsp.util.root_pattern("package.json", "jsconfig.json", ".git")(fname)
-  end,
+  root_dir = nvim_lsp.util.root_pattern("tsconfig.json", ".git"),
+  cmd = { "typescript-language-server","--tsserver-log-file", vim.env.HOME.."/src/tsserver.log", "--tsserver-log-verbosity", "verbose", "--stdio"},
   settings = {documentFormatting = false},
   on_init = custom_on_init
 }

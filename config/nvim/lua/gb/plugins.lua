@@ -5,6 +5,10 @@ require("packer").startup(
     -- Packer can manage itself
     use "wbthomason/packer.nvim"
 
+    use "folke/tokyonight.nvim"
+
+    use "marko-cerovac/material.nvim"
+
     -- Theme
     use "gblock0/oceanic-next"
 
