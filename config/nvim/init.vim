@@ -11,7 +11,7 @@ lua require('gb.plugins')
 
 let g:oceanic_next_terminal_bold = 1
 let g:tokyonight_italic_keywords = v:false
-colorscheme tokyonight
+colorscheme OceanicNext
 
 augroup GB_SETTINGS
     autocmd!

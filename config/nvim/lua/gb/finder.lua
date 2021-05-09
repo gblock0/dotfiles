@@ -2,6 +2,7 @@ local utils = require("gb.utils")
 keymap = utils.map
 
 local actions = require("telescope.actions")
+local trouble = require("trouble.providers.telescope")
 
 require("telescope").setup {
   defaults = {
@@ -22,7 +23,8 @@ require("telescope").setup {
         ["<C-f>"] = actions.smart_send_to_qflist + actions.open_qflist,
         ["<esc>"] = actions.close,
         ["<C-j>"] = actions.move_selection_next,
-        ["<C-k>"] = actions.move_selection_previous
+        ["<C-k>"] = actions.move_selection_previous,
+        ["<C-t>"] = trouble.open_with_trouble
       }
     }
   },

@@ -25,7 +25,14 @@ nvim_lsp.tsserver.setup {
   -- This makes sure tsserver is not used for formatting
   -- on_attach = nvim_lsp.tsserver_on_attach,
   root_dir = nvim_lsp.util.root_pattern("tsconfig.json", ".git"),
-  cmd = { "typescript-language-server","--tsserver-log-file", vim.env.HOME.."/src/tsserver.log", "--tsserver-log-verbosity", "verbose", "--stdio"},
+  cmd = {
+    "typescript-language-server",
+    "--tsserver-log-file",
+    vim.env.HOME .. "/src/tsserver.log",
+    "--tsserver-log-verbosity",
+    "verbose",
+    "--stdio"
+  },
   settings = {documentFormatting = false},
   on_init = custom_on_init
 }
@@ -243,7 +250,7 @@ keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", {silent = true})
 keymap("n", "gR", ":Lspsaga rename<CR>")
-keymap("n", "gr", ":Telescope lsp_references<CR>")
+keymap("n", "gr", "LspTrouble lsp_references", {cmd_cr = true})
 keymap("n", "gs", ":Lspsaga signature_help<CR>")
 keymap("n", "<leader>e", ":Lspsaga diagnostic_jump_next<CR>", {silent = true})
 keymap("n", "<leader>cd", ":Lspsaga show_line_diagnostics<CR>", {silent = true})
