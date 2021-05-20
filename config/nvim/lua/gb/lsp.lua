@@ -24,6 +24,12 @@ nvim_lsp.vimls.setup {}
 nvim_lsp.tsserver.setup {
   -- This makes sure tsserver is not used for formatting
   -- on_attach = nvim_lsp.tsserver_on_attach,
+  on_attach = function(client)
+    if client.config.flags then
+      client.config.flags.allow_incremental_sync = true
+    end
+    client.resolved_capabilities.document_formatting = false
+  end,
   root_dir = nvim_lsp.util.root_pattern("tsconfig.json", ".git"),
   cmd = {
     "typescript-language-server",
@@ -82,10 +88,12 @@ nvim_lsp.html.setup {
 }
 
 local eslint_d = {
-  lintCommand = "eslint_d -f unix --stdin --stdin-filename ${INPUT}",
+  lintCommand = "eslint_d --stdin --fix-to-stdout --stdin-filename ${INPUT}",
   lintIgnoreExitCode = true,
   lintStdin = true,
-  lintFormats = {"%f:%l:%c: %m"}
+  lintFormats = {"%f:%l:%c: %m"},
+  formatCommand = "eslint_d --fix-to-stdout --stdin --stdin-filename ${INPUT}",
+  formatStdin = true
 }
 
 local rustExe = "rustfmt"
