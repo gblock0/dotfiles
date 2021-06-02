@@ -180,7 +180,6 @@ require("lspsaga").init_lsp_saga(
     finder_definition_icon = "  ",
     finder_reference_icon = "  ",
     definition_preview_icon = "  ",
-    border_style = 1,
     rename_prompt_prefix = "❱❱",
     rename_action_keys = {
       quit = {"<C-c>", "<esc>"},
