@@ -8,8 +8,7 @@ vim.g.nvim_tree_group_empty = 1
 vim.g.nvim_tree_root_folder_modifier = ":~" --This is the default. See :help filename-modifiers for more options
 vim.g.nvim_tree_lsp_diagnostics = 1 --0 by default, will show lsp diagnostics in the signcolumn. See :help nvim_tree_lsp_diagnostics
 
-keymap("", "<leader>n", ":NvimTreeToggle<CR>", {silent = true})
-keymap("n", "<leader>r", ":NvimTreeRefresh<CR>")
+keymap("n", "<leader>n", ":NvimTreeToggle<CR>", {silent = true})
 
 local tree_cb = require "nvim-tree.config".nvim_tree_callback
 vim.g.nvim_tree_bindings = {
