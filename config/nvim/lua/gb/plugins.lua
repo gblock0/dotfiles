@@ -7,8 +7,6 @@ require("packer").startup(
 
     use "folke/tokyonight.nvim"
 
-    use "marko-cerovac/material.nvim"
-
     -- Theme
     use "gblock0/oceanic-next"
 
