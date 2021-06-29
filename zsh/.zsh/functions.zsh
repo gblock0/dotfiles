@@ -22,14 +22,6 @@ function cdd() {
     cd ~/.dotfiles
 }
 
-function reinstall-neovim() {
-  brew update
-  brew uninstall neovim
-  brew uninstall luajit
-  brew install --HEAD luajit
-  brew install --HEAD neovim
-}
-
 function update-language-servers() {
   npm update -g typescript pyright vscode-css-languageserver-bin vscode-html-languageserver-bin vim-language-server
   brew upgrade efm-langserver
