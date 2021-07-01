@@ -29,6 +29,7 @@ nvim_lsp.tsserver.setup {
       client.config.flags.allow_incremental_sync = true
     end
     client.resolved_capabilities.document_formatting = false
+    require "lsp_signature".on_attach()
   end,
   root_dir = nvim_lsp.util.root_pattern("tsconfig.json", ".git"),
   cmd = {
@@ -45,25 +46,10 @@ nvim_lsp.tsserver.setup {
 
 --must run: npm install -g pyright
 nvim_lsp.pyright.setup {
-  on_init = custom_on_init
-}
-
-nvim_lsp.rust_analyzer.setup {
   on_init = custom_on_init,
-  settings = {
-    ["rust-analyzer"] = {
-      assist = {
-        importMergeBehavior = "last",
-        importPrefix = "by_self"
-      },
-      cargo = {
-        loadOutDirsFromCheck = true
-      },
-      procMacro = {
-        enable = true
-      }
-    }
-  }
+  on_attach = function(client)
+    require "lsp_signature".on_attach()
+  end
 }
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] =

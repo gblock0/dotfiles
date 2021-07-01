@@ -121,6 +121,8 @@ require("packer").startup(
         require("trouble").setup {}
       end
     }
+
+    use "ray-x/lsp_signature.nvim"
   end
 )
 
