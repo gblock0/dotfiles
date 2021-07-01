@@ -12,6 +12,6 @@ keymap("n", "<leader>n", ":NvimTreeToggle<CR>", {silent = true})
 
 local tree_cb = require "nvim-tree.config".nvim_tree_callback
 vim.g.nvim_tree_bindings = {
-  ["w"] = tree_cb("vsplit"),
-  ["s"] = tree_cb("split")
+  {key = "w", cb = tree_cb("vsplit")},
+  {key = "s", cb = tree_cb("split")}
 }
