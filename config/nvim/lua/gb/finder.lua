@@ -10,7 +10,6 @@ require("telescope").setup {
     selection_caret = " ",
     entry_prefix = "  ",
     scroll_strategy = "cycle",
-    prompt_position = "top",
     file_ignore_patterns = {"%.git", "node%_modules"},
     initial_mode = "insert",
     selection_strategy = "reset",
