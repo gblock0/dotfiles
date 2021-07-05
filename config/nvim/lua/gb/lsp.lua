@@ -44,6 +44,8 @@ nvim_lsp.tsserver.setup {
   on_init = custom_on_init
 }
 
+nvim_lsp.rust_analyzer.setup {}
+
 --must run: npm install -g pyright
 nvim_lsp.pyright.setup {
   on_init = custom_on_init,

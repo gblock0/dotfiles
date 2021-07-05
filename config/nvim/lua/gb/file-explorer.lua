@@ -10,8 +10,8 @@ vim.g.nvim_tree_lsp_diagnostics = 1 --0 by default, will show lsp diagnostics in
 
 keymap("n", "<leader>n", ":NvimTreeToggle<CR>", {silent = true})
 
-local tree_cb = require "nvim-tree.config".nvim_tree_callback
-vim.g.nvim_tree_bindings = {
-  {key = "w", cb = tree_cb("vsplit")},
-  {key = "s", cb = tree_cb("split")}
-}
+-- local tree_cb = require "nvim-tree.config".nvim_tree_callback
+-- vim.g.nvim_tree_bindings = {
+--   {key = "w", cb = tree_cb("vsplit")},
+--   {key = "s", cb = tree_cb("split")}
+-- }
