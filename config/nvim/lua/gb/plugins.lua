@@ -55,6 +55,7 @@ require("packer").startup(
 
     -- Comment helper
     use "b3nj5m1n/kommentary"
+    use "JoosepAlviste/nvim-ts-context-commentstring"
 
     use {
       "kevinhwang91/nvim-bqf",
