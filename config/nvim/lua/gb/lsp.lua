@@ -32,14 +32,14 @@ nvim_lsp.tsserver.setup {
     require "lsp_signature".on_attach()
   end,
   root_dir = nvim_lsp.util.root_pattern("tsconfig.json", ".git"),
-  cmd = {
-    "typescript-language-server",
-    "--tsserver-log-file",
-    vim.env.HOME .. "/src/tsserver.log",
-    "--tsserver-log-verbosity",
-    "verbose",
-    "--stdio"
-  },
+  -- cmd = {
+  --   "typescript-language-server",
+  --   "--tsserver-log-file",
+  --   vim.env.HOME .. "/src/tsserver.log",
+  --   "--tsserver-log-verbosity",
+  --   "verbose",
+  --   "--stdio"
+  -- },
   settings = {documentFormatting = false},
   on_init = custom_on_init
 }
@@ -151,6 +151,7 @@ require "compe".setup {
   source = {
     path = true,
     buffer = true,
+    treesitter = true,
     nvim_lsp = true,
     nvim_lua = true,
     spell = true
