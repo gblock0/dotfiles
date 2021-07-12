@@ -73,7 +73,7 @@ require("packer").startup(
     use "janko/vim-test"
 
     -- Live Markdown previews
-    use {"iamcco/markdown-preview.nvim", run = "cd app && yarn install", opt = true, cmd = "MarkdownPreview"}
+    use {"iamcco/markdown-preview.nvim", run = "cd app && yarn install", cmd = "MarkdownPreview"}
 
     -- Additional search highlighting
     use "kevinhwang91/nvim-hlslens"
