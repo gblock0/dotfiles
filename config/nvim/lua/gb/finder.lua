@@ -15,7 +15,7 @@ require("telescope").setup {
     selection_strategy = "reset",
     sorting_strategy = "ascending",
     layout_strategy = "horizontal",
-    shorten_path = false,
+    path_display = {"absolute"},
     mappings = {
       i = {
         ["<C-x>"] = false,
@@ -25,6 +25,13 @@ require("telescope").setup {
         ["<C-k>"] = actions.move_selection_previous,
         ["<C-t>"] = trouble.open_with_trouble
       }
+    }
+  },
+  pickers = {
+    find_files = {
+      hidden = string.find(vim.fn.getcwd(), ".dotfiles"),
+      sort_lastused = true,
+      previewer = false
     }
   },
   extensions = {
@@ -43,16 +50,11 @@ require("telescope").load_extension("fzf")
 require("telescope").load_extension("fzf_writer")
 
 function _G.gb_find_proj_files()
-  require("telescope.builtin").find_files {
-    shorten_path = false,
-    previewer = false,
-    hidden = string.find(vim.fn.getcwd(), ".dotfiles")
-  }
+  require("telescope.builtin").find_files {}
 end
 
 function _G.gb_grep_files()
   require("telescope").extensions.fzf_writer.staged_grep {
-    shorten_path = true,
     previewer = false
   }
 end
