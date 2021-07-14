@@ -49,10 +49,6 @@ require("telescope").setup {
 require("telescope").load_extension("fzf")
 require("telescope").load_extension("fzf_writer")
 
-function _G.gb_find_proj_files()
-  require("telescope.builtin").find_files {}
-end
-
 function _G.gb_grep_files()
   require("telescope").extensions.fzf_writer.staged_grep {
     previewer = false
@@ -60,7 +56,7 @@ function _G.gb_grep_files()
 end
 
 keymap("n", "<leader>a", ":lua gb_grep_files()<CR>")
-keymap("n", "<leader>p", ":lua gb_find_proj_files()<Cr>")
+keymap("n", "<leader>p", ":Telescope find_files<Cr>")
 keymap("n", "<leader>ca", ":Telescope lsp_code_actions<CR>")
 
 -- Create a new vsplit, switch to it and open CtrlP
