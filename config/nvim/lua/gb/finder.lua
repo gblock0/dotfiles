@@ -60,7 +60,7 @@ keymap("n", "<leader>p", ":Telescope find_files<Cr>")
 keymap("n", "<leader>ca", ":Telescope lsp_code_actions<CR>")
 
 -- Create a new vsplit, switch to it and open CtrlP
-keymap("n", "<leader>w", "<C-w>v<C-w>l :lua gb_find_proj_files()<cr>")
+keymap("n", "<leader>w", "<C-w>v<C-w>l :Telescope find_files<cr>")
 
 -- Create a new split, switch to it and open CtrlP
-keymap("n", "<leader>s", "<C-w>s<C-w>j :lua gb_find_proj_files()<cr>")
+keymap("n", "<leader>s", "<C-w>s<C-w>j :Telescope find_files<cr>")
