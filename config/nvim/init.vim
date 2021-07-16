@@ -30,6 +30,11 @@ augroup GB_SETTINGS
     " Enable type inlay hints
     autocmd CursorMoved,InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *
     \ lua require'lsp_extensions'.inlay_hints{ prefix = '', highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"} }
+
+
+    " Python niceties
+    autocmd FileType python inoremap - _
+    autocmd FileType python inoremap _ -
 augroup END
 
 " Remap colon commands to ignore shift

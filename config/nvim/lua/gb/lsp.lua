@@ -15,9 +15,6 @@ local function custom_root_dir()
   return nil
 end
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
 nvim_lsp.vimls.setup {}
 
 --must have run: npm install -g typescript
@@ -32,14 +29,6 @@ nvim_lsp.tsserver.setup {
     require "lsp_signature".on_attach()
   end,
   root_dir = nvim_lsp.util.root_pattern("tsconfig.json", ".git"),
-  -- cmd = {
-  --   "typescript-language-server",
-  --   "--tsserver-log-file",
-  --   vim.env.HOME .. "/src/tsserver.log",
-  --   "--tsserver-log-verbosity",
-  --   "verbose",
-  --   "--stdio"
-  -- },
   settings = {documentFormatting = false},
   on_init = custom_on_init
 }
@@ -71,8 +60,7 @@ nvim_lsp.cssls.setup {
 
 -- npm i -g vscode-html-languageserver-bin
 nvim_lsp.html.setup {
-  on_init = custom_on_init,
-  capabilities = capabilities
+  on_init = custom_on_init
 }
 
 local eslint_d = {
@@ -149,33 +137,30 @@ require "compe".setup {
   max_menu_width = 100,
   documentation = true,
   source = {
-    path = true,
-    buffer = true,
-    treesitter = true,
-    nvim_lsp = true,
-    nvim_lua = true,
-    spell = true
+    path = {kind = "   (Path)"},
+    buffer = {kind = "   (Buffer)"},
+    calc = {kind = "   (Calc)"},
+    vsnip = {kind = "   (Snippet)"},
+    nvim_lsp = {kind = "   (LSP)"},
+    nvim_lua = false,
+    spell = {kind = "   (Spell)"},
+    tags = false,
+    vim_dadbod_completion = false,
+    snippets_nvim = false,
+    ultisnips = false,
+    treesitter = false,
+    emoji = {kind = " ﲃ  (Emoji)", filetypes = {"markdown", "text"}}
+    -- for emoji press : (idk if that in compe tho)
   }
 }
 
-require("lspsaga").init_lsp_saga(
-  {
-    error_sign = "▊",
-    warn_sign = "▊",
-    hint_sign = "▊",
-    infor_sign = "▊",
-    dianostic_header_icon = "   ",
-    code_action_icon = "",
-    finder_definition_icon = "  ",
-    finder_reference_icon = "  ",
-    definition_preview_icon = "  ",
-    rename_prompt_prefix = "❱❱",
-    rename_action_keys = {
-      quit = {"<C-c>", "<esc>"},
-      exec = "<CR>" -- quit can be a table
-    }
-  }
-)
+vim.g.vsnip_snippet_dir = vim.fn.stdpath "config" .. "/snippets"
+
+vim.fn.sign_define("LspDiagnosticsSignError", {text = "▊"})
+vim.fn.sign_define("LspDiagnosticsSignWarning", {text = "▊"})
+vim.fn.sign_define("LspDiagnosticsSignInformation", {text = "▊"})
+vim.fn.sign_define("LspDiagnosticsSignHint", {text = "▊"})
+
 require("lspkind").init(
   {
     with_text = true,
@@ -226,6 +211,8 @@ end
 _G.tab_complete = function()
   if vim.fn.pumvisible() == 1 then
     return t "<C-n>"
+  elseif vim.fn.call("vsnip#available", {1}) == 1 then
+    return t "<Plug>(vsnip-expand-or-jump)"
   elseif check_back_space() then
     return t "<Tab>"
   else
@@ -235,21 +222,23 @@ end
 _G.s_tab_complete = function()
   if vim.fn.pumvisible() == 1 then
     return t "<C-p>"
+  elseif vim.fn.call("vsnip#jumpable", {-1}) == 1 then
+    return t "<Plug>(vsnip-jump-prev)"
   else
     return t "<S-Tab>"
   end
 end
 
-keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
-keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
-keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", {silent = true})
-keymap("n", "gR", ":Lspsaga rename<CR>")
-keymap("n", "gr", "LspTrouble lsp_references", {cmd_cr = true})
-keymap("n", "gs", ":Lspsaga signature_help<CR>")
-keymap("n", "<leader>e", ":Lspsaga diagnostic_jump_next<CR>", {silent = true})
-keymap("n", "<leader>cd", ":Lspsaga show_line_diagnostics<CR>", {silent = true})
-keymap("n", "K", ":Lspsaga hover_doc<CR>", {silent = true})
+vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 keymap("i", "<C-Space>", "compe#complete()", {silent = true, expr = true})
 keymap("i", "<CR>", 'compe#confirm("<CR>")', {silent = true, expr = true})
+
+keymap("n", "gd", "lua vim.lsp.buf.definition()", {silent = true, cmd_cr = true})
+keymap("n", "gR", "lua vim.lsp.buf.rename()", {cmd_cr = true})
+keymap("n", "gr", "LspTrouble lsp_references", {cmd_cr = true})
+keymap("n", "<leader>e", "lua vim.lsp.diagnostic.goto_next()", {silent = true, cmd_cr = true})
+keymap("n", "<leader>cd", "lua vim.lsp.diagnostic.show_line_diagnostics()", {silent = true, cmd_cr = true})
+keymap("n", "K", "lua vim.lsp.buf.hover()", {silent = true, cmd_cr = true})

@@ -41,7 +41,6 @@ require("packer").startup(
     use "nvim-lua/lsp-status.nvim"
     use "neovim/nvim-lspconfig"
     use "hrsh7th/nvim-compe"
-    use "glepnir/lspsaga.nvim"
     use "nvim-lua/lsp_extensions.nvim"
     use "onsails/lspkind-nvim"
     -- }}}
@@ -124,6 +123,10 @@ require("packer").startup(
     }
 
     use "ray-x/lsp_signature.nvim"
+
+    -- Snippets
+    use "hrsh7th/vim-vsnip"
+    use "rafamadriz/friendly-snippets"
   end
 )
 
