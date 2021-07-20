@@ -53,12 +53,12 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
   }
 )
 
--- npm i -g vscode-css-languageserver-bin
+-- npm i -g vscode-langservers-extracted
 nvim_lsp.cssls.setup {
   on_init = custom_on_init
 }
 
--- npm i -g vscode-html-languageserver-bin
+-- npm i -g vscode-langservers-extracted
 nvim_lsp.html.setup {
   on_init = custom_on_init
 }
