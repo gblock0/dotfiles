@@ -21,7 +21,6 @@ augroup GB_SETTINGS
     " Highlight trailing whitespace
     highlight ExtraWhitespace ctermbg=red guibg=red
 
-    autocmd BufWritePost * FormatWrite
     autocmd BufWinLeave * call clearmatches()
 
     " Disable auto-commenting
