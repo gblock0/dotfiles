@@ -17,6 +17,7 @@ opt("o", "ignorecase", true) -- case insensitive searching
 opt("o", "smartcase", true) -- case-sensitive if expression contains a capital letter
 opt("o", "listchars", "eol:¬,tab:>·,trail:~,space:␣") -- set what whitespace characters look like
 opt("o", "updatetime", 100) -- keep buffers around
+opt("o", "splitright", true) -- split windows to the right
 
 -- Buffer options
 --  Tab control
