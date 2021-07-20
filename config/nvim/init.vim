@@ -13,6 +13,11 @@ let g:oceanic_next_terminal_bold = 1
 let g:tokyonight_italic_keywords = v:false
 colorscheme OceanicNext
 
+
+" Moves the visually selected lines up/down one line
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
 augroup GB_SETTINGS
     autocmd!
     source ~/.config/nvim/filetype_configs.vim
