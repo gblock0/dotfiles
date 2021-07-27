@@ -34,3 +34,6 @@ keymap("", "<F1>", "<ESC>")
 keymap("n", "<F5>", ":set list!<CR>")
 
 keymap("n", "<leader>rn", ":set relativenumber!<CR>", {silent = true})
+
+-- Reselect pasted text
+keymap("n", "gp", "`[v`]", {silent = true})
