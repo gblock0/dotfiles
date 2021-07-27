@@ -20,5 +20,10 @@ require "nvim-treesitter.configs".setup {
     "rust",
     "typescript"
   },
-  highlight = {enable = true}
+  highlight = {
+    enable = true
+  },
+  indent = {
+    enable = true
+  }
 }
