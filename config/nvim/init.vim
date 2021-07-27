@@ -25,6 +25,7 @@ augroup GB_SETTINGS
     " Highlight trailing whitespace
     highlight ExtraWhitespace ctermbg=red guibg=red
 
+    " Clears all matches when leaving the buffer
     autocmd BufWinLeave * call clearmatches()
 
     " Disable auto-commenting
