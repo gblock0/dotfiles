@@ -17,6 +17,10 @@ colorscheme OceanicNext
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
+" Add to jumplist if the cursor moves more than 5 lines
+nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
+nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
+
 augroup GB_SETTINGS
     autocmd!
     source ~/.config/nvim/filetype_configs.vim
@@ -25,7 +29,10 @@ augroup GB_SETTINGS
     " Highlight trailing whitespace
     highlight ExtraWhitespace ctermbg=red guibg=red
 
-    " Clears all matches when leaving the buffer
+    " Format the buffer when leaving insert mode
+    autocmd BufWritePost * FormatWrite
+
+    " Clears all matches when leaving the kuffer
     autocmd BufWinLeave * call clearmatches()
 
     " Disable auto-commenting
