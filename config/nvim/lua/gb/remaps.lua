@@ -54,3 +54,6 @@ keymap("n", "(", "(<c-g>u", {silent = true})
 keymap("n", ")", ")<c-g>u", {silent = true})
 keymap("n", "{", "{<c-g>u", {silent = true})
 keymap("n", "}", "}<c-g>u", {silent = true})
+
+-- Make 'Y' behave like other capital letters
+keymap("n", "Y", "y$")
