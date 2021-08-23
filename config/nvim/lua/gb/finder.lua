@@ -32,6 +32,20 @@ require("telescope").setup {
       hidden = string.find(vim.fn.getcwd(), ".dotfiles"),
       sort_lastused = true,
       previewer = false
+    },
+    buffers = {
+      sort_lastused = true,
+      previewer = false,
+      mappings = {
+        i = {
+          ["<c-d>"] = require("telescope.actions").delete_buffer,
+          -- Right hand side can also be the name of the action as a string
+          ["<c-d>"] = "delete_buffer"
+        },
+        n = {
+          ["<c-d>"] = require("telescope.actions").delete_buffer
+        }
+      }
     }
   },
   extensions = {
@@ -55,9 +69,10 @@ function _G.gb_grep_files()
   }
 end
 
-keymap("n", "<leader>a", ":lua gb_grep_files()<CR>")
-keymap("n", "<leader>p", ":Telescope find_files<Cr>")
-keymap("n", "<leader>ca", ":Telescope lsp_code_actions<CR>")
+keymap("n", "<leader>a", "lua gb_grep_files()", {cmd_cr = true})
+keymap("n", "<leader>p", "Telescope find_files", {cmd_cr = true})
+keymap("n", "<leader>b", "Telescope buffers", {cmd_cr = true})
+keymap("n", "<leader>ca", "Telescope lsp_code_actions", {cmd_cr = true})
 
 -- Create a new vsplit, switch to it and open CtrlP
 keymap("n", "<leader>w", "<C-w>v :Telescope find_files<cr>")

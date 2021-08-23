@@ -46,6 +46,9 @@ augroup GB_SETTINGS
     " Python niceties
     autocmd FileType python inoremap - _
     autocmd FileType python inoremap _ -
+
+    " Delete all buffers except for the one currently being viewed
+    command! BufOnly execute "%bd|e#|bd#"
 augroup END
 
 " Remap colon commands to ignore shift
