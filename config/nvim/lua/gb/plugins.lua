@@ -72,7 +72,7 @@ require("packer").startup(
     use "janko/vim-test"
 
     -- Live Markdown previews
-    use {"iamcco/markdown-preview.nvim", run = "cd app && yarn install", cmd = "MarkdownPreview"}
+    use {"iamcco/markdown-preview.nvim", run = "cd app && yarn install"}
 
     -- Additional search highlighting
     use "kevinhwang91/nvim-hlslens"
@@ -127,6 +127,11 @@ require("packer").startup(
     -- Snippets
     use "hrsh7th/vim-vsnip"
     use "rafamadriz/friendly-snippets"
+
+    use {
+      "SmiteshP/nvim-gps",
+      requires = "nvim-treesitter/nvim-treesitter"
+    }
   end
 )
 

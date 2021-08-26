@@ -2,12 +2,14 @@
 local keymap = require("gb.utils").map
 
 local prettierCmd = "prettier -w"
+local tempfile_dir = vim.fn.expand("~/.formatter-nvim-tmp-files")
 
 local onlyPrettierCmdOpts = {
   {
     cmd = {
       prettierCmd
-    }
+    },
+    tempfile_dir = tempfile_dir
   }
 }
 
@@ -16,7 +18,8 @@ local tsJsCmdOpts = {
     cmd = {
       prettierCmd,
       "./node_modules/.bin/eslint_d --fix"
-    }
+    },
+    tempfile_dir = tempfile_dir
   }
 }
 
@@ -26,7 +29,8 @@ require "format".setup {
       cmd = {
         -- remove trailing whitespace
         "sed -i 's/[ \t]*$//'"
-      }
+      },
+      tempfile_dir = tempfile_dir
     }
   },
   lua = {
@@ -45,10 +49,32 @@ require "format".setup {
   css = onlyPrettierCmdOpts,
   json = onlyPrettierCmdOpts,
   html = onlyPrettierCmdOpts,
-  markdown = onlyPrettierCmdOpts,
+  markdown = {
+    {
+      cmd = {
+        prettierCmd
+      },
+      tempfile_dir = tempfile_dir
+    },
+    {
+      cmd = {prettierCmd},
+      tempfile_dir = tempfile_dir,
+      start_pattern = "^```json$",
+      end_pattern = "^```$",
+      target = "current"
+    },
+    {
+      cmd = {prettierCmd},
+      tempfile_dir = tempfile_dir,
+      start_pattern = "^```typescript$",
+      end_pattern = "^```$",
+      target = "current"
+    }
+  },
   rust = {
     {
-      cmd = {"rustfmt"}
+      cmd = {"rustfmt"},
+      tempfile_dir = tempfile_dir
     }
   }
 }

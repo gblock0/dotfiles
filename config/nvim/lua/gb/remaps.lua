@@ -25,7 +25,7 @@ keymap("n", "<leader>re", 'so ~/.config/nvim/init.vim<CR>:noh<CR>:echo "init.vim
 keymap("n", "<leader>;", "maA;<esc>`a:wa<CR>")
 
 -- Copy current file's path to clipboard
-keymap("n", "cp", 'let @+ = expand("%")', {cmd_cr = true})
+keymap("n", "cp", 'let @+ = expand("%")', {cmd_cr = true, silent = false})
 
 -- Disable help F1 key
 keymap("", "<F1>", "<ESC>")

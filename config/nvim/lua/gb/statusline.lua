@@ -33,6 +33,9 @@ local vi_mode_colors = {
 local lsp = require "feline.providers.lsp"
 local vi_mode_utils = require "feline.providers.vi_mode"
 
+-- Shows the current function in the file
+require("nvim-gps").setup()
+
 local comps = {
   vi_mode = {
     left = {
@@ -176,6 +179,15 @@ local comps = {
       },
       right_sep = " "
     }
+  },
+  nvim_gps = {
+    left_sep = " ",
+    provider = function()
+      return require("nvim-gps").get_location()
+    end,
+    enabled = function()
+      return require("nvim-gps").is_available()
+    end
   }
 }
 
@@ -204,7 +216,8 @@ local components = {
       comps.diagnos.err,
       comps.diagnos.warn,
       comps.diagnos.hint,
-      comps.diagnos.info
+      comps.diagnos.info,
+      comps.nvim_gps
     },
     inactive = {
       comps.file.info
