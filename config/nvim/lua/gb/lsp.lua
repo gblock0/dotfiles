@@ -81,7 +81,7 @@ local rustfmt = {
   formatStdin = rustStdin
 }
 
-local prettierArgs = {"--stdin", "--stdin-filepath", vim.api.nvim_buf_get_name(0), "--single-quote"}
+local prettierArgs = {"--stdin-filepath", vim.api.nvim_buf_get_name(0)}
 
 local prettier = {
   formatCommand = "./node_modules/.bin/prettier" .. table.concat(prettierArgs, " "),
@@ -115,7 +115,7 @@ local languages = {
 }
 
 nvim_lsp.efm.setup {
-  init_options = {documentFormatting = true},
+  init_options = {documentFormatting = false},
   filetypes = vim.tbl_keys(languages),
   root_dir = custom_root_dir(),
   settings = {
@@ -123,36 +123,99 @@ nvim_lsp.efm.setup {
   }
 }
 
-require "compe".setup {
-  enabled = true,
-  autocomplete = true,
-  debug = false,
-  min_length = 1,
-  preselect = "enable",
-  throttle_time = 80,
-  source_timeout = 200,
-  incomplete_delay = 400,
-  max_abbr_width = 100,
-  max_kind_width = 100,
-  max_menu_width = 100,
-  documentation = true,
-  source = {
-    path = {kind = "   (Path)"},
-    buffer = {kind = "   (Buffer)"},
-    calc = {kind = "   (Calc)"},
-    vsnip = {kind = "   (Snippet)"},
-    nvim_lsp = {kind = "   (LSP)"},
-    nvim_lua = false,
-    spell = {kind = "   (Spell)"},
-    tags = false,
-    vim_dadbod_completion = false,
-    snippets_nvim = false,
-    ultisnips = false,
-    treesitter = false,
-    emoji = {kind = " ﲃ  (Emoji)", filetypes = {"markdown", "text"}}
-    -- for emoji press : (idk if that in compe tho)
+local t = function(str)
+  return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
+local check_back_space = function()
+  local col = vim.fn.col "." - 1
+  return col == 0 or vim.fn.getline("."):sub(col, col):match "%s" ~= nil
+end
+
+local cmp = require("cmp")
+cmp.setup {
+  sources = {
+    {name = "nvim_lsp"},
+    {name = "buffer"},
+    {name = "nvim_lua"},
+    {name = "path"}
+  },
+  formatting = {
+    format = function(entry, vim_item)
+      -- fancy icons and a name of kind
+      vim_item.kind = require("lspkind").presets.default[vim_item.kind] .. " " .. vim_item.kind
+      -- set a name for each source
+      vim_item.menu =
+        ({
+        buffer = "   (Buffer)",
+        nvim_lsp = "   (LSP)",
+        nvim_lua = "[Lua]"
+      })[entry.source.name]
+      return vim_item
+    end
+  },
+  mapping = {
+    ["<tab>"] = cmp.mapping(
+      function(fallback)
+        if vim.fn.pumvisible() == 1 then
+          vim.fn.feedkeys(t("<C-n>"), "n")
+        elseif check_back_space() then
+          vim.fn.feedkeys(t("<tab>"), "n")
+        else
+          fallback()
+        end
+      end,
+      {
+        "i",
+        "s"
+      }
+    ),
+    ["<S-tab>"] = cmp.mapping(
+      function(fallback)
+        if vim.fn.pumvisible() == 1 then
+          vim.fn.feedkeys(t("<C-p>"), "n")
+        else
+          fallback()
+        end
+      end,
+      {
+        "i",
+        "s"
+      }
+    )
   }
 }
+
+-- }
+-- require "comp".setup {
+--   enabled = true,
+--   autocomplete = true,
+--   debug = false,
+--   min_length = 1,
+--   preselect = "enable",
+--   throttle_time = 80,
+--   source_timeout = 200,
+--   incomplete_delay = 400,
+--   max_abbr_width = 100,
+--   max_kind_width = 100,
+--   max_menu_width = 100,
+--   documentation = true,
+--   source = {
+--     path = {kind = "   (Path)"},
+--     buffer = {kind = "   (Buffer)"},
+--     calc = {kind = "   (Calc)"},
+--     vsnip = {kind = "   (Snippet)"},
+--     nvim_lsp = {kind = "   (LSP)"},
+--     nvim_lua = false,
+--     spell = {kind = "   (Spell)"},
+--     tags = false,
+--     vim_dadbod_completion = false,
+--     snippets_nvim = false,
+--     ultisnips = false,
+--     treesitter = false,
+--     emoji = {kind = " ﲃ  (Emoji)", filetypes = {"markdown", "text"}}
+--     -- for emoji press : (idk if that in compe tho)
+--   }
+-- }
 
 vim.g.vsnip_snippet_dir = vim.fn.stdpath "config" .. "/snippets"
 
@@ -208,33 +271,33 @@ end
 -- Use (s-)tab to:
 --- move to prev/next item in completion menuone
 --- jump to prev/next snippet's placeholder
-_G.tab_complete = function()
-  if vim.fn.pumvisible() == 1 then
-    return t "<C-n>"
-  elseif vim.fn.call("vsnip#available", {1}) == 1 then
-    return t "<Plug>(vsnip-expand-or-jump)"
-  elseif check_back_space() then
-    return t "<Tab>"
-  else
-    return vim.fn["compe#complete"]()
-  end
-end
-_G.s_tab_complete = function()
-  if vim.fn.pumvisible() == 1 then
-    return t "<C-p>"
-  elseif vim.fn.call("vsnip#jumpable", {-1}) == 1 then
-    return t "<Plug>(vsnip-jump-prev)"
-  else
-    return t "<S-Tab>"
-  end
-end
+-- _G.tab_complete = function()
+--   if vim.fn.pumvisible() == 1 then
+--     return t "<C-n>"
+--   elseif vim.fn.call("vsnip#available", {1}) == 1 then
+--     return t "<Plug>(vsnip-expand-or-jump)"
+--   elseif check_back_space() then
+--     return t "<Tab>"
+--   else
+--     return vim.fn["compe#complete"]()
+--   end
+-- end
+-- _G.s_tab_complete = function()
+--   if vim.fn.pumvisible() == 1 then
+--     return t "<C-p>"
+--   elseif vim.fn.call("vsnip#jumpable", {-1}) == 1 then
+--     return t "<Plug>(vsnip-jump-prev)"
+--   else
+--     return t "<S-Tab>"
+--   end
+-- end
 
 vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-keymap("i", "<C-Space>", "compe#complete()", {silent = true, expr = true})
-keymap("i", "<CR>", 'compe#confirm("<CR>")', {silent = true, expr = true})
+-- keymap("i", "<C-Space>", "compe#complete()", {silent = true, expr = true})
+-- keymap("i", "<CR>", 'compe#confirm("<CR>")', {silent = true, expr = true})
 
 keymap("n", "gd", "lua vim.lsp.buf.definition()", {silent = true, cmd_cr = true})
 keymap("n", "gR", "lua vim.lsp.buf.rename()", {cmd_cr = true})
