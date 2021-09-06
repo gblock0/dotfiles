@@ -11,11 +11,11 @@ function _G.go_to_test_file(typeOfSplit)
   end
   local is_test_file = string.find(current_path, ".test.ts$") ~= nil
   local test_file_path = string.gsub(current_path, ".ts$", ".test.ts")
-  local vsplit_command = "rightbelow vsplit "
+  local vsplit_command = "vsplit "
   local split_command = "below split "
   if is_test_file then
     test_file_path = string.gsub(current_path, ".test.ts$", ".ts")
-    vsplit_command = "vsplit "
+    vsplit_command = "leftabove vsplit "
     split_command = "below "
   end
 
