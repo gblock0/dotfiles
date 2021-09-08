@@ -207,37 +207,36 @@ local properties = {
 }
 
 local components = {
-  left = {
-    active = {
-      comps.vi_mode.left,
-      comps.git.branch,
-      comps.file.info,
-      comps.lsp.name,
-      comps.diagnos.err,
-      comps.diagnos.warn,
-      comps.diagnos.hint,
-      comps.diagnos.info,
-      comps.nvim_gps
-    },
-    inactive = {
-      comps.file.info
-    }
-  },
-  mid = {
-    active = {},
-    inactive = {}
-  },
-  right = {
-    active = {
-      comps.file.encoding,
-      comps.line_percentage,
-      comps.line_number,
-      comps.scroll_bar,
-      comps.vi_mode.right
-    },
-    inactive = {}
-  }
+  active = {},
+  inactive = {}
 }
+
+table.insert(components.active, {})
+table.insert(components.active, {})
+
+table.insert(components.inactive, {})
+
+components.active[1] = {
+  comps.vi_mode.left,
+  comps.git.branch,
+  comps.file.info,
+  comps.lsp.name,
+  comps.diagnos.err,
+  comps.diagnos.warn,
+  comps.diagnos.hint,
+  comps.diagnos.info,
+  comps.nvim_gps
+}
+
+components.active[2] = {
+  comps.file.encoding,
+  comps.line_percentage,
+  comps.line_number,
+  comps.scroll_bar,
+  comps.vi_mode.right
+}
+
+components.inactive[1] = {comps.file.info}
 
 -- Built in separators {{{
 -- vertical_bar	'┃'
