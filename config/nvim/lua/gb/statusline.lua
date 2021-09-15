@@ -191,21 +191,6 @@ local comps = {
   -- }
 }
 
-local properties = {
-  force_inactive = {
-    filetypes = {
-      "NvimTree",
-      "dbui",
-      "vim-plug",
-      "startify",
-      "fugitive",
-      "fugitiveblame"
-    },
-    buftypes = {"terminal"},
-    bufnames = {}
-  }
-}
-
 local components = {
   active = {},
   inactive = {}
@@ -263,9 +248,20 @@ components.inactive[1] = {comps.file.info}
 -- modified ''
 
 require "feline".setup {
-  default_bg = colors.bg,
-  default_fg = colors.fg,
+  bg = colors.bg,
+  fg = colors.fg,
   components = components,
-  properties = properties,
+  force_inactive = {
+    filetypes = {
+      "NvimTree",
+      "dbui",
+      "vim-plug",
+      "startify",
+      "fugitive",
+      "fugitiveblame"
+    },
+    buftypes = {"terminal"},
+    bufnames = {}
+  },
   vi_mode_colors = vi_mode_colors
 }
