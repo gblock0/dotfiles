@@ -57,3 +57,6 @@ keymap("n", "}", "}<c-g>u", {silent = true})
 
 -- Make 'Y' behave like other capital letters
 keymap("n", "Y", "y$")
+
+-- When highlighting a word, keep the cursor on the current word
+keymap("n", "*", "*N")
