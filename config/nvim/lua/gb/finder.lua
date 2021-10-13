@@ -33,6 +33,11 @@ require("telescope").setup {
       sort_lastused = true,
       previewer = false
     },
+    live_grep = {
+      hidden = string.find(vim.fn.getcwd(), ".dotfiles"),
+      sort_lastused = true,
+      previewer = false
+    },
     buffers = {
       sort_lastused = true,
       previewer = false,
@@ -69,7 +74,7 @@ function _G.gb_grep_files()
   }
 end
 
-keymap("n", "<leader>a", "lua gb_grep_files()", {cmd_cr = true})
+keymap("n", "<leader>a", "Telescope live_grep", {cmd_cr = true})
 keymap("n", "<leader>p", "Telescope find_files", {cmd_cr = true})
 keymap("n", "<leader>b", "Telescope buffers", {cmd_cr = true})
 keymap("n", "<leader>ca", "Telescope lsp_code_actions", {cmd_cr = true})
