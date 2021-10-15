@@ -28,6 +28,7 @@ nvim_lsp.tsserver.setup {
     client.resolved_capabilities.document_formatting = false
     require "lsp_signature".on_attach()
   end,
+  capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
   root_dir = nvim_lsp.util.root_pattern("tsconfig.json", ".git"),
   settings = {documentFormatting = false},
   on_init = custom_on_init
@@ -63,15 +64,6 @@ nvim_lsp.html.setup {
   on_init = custom_on_init
 }
 
-local eslint_d = {
-  lintCommand = "eslint_d --stdin --fix-to-stdout --stdin-filename ${INPUT}",
-  lintIgnoreExitCode = true,
-  lintStdin = true,
-  lintFormats = {"%f:%l:%c: %m"},
-  formatCommand = "eslint_d --fix-to-stdout --stdin --stdin-filename ${INPUT}",
-  formatStdin = true
-}
-
 local rustExe = "rustfmt"
 local rustArgs = "--emit=stdout"
 local rustStdin = true
@@ -89,12 +81,12 @@ local prettier = {
 }
 
 local languages = {
-  typescript = {prettier, eslint_d},
-  javascript = {prettier, eslint_d},
-  typescriptreact = {prettier, eslint_d},
-  ["typescript.tsx"] = {prettier, eslint_d},
-  javascriptreact = {prettier, eslint_d},
-  ["javascript.jsx"] = {prettier, eslint_d},
+  typescript = {prettier},
+  javascript = {prettier},
+  typescriptreact = {prettier},
+  ["typescript.tsx"] = {prettier},
+  javascriptreact = {prettier},
+  ["javascript.jsx"] = {prettier},
   yaml = {prettier},
   json = {prettier},
   html = {prettier},
@@ -114,6 +106,8 @@ local languages = {
   }
 }
 
+nvim_lsp.eslint.setup {}
+
 nvim_lsp.efm.setup {
   init_options = {documentFormatting = false},
   filetypes = vim.tbl_keys(languages),
@@ -126,10 +120,6 @@ nvim_lsp.efm.setup {
 local t = function(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
-local check_back_space = function()
-  local col = vim.fn.col "." - 1
-  return col == 0 or vim.fn.getline("."):sub(col, col):match "%s" ~= nil
-end
 
 local cmp = require("cmp")
 cmp.setup {
@@ -137,7 +127,14 @@ cmp.setup {
     {name = "nvim_lsp"},
     {name = "buffer"},
     {name = "nvim_lua"},
-    {name = "path"}
+    {name = "path"},
+    {name = "vsnip"}
+  },
+  snippet = {
+    expand = function(args)
+      -- For `vsnip` user.
+      vim.fn["vsnip#anonymous"](args.body)
+    end
   },
   formatting = {
     format = function(entry, vim_item)
@@ -154,32 +151,13 @@ cmp.setup {
     end
   },
   mapping = {
-    ["<tab>"] = cmp.mapping(
-      function(fallback)
-        if vim.fn.pumvisible() == 1 then
-          vim.fn.feedkeys(t("<C-n>"), "n")
-        elseif check_back_space() then
-          vim.fn.feedkeys(t("<tab>"), "n")
-        else
-          fallback()
-        end
-      end,
+    ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), {"i", "s"}),
+    ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), {"i", "s"}),
+    ["<C-Space>"] = cmp.mapping.complete(),
+    ["<CR>"] = cmp.mapping.confirm(
       {
-        "i",
-        "s"
-      }
-    ),
-    ["<S-tab>"] = cmp.mapping(
-      function(fallback)
-        if vim.fn.pumvisible() == 1 then
-          vim.fn.feedkeys(t("<C-p>"), "n")
-        else
-          fallback()
-        end
-      end,
-      {
-        "i",
-        "s"
+        behavior = cmp.ConfirmBehavior.Replace,
+        select = true
       }
     )
   }
@@ -292,10 +270,10 @@ end
 --   end
 -- end
 
-vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+-- vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
+-- vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
+-- vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+-- vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 -- keymap("i", "<C-Space>", "compe#complete()", {silent = true, expr = true})
 -- keymap("i", "<CR>", 'compe#confirm("<CR>")', {silent = true, expr = true})
 
