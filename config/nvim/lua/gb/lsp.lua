@@ -64,62 +64,7 @@ nvim_lsp.html.setup {
   on_init = custom_on_init
 }
 
-local rustExe = "rustfmt"
-local rustArgs = "--emit=stdout"
-local rustStdin = true
-
-local rustfmt = {
-  formatCommand = rustExe .. rustArgs .. "${INPUT}",
-  formatStdin = rustStdin
-}
-
-local prettierArgs = {"--stdin-filepath", vim.api.nvim_buf_get_name(0)}
-
-local prettier = {
-  formatCommand = "./node_modules/.bin/prettier" .. table.concat(prettierArgs, " "),
-  formatStdin = true
-}
-
-local languages = {
-  typescript = {prettier},
-  javascript = {prettier},
-  typescriptreact = {prettier},
-  ["typescript.tsx"] = {prettier},
-  javascriptreact = {prettier},
-  ["javascript.jsx"] = {prettier},
-  yaml = {prettier},
-  json = {prettier},
-  html = {prettier},
-  scss = {prettier},
-  css = {prettier},
-  markdown = {prettier},
-  rust = {rustfmt},
-  python = {
-    {
-      formatCommand = "black",
-      formatStdin = true
-    },
-    {
-      formatCommand = "isort",
-      formatStdin = true
-    }
-  }
-}
-
 nvim_lsp.eslint.setup {}
-
-nvim_lsp.efm.setup {
-  init_options = {documentFormatting = false},
-  filetypes = vim.tbl_keys(languages),
-  root_dir = custom_root_dir(),
-  settings = {
-    languages = languages
-  }
-}
-
-local t = function(str)
-  return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
 
 local cmp = require("cmp")
 cmp.setup {
