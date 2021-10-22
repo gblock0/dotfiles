@@ -77,7 +77,7 @@ require("packer").startup(
     }
 
     -- Run tests inside nvim
-    use "janko/vim-test"
+    use {"rcarriga/vim-ultest", requires = {"vim-test/vim-test"}, run = ":UpdateRemotePlugins"}
 
     -- Live Markdown previews
     use {"iamcco/markdown-preview.nvim", run = "cd app && yarn install"}

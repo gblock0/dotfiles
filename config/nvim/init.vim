@@ -27,30 +27,20 @@ augroup GB_SETTINGS
     source ~/.config/nvim/filetype_configs.vim
     let autocommands_loaded = 1
 
-    " Highlight trailing whitespace
-    highlight ExtraWhitespace ctermbg=red guibg=red
-
-    " Format the buffer when leaving insert mode
+    " Format the buffer after writing the buffer
     autocmd BufWritePost * FormatWrite
 
-    " Clears all matches when leaving the kuffer
+    " Clears all matches when leaving the buffer
     autocmd BufWinLeave * call clearmatches()
 
     " Disable auto-commenting
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-    " Enable type inlay hints
-    autocmd CursorMoved,InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *
-    \ lua require'lsp_extensions'.inlay_hints{ prefix = '', highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"} }
-
-
-    " Python niceties
-    autocmd FileType python inoremap - _
-    autocmd FileType python inoremap _ -
-
-    " Delete all buffers except for the one currently being viewed
-    command! BufOnly execute "%bd|e#|bd#"
 augroup END
+
+let test#python#pytest#options = "--color=yes"
+
+let test#javascript#jest#options = "--color=always"
 
 " Remap colon commands to ignore shift
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
@@ -69,8 +59,6 @@ function! JestStrategy(cmd)
   call vimspector#LaunchWithSettings( #{ configuration: 'jest', TestName: testName } )
 endfunction
 let g:test#custom_strategies = {'jest': function('JestStrategy')}
-
-autocmd BufEnter,BufWritePost <buffer> :lua require("lsp_extensions.inlay_hints").request {aligned = true, prefix = " » "}
 
 function! OpenURLUnderCursor()
   let s:uri = expand('<cWORD>')
