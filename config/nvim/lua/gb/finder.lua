@@ -15,6 +15,9 @@ require("telescope").setup {
     selection_strategy = "reset",
     sorting_strategy = "ascending",
     layout_strategy = "horizontal",
+    layout_config = {
+      prompt_position = "top"
+    },
     path_display = {"absolute"},
     mappings = {
       i = {
@@ -50,6 +53,12 @@ require("telescope").setup {
         n = {
           ["<c-d>"] = require("telescope.actions").delete_buffer
         }
+      }
+    },
+    lsp_references = {
+      layout_strategy = "vertical",
+      layout_config = {
+        mirror = true
       }
     }
   },

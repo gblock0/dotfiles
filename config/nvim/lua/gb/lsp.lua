@@ -148,7 +148,7 @@ opt("o", "completeopt", "menu,menuone,noselect")
 
 keymap("n", "gd", "lua vim.lsp.buf.definition()", {silent = true, cmd_cr = true})
 keymap("n", "gR", "lua vim.lsp.buf.rename()", {cmd_cr = true})
-keymap("n", "gr", "LspTrouble lsp_references", {cmd_cr = true})
+keymap("n", "gr", "Telescope lsp_references", {cmd_cr = true})
 keymap("n", "<leader>e", "lua vim.lsp.diagnostic.goto_next()", {silent = true, cmd_cr = true})
 keymap("n", "<leader>cd", "lua vim.lsp.diagnostic.show_line_diagnostics()", {silent = true, cmd_cr = true})
 keymap("n", "K", "lua vim.lsp.buf.hover()", {silent = true, cmd_cr = true})
