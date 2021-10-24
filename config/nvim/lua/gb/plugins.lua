@@ -12,6 +12,7 @@ require("packer").startup(
 
     -- Statusline
     use "famiu/feline.nvim"
+    use "windwp/windline.nvim"
 
     -- File tree
     use "kyazdani42/nvim-web-devicons"
