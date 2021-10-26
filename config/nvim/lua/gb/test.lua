@@ -1,8 +1,7 @@
 -- Testing helpers
 local keymap = require("gb.utils").map
-keymap("n", "<leader>tt", ":UltestNearest<CR>")
-keymap("n", "<leader>tf", ":Ultest<CR>")
-keymap("n", "<leader>to", ":UltestOutput<CR>")
+keymap("n", "<leader>tt", ":TestNearest -strategy=neovim<CR>")
+keymap("n", "<leader>tf", ":TestFile -strategy=neovim<CR>")
 
 function _G.go_to_test_file(typeOfSplit)
   local current_path = vim.fn.expand("%")
@@ -16,7 +15,7 @@ function _G.go_to_test_file(typeOfSplit)
   local split_command = "below split "
   if is_test_file then
     test_file_path = string.gsub(current_path, ".test.ts$", ".ts")
-    vsplit_command = "leftabove vsplit "
+    vsplit_command = "vsplit "
     split_command = "below "
   end
 
