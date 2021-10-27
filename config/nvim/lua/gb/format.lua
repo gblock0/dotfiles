@@ -1,7 +1,7 @@
 -- autocmd BufWritePost set in init.vim
 local keymap = require("gb.utils").map
 
-local prettierCmd = "npx prettier --config .prettierrc -w"
+local prettierCmd = "./node_modules/.bin/prettier --config .prettierrc --write"
 local tempfile_dir = vim.fn.expand("~/.formatter-nvim-tmp-files")
 
 local onlyPrettierCmdOpts = {
@@ -17,7 +17,7 @@ local tsJsCmdOpts = {
   {
     cmd = {
       prettierCmd,
-      "eslint_d --fix"
+      "./node_modules/.bin/eslint_d --fix"
     },
     tempfile_dir = tempfile_dir
   }

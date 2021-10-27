@@ -28,7 +28,7 @@ augroup GB_SETTINGS
     let autocommands_loaded = 1
 
     " Format the buffer after writing the buffer
-    " autocmd BufWritePost * FormatWrite
+    autocmd BufWritePost * FormatWrite
 
     " Clears all matches when leaving the buffer
     autocmd BufWinLeave * call clearmatches()
