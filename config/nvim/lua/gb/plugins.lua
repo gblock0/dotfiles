@@ -96,6 +96,13 @@ require("packer").startup(
 
     -- Git status integration
     use {"lewis6991/gitsigns.nvim", requires = {"nvim-lua/plenary.nvim"}}
+    use {
+      "TimUntersberger/neogit",
+      requires = {
+        "nvim-lua/plenary.nvim",
+        "sindrets/diffview.nvim"
+      }
+    }
 
     -- Documentation generator
     use {
