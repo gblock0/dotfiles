@@ -6,6 +6,7 @@
 "
 let g:python_host_skip_check=1
 
+lua require("gb.folds")
 lua require('gb.sets')
 lua require('gb.plugins')
 

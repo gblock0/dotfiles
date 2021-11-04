@@ -30,7 +30,12 @@ opt("b", "expandtab", true) -- insert tabs rather than spaces for <Tab>
 opt("w", "cursorline", true) -- highlight current line
 opt("w", "number", true)
 opt("w", "relativenumber", true)
-opt("w", "foldmethod", "indent")
 opt("w", "foldlevel", 99)
 opt("w", "signcolumn", "yes")
 opt("w", "wrap", false)
+
+local parsers = require'nvim-treesitter.parsers'
+local configs = parsers.get_parser_configs()
+local ft_str = table.concat(vim.tbl_map(function(ft) return configs[ft].filetype or ft end, parsers.available_parsers()), ',')
+vim.cmd('autocmd Filetype ' .. ft_str .. ' setlocal foldmethod=expr foldexpr=nvim_treesitter#foldexpr() foldtext=v:lua.foldText()')
+
