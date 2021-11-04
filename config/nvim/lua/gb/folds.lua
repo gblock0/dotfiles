@@ -25,10 +25,11 @@ end
 function foldText()
   local fs = vim.api.nvim_get_vvar("foldstart")
   local fe = vim.api.nvim_get_vvar("foldend")
-  local line = vim.fn.substitute(vim.fn.getline(fs), "\t", string.rep(' ', vim.bo.tabstop), 'g')
+  local start_line = vim.fn.substitute(vim.fn.getline(fs), "\t", string.rep(' ', vim.bo.tabstop), 'g')
+  local end_line = string.gsub(vim.fn.getline(fe), "^%s+", "")
   local winSize = bufwidth()
-  local fillcharcount = winSize - #line - 2
-  return line .. ' '.. string.rep(" ", fillcharcount)
+  local fillcharcount = winSize - #start_line - 2
+  return start_line .. ''.. end_line .. string.rep(" ", fillcharcount)
 
 end
 return M
