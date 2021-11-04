@@ -1,5 +1,4 @@
 local keymap = require("gb.utils").map
-vim.g.nvim_tree_ignore = {".git", "node_modules", ".cache", ".DS_Store"} --empty by default
 vim.g.nvim_tree_group_empty = 1
 vim.g.nvim_tree_root_folder_modifier = ":~" --This is the default. See :help filename-modifiers for more options
 
@@ -22,5 +21,8 @@ require "nvim-tree".setup {
   },
   update_focused_file = {
     enable = true
+  },
+  filters = {
+    custom = {".git", "node_modules", ".cache", ".DS_Store"}
   }
 }
