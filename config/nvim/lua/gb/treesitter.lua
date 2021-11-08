@@ -18,12 +18,20 @@ require "nvim-treesitter.configs".setup {
     "jsdoc",
     "html",
     "rust",
-    "typescript"
+    "typescript",
+    "vim"
   },
   highlight = {
-    enable = true
+    enable = true,
+    use_languagetree = true
   },
   indent = {
-    enable = true
+    enable = false
+  },
+  context_commentstring = {enable = true},
+  query_linter = {
+    enable = true,
+    use_virtual_text = true,
+    lint_events = {"BufWrite", "CursorHold"}
   }
 }
