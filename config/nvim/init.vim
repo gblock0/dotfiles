@@ -11,7 +11,7 @@ lua require('gb.plugins')
 
 let g:oceanic_next_terminal_bold = 1
 let g:tokyonight_italic_keywords = v:false
-colorscheme OceanicNext
+colorscheme onenord
 
 " Moves the visually selected lines up/down one line
 vnoremap J :m '>+1<CR>gv=gv
@@ -28,7 +28,8 @@ augroup GB_SETTINGS
     let autocommands_loaded = 1
 
     " Format the buffer after writing the buffer
-    autocmd BufWritePost * FormatWrite
+    autocmd BufWritePost *.lua,*.rs :FormatWrite
+    autocmd BufWritePost *.ts,*.tsx,*.js :EslintFixAll
 
     " Clears all matches when leaving the buffer
     autocmd BufWinLeave * call clearmatches()
