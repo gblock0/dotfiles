@@ -166,10 +166,11 @@ cmp.setup {
 
 vim.g.vsnip_snippet_dir = vim.fn.stdpath "config" .. "/snippets"
 
-vim.fn.sign_define("LspDiagnosticsSignError", {text = "▊"})
-vim.fn.sign_define("LspDiagnosticsSignWarning", {text = "▊"})
-vim.fn.sign_define("LspDiagnosticsSignInformation", {text = "▊"})
-vim.fn.sign_define("LspDiagnosticsSignHint", {text = "▊"})
+local signs = {"Error", "Warn", "Hint", "Info"}
+for index, type in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, {text = "▊ ", texthl = hl, numhl = hl})
+end
 
 require("lspkind").init(
   {

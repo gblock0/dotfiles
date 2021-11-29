@@ -24,5 +24,4 @@ function cdd() {
 
 function update-language-servers() {
   npm update -g typescript pyright vim-language-server vscode-languageservers-extracted
-  brew upgrade efm-langserver
 }
