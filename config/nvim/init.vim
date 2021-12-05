@@ -10,8 +10,6 @@ lua require("gb.folds")
 lua require('gb.sets')
 lua require('gb.plugins')
 
-let g:oceanic_next_terminal_bold = 1
-let g:tokyonight_italic_keywords = v:false
 colorscheme onenord
 
 " Moves the visually selected lines up/down one line

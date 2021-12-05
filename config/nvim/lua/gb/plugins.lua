@@ -5,12 +5,7 @@ require("packer").startup(
     -- Packer can manage itself
     use "wbthomason/packer.nvim"
 
-    use "folke/tokyonight.nvim"
-
     use "rmehri01/onenord.nvim"
-
-    -- Theme
-    use "gblock0/oceanic-next"
 
     -- Statusline
     use "famiu/feline.nvim"
