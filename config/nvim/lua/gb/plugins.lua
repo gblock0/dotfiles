@@ -150,6 +150,12 @@ require("packer").startup(
       "SmiteshP/nvim-gps",
       requires = "nvim-treesitter/nvim-treesitter"
     }
+
+    use {"vuki656/package-info.nvim", requires = "MunifTanjim/nui.nvim"}
+
+    use "ggandor/lightspeed.nvim"
+
+    use {"ThePrimeagen/harpoon", requires = "nvim-lua/plenary.nvim"}
   end
 )
 
@@ -161,6 +167,7 @@ require("gb.file-explorer")
 require("gb.finder")
 require("gb.format")
 require("gb.git")
+require("gb.harpoon")
 require("gb.hlslens")
 require("gb.lsp")
 require("gb.lsp-trouble")
