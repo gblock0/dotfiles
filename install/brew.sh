@@ -9,10 +9,7 @@ brew install font-blex-mono-nerd-font
 brew install tree wget ripgrep procs tldr exa
 
 # development tools
-brew install node git reattach-to-user-namespace tmux fzf zsh antigen git-delta stow
+brew install neovim node git reattach-to-user-namespace tmux fzf zsh antigen git-delta stow
 brew install romkatv/powerlevel10k/powerlevel10k
 
-# Need luajit for neovim
-brew install --build-from-source --HEAD luajit
-brew install --build-from-source --HEAD neovim
 brew cask install alacritty
