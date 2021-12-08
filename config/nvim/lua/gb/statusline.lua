@@ -179,6 +179,16 @@ local comps = {
       },
       right_sep = " "
     }
+  },
+  package_info = {
+    provider = function()
+      return require("package-info").get_status()
+    end,
+    hl = {
+      style = "bold"
+    },
+    left_sep = "  ",
+    right_sep = " "
   }
   -- nvim_gps = {
   --   left_sep = " ",
@@ -214,6 +224,7 @@ components.active[1] = {
 }
 
 components.active[2] = {
+  comps.package_info,
   comps.file.encoding,
   comps.line_percentage,
   comps.line_number,

@@ -59,8 +59,15 @@ require("packer").startup(
     -- }}}
 
     -- Comment helper
-    use "b3nj5m1n/kommentary"
-    use "JoosepAlviste/nvim-ts-context-commentstring"
+    use {
+      "numToStr/Comment.nvim",
+      requires = {
+        "JoosepAlviste/nvim-ts-context-commentstring"
+      },
+      config = function()
+        require("Comment").setup()
+      end
+    }
 
     use {
       "kevinhwang91/nvim-bqf",
@@ -146,7 +153,13 @@ require("packer").startup(
       requires = "nvim-treesitter/nvim-treesitter"
     }
 
-    use {"vuki656/package-info.nvim", requires = "MunifTanjim/nui.nvim"}
+    use {
+      "vuki656/package-info.nvim",
+      requires = "MunifTanjim/nui.nvim",
+      config = function()
+        require("package-info").setup()
+      end
+    }
 
     use "ggandor/lightspeed.nvim"
 
