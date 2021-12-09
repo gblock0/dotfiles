@@ -5,7 +5,12 @@ require("packer").startup(
     -- Packer can manage itself
     use "wbthomason/packer.nvim"
 
-    use "rmehri01/onenord.nvim"
+    use {
+      "rmehri01/onenord.nvim",
+      config = function()
+        require("onenord").setup()
+      end
+    }
 
     -- Statusline
     use "famiu/feline.nvim"
@@ -132,7 +137,10 @@ require("packer").startup(
     use "szw/vim-maximizer"
 
     -- Adds debugger to nvim
-    use "puremourning/vimspector"
+    -- use "puremourning/vimspector"
+    use "mfussenegger/nvim-dap"
+    use "nvim-telescope/telescope-dap.nvim"
+    use "theHamsta/nvim-dap-virtual-text"
 
     use {
       "folke/lsp-trouble.nvim",
@@ -171,6 +179,8 @@ require("packer").startup(
 require("gb.autoswap")
 require("gb.colorizer")
 require("gb.commenter")
+require("gb.debugHelper")
+require("gb.debugger")
 require("gb.file-explorer")
 require("gb.finder")
 require("gb.format")
@@ -186,4 +196,3 @@ require("gb.term")
 require("gb.test")
 require("gb.tmux-navigator")
 require("gb.treesitter")
-require("gb.vimspector")

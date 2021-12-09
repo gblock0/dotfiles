@@ -12,9 +12,6 @@ lua require('gb.plugins')
 
 colorscheme onenord
 
-" Moves the visually selected lines up/down one line
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
 inoremap <F1> <Nop>
 
 " Add to jumplist if the cursor moves more than 5 lines

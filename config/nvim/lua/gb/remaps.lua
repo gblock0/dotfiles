@@ -41,7 +41,6 @@ keymap("n", "gp", "`[v`]", {silent = true})
 -- Keep cursor in the middle of the screen
 keymap("n", "n", "nzzzv", {silent = true})
 keymap("n", "N", "Nzzzv", {silent = true})
-keymap("n", "J", "mzJ`z", {silent = true})
 
 -- Set more undo breakpoints
 keymap("n", ",", ",<c-g>u", {silent = true})
