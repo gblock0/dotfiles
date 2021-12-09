@@ -1,7 +1,23 @@
 -- Testing helpers
 local keymap = require("gb.utils").map
-keymap("n", "<leader>tt", ":TestNearest -strategy=neovim<CR>")
-keymap("n", "<leader>tf", ":TestFile -strategy=neovim<CR>")
+keymap(
+  "n",
+  "<leader>tt",
+  "lua require('jester').run({terminal_cmd=':below split | terminal'})",
+  {silent = true, cmd_cr = true}
+)
+keymap(
+  "n",
+  "<leader>tf",
+  "lua require('jester').run_file({terminal_cmd=':below split | terminal'})",
+  {silent = true, cmd_cr = true}
+)
+keymap(
+  "n",
+  "<leader>td",
+  "lua require('jester').debug({terminal_cmd=':below split | terminal'})",
+  {silent = true, cmd_cr = true}
+)
 
 function _G.go_to_test_file(typeOfSplit)
   local current_path = vim.fn.expand("%")

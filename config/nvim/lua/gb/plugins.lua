@@ -87,7 +87,16 @@ require("packer").startup(
     }
 
     -- Run tests inside nvim
-    use "vim-test/vim-test"
+    use {
+      "David-Kunz/jester",
+      config = function()
+        require("jester").setup(
+          {
+            terminal_cmd = ":below split | terminal"
+          }
+        )
+      end
+    }
 
     -- Live Markdown previews
     use {"iamcco/markdown-preview.nvim", run = "cd app && yarn install"}
