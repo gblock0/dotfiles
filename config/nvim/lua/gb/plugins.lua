@@ -68,10 +68,7 @@ require("packer").startup(
       "numToStr/Comment.nvim",
       requires = {
         "JoosepAlviste/nvim-ts-context-commentstring"
-      },
-      config = function()
-        require("Comment").setup()
-      end
+      }
     }
 
     use {
@@ -87,16 +84,7 @@ require("packer").startup(
     }
 
     -- Run tests inside nvim
-    use {
-      "David-Kunz/jester",
-      config = function()
-        require("jester").setup(
-          {
-            terminal_cmd = ":below split | terminal"
-          }
-        )
-      end
-    }
+    use "David-Kunz/jester"
 
     -- Live Markdown previews
     use {"iamcco/markdown-preview.nvim", run = "cd app && yarn install"}
