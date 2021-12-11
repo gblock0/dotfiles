@@ -51,13 +51,6 @@ cnoreabbrev <expr> Qa ((getcmdtype() is# ':' && getcmdline() is# 'Qa')?('qa'):('
 " => Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" janko/vim-test and puremourning/vimspector
-function! JestStrategy(cmd)
-  let testName = matchlist(a:cmd, '\v -t ''(.*)''')[1]
-  call vimspector#LaunchWithSettings( #{ configuration: 'jest', TestName: testName } )
-endfunction
-let g:test#custom_strategies = {'jest': function('JestStrategy')}
-
 function! OpenURLUnderCursor()
   let s:uri = expand('<cWORD>')
   let s:uri = substitute(s:uri, '?', '\\?', '')
