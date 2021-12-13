@@ -86,6 +86,14 @@ nvim_lsp.tsserver.setup {
   end,
   capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
   root_dir = nvim_lsp.util.root_pattern("tsconfig.json", ".git"),
+  -- cmd = {
+  --   "typescript-language-server",
+  --   "--tsserver-log-file",
+  --   vim.env.HOME .. "/src/tsserver.log",
+  --   "--tsserver-log-verbosity",
+  --   "verbose",
+  --   "--stdio"
+  -- },
   settings = {documentFormatting = false},
   on_init = custom_on_init
 }
