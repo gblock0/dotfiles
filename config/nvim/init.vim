@@ -44,17 +44,6 @@ cnoreabbrev <expr> Qa ((getcmdtype() is# ':' && getcmdline() is# 'Qa')?('qa'):('
 " => Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-function! OpenURLUnderCursor()
-  let s:uri = expand('<cWORD>')
-  let s:uri = substitute(s:uri, '?', '\\?', '')
-  let s:uri = shellescape(s:uri, 1)
-  if s:uri != ''
-    silent exec "!open '".s:uri."'"
-    :redraw!
-  endif
-endfunction
-nnoremap gx :call OpenURLUnderCursor()<CR>
-
 " Jump to last position in file when a the file is opened
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
