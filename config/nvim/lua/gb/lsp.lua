@@ -15,7 +15,7 @@ local function custom_root_dir()
   return nil
 end
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 nvim_lsp.vimls.setup {}
@@ -84,7 +84,7 @@ nvim_lsp.tsserver.setup {
     client.resolved_capabilities.document_formatting = false
     require "lsp_signature".on_attach()
   end,
-  capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+  capabilities = capabilities,
   root_dir = nvim_lsp.util.root_pattern("tsconfig.json", ".git"),
   -- cmd = {
   --   "typescript-language-server",
@@ -120,7 +120,9 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
 
 -- npm i -g vscode-langservers-extracted
 nvim_lsp.cssls.setup {
-  on_init = custom_on_init
+  on_init = custom_on_init,
+  -- Need capabilities for snippets/completion
+  capabilities = capabilities
 }
 
 -- npm i -g vscode-langservers-extracted
