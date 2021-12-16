@@ -36,10 +36,6 @@ augroup GB_SETTINGS
 
 augroup END
 
-let test#python#pytest#options = "--color=yes"
-
-let test#javascript#jest#options = "--color=always"
-
 " Remap colon commands to ignore shift
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 cnoreabbrev <expr> w ((getcmdtype() is# ':' && getcmdline() is# 'w')?('w'):('w'))
