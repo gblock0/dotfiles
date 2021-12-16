@@ -12,9 +12,6 @@ lua require('gb.plugins')
 
 colorscheme onenord
 
-inoremap <F1> <Nop>
-
-" Add to jumplist if the cursor moves more than 5 lines
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
 nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
 

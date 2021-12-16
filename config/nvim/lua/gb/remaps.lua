@@ -59,3 +59,9 @@ keymap("n", "Y", "y$")
 
 -- When highlighting a word, keep the cursor on the current word
 keymap("n", "*", "*N")
+
+keymap("i", "<F1>", "<Nop>")
+
+-- Shift + J/K moves selected lines down/up in visual mode
+keymap("v", "K", "m '<-2<CR>gv=gv", {cmd_cr = true})
+keymap("v", "J", "m '>+1<CR>gv=gv", {cmd_cr = true})
