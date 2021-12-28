@@ -13,7 +13,7 @@ require("packer").startup(
     }
 
     -- Statusline
-    use {"feline-nvim/feline.nvim", tag = "v0.3.3"}
+    use {"feline-nvim/feline.nvim"}
     use "windwp/windline.nvim"
 
     -- File tree
