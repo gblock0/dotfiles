@@ -3,13 +3,13 @@ brew update
 
 # Install BlexMono Nerd Font
 brew tap homebrew/cask-fonts
-brew install font-blex-mono-nerd-font
-
-# cli tools
-brew install tree wget ripgrep procs tldr exa
 
 # development tools
-brew install neovim node git reattach-to-user-namespace tmux fzf zsh antigen git-delta stow
-brew install romkatv/powerlevel10k/powerlevel10k
+brew install neovim node git reattach-to-user-namespace\
+             tmux fzf zsh antigen git-delta stow\
+             romkatv/powerlevel10k/powerlevel10k rust tree\
+             wget ripgrep procs tldr exa htop 
 
-brew cask install alacritty
+# Split these out because they will stop the install if they already exist
+brew install alacritty
+brew install font-blex-mono-nerd-font
