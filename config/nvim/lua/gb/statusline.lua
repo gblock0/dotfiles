@@ -123,7 +123,7 @@ local comps = {
     err = {
       provider = "diagnostic_errors",
       enabled = function()
-        return lsp.diagnostics_exist("Error")
+        return lsp.diagnostics_exist(vim.diagnostic.severity.ERROR)
       end,
       hl = {
         fg = colors.red
@@ -132,7 +132,7 @@ local comps = {
     warn = {
       provider = "diagnostic_warnings",
       enabled = function()
-        return lsp.diagnostics_exist("Warning")
+        return lsp.diagnostics_exist(vim.diagnostic.severity.WARN)
       end,
       hl = {
         fg = colors.yellow
@@ -141,7 +141,7 @@ local comps = {
     hint = {
       provider = "diagnostic_hints",
       enabled = function()
-        return lsp.diagnostics_exist("Hint")
+        return lsp.diagnostics_exist(vim.diagnostic.severity.HINT)
       end,
       hl = {
         fg = colors.cyan
@@ -150,7 +150,7 @@ local comps = {
     info = {
       provider = "diagnostic_info",
       enabled = function()
-        return lsp.diagnostics_exist("Information")
+        return lsp.diagnostics_exist(vim.diagnostic.severity.INFO)
       end,
       hl = {
         fg = colors.blue
@@ -260,19 +260,19 @@ components.inactive[1] = {comps.file.info}
 
 require "feline".setup {
   bg = colors.bg,
-  fg = colors.fg,
-  components = components,
-  force_inactive = {
-    filetypes = {
-      "NvimTree",
-      "dbui",
-      "vim-plug",
-      "startify",
-      "fugitive",
-      "fugitiveblame"
-    },
-    buftypes = {"terminal"},
-    bufnames = {}
-  },
-  vi_mode_colors = vi_mode_colors
+ fg = colors.fg,
+ components = components,
+ force_inactive = {
+   filetypes = {
+     "NvimTree",
+     "dbui",
+     "vim-plug",
+     "startify",
+     "fugitive",
+     "fugitiveblame"
+   },
+   buftypes = {"terminal"},
+   bufnames = {}
+ },
+ vi_mode_colors = vi_mode_colors
 }
