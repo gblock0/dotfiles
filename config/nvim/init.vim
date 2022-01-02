@@ -1,16 +1,11 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" load plugins from vim-plug,
-" plugin configs in ~/.config/nvim/plugin are loaded automatically
-"
 let g:python_host_skip_check=1
 
 lua require("gb.folds")
 lua require('gb.sets')
 lua require('gb.plugins')
-
-colorscheme onenord
 
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
 nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
