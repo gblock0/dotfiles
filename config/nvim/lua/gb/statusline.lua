@@ -260,19 +260,19 @@ components.inactive[1] = {comps.file.info}
 
 require "feline".setup {
   bg = colors.bg,
- fg = colors.fg,
- components = components,
- force_inactive = {
-   filetypes = {
-     "NvimTree",
-     "dbui",
-     "vim-plug",
-     "startify",
-     "fugitive",
-     "fugitiveblame"
-   },
-   buftypes = {"terminal"},
-   bufnames = {}
- },
- vi_mode_colors = vi_mode_colors
+  fg = colors.fg,
+  components = components,
+  force_inactive = {
+    filetypes = {
+      "NvimTree",
+      "dbui",
+      "vim-plug",
+      "startify",
+      "fugitive",
+      "fugitiveblame"
+    },
+    buftypes = {"terminal"},
+    bufnames = {}
+  },
+  vi_mode_colors = vi_mode_colors
 }
