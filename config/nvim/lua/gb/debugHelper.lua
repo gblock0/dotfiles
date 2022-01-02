@@ -7,7 +7,7 @@ local function debugJest(testName, filename)
       type = "node2",
       request = "launch",
       cwd = vim.fn.getcwd(),
-      runtimeArgs = {"--inspect-brk", "/usr/local/bin/jest", "--no-coverage", "-t", testName, "--", filename},
+      runtimeArgs = {"--inspect-brk", "node_modules/.bin/jest", "--no-coverage", "-t", testName, "--", filename},
       sourceMaps = true,
       protocol = "inspector",
       skipFiles = {"<node_internals>/**/*.js"},

@@ -1,23 +1,9 @@
 -- Testing helpers
 local keymap = require("gb.utils").map
-keymap(
-  "n",
-  "<leader>tt",
-  "lua require('jester').run({terminal_cmd=':below split | terminal'})",
-  {silent = true, cmd_cr = true}
-)
-keymap(
-  "n",
-  "<leader>tf",
-  "lua require('jester').run_file({terminal_cmd=':below split | terminal'})",
-  {silent = true, cmd_cr = true}
-)
-keymap(
-  "n",
-  "<leader>td",
-  "lua require('jester').debug({terminal_cmd=':below split | terminal'})",
-  {silent = true, cmd_cr = true}
-)
+local jest_opts = "{path_to_jest = 'node_modules/.bin/jest',terminal_cmd = ':below split | terminal'}"
+keymap("n", "<leader>tt", "lua require('jester').run(" .. jest_opts .. ")", {silent = true, cmd_cr = true})
+keymap("n", "<leader>tf", "lua require('jester').run_file(" .. jest_opts .. ")", {silent = true, cmd_cr = true})
+keymap("n", "<leader>td", "lua require('jester').debug(" .. jest_opts .. ")", {silent = true, cmd_cr = true})
 
 function _G.go_to_test_file(typeOfSplit)
   local current_path = vim.fn.expand("%")
