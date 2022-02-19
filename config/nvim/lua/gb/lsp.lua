@@ -133,6 +133,7 @@ nvim_lsp.html.setup {
 nvim_lsp.eslint.setup {}
 
 local cmp = require("cmp")
+local lspkind = require("lspkind")
 cmp.setup {
   sources = {
     {name = "nvim_lsp"},
@@ -148,18 +149,27 @@ cmp.setup {
     end
   },
   formatting = {
-    format = function(entry, vim_item)
-      -- fancy icons and a name of kind
-      vim_item.kind = require("lspkind").presets.default[vim_item.kind] .. " " .. vim_item.kind
-      -- set a name for each source
-      vim_item.menu =
-        ({
-        buffer = "   (Buffer)",
-        nvim_lsp = "   (LSP)",
-        nvim_lua = "[Lua]"
-      })[entry.source.name]
-      return vim_item
-    end
+    format = lspkind.cmp_format(
+      {
+        mode = "symbol_text",
+        maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+        -- The function below will be called before any actual modifications from lspkind
+        -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+        before = function(entry, vim_item)
+          vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
+          -- set a name for each source
+          vim_item.menu =
+            ({
+            buffer = " (Buffer)",
+            nvim_lsp = " (LSP)",
+            nvim_lua = " (Lua)",
+            path = " (Path)",
+            path = " (Vsnip)"
+          })[entry.source.name]
+          return vim_item
+        end
+      }
+    )
   },
   mapping = {
     ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), {"i", "s"}),
@@ -181,34 +191,6 @@ for index, type in pairs(signs) do
   local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, {text = "▊ ", texthl = hl, numhl = hl})
 end
-
-require("lspkind").init(
-  {
-    with_text = true,
-    symbol_map = {
-      Text = "  ",
-      Method = "  ",
-      Function = "  ",
-      Constructor = "  ",
-      Variable = "[]",
-      Class = "  ",
-      Interface = " 蘒",
-      Module = "  ",
-      Property = "  ",
-      Unit = " 塞 ",
-      Value = "  ",
-      Enum = " 練",
-      Keyword = "  ",
-      Snippet = "  ",
-      Color = "",
-      File = "",
-      Folder = " ﱮ ",
-      EnumMember = "  ",
-      Constant = "  ",
-      Struct = "  "
-    }
-  }
-)
 
 vim.g.completion_matching_strategy_list = {"exact", "substring", "fuzzy"}
 opt("o", "completeopt", "menu,menuone,noselect")
