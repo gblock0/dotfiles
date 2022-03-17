@@ -1,19 +1,19 @@
 vim.cmd "autocmd BufWritePost plugins.lua PackerCompile" -- Auto compile when there are changes in plugins.lua
 
 require("packer").startup(
-  function(use)
+function(use)
     -- Packer can manage itself
     use "wbthomason/packer.nvim"
 
     use {
       "rmehri01/onenord.nvim",
       config = function()
-        require("onenord").setup()
+          require("onenord").setup()
       end
     }
 
     -- Statusline
-    use {"feline-nvim/feline.nvim"}
+    use { "feline-nvim/feline.nvim" }
     use "windwp/windline.nvim"
 
     -- File tree
@@ -36,7 +36,7 @@ require("packer").startup(
     use "voldikss/vim-floaterm"
 
     -- Treesitter Plugins {{{
-    use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
     use "nvim-treesitter/playground"
     -- }}}
 
@@ -77,7 +77,7 @@ require("packer").startup(
         {
           "junegunn/fzf",
           run = function()
-            vim.fn["fzf#install"]()
+              vim.fn["fzf#install"]()
           end
         }
       }
@@ -85,9 +85,10 @@ require("packer").startup(
 
     -- Run tests inside nvim
     use "David-Kunz/jester"
+    use "vim-test/vim-test"
 
     -- Live Markdown previews
-    use {"iamcco/markdown-preview.nvim", run = "cd app && yarn install"}
+    use { "iamcco/markdown-preview.nvim", run = "cd app && yarn install" }
 
     -- Additional search highlighting
     use "kevinhwang91/nvim-hlslens"
@@ -97,11 +98,11 @@ require("packer").startup(
     use "nvim-lua/plenary.nvim"
     use "nvim-telescope/telescope.nvim"
     use "nvim-telescope/telescope-fzf-writer.nvim"
-    use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
+    use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
     -- }}}
 
     -- Git status integration
-    use {"lewis6991/gitsigns.nvim", requires = {"nvim-lua/plenary.nvim"}}
+    use { "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } }
     use {
       "TimUntersberger/neogit",
       requires = {
@@ -114,12 +115,12 @@ require("packer").startup(
     use {
       "kkoomen/vim-doge",
       run = function()
-        vim.fn["doge#install"]()
+          vim.fn["doge#install"]()
       end
     }
 
     -- Git UI
-    use "tpope/vim-fugitive"
+    use { "tpope/vim-fugitive", requires = { "tpope/vim-rhubarb" } }
 
     -- Adds commands to easliy change surrounding quotes, brackets, etc.
     use "tpope/vim-surround"
@@ -143,7 +144,7 @@ require("packer").startup(
       "folke/lsp-trouble.nvim",
       requires = "kyazdani42/nvim-web-devicons",
       config = function()
-        require("trouble").setup {}
+          require("trouble").setup {}
       end
     }
 
@@ -162,14 +163,15 @@ require("packer").startup(
       "vuki656/package-info.nvim",
       requires = "MunifTanjim/nui.nvim",
       config = function()
-        require("package-info").setup()
+          require("package-info").setup()
       end
     }
 
     use "ggandor/lightspeed.nvim"
 
-    use {"ThePrimeagen/harpoon", requires = "nvim-lua/plenary.nvim"}
-  end
+    use { "ThePrimeagen/harpoon", requires = "nvim-lua/plenary.nvim" }
+
+end
 )
 
 -- load plugin configs
