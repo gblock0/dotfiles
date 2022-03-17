@@ -23,7 +23,7 @@ local tsJsCmdOpts = {
   }
 }
 
-require "format".setup {
+require "lsp-format".setup {
   ["*"] = {
     {
       cmd = {
@@ -79,5 +79,5 @@ require "format".setup {
   }
 }
 
-keymap("n", "<leader>f", "Format", {silent = true, cmd_cr = true})
-keymap("n", "<leader>F", "FormatWrite", {silent = true, cmd_cr = true})
+keymap("n", "<leader>f", "Format", { silent = true, cmd_cr = true })
+keymap("n", "<leader>F", "FormatWrite", { silent = true, cmd_cr = true })

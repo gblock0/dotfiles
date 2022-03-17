@@ -24,7 +24,7 @@ function(use)
     use "norcalli/nvim-colorizer.lua"
 
     -- Autoformater
-    use "lukas-reineke/format.nvim"
+    use "lukas-reineke/lsp-format.nvim"
 
     -- Highlight other uses of the current word under the cursor
     use "RRethy/vim-illuminate"

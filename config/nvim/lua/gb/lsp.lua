@@ -22,6 +22,9 @@ nvim_lsp.vimls.setup {}
 
 nvim_lsp.jsonls.setup {
   cmd = {"vscode-json-language-server", "--stdio"},
+  on_attach = function (client)
+    require "lsp-format".on_attach(client)
+  end,
   capabilities = capabilities,
   filetypes = {"json", "jsonc"},
   settings = {
@@ -83,6 +86,7 @@ nvim_lsp.tsserver.setup {
     end
     client.resolved_capabilities.document_formatting = false
     require "lsp_signature".on_attach()
+    require "lsp-format".on_attach(client)
   end,
   capabilities = capabilities,
   root_dir = nvim_lsp.util.root_pattern("tsconfig.json", ".git"),
@@ -98,13 +102,18 @@ nvim_lsp.tsserver.setup {
   on_init = custom_on_init
 }
 
-nvim_lsp.rust_analyzer.setup {}
+nvim_lsp.rust_analyzer.setup {
+  on_attach = function (client)
+    require "lsp-format".on_attach(client)
+  end
+}
 
 --must run: npm install -g pyright
 nvim_lsp.pyright.setup {
   on_init = custom_on_init,
   on_attach = function(client)
     require "lsp_signature".on_attach()
+    require "lsp-format".on_attach(client)
   end
 }
 
@@ -197,7 +206,8 @@ opt("o", "completeopt", "menu,menuone,noselect")
 
 keymap("n", "gd", "lua vim.lsp.buf.definition()", {silent = true, cmd_cr = true})
 keymap("n", "gR", "lua vim.lsp.buf.rename()", {cmd_cr = true})
-keymap("n", "gr", "Telescope lsp_references", {cmd_cr = true})
+keymap("n", "gr", ":lua require'telescope.builtin'.lsp_references({cwd= vim.fn.expand('%:h')})", {cmd_cr = true})
+-- keymap("n", "gr", "Telescope lsp_references({cwd: utils.buffer_dir()})", {cmd_cr = true})
 keymap("n", "<leader>e", "lua vim.lsp.diagnostic.goto_next()", {silent = true, cmd_cr = true})
 keymap("n", "<leader>cd", "lua vim.lsp.diagnostic.show_line_diagnostics()", {silent = true, cmd_cr = true})
 keymap("n", "K", "lua vim.lsp.buf.hover()", {silent = true, cmd_cr = true})
