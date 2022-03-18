@@ -189,16 +189,16 @@ local comps = {
     },
     left_sep = "  ",
     right_sep = " "
+  },
+  nvim_gps = {
+    left_sep = " ",
+    provider = function()
+      return require("nvim-gps").get_location()
+    end,
+    enabled = function()
+      return require("nvim-gps").is_available()
+    end
   }
-  -- nvim_gps = {
-  --   left_sep = " ",
-  --   provider = function()
-  --     return require("nvim-gps").get_location()
-  --   end,
-  --   enabled = function()
-  --     return require("nvim-gps").is_available()
-  --   end
-  -- }
 }
 
 local components = {

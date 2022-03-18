@@ -8,7 +8,9 @@ function(use)
     use {
       "rmehri01/onenord.nvim",
       config = function()
-          require("onenord").setup()
+          require("onenord").setup({
+            fade_nc = true
+          })
       end
     }
 

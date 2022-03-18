@@ -1,6 +1,7 @@
 local opt = require("gb.utils").opt
 
 vim.g.mapleader = " "
+vim.opt.laststatus = 3
 
 -- Global options
 opt("o", "termguicolors", true)
