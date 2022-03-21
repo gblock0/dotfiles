@@ -14,6 +14,8 @@ function(use)
       end
     }
 
+    use "lukas-reineke/indent-blankline.nvim"
+
     -- Statusline
     use { "feline-nvim/feline.nvim" }
     use "windwp/windline.nvim"
@@ -175,6 +177,12 @@ function(use)
 
 end
 )
+
+require("indent_blankline").setup {
+    -- for example, context is off by default, use this to turn it on
+    show_current_context = true,
+    show_current_context_start = true,
+}
 
 -- load plugin configs
 require("gb.autoswap")
