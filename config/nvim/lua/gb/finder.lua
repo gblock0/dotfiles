@@ -89,7 +89,7 @@ keymap("n", "<leader>b", "Telescope buffers", {cmd_cr = true})
 keymap("n", "<leader>ca", "Telescope lsp_code_actions", {cmd_cr = true})
 
 -- Create a new vsplit, switch to it and open CtrlP
-keymap("n", "<leader>w", "<C-w>v :Telescope find_files<cr>")
+keymap("n", "<leader>w", "<C-w>v")
 
 -- Create a new split, switch to it and open CtrlP
-keymap("n", "<leader>s", "<C-w>s<C-w>j :Telescope find_files<cr>")
+keymap("n", "<leader>s", "<C-w>s<C-w>j")
