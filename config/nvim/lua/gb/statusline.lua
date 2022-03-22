@@ -47,7 +47,6 @@ local comps = {
         }
         return val
       end,
-      right_sep = " "
     },
     right = {
       provider = "▊",
@@ -58,7 +57,6 @@ local comps = {
         }
         return val
       end,
-      left_sep = " "
     }
   },
   line_number = {
@@ -207,8 +205,6 @@ local components = {
 }
 
 table.insert(components.active, {})
-table.insert(components.active, {})
-
 table.insert(components.inactive, {})
 
 components.active[1] = {
@@ -225,10 +221,10 @@ components.active[1] = {
 
 components.active[2] = {
   comps.package_info,
-  comps.file.encoding,
+  -- comps.file.encoding,
   comps.line_percentage,
   comps.line_number,
-  comps.scroll_bar,
+  -- comps.scroll_bar,
   comps.vi_mode.right
 }
 
