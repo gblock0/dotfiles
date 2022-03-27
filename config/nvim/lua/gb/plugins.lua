@@ -155,8 +155,8 @@ function(use)
     use "ray-x/lsp_signature.nvim"
 
     -- Snippets
-    use "hrsh7th/vim-vsnip"
-    use "rafamadriz/friendly-snippets"
+    -- use "hrsh7th/vim-vsnip"
+    -- use "rafamadriz/friendly-snippets"
 
     use {
       "SmiteshP/nvim-gps",
