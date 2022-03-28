@@ -159,7 +159,6 @@ function(use)
     -- use "rafamadriz/friendly-snippets"
 
     use {
-      "SmiteshP/nvim-gps",
       requires = "nvim-treesitter/nvim-treesitter"
     }
 

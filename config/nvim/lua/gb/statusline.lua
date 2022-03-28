@@ -1,6 +1,3 @@
--- Shows the current function in the file
-require("nvim-gps").setup()
-
 local colors = {
   bg = "#202328",
   fg = "#bbc2cf",
@@ -78,14 +75,19 @@ local comps = {
   },
   file = {
     info = {
-      provider = "file_info",
+      provider = {
+        name = "file_info",
+        opts ={
+          file_modified_icon = "",
+          type = 'relative'
+        }
+      },
       hl = {
         fg = colors.white,
         bg = "oceanblue",
         style = "bold"
       },
       icon = "",
-      file_modified_icon = "",
       left_sep = {
         " ",
         "slant_left_2",
@@ -187,15 +189,6 @@ local comps = {
     },
     left_sep = "  ",
     right_sep = " "
-  },
-  nvim_gps = {
-    left_sep = " ",
-    provider = function()
-      return require("nvim-gps").get_location()
-    end,
-    enabled = function()
-      return require("nvim-gps").is_available()
-    end
   }
 }
 
@@ -204,22 +197,29 @@ local components = {
   inactive = {}
 }
 
+
+-- Insert three sections (left, mid and right) for the active statusline
 table.insert(components.active, {})
+table.insert(components.active, {})
+table.insert(components.active, {})
+
+-- Insert one section for the inactive statusline
 table.insert(components.inactive, {})
 
 components.active[1] = {
   comps.vi_mode.left,
   comps.git.branch,
-  comps.file.info,
   comps.lsp.name,
   comps.diagnos.err,
   comps.diagnos.warn,
   comps.diagnos.hint,
   comps.diagnos.info,
-  comps.nvim_gps
+}
+components.active[2] = {
+  comps.file.info,
 }
 
-components.active[2] = {
+components.active[3] = {
   comps.package_info,
   -- comps.file.encoding,
   comps.line_percentage,
@@ -258,17 +258,5 @@ require "feline".setup {
   bg = colors.bg,
   fg = colors.fg,
   components = components,
-  force_inactive = {
-    filetypes = {
-      "NvimTree",
-      "dbui",
-      "vim-plug",
-      "startify",
-      "fugitive",
-      "fugitiveblame"
-    },
-    buftypes = {"terminal"},
-    bufnames = {}
-  },
   vi_mode_colors = vi_mode_colors
 }
