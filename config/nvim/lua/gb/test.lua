@@ -1,6 +1,6 @@
 -- Testing helpers
 local keymap = require("gb.utils").map
-local jest_opts = "{path_to_jest = 'node_modules/.bin/jest',terminal_cmd = ':below split | terminal'}"
+local jest_opts = "{path_to_jest = 'node_modules/.bin/jest --selectProjects unitTests',terminal_cmd = ':below split | terminal'}"
 keymap("n", "<leader>tt", "lua require('jester').run(" .. jest_opts .. ")", {silent = true, cmd_cr = true})
 keymap("n", "<leader>tf", "lua require('jester').run_file(" .. jest_opts .. ")", {silent = true, cmd_cr = true})
 keymap("n", "<leader>td", "lua require('jester').debug(" .. jest_opts .. ")", {silent = true, cmd_cr = true})
