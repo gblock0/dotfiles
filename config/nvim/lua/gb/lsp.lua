@@ -149,7 +149,7 @@ cmp.setup {
     {name = "buffer"},
     {name = "nvim_lua"},
     {name = "path"},
-    {name = "vsnip"}
+    -- {name = "vsnip"}
   },
   snippet = {
     expand = function(args)
