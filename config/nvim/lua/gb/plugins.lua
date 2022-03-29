@@ -162,6 +162,14 @@ function(use)
       requires = "nvim-treesitter/nvim-treesitter"
     }
 
+    use { 'bennypowers/nvim-regexplainer',
+    config = function() require'regexplainer'.setup()  end,
+      requires = {
+        'nvim-treesitter/nvim-treesitter',
+        'MunifTanjim/nui.nvim',
+      }
+    }
+
     use {
       "vuki656/package-info.nvim",
       requires = "MunifTanjim/nui.nvim",
