@@ -16,7 +16,7 @@ local function custom_root_dir()
 end
 
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
-capabilities.textDocument.completion.completionItem.snippetSupport = true
+-- capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 nvim_lsp.vimls.setup {}
 
@@ -151,12 +151,13 @@ cmp.setup {
     {name = "path"},
     -- {name = "vsnip"}
   },
-  snippet = {
-    expand = function(args)
-      -- For `vsnip` user.
-      vim.fn["vsnip#anonymous"](args.body)
-    end
-  },
+  snippet = { expand = function() end },
+  -- snippet = {
+  --   expand = function(args)
+  --     -- For `vsnip` user.
+  --     vim.fn["vsnip#anonymous"](args.body)
+  --   end
+  -- },
   formatting = {
     format = lspkind.cmp_format(
       {
@@ -173,7 +174,7 @@ cmp.setup {
             nvim_lsp = " (LSP)",
             nvim_lua = " (Lua)",
             path = " (Path)",
-            path = " (Vsnip)"
+            -- path = " (Vsnip)"
           })[entry.source.name]
           return vim_item
         end
@@ -193,7 +194,7 @@ cmp.setup {
   }
 }
 
-vim.g.vsnip_snippet_dir = vim.fn.stdpath "config" .. "/snippets"
+-- vim.g.vsnip_snippet_dir = vim.fn.stdpath "config" .. "/snippets"
 
 local signs = {"Error", "Warn", "Hint", "Info"}
 for index, type in pairs(signs) do
