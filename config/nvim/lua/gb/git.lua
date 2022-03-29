@@ -15,10 +15,11 @@ require("gitsigns").setup(
 }
 )
 
-keymap("n", "<leader>gs", ":vertical Git<CR>", { silent = true })
-keymap("n", "<leader>gh", ":diffget //2<CR>", { silent = true })
-keymap("n", "<leader>gl", ":diffget //3<CR>", { silent = true })
-keymap("n", "<leader>gb", ":Git blame<CR>", { silent = true })
+keymap("n", "<leader>gs", "vertical Git", { silent = true, cmd_cr = true  })
+keymap("n", "<leader>gh", "diffget //2", { silent = true, cmd_cr = true  })
+keymap("n", "<leader>gl", ":diffget //3", { silent = true, cmd_cr = true  })
+keymap("n", "<leader>gb", "GBrowse!", { silent = true, cmd_cr = true })
+keymap("v", "<leader>gb", ":'<,'>GBrowse!<CR>", { silent = true, cmd_cr = false })
 
 require("neogit").setup(
 {
