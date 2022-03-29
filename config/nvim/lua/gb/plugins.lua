@@ -158,10 +158,6 @@ function(use)
     -- use "hrsh7th/vim-vsnip"
     -- use "rafamadriz/friendly-snippets"
 
-    use {
-      requires = "nvim-treesitter/nvim-treesitter"
-    }
-
     use { 'bennypowers/nvim-regexplainer',
     config = function() require'regexplainer'.setup()  end,
       requires = {
