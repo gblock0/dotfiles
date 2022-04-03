@@ -53,7 +53,9 @@ function(use)
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-nvim-lua",
         "hrsh7th/cmp-nvim-lsp",
-        "hrsh7th/cmp-path"
+        "hrsh7th/cmp-path",
+        "hrsh7th/cmp-vsnip",
+        "hrsh7th/cmp-nvim-lsp-signature-help"
       }
     }
     use "nvim-lua/lsp_extensions.nvim"
@@ -152,11 +154,11 @@ function(use)
       end
     }
 
-    use "ray-x/lsp_signature.nvim"
 
     -- Snippets
-    -- use "hrsh7th/vim-vsnip"
-    -- use "rafamadriz/friendly-snippets"
+    use "hrsh7th/vim-vsnip"
+    use "hrsh7th/vim-vsnip-integ"
+    use "rafamadriz/friendly-snippets"
 
     use { 'bennypowers/nvim-regexplainer',
     config = function() require'regexplainer'.setup()  end,

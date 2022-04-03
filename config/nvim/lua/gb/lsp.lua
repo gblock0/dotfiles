@@ -16,7 +16,7 @@ local function custom_root_dir()
 end
 
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
--- capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 nvim_lsp.vimls.setup {}
 
@@ -85,7 +85,6 @@ nvim_lsp.tsserver.setup {
       client.config.flags.allow_incremental_sync = true
     end
     client.resolved_capabilities.document_formatting = false
-    require "lsp_signature".on_attach()
     require "lsp-format".on_attach(client)
   end,
   capabilities = capabilities,
@@ -112,7 +111,6 @@ nvim_lsp.rust_analyzer.setup {
 nvim_lsp.pyright.setup {
   on_init = custom_on_init,
   on_attach = function(client)
-    require "lsp_signature".on_attach()
     require "lsp-format".on_attach(client)
   end
 }
@@ -144,20 +142,20 @@ nvim_lsp.eslint.setup {}
 local cmp = require("cmp")
 local lspkind = require("lspkind")
 cmp.setup {
-  sources = {
+  sources = { 
     {name = "nvim_lsp"},
+    {name = "vsnip"},
     {name = "buffer"},
     {name = "nvim_lua"},
     {name = "path"},
-    -- {name = "vsnip"}
+    { name = 'nvim_lsp_signature_help' }
   },
-  snippet = { expand = function() end },
-  -- snippet = {
-  --   expand = function(args)
-  --     -- For `vsnip` user.
-  --     vim.fn["vsnip#anonymous"](args.body)
-  --   end
-  -- },
+  snippet = {
+    expand = function(args)
+      -- For `vsnip` user.
+      vim.fn["vsnip#anonymous"](args.body)
+    end
+  },
   formatting = {
     format = lspkind.cmp_format(
       {
