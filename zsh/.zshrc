@@ -17,6 +17,7 @@ antigen apply >/dev/null
 # load all zsh config files
 for config ($ZSH/*.zsh) source $config
 
+bindkey -e
 
 # TODO: Need to set this up
 if [[ -a ~/.localrc ]]; then
