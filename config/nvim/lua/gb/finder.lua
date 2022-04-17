@@ -21,7 +21,6 @@ require("telescope").setup {
     path_display = {"absolute"},
     mappings = {
       i = {
-        ["<C-x>"] = false,
         ["<C-f>"] = actions.smart_send_to_qflist + actions.open_qflist,
         ["<esc>"] = actions.close,
         ["<C-j>"] = actions.move_selection_next,
