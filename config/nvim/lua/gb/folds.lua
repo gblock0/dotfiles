@@ -1,5 +1,6 @@
 local M = {}
- local function bufwidth()
+
+local function bufwidth()
   local width = vim.fn.winwidth(0)
   local numwidth = 0
   local wo = vim.wo
@@ -22,6 +23,7 @@ local M = {}
   end
   return width - numwidth - foldwidth - signwidth
 end
+
 function foldText()
   local fs = vim.api.nvim_get_vvar("foldstart")
   local fe = vim.api.nvim_get_vvar("foldend")
@@ -30,6 +32,6 @@ function foldText()
   local winSize = bufwidth()
   local fillcharcount = winSize - #start_line - 2
   return start_line .. ''.. end_line .. string.rep(" ", fillcharcount)
-
 end
+
 return M
