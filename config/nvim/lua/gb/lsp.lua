@@ -156,6 +156,13 @@ cmp.setup {
       vim.fn["vsnip#anonymous"](args.body)
     end
   },
+  comparators = {
+    cmp.config.compare.recently_used,
+    cmp.config.compare.locality,
+    cmp.config.compare.score, -- based on :  score = score + ((#sources - (source_index - 1)) * sorting.priority_weight)
+    cmp.config.compare.offset,
+    cmp.config.compare.order,
+  },
   formatting = {
     format = lspkind.cmp_format(
       {
