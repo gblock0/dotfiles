@@ -29,6 +29,7 @@ function(use)
 
     -- Autoformater
     use "lukas-reineke/lsp-format.nvim"
+    use "averms/black-nvim"
 
     -- Highlight other uses of the current word under the cursor
     use "RRethy/vim-illuminate"
