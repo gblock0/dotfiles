@@ -1,5 +1,3 @@
-keymap = require("gb.utils").map
-
 require("gitsigns").setup(
 {
     watch_gitdir = {
@@ -15,11 +13,11 @@ require("gitsigns").setup(
 }
 )
 
-keymap("n", "<leader>gs", "vertical Git", { silent = true, cmd_cr = true  })
-keymap("n", "<leader>gh", "diffget //2", { silent = true, cmd_cr = true  })
-keymap("n", "<leader>gl", "diffget //3", { silent = true, cmd_cr = true  })
-keymap("n", "<leader>gb", "GBrowse!", { silent = true, cmd_cr = true })
-keymap("v", "<leader>gb", ":'<,'>GBrowse!<CR>", { silent = true, cmd_cr = false })
+vim.keymap.set("n", "<leader>gs", "<cmd>vertical Git<cr>", { silent = true})
+vim.keymap.set("n", "<leader>gh", "<cmd>diffget //2<cr>", { silent = true})
+vim.keymap.set("n", "<leader>gl", "<cmd>diffget //3<cr>", { silent = true})
+vim.keymap.set("n", "<leader>gb", "<cmd>GBrowse!<cr>", { silent = true })
+vim.keymap.set("v", "<leader>gb", "<cmd>'<,'>GBrowse!<CR>", { silent = true })
 
 require("neogit").setup(
 {

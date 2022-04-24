@@ -1,7 +1,6 @@
 vim.g.tmux_navigator_no_mappings = 1
 
-local keymap = require("gb.utils").map
-keymap("n", "<c-h>", ":TmuxNavigateLeft<cr>", {silent = true})
-keymap("n", "<c-j>", ":TmuxNavigateDown<cr>", {silent = true})
-keymap("n", "<c-k>", ":TmuxNavigateUp<cr>", {silent = true})
-keymap("n", "<c-l>", ":TmuxNavigateRight<cr>", {silent = true})
+vim.keymap.set("n", "<c-h>", "<cmd>TmuxNavigateLeft<cr>", {silent = true})
+vim.keymap.set("n", "<c-j>", "<cmd>TmuxNavigateDown<cr>", {silent = true})
+vim.keymap.set("n", "<c-k>", "<cmd>TmuxNavigateUp<cr>", {silent = true})
+vim.keymap.set("n", "<c-l>", "<cmd>TmuxNavigateRight<cr>", {silent = true})

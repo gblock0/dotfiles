@@ -1,6 +1,5 @@
 local utils = require("gb.utils")
 local nvim_lsp = require("lspconfig")
-keymap = utils.map
 opt = utils.opt
 
 local function custom_on_init()
@@ -210,10 +209,10 @@ end
 vim.g.completion_matching_strategy_list = {"exact", "substring", "fuzzy"}
 opt("o", "completeopt", "menu,menuone,noselect")
 
-keymap("n", "gd", "lua vim.lsp.buf.definition()", {silent = true, cmd_cr = true})
-keymap("n", "gR", "lua vim.lsp.buf.rename()", {cmd_cr = true})
-keymap("n", "gr", ":lua require'telescope.builtin'.lsp_references({cwd= vim.fn.expand('%:h')})", {cmd_cr = true})
--- keymap("n", "gr", "Telescope lsp_references({cwd: utils.buffer_dir()})", {cmd_cr = true})
-keymap("n", "<leader>e", "lua vim.lsp.diagnostic.goto_next()", {silent = true, cmd_cr = true})
-keymap("n", "<leader>cd", "lua vim.lsp.diagnostic.show_line_diagnostics()", {silent = true, cmd_cr = true})
-keymap("n", "K", "lua vim.lsp.buf.hover()", {silent = true, cmd_cr = true})
+vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, {silent = true})
+vim.keymap.set("n", "gR", function() vim.lsp.buf.rename() end)
+vim.keymap.set("n", "gr", function() require'telescope.builtin'.lsp_references({cwd= vim.fn.expand('%:h')}) end)
+-- vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references({cwd: utils.buffer_dir()})<cr>")
+vim.keymap.set("n", "<leader>e", function() vim.lsp.diagnostic.goto_next() end, {silent = true})
+vim.keymap.set("n", "<leader>cd", function() vim.lsp.diagnostic.show_line_diagnostics() end, {silent = true})
+vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, {silent = true})

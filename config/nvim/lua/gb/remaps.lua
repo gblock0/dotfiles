@@ -1,67 +1,64 @@
--- misc remaps
-keymap = require("gb.utils").map
-
 -- Close location list or quickfix window
-keymap("n", "<leader>q", "ccl<Space><Bar><Space>lcl", {cmd_cr = true})
+vim.keymap.set("n", "<leader>q", "<cmd>ccl<Space><Bar><Space>lcl<cr>")
 
 -- Remap p so that paste doesn't overwrite the 0 register
-keymap("x", "p", "pgvy")
+vim.keymap.set("x", "p", "pgvy")
 
 -- Turn off highlighting, need to add the 'h' at the end of offset the <BS> making the cursor move one character to the right
-keymap("n", "<BS>", ":noh<CR> :match none<CR>h")
+vim.keymap.set("n", "<BS>", "<cmd>noh<CR> <cmd>match none<CR>h")
 
 -- shortcut to save
-keymap("n", "<leader><leader>", "wa", {cmd_cr = true})
+vim.keymap.set("n", "<leader><leader>", "<cmd>wa<cr>")
 
 -- scroll the viewport faster
-keymap("n", "<C-e>", "3<C-e>")
-keymap("n", "<C-y>", "3<C-y>")
-keymap("n", "<leader>=", "<C-W>=")
+vim.keymap.set("n", "<C-e>", "3<C-e>")
+vim.keymap.set("n", "<C-y>", "3<C-y>")
+vim.keymap.set("n", "<leader>=", "<C-W>=")
 
 -- Reload init.vim
-keymap("n", "<leader>re", 'so ~/.config/nvim/init.vim<CR>:noh<CR>:echo "init.vim Reload!"', {cmd_cr = true})
+vim.keymap.set("n", "<leader>re", '<cmd>so ~/.config/nvim/init.vim<CR>:noh<CR>:echo "init.vim Reload!"<cr>')
 
 -- Add semi colon to the end of current line and return cursor to position
-keymap("n", "<leader>;", "maA;<esc>`a:wa<CR>")
+vim.keymap.set("n", "<leader>;", "maA;<esc>`a:wa<CR>")
 
 -- Copy current file's path to clipboard
-keymap("n", "cp", 'let @+ = expand("%")', {cmd_cr = true, silent = false})
+vim.keymap.set("n", "cp", '<cmd>let @+ = expand("%")<cr>', { silent = false})
 
 -- Disable help F1 key
-keymap("", "<F1>", "<ESC>")
+vim.keymap.set("", "<F1>", "<ESC>")
 
 -- show/hide whitespace mappings
-keymap("n", "<F5>", "set list!", {cmd_cr = true})
+vim.keymap.set("n", "<F5>", "<cmd>set list!<cr>")
 
-keymap("n", "<leader>rn", "set relativenumber!", {silent = true, cmd_cr = true})
+vim.keymap.set("n", "<leader>rn", "<cmd>set relativenumber!<cr>", {silent = true})
 
 -- Reselect pasted text
-keymap("n", "gp", "`[v`]", {silent = true})
+vim.keymap.set("n", "gp", "`[v`]", {silent = true})
 
 -- Keep cursor in the middle of the screen
-keymap("n", "n", "nzzzv", {silent = true})
-keymap("n", "N", "Nzzzv", {silent = true})
+vim.keymap.set("n", "n", "nzzzv", {silent = true})
+vim.keymap.set("n", "N", "Nzzzv", {silent = true})
 
 -- Set more undo breakpoints
-keymap("n", ",", ",<c-g>u", {silent = true})
-keymap("n", ".", ".<c-g>u", {silent = true})
-keymap("n", "!", "!<c-g>u", {silent = true})
-keymap("n", "?", "?<c-g>u", {silent = true})
-keymap("n", "]", "]<c-g>u", {silent = true})
-keymap("n", "[", "[<c-g>u", {silent = true})
-keymap("n", "(", "(<c-g>u", {silent = true})
-keymap("n", ")", ")<c-g>u", {silent = true})
-keymap("n", "{", "{<c-g>u", {silent = true})
-keymap("n", "}", "}<c-g>u", {silent = true})
+vim.keymap.set("n", ",", ",<c-g>u", {silent = true})
+vim.keymap.set("n", ".", ".<c-g>u", {silent = true})
+vim.keymap.set("n", "!", "!<c-g>u", {silent = true})
+vim.keymap.set("n", "?", "?<c-g>u", {silent = true})
+vim.keymap.set("n", "]", "]<c-g>u", {silent = true})
+vim.keymap.set("n", "[", "[<c-g>u", {silent = true})
+vim.keymap.set("n", "(", "(<c-g>u", {silent = true})
+vim.keymap.set("n", ")", ")<c-g>u", {silent = true})
+vim.keymap.set("n", "{", "{<c-g>u", {silent = true})
+vim.keymap.set("n", "}", "}<c-g>u", {silent = true})
 
 -- Make 'Y' behave like other capital letters
-keymap("n", "Y", "y$")
+vim.keymap.set("n", "Y", "y$")
 
 -- When highlighting a word, keep the cursor on the current word
-keymap("n", "*", "*N")
+vim.keymap.set("n", "*", "*N")
 
-keymap("i", "<F1>", "<Nop>")
+vim.keymap.set("i", "<F1>", "<Nop>")
 
 -- Shift + J/K moves selected lines down/up in visual mode
-keymap("v", "K", "m '<-2<CR>gv=gv", {cmd_cr = true})
-keymap("v", "J", "m '>+1<CR>gv=gv", {cmd_cr = true})
+vim.keymap.set("v", "K", "<cmd>m '<-2<CR>gv=gv<cr>")
+vim.keymap.set("v", "J", "<cmd>m '>+1<CR>gv=gv<cr>")

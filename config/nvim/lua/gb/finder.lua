@@ -1,6 +1,3 @@
-local utils = require("gb.utils")
-keymap = utils.map
-
 local actions = require("telescope.actions")
 local trouble = require("trouble.providers.telescope")
 
@@ -82,13 +79,13 @@ function _G.gb_grep_files()
   }
 end
 
-keymap("n", "<leader>a", "Telescope live_grep", {cmd_cr = true})
-keymap("n", "<leader>p", "Telescope find_files", {cmd_cr = true})
-keymap("n", "<leader>b", "Telescope buffers", {cmd_cr = true})
-keymap("n", "<leader>ca", "Telescope lsp_code_actions", {cmd_cr = true})
+vim.keymap.set("n", "<leader>a", "<cmd>Telescope live_grep<cr>")
+vim.keymap.set("n", "<leader>p", "<cmd>Telescope find_files<cr>")
+vim.keymap.set("n", "<leader>b", "<cmd>Telescope buffers<cr>")
+vim.keymap.set("n", "<leader>ca", "<cmd>Telescope lsp_code_actions<cr>")
 
 -- Create a new vsplit, switch to it and open CtrlP
-keymap("n", "<leader>w", "<C-w>v")
+vim.keymap.set("n", "<leader>w", "<C-w>v")
 
 -- Create a new split, switch to it and open CtrlP
-keymap("n", "<leader>s", "<C-w>s<C-w>j")
+vim.keymap.set("n", "<leader>s", "<C-w>s<C-w>j")

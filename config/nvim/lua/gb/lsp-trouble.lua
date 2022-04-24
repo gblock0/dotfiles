@@ -1,6 +1,4 @@
-local keymap = require("gb.utils").map
-
-keymap("n", "<leader>lt", "LspTroubleToggle", {silent = true, cmd_cr = true})
-keymap("n", "<leader>ld", "Trouble lsp_document_diagnostics", {silent = true, cmd_cr = true})
-keymap("n", "<leader>ldt", "LspTroubleDocumentToggle", {silent = true, cmd_cr = true})
-keymap("n", "<leader>lwt", "LspTroubleWorkspaceToggle", {silent = true, cmd_cr = true})
+vim.keymap.set("n", "<leader>lt", "<cmd>LspTroubleToggle<cr>", {silent = true})
+vim.keymap.set("n", "<leader>ld", "<cmd>Trouble lsp_document_diagnostics<cr>", {silent = true})
+vim.keymap.set("n", "<leader>ldt", "<cmd>LspTroubleDocumentToggle<cr>", {silent = true})
+vim.keymap.set("n", "<leader>lwt", "<cmd>LspTroubleWorkspaceToggle<cr>", {silent = true})
