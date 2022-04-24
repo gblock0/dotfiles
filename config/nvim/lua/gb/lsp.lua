@@ -1,6 +1,4 @@
-local utils = require("gb.utils")
 local nvim_lsp = require("lspconfig")
-opt = utils.opt
 
 local function custom_on_init()
   print("Language Server Protocol started!")
@@ -207,7 +205,7 @@ for index, type in pairs(signs) do
 end
 
 vim.g.completion_matching_strategy_list = {"exact", "substring", "fuzzy"}
-opt("o", "completeopt", "menu,menuone,noselect")
+vim.opt.completeopt = "menu,menuone,noselect"
 
 vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, {silent = true})
 vim.keymap.set("n", "gR", function() vim.lsp.buf.rename() end)
