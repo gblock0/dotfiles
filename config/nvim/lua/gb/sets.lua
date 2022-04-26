@@ -1,39 +1,37 @@
-local opt = require("gb.utils").opt
-
 vim.g.mapleader = " "
 vim.opt.laststatus = 3
 
--- Global options
-opt("o", "termguicolors", true)
-opt("o", "mouse", "a")
-opt("o", "shiftround", true) -- round indent to a multiple of 'shiftwidth'
-opt("o", "undolevels", 5000)
-opt("o", "undodir", vim.fn.expand("~/.VIM_UNDO_FILES"))
-opt("o", "undofile", true)
-opt("o", "clipboard", "unnamedplus")
-opt("o", "scrolloff", 10) -- lines of text around cursor
-opt("o", "wildoptions", "pum")
-opt("o", "pumblend", 17) -- floating window popup menu for command line completion
-opt("o", "ignorecase", true) -- case insensitive searching
-opt("o", "smartcase", true) -- case-sensitive if expression contains a capital letter
-opt("o", "listchars", "eol:¬,tab:>·,trail:~,space:␣") -- set what whitespace characters look like
-opt("o", "updatetime", 100) -- keep buffers around
-opt("o", "splitright", true) -- split windows to the right
+-- Global vim.opt.ions
+vim.opt.termguicolors = true
+vim.opt.mouse = "a"
+vim.opt.shiftround = true -- round indent to a multiple of 'shiftwidth'
+vim.opt.undolevels = 5000
+vim.opt.undodir = vim.fn.expand("~/.VIM_UNDO_FILES")
+vim.opt.undofile = true
+vim.opt.clipboard = "unnamedplus"
+vim.opt.scrolloff = 10 -- lines of text around cursor
+vim.opt.wildoptions = "pum"
+vim.opt.pumblend = 17 -- floating window popup menu for command line completion
+vim.opt.ignorecase = true -- case insensitive searching
+vim.opt.smartcase = true -- case-sensitive if expression contains a capital letter
+vim.opt.listchars = "eol:¬,tab:>·,trail:~,space:␣" -- set what whitespace characters look like
+vim.opt.updatetime = 100 -- keep buffers around
+vim.opt.splitright = true -- split windows to the right
 
--- Buffer options
+-- Buffer vim.opt.ions
 --  Tab control
-opt("b", "tabstop", 2) -- the visible width of tabs
-opt("b", "softtabstop", 2) -- edit as if the tabs are 2 characters wide
-opt("b", "shiftwidth", 2) -- number of spaces to use for indent and unindent
-opt("b", "expandtab", true) -- insert tabs rather than spaces for <Tab>
+vim.opt.tabstop = 2 -- the visible width of tabs
+vim.opt.softtabstop = 2 -- edit as if the tabs are 2 characters wide
+vim.opt.shiftwidth = 2 -- number of spaces to use for indent and unindent
+vim.opt.expandtab = true -- insert tabs rather than spaces for <Tab>
 
--- Window options
-opt("w", "cursorline", true) -- highlight current line
-opt("w", "number", true)
-opt("w", "relativenumber", true)
-opt("w", "foldlevel", 99)
-opt("w", "signcolumn", "yes")
-opt("w", "wrap", false)
+-- Window vim.opt.ions
+vim.opt.cursorline = true -- highlight current line
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.foldlevel = 99
+vim.opt.signcolumn = "yes"
+vim.opt.wrap = false
 
 local parsers = require'nvim-treesitter.parsers'
 local configs = parsers.get_parser_configs()

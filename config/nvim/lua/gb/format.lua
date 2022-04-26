@@ -1,6 +1,4 @@
 -- autocmd BufWritePost set in init.vim
-local keymap = require("gb.utils").map
-
 local prettierCmd = "./node_modules/.bin/prettier --config .prettierrc --write"
 local tempfile_dir = vim.fn.expand("~/.formatter-nvim-tmp-files")
 
@@ -78,6 +76,3 @@ require "lsp-format".setup {
     }
   }
 }
-
-keymap("n", "<leader>f", "Format", { silent = true, cmd_cr = true })
-keymap("n", "<leader>F", "FormatWrite", { silent = true, cmd_cr = true })
