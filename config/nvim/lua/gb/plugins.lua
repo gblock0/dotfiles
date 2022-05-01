@@ -21,7 +21,7 @@ function(use)
     use "windwp/windline.nvim"
 
     -- File tree
-    use "kyazdani42/nvim-web-devicons"
+    use {"kyazdani42/nvim-web-devicons", config = require "gb.icons"}
     use "kyazdani42/nvim-tree.lua"
 
     -- Highlight hex colors
