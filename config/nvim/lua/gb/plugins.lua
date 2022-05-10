@@ -161,13 +161,14 @@ function(use)
     use "hrsh7th/vim-vsnip-integ"
     use "rafamadriz/friendly-snippets"
 
-    use { 'bennypowers/nvim-regexplainer',
-    config = function() require'regexplainer'.setup()  end,
-      requires = {
-        'nvim-treesitter/nvim-treesitter',
-        'MunifTanjim/nui.nvim',
-      }
-    }
+    -- -- Uncomment when I want to explain regex, no way to override default mappings
+    -- use { 'bennypowers/nvim-regexplainer',
+    -- config = function() require'regexplainer'.setup()  end,
+    --   requires = {
+    --     'nvim-treesitter/nvim-treesitter',
+    --     'MunifTanjim/nui.nvim',
+    --   }
+    -- }
 
     use {
       "vuki656/package-info.nvim",
