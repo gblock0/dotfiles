@@ -11,16 +11,6 @@ local onlyPrettierCmdOpts = {
   }
 }
 
-local tsJsCmdOpts = {
-  {
-    cmd = {
-      prettierCmd,
-      "./node_modules/.bin/eslint_d --fix"
-    },
-    tempfile_dir = tempfile_dir
-  }
-}
-
 require "lsp-format".setup {
   ["*"] = {
     {
@@ -40,9 +30,6 @@ require "lsp-format".setup {
       }
     }
   },
-  typescript = tsJsCmdOpts,
-  typescriptreact = tsJsCmdOpts,
-  javascript = tsJsCmdOpts,
   scss = onlyPrettierCmdOpts,
   css = onlyPrettierCmdOpts,
   json = onlyPrettierCmdOpts,
