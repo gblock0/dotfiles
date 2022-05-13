@@ -1,5 +1,5 @@
 -- Testing helpers
-local jest_opts = {path_to_jest = 'node_modules/.bin/jest --selectProjects unitTests',terminal_cmd = ':below split | terminal'}
+local jest_opts = {path_to_jest = 'node_modules/.bin/jest', terminal_cmd = ':below split | terminal'}
 vim.keymap.set("n", "<leader>tt", function () require('jester').run(jest_opts) end, {silent = true})
 vim.keymap.set("n", "<leader>tf", function () require('jester').run_file(jest_opts) end, {silent = true})
 vim.keymap.set("n", "<leader>td", function () require('jester').debug(jest_opts) end, {silent = true})
