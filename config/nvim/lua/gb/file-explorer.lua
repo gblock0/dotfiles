@@ -5,7 +5,6 @@ vim.keymap.set("n", "<leader>n", "<cmd>NvimTreeToggle<CR>", {silent = true})
 
 local tree_cb = require "nvim-tree.config".nvim_tree_callback
 require "nvim-tree".setup {
-  auto_close = false,
   diagnostics = {
     enable = false
   },
