@@ -3,7 +3,7 @@ local trouble = require("trouble.providers.telescope")
 
 require("telescope").setup {
   defaults = {
-    prompt_prefix = " ",
+    prompt_prefix = "   ",
     selection_caret = " ",
     entry_prefix = "  ",
     scroll_strategy = "cycle",
@@ -24,7 +24,21 @@ require("telescope").setup {
         ["<C-k>"] = actions.move_selection_previous,
         ["<C-t>"] = trouble.open_with_trouble
       }
-    }
+    },
+    vimgrep_arguments = {
+      "rg",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case",
+      "--hidden",
+    },
+    winblend = 0,
+    border = {},
+    borderchars = { "" },
+    color_devicons = true,
   },
   pickers = {
     find_files = {
