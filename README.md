@@ -5,7 +5,6 @@
 - [alacritty] configuration
 - [neovim] configuration
 - [tmux] configuration
-- [karabiner] configuartion
 - [zsh] configuartion w/ [powerlevel10k]
 - git configuration
 - `install.sh`
@@ -38,7 +37,6 @@
 [alacritty]: https://github.com/alacritty/alacritty
 [neovim]: https://neovim.io
 [tmux]: https://github.com/tmux/tmux
-[karabiner]: https://karabiner-elements.pqrs.org/
 [zsh]: https://www.zsh.org/
 [powerlevel10k]: https://github.com/romkatv/powerlevel10k
 [`install/brew.sh`]: https://github.com/gblock0/dotfiles/blob/master/install/brew.sh
