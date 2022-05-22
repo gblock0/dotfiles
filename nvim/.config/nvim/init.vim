@@ -16,7 +16,7 @@ augroup GB_SETTINGS
     let autocommands_loaded = 1
 
     " Format the buffer after writing the buffer
-    autocmd BufWritePre *.ts,*.tsx,*.js :EslintFixAll
+    " autocmd BufWritePre *.ts,*.tsx,*.js :EslintFixAll
     autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 200)
 
     " Clears all matches when leaving the buffer
