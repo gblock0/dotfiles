@@ -146,7 +146,7 @@ nvim_lsp.eslint.setup {
     local group = vim.api.nvim_create_augroup("Eslint", {})
     vim.api.nvim_create_autocmd("BufWritePre", {
       group = group,
-      pattern = "<buffer>",
+      pattern = "*.ts,*.tsx,*.js",
       command = "EslintFixAll",
       desc = "Run eslint when saving buffer.",
     })
