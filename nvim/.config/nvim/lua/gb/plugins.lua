@@ -144,6 +144,7 @@ function(use)
     -- Adds debugger to nvim
     -- use "puremourning/vimspector"
     use "mfussenegger/nvim-dap"
+    use "rcarriga/nvim-dap-ui"
     use "nvim-telescope/telescope-dap.nvim"
     use "theHamsta/nvim-dap-virtual-text"
 
@@ -195,7 +196,6 @@ require("indent_blankline").setup {
 require("gb.autoswap")
 require("gb.colorizer")
 require("gb.commenter")
-require("gb.debugHelper")
 require("gb.debugger")
 require("gb.file-explorer")
 require("gb.finder")
