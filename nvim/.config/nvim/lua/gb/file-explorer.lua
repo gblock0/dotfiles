@@ -1,6 +1,3 @@
-vim.g.nvim_tree_group_empty = 1
-vim.g.nvim_tree_root_folder_modifier = ":~" --This is the default. See :help filename-modifiers for more options
-
 vim.keymap.set("n", "<leader>n", "<cmd>NvimTreeToggle<CR>", {silent = true})
 
 local tree_cb = require "nvim-tree.config".nvim_tree_callback
@@ -22,5 +19,9 @@ require "nvim-tree".setup {
   },
   filters = {
     custom = {".git", "node_modules", ".cache", ".DS_Store"}
+  },
+  renderer = {
+    group_empty = true,
+    root_folder_modifier = ":~"
   }
 }
