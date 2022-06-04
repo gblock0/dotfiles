@@ -73,7 +73,7 @@
 
 [core]
   excludesfile = ~/.gitignore_global
-  pager = delta --plus-style="syntax #012800" --minus-style="normal #340001" --theme='base16'
+  pager = delta
   editor = nvim
 
 [rerere]
@@ -93,7 +93,7 @@
   insteadOf = https://github.com/
 
 [interactive]
-  diffFilter = delta --color-only
+  diffFilter = delta
 
 [filter "lfs"]
   clean = git-lfs clean -- %f
@@ -104,9 +104,13 @@
 [pull]
   rebase = false
 
+[merge]
+  conflictstyle = diff3
+
 [delta]
   line-numbers = true
-  features = side-by-side decorations
+  side-by-side = true
+  features = decorations
   whitespace-error-style = 22 reverse
 
 [delta "decorations"]
