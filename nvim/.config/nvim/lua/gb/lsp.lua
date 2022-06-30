@@ -143,13 +143,13 @@ nvim_lsp.html.setup {
 nvim_lsp.eslint.setup {
   on_init = custom_on_init,
   on_attach = function(client)
-    local group = vim.api.nvim_create_augroup("Eslint", {})
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      group = group,
-      pattern = "*.ts,*.tsx,*.js",
-      command = "EslintFixAll",
-      desc = "Run eslint when saving buffer.",
-    })
+    -- local group = vim.api.nvim_create_augroup("Eslint", {})
+    -- vim.api.nvim_create_autocmd("BufWritePre", {
+    --   group = group,
+    --   pattern = "*.ts,*.tsx,*.js",
+    --   command = "EslintFixAll",
+    --   desc = "Run eslint when saving buffer.",
+    -- })
   end,
   capabilities = capabilities, -- declared elsewhere
 }
