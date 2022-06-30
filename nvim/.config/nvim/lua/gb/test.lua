@@ -1,8 +1,12 @@
 -- Testing helpers
-local jest_opts = {path_to_jest = 'node_modules/.bin/jest', terminal_cmd = ':below split | terminal'}
-vim.keymap.set("n", "<leader>tt", function () require('jester').run(jest_opts) end, {silent = true})
-vim.keymap.set("n", "<leader>tf", function () require('jester').run_file(jest_opts) end, {silent = true})
-vim.keymap.set("n", "<leader>td", function () require('jester').debug(jest_opts) end, {silent = true})
+local jester = require('jester');
+jester.setup({
+  path_to_jest_run = 'node_modules/.bin/jest',
+  terminal_cmd = ':below split | terminal'
+})
+vim.keymap.set("n", "<leader>tt", function () jester.run() end)
+vim.keymap.set("n", "<leader>tf", function () jester.run_file() end)
+vim.keymap.set("n", "<leader>td", function () jester.debug() end)
 
 function _G.go_to_test_file(typeOfSplit)
   local current_path = vim.fn.expand("%")
