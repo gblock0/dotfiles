@@ -96,7 +96,6 @@ end
 vim.keymap.set("n", "<leader>a", "<cmd>Telescope live_grep<cr>")
 vim.keymap.set("n", "<leader>p", "<cmd>Telescope find_files<cr>")
 vim.keymap.set("n", "<leader>b", "<cmd>Telescope buffers<cr>")
-vim.keymap.set("n", "<leader>ca", "<cmd>Telescope lsp_code_actions<cr>")
 
 -- Create a new vsplit, switch to it and open CtrlP
 vim.keymap.set("n", "<leader>w", "<C-w>v")

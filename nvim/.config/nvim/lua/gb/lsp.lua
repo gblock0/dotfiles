@@ -232,3 +232,4 @@ vim.keymap.set("n", "gr", function() require'telescope.builtin'.lsp_references({
 vim.keymap.set("n", "<leader>e", function() vim.lsp.diagnostic.goto_next() end, {silent = true})
 vim.keymap.set("n", "<leader>cd", function() vim.lsp.diagnostic.show_line_diagnostics() end, {silent = true})
 vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, {silent = true})
+vim.keymap.set("n", "<leader>ca", function () vim.lsp.buf.code_action() end)
