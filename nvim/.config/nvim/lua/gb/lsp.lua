@@ -88,7 +88,7 @@ nvim_lsp.tsserver.setup {
     if client.config.flags then
       client.config.flags.allow_incremental_sync = true
     end
-    client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.documentFormattingProvider = false
   end,
   capabilities = capabilities,
   root_dir = nvim_lsp.util.root_pattern("tsconfig.json", ".git"),
