@@ -216,7 +216,7 @@ components.active[1] = {
   comps.diagnos.info,
 }
 components.active[2] = {
-  comps.file.info,
+  -- comps.file.info,
 }
 
 components.active[3] = {
@@ -260,3 +260,17 @@ require "feline".setup {
   components = components,
   vi_mode_colors = vi_mode_colors
 }
+
+local components_wb = {
+  active = {},
+  inactive = {}
+}
+table.insert(components_wb.active, {})
+table.insert(components_wb.inactive, {})
+components_wb.active[1] = {
+  comps.file.info,
+}
+components_wb.inactive[1] = {
+  comps.file.info,
+}
+require('feline').winbar.setup( {components = components_wb})
