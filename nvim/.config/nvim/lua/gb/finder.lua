@@ -86,6 +86,7 @@ require("telescope").setup {
 
 require("telescope").load_extension("fzf")
 require("telescope").load_extension("fzf_writer")
+require("telescope").load_extension("ui-select")
 
 function _G.gb_grep_files()
   require("telescope").extensions.fzf_writer.staged_grep {

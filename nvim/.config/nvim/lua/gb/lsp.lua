@@ -225,11 +225,12 @@ end
 vim.g.completion_matching_strategy_list = {"exact", "substring", "fuzzy"}
 vim.opt.completeopt = "menu,menuone,noselect"
 
+vim.keymap.set("n", "<leader>f", '<CMD>EslintFixAll<CR>', {silent = true})
 vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, {silent = true})
 vim.keymap.set("n", "gR", function() vim.lsp.buf.rename() end)
 vim.keymap.set("n", "gr", function() require'telescope.builtin'.lsp_references({cwd= vim.fn.expand('%:h')}) end)
 -- vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references({cwd: utils.buffer_dir()})<cr>")
-vim.keymap.set("n", "<leader>e", function() vim.lsp.diagnostic.goto_next() end, {silent = true})
-vim.keymap.set("n", "<leader>cd", function() vim.lsp.diagnostic.show_line_diagnostics() end, {silent = true})
+vim.keymap.set("n", "<leader>e", function() vim.diagnostic.goto_next() end, {silent = true})
+vim.keymap.set("n", "<leader>cd", function() vim.diagnostic.show_line_diagnostics() end, {silent = true})
 vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, {silent = true})
 vim.keymap.set("n", "<leader>ca", function () vim.lsp.buf.code_action() end)
