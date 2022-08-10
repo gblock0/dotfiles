@@ -79,7 +79,7 @@ local comps = {
         name = "file_info",
         opts ={
           file_modified_icon = "",
-          type = 'relative'
+          type = 'unique'
         }
       },
       hl = {
