@@ -15,7 +15,7 @@ require("telescope").setup {
     layout_config = {
       prompt_position = "top"
     },
-    path_display = {"absolute"},
+    path_display = {"smart"},
     mappings = {
       i = {
         ["<C-f>"] = actions.smart_send_to_qflist + actions.open_qflist,
@@ -38,7 +38,6 @@ require("telescope").setup {
     winblend = 0,
     border = {},
     borderchars = { "" },
-    color_devicons = true,
   },
   pickers = {
     find_files = {
@@ -66,6 +65,8 @@ require("telescope").setup {
       }
     },
     lsp_references = {
+      fname_width = 0.5,
+      include_current_line = true,
       layout_strategy = "vertical",
       layout_config = {
         mirror = true
