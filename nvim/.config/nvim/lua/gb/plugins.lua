@@ -21,7 +21,7 @@ function(use)
     use "windwp/windline.nvim"
 
     -- File tree
-    use {"kyazdani42/nvim-web-devicons", config = function() require "gb.icons" end}
+    use "kyazdani42/nvim-web-devicons"
     use "kyazdani42/nvim-tree.lua"
 
     -- Highlight hex colors
@@ -194,6 +194,7 @@ require("indent_blankline").setup {
 }
 
 -- load plugin configs
+require("gb.icons")
 require("gb.autoswap")
 require("gb.colorizer")
 require("gb.commenter")
