@@ -66,7 +66,6 @@ require("telescope").setup {
     },
     lsp_references = {
       fname_width = 0.5,
-      include_current_line = true,
       layout_strategy = "vertical",
       layout_config = {
         mirror = true
