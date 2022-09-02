@@ -43,6 +43,7 @@ function(use)
     -- Treesitter Plugins {{{
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
     use "nvim-treesitter/playground"
+    use "nvim-treesitter/nvim-treesitter-context"
     -- }}}
 
     -- LSP Plugins {{{
