@@ -269,8 +269,10 @@ table.insert(components_wb.active, {})
 table.insert(components_wb.inactive, {})
 components_wb.active[1] = {
   comps.file.info,
+  comps.diagnos.err,
 }
 components_wb.inactive[1] = {
   comps.file.info,
+  comps.diagnos.err,
 }
 require('feline').winbar.setup( {components = components_wb})
