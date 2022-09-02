@@ -36,3 +36,5 @@ alias tmuxkill="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, lengt
 alias whitespace="sed 's/ /␣/g;s/\t/￫/g;s/\r/§/g;s/$/¬/g'"
 
 alias ns="npm start"
+
+alias nrats="npm run test:api:loc:single"
