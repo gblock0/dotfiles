@@ -13,16 +13,18 @@ require("gitsigns").setup(
 }
 )
 
-vim.keymap.set("n", "<leader>gs", "<cmd>vertical Git<cr>", { silent = true})
+local neogit = require("neogit")
+
+neogit.setup(
+  {
+    integrations = {
+      diffview = true
+    }
+  }
+)
+
+vim.keymap.set("n", "<leader>gs", function() neogit.open({ kind = "vsplit" })  end, { silent = true})
 vim.keymap.set("n", "<leader>gh", "<cmd>diffget //2<cr>", { silent = true})
 vim.keymap.set("n", "<leader>gl", "<cmd>diffget //3<cr>", { silent = true})
 vim.keymap.set("n", "<leader>gb", "<cmd>GBrowse!<cr>", { silent = true })
 vim.keymap.set("v", "<leader>gb", "<cmd>'<,'>GBrowse!<CR>", { silent = true })
-
-require("neogit").setup(
-{
-    integrations = {
-      diffview = true
-    }
-}
-)
