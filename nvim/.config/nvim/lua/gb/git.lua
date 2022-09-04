@@ -19,6 +19,9 @@ neogit.setup(
   {
     integrations = {
       diffview = true
+    },
+    sections = {
+      recent = false
     }
   }
 )
