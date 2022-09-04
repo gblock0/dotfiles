@@ -15,7 +15,7 @@ require("telescope").setup {
     layout_config = {
       prompt_position = "top"
     },
-    path_display = {"smart"},
+    path_display = {"absolute"},
     mappings = {
       i = {
         ["<C-f>"] = actions.smart_send_to_qflist + actions.open_qflist,
