@@ -91,6 +91,8 @@ function(use)
       }
     }
 
+    use { 'smithbm2316/centerpad.nvim' }
+
     -- Run tests inside nvim
     use "David-Kunz/jester"
     use "vim-test/vim-test"
@@ -215,3 +217,4 @@ require("gb.term")
 require("gb.test")
 require("gb.tmux-navigator")
 require("gb.treesitter")
+require("gb.centerpad")

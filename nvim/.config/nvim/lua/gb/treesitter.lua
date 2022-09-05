@@ -91,6 +91,4 @@ function ContextSetup(show_all_context)
     })
 end
 
-vim.keymap.set("n", "<leader>cf", function() ContextSetup(true) end)
-vim.keymap.set("n", "<leader>cp", function() ContextSetup(false) end)
 ContextSetup(false)
