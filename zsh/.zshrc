@@ -57,6 +57,10 @@ function set_nvm() {
   fi
 }
 
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 chpwd_functions+=(set_nvm)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
