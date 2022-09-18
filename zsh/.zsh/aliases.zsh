@@ -38,3 +38,5 @@ alias whitespace="sed 's/ /␣/g;s/\t/￫/g;s/\r/§/g;s/$/¬/g'"
 alias ns="npm start"
 
 alias nrat="npm run test:api:loc"
+
+alias python="python3"
