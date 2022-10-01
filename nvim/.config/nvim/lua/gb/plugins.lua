@@ -135,9 +135,6 @@ function(use)
     -- Adds commands to easliy change surrounding quotes, brackets, etc.
     use "tpope/vim-surround"
 
-    -- Test startup time
-    use "tweekmonster/startuptime.vim"
-
     -- Swap file handling
     use "gioele/vim-autoswap"
 
@@ -176,8 +173,6 @@ function(use)
           require("package-info").setup()
       end
     }
-
-    use "ggandor/lightspeed.nvim"
 
     use { "ThePrimeagen/harpoon", requires = "nvim-lua/plenary.nvim" }
 
