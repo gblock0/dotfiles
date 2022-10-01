@@ -13,7 +13,6 @@ local function custom_root_dir()
 end
 
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
-capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 nvim_lsp.terraformls.setup{
   on_attach = function (client)
@@ -131,7 +130,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
 -- npm i -g vscode-langservers-extracted
 nvim_lsp.cssls.setup {
   on_init = custom_on_init,
-  -- Need capabilities for snippets/completion
   capabilities = capabilities
 }
 
@@ -159,17 +157,10 @@ local lspkind = require("lspkind")
 cmp.setup {
   sources = { 
     {name = "nvim_lsp"},
-    {name = "vsnip"},
     {name = "buffer"},
     {name = "nvim_lua"},
     {name = "path"},
     { name = 'nvim_lsp_signature_help' }
-  },
-  snippet = {
-    expand = function(args)
-      -- For `vsnip` user.
-      vim.fn["vsnip#anonymous"](args.body)
-    end
   },
   comparators = {
     cmp.config.compare.recently_used,
@@ -194,7 +185,6 @@ cmp.setup {
             nvim_lsp = " (LSP)",
             nvim_lua = " (Lua)",
             path = " (Path)",
-            -- path = " (Vsnip)"
           })[entry.source.name]
           return vim_item
         end
@@ -213,8 +203,6 @@ cmp.setup {
     )
   }
 }
-
--- vim.g.vsnip_snippet_dir = vim.fn.stdpath "config" .. "/snippets"
 
 local signs = {"Error", "Warn", "Hint", "Info"}
 for index, type in pairs(signs) do

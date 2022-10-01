@@ -56,7 +56,6 @@ function(use)
         "hrsh7th/cmp-nvim-lua",
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-path",
-        "hrsh7th/cmp-vsnip",
         "hrsh7th/cmp-nvim-lsp-signature-help"
       }
     }
@@ -160,11 +159,6 @@ function(use)
       end
     }
 
-
-    -- Snippets
-    use "hrsh7th/vim-vsnip"
-    use "hrsh7th/vim-vsnip-integ"
-    use "rafamadriz/friendly-snippets"
 
     -- -- Uncomment when I want to explain regex, no way to override default mappings
     -- use { 'bennypowers/nvim-regexplainer',
