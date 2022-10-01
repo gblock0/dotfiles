@@ -46,6 +46,13 @@ function(use)
     use "nvim-treesitter/nvim-treesitter-context"
     -- }}}
 
+    use {
+      "danymat/neogen",
+      requires = "nvim-treesitter/nvim-treesitter",
+      -- Uncomment next line if you want to follow only stable versions
+      -- tag = "*"
+    }
+
     -- LSP Plugins {{{
     use "nvim-lua/lsp-status.nvim"
     use "neovim/nvim-lspconfig"
@@ -121,14 +128,6 @@ function(use)
       }
     }
 
-    -- Documentation generator
-    use {
-      "kkoomen/vim-doge",
-      run = function()
-          vim.fn["doge#install"]()
-      end
-    }
-
     -- Git UI
     use { "tpope/vim-fugitive", requires = { "tpope/vim-rhubarb" } }
 
@@ -186,6 +185,7 @@ require("indent_blankline").setup {
 }
 
 -- load plugin configs
+require('neogen').setup()
 require("gb.icons")
 require("gb.autoswap")
 require("gb.colorizer")
