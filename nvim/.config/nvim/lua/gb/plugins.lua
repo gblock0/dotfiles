@@ -101,7 +101,7 @@ function(use)
 
     -- Run tests inside nvim
     use "David-Kunz/jester"
-    use "vim-test/vim-test"
+    -- use "vim-test/vim-test"
 
     -- Live Markdown previews
     use { "iamcco/markdown-preview.nvim", run = "cd app && yarn install" }
