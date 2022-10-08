@@ -162,6 +162,7 @@ cmp.setup {
     {name = "path"},
     { name = 'nvim_lsp_signature_help' }
   },
+  -- Need an empty snippet function or tsserver breaks :(
   snippet = { expand = function() end },
   comparators = {
     cmp.config.compare.recently_used,

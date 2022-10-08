@@ -14,6 +14,8 @@ function(use)
       end
     }
 
+    use "andythigpen/nvim-coverage"
+
     use "lukas-reineke/indent-blankline.nvim"
 
     -- Statusline

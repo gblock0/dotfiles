@@ -4,6 +4,8 @@ jester.setup({
   path_to_jest_run = 'node_modules/.bin/jest',
   terminal_cmd = ':below split | terminal'
 })
+
+require("coverage").setup()
 vim.keymap.set("n", "<leader>tt", function () jester.run() end)
 vim.keymap.set("n", "<leader>tf", function () jester.run_file() end)
 vim.keymap.set("n", "<leader>td", function () jester.debug() end)
