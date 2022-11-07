@@ -169,7 +169,7 @@ cmp.setup {
   snippet = {
     expand =
     function(args)
-      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+      vim.fn["vsnip#anonymous"](args.body)
     end,
   }
   ,
@@ -229,7 +229,7 @@ cmp.setup {
       if cmp.visible() then
         cmp.confirm()
       else
-        fallback() -- If you use vim-endwise, this fallback will behave the same as vim-endwise.
+        fallback()
       end
     end
   }
