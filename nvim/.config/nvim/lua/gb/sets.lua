@@ -33,6 +33,9 @@ vim.opt.foldlevel = 99
 vim.opt.signcolumn = "yes"
 vim.opt.wrap = false
 
+-- Turn on new diff
+-- vim.opt.diffopt+="linematch:60"
+
 local parsers = require'nvim-treesitter.parsers'
 local configs = parsers.get_parser_configs()
 local ft_str = table.concat(vim.tbl_map(function(ft) return configs[ft].filetype or ft end, parsers.available_parsers()), ',')
