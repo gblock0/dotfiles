@@ -50,7 +50,7 @@
   branch = yellow
 
 [push]
-    # push will only do the current branch, not all branches
+  # push will only do the current branch, not all branches
   default = current
 
 [branch]
