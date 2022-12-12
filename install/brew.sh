@@ -10,6 +10,9 @@ brew install neovim node git reattach-to-user-namespace\
              romkatv/powerlevel10k/powerlevel10k rust tree\
              wget ripgrep procs tldr exa htop nvm hyperfine\
              pyenv gnupg cmake
+
+# Need this for nvm
+mkdir ~/.nvm
  
 # Split these out because they will stop the install if they already exist
 brew install alacritty
