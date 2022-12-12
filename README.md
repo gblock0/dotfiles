@@ -1,7 +1,5 @@
 # Welcome to my Dotfiles!
 
-testing
-
 ## What's in this repo?
 
 - [alacritty] configuration
