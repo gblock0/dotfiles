@@ -160,25 +160,27 @@ local has_words_before = function()
 end
 cmp.setup {
   sources = { 
-    {name = "nvim_lsp"},
-    {name = "buffer"},
-    {name = "nvim_lua"},
+    {name = "nvim_lsp", priority = 8},
+    {name = "buffer", priority = 7},
+    {name = "nvim_lua", priority = 6},
     {name = "path"},
-    { name = 'nvim_lsp_signature_help' }
+    {name = 'nvim_lsp_signature_help'}
   },
   snippet = {
     expand =
     function(args)
       vim.fn["vsnip#anonymous"](args.body)
     end,
-  }
-  ,
-  comparators = {
-    cmp.config.compare.recently_used,
-    cmp.config.compare.locality,
-    cmp.config.compare.score, -- based on :  score = score + ((#sources - (source_index - 1)) * sorting.priority_weight)
-    cmp.config.compare.offset,
-    cmp.config.compare.order,
+  },
+  sorting = {
+    priority_weight = 1.0,
+    comparators = {
+      cmp.config.compare.locality,
+      cmp.config.compare.recently_used,
+      cmp.config.compare.score, -- based on :  score = score + ((#sources - (source_index - 1)) * sorting.priority_weight)
+      cmp.config.compare.offset,
+      cmp.config.compare.order,
+    },
   },
   formatting = {
     format = lspkind.cmp_format(
