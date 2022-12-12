@@ -7,10 +7,11 @@ if [ ! -x "$(command -v brew)" ]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
     echo "brewing all the things"
-    source install/brew.sh
 else
     echo "homebrew already install! skipping..."
 fi
+
+source install/brew.sh
 
 echo "running stow (with --verbose=3)"
 stow --verbose=3 -R zsh git tmux
