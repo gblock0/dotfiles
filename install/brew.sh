@@ -4,6 +4,12 @@ brew update
 # Install BlexMono Nerd Font
 brew tap homebrew/cask-fonts
 
+# Tap for terraform
+brew tap hashicorp/tap
+
+# Install terraform and its languageserver
+brew install hashicorp/tap/terraform hashicorp/tap/terraform-ls
+
 # development tools
 brew install neovim node git reattach-to-user-namespace\
              tmux fzf zsh antigen git-delta stow bottom\

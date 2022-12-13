@@ -70,5 +70,3 @@ eval "$(pyenv init -)"
 chpwd_functions+=(set_nvm)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export GPG_TTY=$(tty)
