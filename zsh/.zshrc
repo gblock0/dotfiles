@@ -9,7 +9,7 @@ export DOTFILES=$HOME/.dotfiles
 export ZSH=$HOME/.zsh
 export EVENT_NOKQUEUE=1
 
-source /usr/local/share/antigen/antigen.zsh
+source $(brew --prefix)/share/antigen/antigen.zsh
 antigen bundle zsh-users/zsh-syntax-highlighting >/dev/null
 antigen bundle zsh-users/zsh-autosuggestions >/dev/null
 antigen apply >/dev/null
@@ -48,8 +48,8 @@ bindkey '^b' backward-word
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # NVM settings
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 function set_nvm() {
   local nvmrc_path="$(nvm_find_nvmrc)"

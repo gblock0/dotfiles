@@ -23,5 +23,5 @@ function cdd() {
 }
 
 function update-language-servers() {
-  npm update -g typescript pyright vim-language-server vscode-languageservers-extracted
+  npm update -g typescript pyright vim-language-server vscode-langservers-extracted typescript-language-server
 }
