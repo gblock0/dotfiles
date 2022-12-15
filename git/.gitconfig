@@ -26,6 +26,9 @@
 [include]
   path = ~/.gitconfig-work
 
+[commit]
+  gpgsign = true
+
 [color]
   diff = auto
   status = auto
