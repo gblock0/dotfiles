@@ -23,8 +23,8 @@
   amend = commit -a --amend
   cleanup = "!git remote prune origin && git gc && git clean -df && git stash clear"
 
-[includeIf "gitdir:~/src/"]
-  path = ~/src/.gitconfig
+[include]
+  path = ~/.gitconfig-work
 
 [color]
   diff = auto
