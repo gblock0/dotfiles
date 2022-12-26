@@ -1,12 +1,12 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:python_host_skip_check=1
 
-lua require("gb.folds")
-lua require('gb.sets')
-lua require('gb.plugins')
+" lua require("gb.folds")
+" lua require('gb.sets')
+" lua require('gb.plugins')
 
+" Not moving these two lines over to init.lua for now 
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
 nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
 
