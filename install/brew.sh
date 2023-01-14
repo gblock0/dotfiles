@@ -15,7 +15,7 @@ brew install neovim node git reattach-to-user-namespace\
              tmux fzf zsh antigen git-delta stow bottom\
              romkatv/powerlevel10k/powerlevel10k rust tree\
              wget ripgrep procs tldr exa htop nvm hyperfine\
-             pyenv gnupg cmake
+             pyenv gnupg cmake yarn
 
 # Need this for nvm
 mkdir ~/.nvm
