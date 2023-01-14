@@ -22,13 +22,10 @@
 1. `git clone https://github.com/gblock0/dotfiles.git ~/.dotfiles`
 1. `cd ~/.dotfiles`
 1. `./install.sh`
-1. Download [`packer.nvim`]
-
-   
-   `git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim`
-
 1. Run `:Lazy` in Neovim
 1. Change keyboard modifier keys to make `Caps Lock` be `Ctrl`
+1. Add ssh key and run `ssh-add --apple-use-keychain`
+
 
 ## TODO
 
