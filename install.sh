@@ -13,8 +13,11 @@ fi
 
 source install/brew.sh
 
+echo "installing fzf keybindings and completions..."
+$(brew --prefix)/opt/fzf/install --all
+
 echo "running stow (with --verbose=3)"
-stow --verbose=3 -R zsh git tmux
+stow --verbose=3 -R alacritty bat git nvim ssh tmux zsh
 
 echo "linking config dir"
 ln -sv $(PWD)/config/* ~/.config
