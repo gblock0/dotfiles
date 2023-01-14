@@ -6,9 +6,6 @@
 [github]
   user = gblock0
 
-[gpg]
-  format=ssh
-
 [alias]
   delete-merged-branches = "!f() { git checkout --quiet master && git branch --merged | grep --invert-match '\\*' | xargs -n 1 git branch --delete; git checkout --quiet @{-1}; }; f"
   co = checkout
@@ -25,9 +22,6 @@
 
 [include]
   path = ~/.gitconfig-work
-
-[commit]
-  gpgsign = true
 
 [color]
   diff = auto
