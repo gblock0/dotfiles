@@ -8,6 +8,27 @@ require('lazy').setup({
     end
   },
 
+  {
+    "folke/noice.nvim",
+    config = function ()
+      require("noice").setup({
+        cmdline = {
+          format = {
+            search_down = { kind = "search", pattern = "^/", icon = " ", lang = "regex" },
+            search_up = { kind = "search", pattern = "^%?", icon = " ", lang = "regex" },
+          },
+        },
+        presets = {
+          lsp_doc_border = true, -- add a border to hover docs and signature help
+        },
+      })
+    end,
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    }
+  },
+
   "andythigpen/nvim-coverage",
 
   "lukas-reineke/indent-blankline.nvim",
