@@ -1,9 +1,5 @@
 local nvim_lsp = require("lspconfig")
 
-local function custom_on_init()
-  print("Language Server Protocol started!")
-end
-
 local function custom_root_dir()
   if (string.find(vim.fn.expand("%f"), "node_modules/") == nil) then
     return nvim_lsp.util.root_pattern(".git")
@@ -17,8 +13,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 nvim_lsp.terraformls.setup{
   on_attach = function (client)
     require "lsp-format".on_attach(client)
-  end,
-  on_init = custom_on_init
+  end
 }
 
 nvim_lsp.vimls.setup {}
@@ -99,8 +94,7 @@ nvim_lsp.tsserver.setup {
   --   "verbose",
   --   "--stdio"
   -- },
-  settings = {documentFormatting = false},
-  on_init = custom_on_init
+  settings = {documentFormatting = false}
 }
 
 nvim_lsp.rust_analyzer.setup {
@@ -111,7 +105,6 @@ nvim_lsp.rust_analyzer.setup {
 
 --must run: npm install -g pyright
 nvim_lsp.pyright.setup {
-  on_init = custom_on_init,
   on_attach = function(client)
     require "lsp-format".on_attach(client)
   end
@@ -129,17 +122,13 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
 
 -- npm i -g vscode-langservers-extracted
 nvim_lsp.cssls.setup {
-  on_init = custom_on_init,
   capabilities = capabilities
 }
 
 -- npm i -g vscode-langservers-extracted
-nvim_lsp.html.setup {
-  on_init = custom_on_init
-}
+nvim_lsp.html.setup()
 
 nvim_lsp.eslint.setup {
-  on_init = custom_on_init,
   on_attach = function(client)
     -- local group = vim.api.nvim_create_augroup("Eslint", {})
     -- vim.api.nvim_create_autocmd("BufWritePre", {
