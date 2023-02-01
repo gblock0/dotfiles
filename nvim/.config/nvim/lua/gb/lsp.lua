@@ -126,7 +126,7 @@ nvim_lsp.cssls.setup {
 }
 
 -- npm i -g vscode-langservers-extracted
-nvim_lsp.html.setup()
+nvim_lsp.html.setup{}
 
 nvim_lsp.eslint.setup {
   on_attach = function(client)
