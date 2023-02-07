@@ -168,10 +168,10 @@ web_devicons.setup {
             color = colors.yellow,
             name = "dotenvexample",
         },
-        [".env.api.test"] = {
+        [".env.e2e.test"] = {
             icon = "",
             color = colors.yellow,
-            name = "envapitest",
+            name = "enve2etest",
         },
         [".env.production"] = {
             icon = "",

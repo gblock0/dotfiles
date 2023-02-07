@@ -38,4 +38,3 @@ require("gb.tmux-navigator")
 require("gb.treesitter")
 require("gb.centerpad")
 require("gb.autocmds")
-
