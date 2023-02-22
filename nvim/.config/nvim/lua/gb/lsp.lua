@@ -94,6 +94,12 @@ nvim_lsp.tsserver.setup {
   --   "verbose",
   --   "--stdio"
   -- },
+  init_options = {
+    -- https://github.com/typescript-language-server/typescript-language-server preferences
+    preferences = {
+      importModuleSpecifierPreference = 'relative'
+    }
+  },
   settings = {documentFormatting = false}
 }
 
