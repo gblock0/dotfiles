@@ -40,3 +40,5 @@ alias ns="npm start"
 alias nrat="npm run test:api:loc"
 
 alias python="python3"
+
+alias jcov="node_modules/.bin/jest --coverage"
