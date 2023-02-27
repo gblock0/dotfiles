@@ -34,8 +34,7 @@ require('lazy').setup({
   "lukas-reineke/indent-blankline.nvim",
 
   -- Statusline
-  "feline-nvim/feline.nvim",
-  "windwp/windline.nvim",
+  "freddiehaddad/feline.nvim",
 
   -- File tree
   "kyazdani42/nvim-web-devicons",
