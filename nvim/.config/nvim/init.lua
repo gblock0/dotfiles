@@ -10,7 +10,7 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
-vim.opt.runtimepath:prepend(lazypath)
+vim.opt.rtp:prepend(lazypath)
 require('gb.plugins')
 require("gb.folds")
 require('gb.sets')

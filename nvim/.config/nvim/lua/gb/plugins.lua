@@ -23,7 +23,7 @@ require('lazy').setup({
         },
       })
     end,
-    requires = {
+    dependencies = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
     }
