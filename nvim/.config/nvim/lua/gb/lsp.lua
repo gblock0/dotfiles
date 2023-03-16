@@ -241,7 +241,16 @@ end
 vim.g.completion_matching_strategy_list = {"exact", "substring", "fuzzy"}
 vim.opt.completeopt = "menu,menuone,noselect"
 
-vim.keymap.set("n", "<leader>f", '<CMD>EslintFixAll<CR>', {silent = true})
+local function format_file()
+  local current_path = vim.fn.expand("%")
+  if string.find(current_path, ".tsx?$") == nil then
+    vim.lsp.buf.format()
+  else
+    vim.cmd(":EslintFixAll")
+  end
+end
+
+vim.keymap.set("n", "<leader>f", format_file, {silent = true})
 vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, {silent = true})
 vim.keymap.set("n", "gR", function() vim.lsp.buf.rename() end)
 vim.keymap.set("n", "gr", function() require'telescope.builtin'.lsp_references({cwd= vim.fn.expand('%:h')}) end)
