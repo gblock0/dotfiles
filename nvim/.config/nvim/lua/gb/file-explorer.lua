@@ -59,7 +59,7 @@ require "nvim-tree".setup {
     enable = true
   },
   filters = {
-    custom = {".git", "node_modules", ".cache", ".DS_Store"}
+    custom = {".git", "node_modules", ".cache$", ".DS_Store"}
   },
   renderer = {
     group_empty = true,
