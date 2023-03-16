@@ -16,12 +16,34 @@ local function attach()
   )
 end
 
+dap.configurations.typescript = {
+  {
+    name = 'Launch',
+    type = 'node2',
+    request = 'launch',
+    program = '${file}',
+    cwd = vim.fn.getcwd(),
+    sourceMaps = true,
+    protocol = 'inspector',
+    console = 'integratedTerminal',
+  },
+  {
+    -- For this to work you need to make sure the node process is started with the `--inspect` flag.
+    name = 'Attach to process',
+    type = 'node2',
+    request = 'attach',
+    processId = require'dap.utils'.pick_process,
+  },
+}
+
 local function debugJest(testName, filename)
   print("starting " .. testName .. " in " .. filename)
   dap.run(
     {
+      name = 'Launch',
       type = "node2",
       request = "launch",
+      program = '',
       cwd = vim.fn.getcwd(),
       runtimeArgs = {"--inspect-brk", "node_modules/.bin/jest", "--no-coverage", "-t", testName, "--", filename},
       sourceMaps = true,
