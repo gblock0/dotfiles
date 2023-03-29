@@ -35,6 +35,7 @@ require('lazy').setup({
 
   -- Statusline
   "freddiehaddad/feline.nvim",
+  "nvim-lualine/lualine.nvim",
 
   -- File tree
   "kyazdani42/nvim-web-devicons",
