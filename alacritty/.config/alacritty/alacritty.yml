@@ -13,6 +13,35 @@
 env:
   TERM: xterm-256color
 
+# campbell (windows 10 default)
+colors:
+  # default colors
+  primary:
+    background: '0x0c0c0c'
+    foreground: '0xcccccc'
+
+  # normal colors
+  normal:
+    black:      '0x0c0c0c'
+    red:        '0xc50f1f'
+    green:      '0x13a10e'
+    yellow:     '0xc19c00'
+    blue:       '0x0037da'
+    magenta:    '0x881798'
+    cyan:       '0x3a96dd'
+    white:      '0xcccccc'
+
+  # bright colors
+  bright:
+    black:      '0x767676'
+    red:        '0xe74856'
+    green:      '0x16c60c'
+    yellow:     '0xf9f1a5'
+    blue:       '0x3b78ff'
+    magenta:    '0xb4009e'
+    cyan:       '0x61d6d6'
+    white:      '0xf2f2f2'
+
 window:
   # Window dimensions (changes require restart)
   #
@@ -49,7 +78,7 @@ font:
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
     family: BlexMono Nerd Font Mono
-    style: Book
+    style: Regular
 
   # Bold font face
   bold:
