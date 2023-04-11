@@ -33,7 +33,7 @@ vim.api.nvim_create_autocmd('BufRead', {
 })
 
 -- Set inlay hints
-vim.api.nvim_create_autocmd('BufReadPost', {
+vim.api.nvim_create_autocmd('BufReadPre', {
   pattern = "*.rs",
   command = "lua require('rust-tools').inlay_hints.set()"
 })

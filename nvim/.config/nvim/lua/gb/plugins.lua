@@ -203,10 +203,8 @@ require('lazy').setup({
     "simrat39/rust-tools.nvim",
     config = function()
       local rt = require("rust-tools")
-
       rt.setup({})
       rt.inlay_hints.enable()
-      rt.inlay_hints.set()
     end
   },
   { "williamboman/mason.nvim", build = ":MasonUpdate" },
