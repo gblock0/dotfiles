@@ -59,6 +59,11 @@ vim.keymap.set("n", "*", "*N")
 
 vim.keymap.set("i", "<F1>", "<Nop>")
 
--- Shift + J/K moves selected lines down/up in visual mode
-vim.keymap.set("v", "K", "<cmd>m '<-2<CR>gv=gv<cr>")
-vim.keymap.set("v", "J", "<cmd>m '>+1<CR>gv=gv<cr>")
+-- Alt + j/k moves selected lines down/up in visual-block mode
+vim.keymap.set("x", "J", ":m '>+1<CR>gv=gv", {silent = true})
+vim.keymap.set("x", "K", ":m '<-2<CR>gv=gv", {silent = true})
+-- Alt + j/k moves selected lines down/up in insert mode
+vim.keymap.set("i", "∆", "<Esc>:m .+1<CR>==gi", {silent = true}) -- Alt+j
+vim.keymap.set("i", "˚", "<Esc>:m .-2<CR>==gi", {silent = true}) -- Alt+k
+
+
