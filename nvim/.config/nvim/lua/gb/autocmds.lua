@@ -32,10 +32,10 @@ vim.api.nvim_create_autocmd('BufRead', {
   command = "set filetype=sh"
 })
 
--- Format the buffer after writing the rust buffers
-vim.api.nvim_create_autocmd('BufWritePre', {
+-- Set inlay hints
+vim.api.nvim_create_autocmd('BufReadPost', {
   pattern = "*.rs",
-  command = "lua vim.lsp.buf.formatting_sync(nil, 200)"
+  command = "lua require('rust-tools').inlay_hints.set()"
 })
 
 -- Clears all matches when leaving the buffer

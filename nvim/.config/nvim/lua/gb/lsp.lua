@@ -149,6 +149,8 @@ nvim_lsp.eslint.setup {
   capabilities = capabilities, -- declared elsewhere
 }
 
+nvim_lsp.rust_analyzer.setup{}
+
 local cmp = require("cmp")
 local lspkind = require("lspkind")
 local has_words_before = function()
