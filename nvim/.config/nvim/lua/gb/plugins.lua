@@ -38,8 +38,8 @@ require('lazy').setup({
   "nvim-lualine/lualine.nvim",
 
   -- File tree
-  "kyazdani42/nvim-web-devicons",
-  "kyazdani42/nvim-tree.lua",
+  "nvim-tree/nvim-web-devicons",
+  "nvim-tree/nvim-tree.lua",
 
   -- Highlight hex colors
   "norcalli/nvim-colorizer.lua",
@@ -173,7 +173,7 @@ require('lazy').setup({
 
   {
     "folke/lsp-trouble.nvim",
-    dependencies = { "kyazdani42/nvim-web-devicons" },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("trouble").setup {}
     end

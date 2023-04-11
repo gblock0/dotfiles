@@ -42,6 +42,7 @@ local function split()
     -- Finally refocus on tree if it was lost
     view.focus()
 end
+
 require "nvim-tree".setup {
   diagnostics = {
     enable = false
