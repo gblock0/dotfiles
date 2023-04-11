@@ -17,6 +17,7 @@ require('gb.sets')
 
 -- load plugin configs
 require("gb.icons")
+require("gb.mason")
 require("gb.autoswap")
 require("gb.colorizer")
 require("gb.commenter")

@@ -42,14 +42,14 @@ require "lsp-format".setup {
       tempfile_dir = tempfile_dir
     },
     {
-      cmd = {prettierCmd},
+      cmd = { prettierCmd },
       tempfile_dir = tempfile_dir,
       start_pattern = "^```json$",
       end_pattern = "^```$",
       target = "current"
     },
     {
-      cmd = {prettierCmd},
+      cmd = { prettierCmd },
       tempfile_dir = tempfile_dir,
       start_pattern = "^```typescript$",
       end_pattern = "^```$",
@@ -58,7 +58,7 @@ require "lsp-format".setup {
   },
   rust = {
     {
-      cmd = {"rustfmt"},
+      cmd = { "rustfmt" },
       tempfile_dir = tempfile_dir
     }
   }

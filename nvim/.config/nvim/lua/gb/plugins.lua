@@ -10,7 +10,7 @@ require('lazy').setup({
 
   {
     "folke/noice.nvim",
-    config = function ()
+    config = function()
       require("noice").setup({
         cmdline = {
           format = {
@@ -57,23 +57,23 @@ require('lazy').setup({
   -- Toggle floating terminal inside nvim
   "voldikss/vim-floaterm",
 
-  -- Treesitter Plugins 
+  -- Treesitter Plugins
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
   "nvim-treesitter/playground",
   "nvim-treesitter/nvim-treesitter-context",
-  
+
 
   {
     "danymat/neogen",
-    dependencies = {"nvim-treesitter/nvim-treesitter"},
-    config = function ()
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    config = function()
       require('neogen').setup()
     end
     -- Uncomment next line if you want to follow only stable versions
     -- tag = "*",
   },
 
-  -- LSP Plugins 
+  -- LSP Plugins
   "nvim-lua/lsp-status.nvim",
   "neovim/nvim-lspconfig",
   {
@@ -90,7 +90,7 @@ require('lazy').setup({
   "nvim-lua/lsp_extensions.nvim",
   "onsails/lspkind-nvim",
 
-  -- Tmux Plugins 
+  -- Tmux Plugins
   "tmux-plugins/vim-tmux-focus-events",
 
   -- Allows navigation between vim and tmux
@@ -123,12 +123,12 @@ require('lazy').setup({
   -- "vim-test/vim-test",
 
   -- Live Markdown previews
-  { "iamcco/markdown-preview.nvim", build = "cd app && yarn install" },
+  { "iamcco/markdown-preview.nvim",    build = "cd app && yarn install" },
 
   -- Additional search highlighting
-  { 
+  {
     "kevinhwang91/nvim-hlslens",
-    config = function ()
+    config = function()
       require('hlslens').setup()
     end
   },
@@ -143,7 +143,7 @@ require('lazy').setup({
   'nvim-telescope/telescope-ui-select.nvim',
 
   -- Git status integration
-  { "lewis6991/gitsigns.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
+  { "lewis6991/gitsigns.nvim",                  dependencies = { "nvim-lua/plenary.nvim" } },
   {
     "TimUntersberger/neogit",
     dependencies = {
@@ -153,7 +153,7 @@ require('lazy').setup({
   },
 
   -- Git UI
-  { "tpope/vim-fugitive", dependencies = { "tpope/vim-rhubarb" } },
+  { "tpope/vim-fugitive",   dependencies = { "tpope/vim-rhubarb" } },
 
   -- Adds commands to easliy change surrounding quotes, brackets, etc.
   "tpope/vim-surround",
@@ -198,6 +198,9 @@ require('lazy').setup({
     end
   },
 
-  { "ThePrimeagen/harpoon", dependencies = {"nvim-lua/plenary.nvim" }},
-})
+  { "ThePrimeagen/harpoon", dependencies = { "nvim-lua/plenary.nvim" } },
 
+  "simrat39/rust-tools.nvim",
+  { "williamboman/mason.nvim", build = ":MasonUpdate" },
+  "williamboman/mason-lspconfig.nvim"
+})
