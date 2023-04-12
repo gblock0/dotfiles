@@ -254,7 +254,7 @@ local function format_file()
 end
 
 vim.keymap.set("n", "<leader>f", format_file, { silent = true })
-vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, { silent = true })
+vim.keymap.set("n", "gd", function() vim.lsp.buf.implementation() end, { silent = true })
 vim.keymap.set("n", "gR", function() vim.lsp.buf.rename() end)
 vim.keymap.set("n", "gr", function() require 'telescope.builtin'.lsp_references({ cwd = vim.fn.expand('%:h') }) end)
 -- vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references({cwd: utils.buffer_dir()})<cr>")
