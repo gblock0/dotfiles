@@ -21,6 +21,14 @@ require('lazy').setup({
         presets = {
           lsp_doc_border = true, -- add a border to hover docs and signature help
         },
+        messages = {
+          enabled = false
+        },
+        lsp = {
+          progress = {
+            enabled = false
+          }
+        }
       })
     end,
     dependencies = {
@@ -208,5 +216,5 @@ require('lazy').setup({
     end
   },
   { "williamboman/mason.nvim", build = ":MasonUpdate" },
-  "williamboman/mason-lspconfig.nvim"
+  "williamboman/mason-lspconfig.nvim",
 })
