@@ -205,7 +205,6 @@ require('lazy').setup({
       })
     end
   },
-
   { "ThePrimeagen/harpoon", dependencies = { "nvim-lua/plenary.nvim" } },
   {
     "simrat39/rust-tools.nvim",
@@ -216,5 +215,8 @@ require('lazy').setup({
     end
   },
   { "williamboman/mason.nvim", build = ":MasonUpdate" },
-  "williamboman/mason-lspconfig.nvim",
+  {
+    "williamboman/mason-lspconfig.nvim",
+    dependencies = { "williamboman/mason.nvim" }
+  }
 })
