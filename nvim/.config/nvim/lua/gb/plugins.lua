@@ -205,7 +205,6 @@ require('lazy').setup({
       })
     end
   },
-
   { "ThePrimeagen/harpoon", dependencies = { "nvim-lua/plenary.nvim" } },
   {
     "simrat39/rust-tools.nvim",
