@@ -57,7 +57,6 @@ require("telescope").setup {
         i = {
           ["<c-d>"] = require("telescope.actions").delete_buffer,
           -- Right hand side can also be the name of the action as a string
-          ["<c-d>"] = "delete_buffer"
         },
         n = {
           ["<c-d>"] = require("telescope.actions").delete_buffer
