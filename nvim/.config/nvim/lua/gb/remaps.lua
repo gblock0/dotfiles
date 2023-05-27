@@ -66,4 +66,7 @@ vim.keymap.set("x", "K", ":m '<-2<CR>gv=gv", {silent = true})
 vim.keymap.set("i", "∆", "<Esc>:m .+1<CR>==gi", {silent = true}) -- Alt+j
 vim.keymap.set("i", "˚", "<Esc>:m .-2<CR>==gi", {silent = true}) -- Alt+k
 
+-- Use H/L to go to beginning/end of line
+vim.keymap.set("n", "H", "^")
+vim.keymap.set("n", "L", "$")
 
