@@ -79,3 +79,16 @@ function gch() {
     git checkout ${branch}
   fi
 }
+
+function gwa() {
+  echo "Creating worktree for branch: ${1}"
+  git worktree add $1
+
+  echo ''
+
+  echo "Cd into ${1}"
+  cd $1
+
+  echo 'Running npm ci...'
+  npm ci
+}
