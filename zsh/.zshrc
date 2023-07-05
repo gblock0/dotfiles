@@ -47,27 +47,8 @@ bindkey '^b' backward-word
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# NVM settings
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-
-function set_nvm() {
-  local nvmrc_path="$(nvm_find_nvmrc)"
-  if [ -n "$nvmrc_path" ]; then
-      local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-      if [ "$nvmrc_node_version" = "N/A" ]; then
-        nvm install
-      elif [ "$nvmrc_node_version" != "$node_version" ]; then
-        nvm use
-      fi
-  fi
-}
-
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-chpwd_functions+=(set_nvm)
-
 #### BELOW FROM FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(rtx activate zsh)"
+
