@@ -7,6 +7,11 @@ require('lazy').setup({
       })
     end
   },
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {},
+  },
 
   {
     "folke/noice.nvim",
@@ -153,7 +158,7 @@ require('lazy').setup({
   -- Git status integration
   { "lewis6991/gitsigns.nvim",                  dependencies = { "nvim-lua/plenary.nvim" } },
   {
-    "TimUntersberger/neogit",
+    "Neogitorg/neogit",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "sindrets/diffview.nvim",

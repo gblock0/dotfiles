@@ -76,35 +76,6 @@ nvim_lsp.jsonls.setup {
   }
 }
 
---must have run: npm install -g typescript
-nvim_lsp.tsserver.setup {
-  -- This makes sure tsserver is not used for formatting
-  -- on_attach = nvim_lsp.tsserver_on_attach,
-  on_attach = function(client)
-    if client.config.flags then
-      client.config.flags.allow_incremental_sync = true
-    end
-    client.server_capabilities.documentFormattingProvider = false
-  end,
-  capabilities = capabilities,
-  root_dir = nvim_lsp.util.root_pattern("tsconfig.json", ".git"),
-  -- cmd = {
-  --   "typescript-language-server",
-  --   "--tsserver-log-file",
-  --   vim.env.HOME .. "/src/tsserver.log",
-  --   "--tsserver-log-verbosity",
-  --   "verbose",
-  --   "--stdio"
-  -- },
-  init_options = {
-    -- https://github.com/typescript-language-server/typescript-language-server preferences
-    preferences = {
-      importModuleSpecifierPreference = 'relative'
-    }
-  },
-  settings = { documentFormatting = false }
-}
-
 nvim_lsp.rust_analyzer.setup {
   on_attach = function(client)
     require "lsp-format".on_attach(client)
@@ -149,7 +120,7 @@ nvim_lsp.eslint.setup {
   capabilities = capabilities, -- declared elsewhere
 }
 
-nvim_lsp.rust_analyzer.setup{}
+nvim_lsp.rust_analyzer.setup {}
 
 local cmp = require("cmp")
 local lspkind = require("lspkind")
@@ -160,7 +131,7 @@ end
 cmp.setup {
   sources = {
     { name = "nvim_lsp",               priority = 8 },
-    { name = "buffer",                 priority = 7 },
+    { name = "buffer",                 priority = 6 },
     { name = "nvim_lua",               priority = 6 },
     { name = "path" },
     { name = 'nvim_lsp_signature_help' }
@@ -172,12 +143,16 @@ cmp.setup {
         end,
   },
   sorting = {
-    priority_weight = 1.0,
+    priority_weight = 2.0,
     comparators = {
-      cmp.config.compare.locality,
-      cmp.config.compare.recently_used,
-      cmp.config.compare.score, -- based on :  score = score + ((#sources - (source_index - 1)) * sorting.priority_weight)
       cmp.config.compare.offset,
+      cmp.config.compare.exact,
+      cmp.config.compare.score,
+      cmp.config.compare.recently_used,
+      cmp.config.compare.locality,
+      cmp.config.compare.kind,
+      -- compare.sort_text,
+      cmp.config.compare.length,
       cmp.config.compare.order,
     },
   },
