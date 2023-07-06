@@ -1,4 +1,22 @@
+local winbar_settings = {
+  lualine_a = {
+    {
+      'filename',
+      symbols = {
+        modified = '',      -- Text to show when the file is modified.
+        readonly = '[-]',      -- Text to show when the file is non-modifiable or readonly.
+        unnamed = '[No Name]', -- Text to show for unnamed buffers.
+        newfile = '[New]',     -- Text to show for newly created file before first write
+      }
+    }
+  }
+}
+
 require('lualine').setup({
+  options = {
+    globalstatus = true,
+    section_separators = { left = ' ', right = ' '},
+  },
   sections = {
     lualine_c = {},
     lualine_x = {
@@ -12,17 +30,6 @@ require('lualine').setup({
       end
     },
   },
-  winbar = {
-    lualine_a = {
-      {
-        'filename',
-        symbols = {
-          modified = '',    -- Text to show when the file is modified.
-          readonly = '[-]',    -- Text to show when the file is non-modifiable or readonly.
-          unnamed = '[No Name]', -- Text to show for unnamed buffers.
-          newfile = '[New]',   -- Text to show for newly created file before first write
-        }
-      }
-    }
-  }
+  inactive_winbar = winbar_settings,
+  winbar = winbar_settings
 })
