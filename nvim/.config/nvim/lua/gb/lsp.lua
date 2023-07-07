@@ -82,11 +82,25 @@ nvim_lsp.rust_analyzer.setup {
   end
 }
 
+-- Infers the full executable path based on shell command name
+local read_exec_path = function(exec_name)
+  local handle = io.popen("which " .. exec_name)
+  local result = handle:read("*a"):gsub("\n", "")
+  handle:close()
+  return result
+end
+
 --must run: npm install -g pyright
 nvim_lsp.pyright.setup {
   on_attach = function(client)
     require "lsp-format".on_attach(client)
-  end
+  end,
+  settings = {
+    python = {
+      -- Use the locally available python executable. Enables using pyright from an activated venv.
+      pythonPath = read_exec_path("python"),
+    },
+  },
 }
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
