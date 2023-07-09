@@ -24,7 +24,7 @@ local function bufwidth()
   return width - numwidth - foldwidth - signwidth
 end
 
-function foldText()
+function fold_text()
   local fs = vim.api.nvim_get_vvar("foldstart")
   local fe = vim.api.nvim_get_vvar("foldend")
   local start_line = vim.fn.substitute(vim.fn.getline(fs), "\t", string.rep(' ', vim.bo.tabstop), 'g')

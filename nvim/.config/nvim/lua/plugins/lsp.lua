@@ -82,9 +82,9 @@ local servers = {
     Lua = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
-      -- diagnostics = {
-      --   globals = { "vim" }
-      -- }
+      diagnostics = {
+        globals = { "vim" }
+      }
     },
   },
   html = {
@@ -134,7 +134,6 @@ return {
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
     opts = {}
   },
-  "lukas-reineke/lsp-format.nvim",
   "nvim-lua/lsp-status.nvim",
   {
     "neovim/nvim-lspconfig",
@@ -152,7 +151,7 @@ return {
             desc = "LSP: " .. desc
           end
 
-          vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
+          set_nmap(keys, func, desc, bufnr)
         end
 
         local function format_file()
@@ -181,7 +180,7 @@ return {
         -- Lesser used LSP functionality
         nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
-        nmap("<leader>e", vim.diagnostic.goto_next(), "Go to next diagnostic")
+        nmap("<leader>e", vim.diagnostic.goto_next, "Go to next diagnostic")
 
         -- disable tsserver so it does not conflict with prettier
         -- if client.name == "tsserver" then
@@ -308,13 +307,6 @@ return {
   },
   "nvim-lua/lsp_extensions.nvim",
   "onsails/lspkind-nvim",
-  {
-    "folke/lsp-trouble.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      require("trouble").setup {}
-    end
-  },
   {
     "simrat39/rust-tools.nvim",
     config = function()

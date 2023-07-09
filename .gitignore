@@ -38,3 +38,4 @@ fishd.tmp.*
 Luapad*
 config/karabiner/automatic_backups
 lazy-lock.json
+.idea/*
