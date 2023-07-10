@@ -17,11 +17,6 @@ vim.api.nvim_create_autocmd('BufReadPre', {
   command = "set spell spelllang=en_us"
 })
 
-vim.api.nvim_create_autocmd('BufReadPre', {
-  pattern = "Dockerfile_base",
-  command = "set filetype=dockerfile"
-})
-
 vim.api.nvim_create_autocmd('BufRead', {
   pattern = ".env.*",
   command = "set filetype=sh"
