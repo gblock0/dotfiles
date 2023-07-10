@@ -11,10 +11,10 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
+require('utils')
 require("folds")
 require('sets')
 require('remaps')
-require('utils')
 require('autocmds')
 require('lazy').setup('plugins', {
   change_detection = {
