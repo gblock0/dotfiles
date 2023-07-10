@@ -18,6 +18,7 @@ return {
         "jsonc",
         "lua",
         "markdown",
+        "markdown_inline",
         "python",
         "regex",
         "rust",
