@@ -27,12 +27,6 @@ vim.api.nvim_create_autocmd('BufRead', {
   command = "set filetype=sh"
 })
 
--- Set inlay hints
-vim.api.nvim_create_autocmd('BufReadPre', {
-  pattern = "*.rs",
-  command = "lua require('rust-tools').inlay_hints.set()"
-})
-
 -- Clears all matches when leaving the buffer
 vim.api.nvim_create_autocmd('BufWinLeave', {
   pattern = "*",
