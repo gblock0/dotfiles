@@ -20,7 +20,10 @@ return {
         layout_config = {
           prompt_position = "top"
         },
-        path_display = { "smart" },
+        path_display = function(_, path)
+          local tail = require("telescope.utils").path_tail(path)
+          return string.format("%s (%s)", tail, path)
+        end,
         mappings = {
           i = {
             ["<C-f>"] = require("telescope.actions").smart_send_to_qflist + require("telescope.actions").open_qflist,
