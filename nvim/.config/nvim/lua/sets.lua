@@ -33,4 +33,4 @@ vim.opt.signcolumn = "yes"
 vim.opt.wrap = false
 
 -- Turn on new diff
-vim.opt.diffopt:append("linematch:60")
+vim.opt.diffopt:append("linematch:20")
