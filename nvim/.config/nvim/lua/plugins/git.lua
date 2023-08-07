@@ -40,9 +40,6 @@ return {
     opts = {
       integrations = {
         diffview = true
-      },
-      sections = {
-        recent = false
       }
     },
     config = function(_, opts)
