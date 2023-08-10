@@ -2,6 +2,8 @@
 return {
   {
     "NvChad/nvim-colorizer.lua",
-    opts = {}
+    opts = {
+      filetypes = { "css" },
+    }
   }
 }
