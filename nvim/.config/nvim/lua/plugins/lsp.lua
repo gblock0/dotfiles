@@ -181,9 +181,9 @@ return {
 
         nmap("<leader>f", format_file, "[F]ormat file")
 
-        nmap("<leader>gR", vim.lsp.buf.rename, "[R]ename")
         nmap("<leader>ca", vim.lsp.buf.code_action, "Code [A]ction")
 
+        nmap("gR", vim.lsp.buf.rename, "[R]ename")
         nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
         nmap("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
         nmap("gi", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
