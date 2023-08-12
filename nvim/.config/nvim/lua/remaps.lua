@@ -18,17 +18,17 @@ set_nmap("gp", "`[v`]", "Reselect pasted text")
 set_nmap("n", "nzzzv", "Keep cursor in the middle of the screen when searching down")
 set_nmap("N", "Nzzzv", "Keep cursor in the middle of the screen when searching up")
 
--- Set more undo breakpoints
-set_nmap(",", ",<c-g>u", "Set undo breakpoints for ','")
-set_nmap(".", ".<c-g>u", "Set undo breakpoints for '.'")
-set_nmap("!", "!<c-g>u", "Set undo breakpoints for '!'")
-set_nmap("?", "?<c-g>u", "Set undo breakpoints for '?'")
-set_nmap("]", "]<c-g>u", "Set undo breakpoints for '['")
-set_nmap("[", "[<c-g>u", "Set undo breakpoints for '['")
-set_nmap("(", "(<c-g>u", "Set undo breakpoints for '('")
-set_nmap(")", ")<c-g>u", "Set undo breakpoints for ')'")
-set_nmap("{", "{<c-g>u", "Set undo breakpoints for '{'")
-set_nmap("}", "}<c-g>u", "Set undo breakpoints for '}'")
+-- Set more undo breakpoints -- doesn't work need to fix
+-- set_nmap(",", ",<c-g>u", "Set undo breakpoints for ','")
+-- set_nmap(".", ".<c-g>u", "Set undo breakpoints for '.'")
+-- set_nmap("!", "!<c-g>u", "Set undo breakpoints for '!'")
+-- set_nmap("?", "?<c-g>u", "Set undo breakpoints for '?'")
+-- set_nmap("]", "]<c-g>u", "Set undo breakpoints for '['")
+-- set_nmap("[", "[<c-g>u", "Set undo breakpoints for '['")
+-- set_nmap("(", "(<c-g>u", "Set undo breakpoints for '('")
+-- set_nmap(")", ")<c-g>u", "Set undo breakpoints for ')'")
+-- set_nmap("{", "{<c-g>u", "Set undo breakpoints for '{'")
+-- set_nmap("}", "}<c-g>u", "Set undo breakpoints for '}'")
 
 set_nmap("Y", "y$", "Make 'Y' behave like other capital letters")
 
