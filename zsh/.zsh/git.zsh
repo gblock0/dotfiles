@@ -73,11 +73,7 @@ function gbpurge () {
 }
 
 function gch() {
-  branch=$(git branch | fzf --height 20%)
-
-  if [[ ${branch} -ne '' ]] then
-    git checkout ${branch}
-  fi
+  git checkout $(git branch | fzf --height 20% | tr -d '[:space:]' | tr -d '*')
 }
 
 function gwa() {
