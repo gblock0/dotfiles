@@ -4,7 +4,7 @@ alias reload!="source ~/.zshrc"
 alias tc="~/.dotfiles/truecolor.sh"
 alias tm="~/.tmux/bin/bash/tm.sh"
 
-# Changing "ls" to "exa"
+# Changing "ls" to "eza"
 alias ls='eza -al --color=always --group-directories-first'
 alias l='ls'
 alias la='eza -a --color=always --group-directories-first'  # all files and dirs
