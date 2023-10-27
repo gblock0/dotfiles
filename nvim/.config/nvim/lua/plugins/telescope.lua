@@ -80,6 +80,10 @@ return {
         }
       },
       extensions = {
+        frecency = {
+          show_scores = true,
+          show_unindexed = true,
+        },
         fzf = {
           override_generic_sorter = true,
           override_file_sorter = true,
@@ -113,4 +117,10 @@ return {
     build = "make"
   },
   'nvim-telescope/telescope-ui-select.nvim',
+  {
+    "nvim-telescope/telescope-frecency.nvim",
+    config = function()
+      require("telescope").load_extension "frecency"
+    end,
+  },
 }
