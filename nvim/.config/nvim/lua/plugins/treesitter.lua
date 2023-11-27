@@ -3,10 +3,6 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     opts = {
-      context_commentstring = {
-        enable = true,
-        enable_autocmd = false
-      },
       ensure_installed = {
         "bash",
         "css",
