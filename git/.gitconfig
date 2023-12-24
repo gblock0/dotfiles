@@ -3,6 +3,12 @@
   name = Greg Block
   email = gblock0@gmail.com
 
+[gpg]
+  format = ssh
+
+[commit]
+  gpgsign = true
+
 [github]
   user = gblock0
 
