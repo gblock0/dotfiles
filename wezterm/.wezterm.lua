@@ -42,8 +42,6 @@ wezterm.on("move-down", function(window, pane)
   move_around(window, pane, "Down", "j")
 end)
 
-config.disable_default_key_bindings = true
-
 config.keys = {
   {
     key = '|',
