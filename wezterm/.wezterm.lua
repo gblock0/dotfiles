@@ -71,10 +71,10 @@ config.keys = {
     mods = 'LEADER|CTRL',
     action = wezterm.action.SendKey { key = 'a', mods = 'CTRL' },
   },
-  { key = "LeftArrow",  mods = "SHIFT", action = wezterm.action { EmitEvent = "move-left" } },
-  { key = "RightArrow", mods = "SHIFT", action = wezterm.action { EmitEvent = "move-right" } },
-  { key = "UpArrow",    mods = "SHIFT", action = wezterm.action { EmitEvent = "move-up" } },
-  { key = "j",  mods = "LEADER|CTRL", action = wezterm.action { EmitEvent = "move-down" } },
+  { key = "h", mods = "CTRL", action = wezterm.action { EmitEvent = "move-left" } },
+  { key = "l", mods = "CTRL", action = wezterm.action { EmitEvent = "move-right" } },
+  { key = "k", mods = "CTRL", action = wezterm.action { EmitEvent = "move-up" } },
+  { key = "j", mods = "CTRL", action = wezterm.action { EmitEvent = "move-down" } },
 }
 
 -- LEADER + CTRL + number to activate that tab
