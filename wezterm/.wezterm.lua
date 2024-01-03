@@ -18,6 +18,8 @@ config.color_scheme = 'Dracula+'
 
 config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 2000 }
 
+config.scrollback_lines = 100000
+
 local move_around = function(window, pane, direction_wez, direction_nvim)
   if pane:get_title():sub(1, 4) == "nvim" then
     window:perform_action(wezterm.action { SendString = "\x17" .. direction_nvim }, pane)
