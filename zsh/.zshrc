@@ -50,5 +50,5 @@ bindkey '^b' backward-word
 #### BELOW FROM FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-eval "$(rtx activate zsh)"
+eval "$(mise activate zsh)"
 
