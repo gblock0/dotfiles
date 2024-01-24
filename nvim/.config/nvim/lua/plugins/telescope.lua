@@ -49,12 +49,12 @@ return {
       },
       pickers = {
         find_files = {
-          hidden = string.find(vim.fn.getcwd(), ".dotfiles"),
+          hidden = true,
           sort_lastused = true,
           previewer = false
         },
         live_grep = {
-          hidden = string.find(vim.fn.getcwd(), ".dotfiles"),
+          hidden = true,
           sort_lastused = true,
           previewer = false
         },
