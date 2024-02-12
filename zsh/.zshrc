@@ -36,7 +36,7 @@ export PATH="/usr/local/sbin:$PATH"
 # Add poetry to path
 export PATH=~/.poetry/bin:$PATH
 
-source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
+source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # Add ctrl+f to move forward one word (includes in autocomplete)
 bindkey '^f' forward-word
