@@ -10,6 +10,9 @@ local read_exec_path = function(exec_name)
   return ""
 end
 
+-- Set lsp log level to off
+vim.lsp.set_log_level("off")
+
 local servers = {
   bashls = {
     -- bash
