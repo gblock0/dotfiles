@@ -25,3 +25,18 @@ function cdd() {
 function update-language-servers() {
   npm update -g typescript pyright vim-language-server vscode-langservers-extracted typescript-language-server
 }
+
+# Git checkout to main or master whatever the current repository uses
+function gcm() {
+  if [ `git rev-parse --verify main 2>/dev/null` ]
+  then
+    git checkout main
+    return
+  fi
+
+  if [ `git rev-parse --verify master 2>/dev/null` ]
+  then
+    git checkout master
+    return
+  fi
+}
