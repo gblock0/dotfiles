@@ -28,15 +28,19 @@ function update-language-servers() {
 
 # Git checkout to main or master whatever the current repository uses
 function gcm() {
+  if [ `git rev-parse --verify master 2>/dev/null` ]
+  then
+    git checkout master
+    return
+  fi
+
   if [ `git rev-parse --verify main 2>/dev/null` ]
   then
     git checkout main
     return
   fi
 
-  if [ `git rev-parse --verify master 2>/dev/null` ]
-  then
-    git checkout master
-    return
-  fi
+  RED='\033[0;31m'
+  NC='\033[0m' # No Color
+  echo -e "${RED}No master or main branch found!${NC}"
 }
