@@ -67,6 +67,10 @@ window:
     x: 0
     y: 0
 
+  # Window opacity as a floating point number from `0.0` to `1.0`.
+  # The value `0.0` is completely transparent and `1.0` is opaque.
+  opacity: 1.0
+
 # Font configuration
 font:
   # Normal (roman) font face
@@ -107,13 +111,6 @@ font:
   # Point size
   size: 18
     
-# Background opacity
-#
-# Window opacity as a floating point number from `0.0` to `1.0`.
-# The value `0.0` is completely transparent and `1.0` is opaque.
-window:
-  opacity: 1.0
-
 # Bindings are always filled by default, but will be replaced when a new
 # binding with the same triggers is defined. To unset a default binding, it can
 # be mapped to the `ReceiveChar` action. Alternatively, you can use `None` for
