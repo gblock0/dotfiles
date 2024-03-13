@@ -12,6 +12,7 @@ export EVENT_NOKQUEUE=1
 source $(brew --prefix)/share/antigen/antigen.zsh
 antigen bundle zsh-users/zsh-syntax-highlighting >/dev/null
 antigen bundle zsh-users/zsh-autosuggestions >/dev/null
+antigen bundle Aloxaf/fzf-tab
 antigen apply >/dev/null
 
 # load all zsh config files
