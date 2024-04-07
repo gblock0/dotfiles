@@ -2,3 +2,5 @@ set clipboard+=unnamed
 set relativenumber
 set number
 
+nnoremap p pgvy
+
