@@ -13,6 +13,7 @@ return {
       load = {
         ["core.defaults"] = {},
         ["core.concealer"] = {},
+        ["core.qol.todo_items"] = {},
         ["core.dirman"] = {
           config = {
             workspaces = {
