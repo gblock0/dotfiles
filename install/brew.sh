@@ -17,6 +17,8 @@ brew install neovim node git reattach-to-user-namespace\
              wget ripgrep procs tldr eza htop nvm hyperfine\
              gnupg cmake yarn mise bat
 
+brew install --cask hammerspoon
+
 # Need this for nvm
 mkdir ~/.nvm
  
