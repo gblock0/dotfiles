@@ -6,13 +6,6 @@ return {
       watch_gitdir = {
         interval = 100
       },
-      signs = {
-        add = { hl = "GitGutterAdd" },
-        change = { hl = "GitGutterChange" },
-        delete = { hl = "GitGutterDelete" },
-        topdelete = { hl = "GitGutterDelete" },
-        changedelete = { hl = "GitGutterChangeDelete" }
-      },
       current_line_blame_opts = {
         virt_text = true,
         virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
@@ -22,6 +15,11 @@ return {
       on_attach = function()
         local gs = package.loaded.gitsigns
         set_nmap('<leader>tb', gs.toggle_current_line_blame)
+        vim.api.nvim_set_hl(0, 'GitSignsAdd', { link = 'GitGutterAdd' })
+        vim.api.nvim_set_hl(0, 'GitSignsChange', { link = 'GitGutterChange' })
+        vim.api.nvim_set_hl(0, 'GitSignsDelete', { link = 'GitGutterDelete' })
+        vim.api.nvim_set_hl(0, 'GitSignsTopDelete', { link = 'GitGutterDelete' })
+        vim.api.nvim_set_hl(0, 'GitSignsChangeDelete', { link = 'GitGutterDelete' })
       end
     }
   },
