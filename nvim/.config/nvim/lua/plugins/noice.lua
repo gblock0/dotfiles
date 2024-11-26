@@ -3,9 +3,10 @@ return
   "folke/noice.nvim",
   opts =
   {
-    -- routes = {
-    --   { filter = { event = "notify" }, opts = { view = "cmdline" } },
-    -- },
+    messages = {
+      -- Messages shown by lsp servers
+      enabled = false,
+    },
     cmdline = {
       format = {
         search_down = { kind = "search", pattern = "^/", icon = " ", lang = "regex" },
