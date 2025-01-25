@@ -27,7 +27,7 @@ defaults write com.apple.finder ShowStatusBar -bool true
 echo "Avoid creating .DS_Store files on network volumes"
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
-# Empty Trash securely by default
+echo "Empty Trash securely by default"
 defaults write com.apple.finder EmptyTrashSecurely -bool true
 
 echo "Require password immediately after sleep or screen saver begins"
@@ -36,6 +36,12 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 echo "Disable tap to click (Trackpad)"
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool False
+
+echo "Setting window keyboard shortcuts"
+defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Move & Resize\033Left" "@^\\U2190"
+defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Move & Resize\033Top" "@^\\U2191"
+defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Move & Resize\033Right" "@^\\U2192"
+defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Move & Resize\033Bottom" "@^\\U2193"
 
 echo "Kill affected applications"
 for app in Safari Finder Dock Mail SystemUIServer; do killall "$app" >/dev/null 2>&1; done
