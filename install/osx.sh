@@ -42,6 +42,7 @@ defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Move
 defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Move & Resize\033Top" "@^\\U2191"
 defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Move & Resize\033Right" "@^\\U2192"
 defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Move & Resize\033Bottom" "@^\\U2193"
+defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Fill" "@^f"
 
 echo "Kill affected applications"
 for app in Safari Finder Dock Mail SystemUIServer; do killall "$app" >/dev/null 2>&1; done
