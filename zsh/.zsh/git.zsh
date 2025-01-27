@@ -54,7 +54,7 @@ function localBranches () {
 }
 
 # Prunes local branches
-function gbpurge () {
+function gpurge () {
   git fetch
   git remote prune origin
   for local in $(localBranches); do
