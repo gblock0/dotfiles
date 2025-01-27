@@ -1,6 +1,6 @@
 return {
   "rmehri01/onenord.nvim",
   opts = {
-    fade_nc = true
+    fade_nc = false
   }
 }
