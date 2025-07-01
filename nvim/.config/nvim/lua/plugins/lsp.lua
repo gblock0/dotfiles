@@ -227,16 +227,15 @@ return {
         debounce_text_changes = 200,
       }
 
-      mason_lspconfig.setup_handlers({
-        function(server_name)
-          require("lspconfig")[server_name].setup({
-            flags = flags,
-            capabilities = capabilities,
-            on_attach = on_attach,
-            settings = servers[server_name],
-          })
-        end,
-      })
+      for server_name, server_opts in pairs(servers) do
+        -- Ensure that the server is installed
+        vim.lsp.config(server_name, {
+          on_attach = on_attach,
+          capabilities = capabilities,
+          flags = flags,
+          settings = server_opts,
+        })
+      end
 
       cmp.setup({
         formatting = {
