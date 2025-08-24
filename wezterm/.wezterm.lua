@@ -14,7 +14,7 @@ config.font = wezterm.font('BlexMono Nerd Font Mono')
 config.font_size = 18.0
 
 -- For example, changing the color scheme:
-config.color_scheme = 'Dracula+'
+config.color_scheme = 'nord'
 
 config.scrollback_lines = 100000
 
