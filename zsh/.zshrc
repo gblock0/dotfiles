@@ -53,3 +53,4 @@ bindkey '^b' backward-word
 
 eval "$(mise activate zsh)"
 
+eval "$(direnv hook zsh)"
