@@ -9,6 +9,9 @@
 [commit]
   gpgsign = true
 
+[tag]
+  gpgsign = true
+
 [github]
   user = gblock0
 
