@@ -181,11 +181,11 @@ return {
 
         local function format_file()
           local current_path = vim.fn.expand("%")
-          if string.find(current_path, ".tsx?$") == nil then
-            vim.lsp.buf.format()
-          else
-            vim.cmd(":EslintFixAll")
-          end
+          -- if string.find(current_path, ".tsx?$") == nil then
+          vim.lsp.buf.format()
+          -- else
+          --   vim.cmd(":EslintFixAll")
+          -- end
         end
 
         nmap("<leader>f", format_file, "[F]ormat file")
