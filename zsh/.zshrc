@@ -52,5 +52,3 @@ bindkey '^b' backward-word
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(mise activate zsh)"
-
-eval "$(direnv hook zsh)"
